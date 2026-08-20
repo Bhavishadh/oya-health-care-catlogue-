@@ -1,929 +1,729 @@
-/* =========================================================
+/* =====================================================
    OYA HEALTH CARE
-   MAIN WEBSITE JAVASCRIPT
-   ========================================================= */
+   CATEGORY + PRODUCT SYSTEM
+===================================================== */
 
-/* =========================================================
-   CATEGORY DATA
-   ========================================================= */
 
-const categories = [
+/* =====================================================
+   PRODUCT DATA
+===================================================== */
 
-    {
-        id: "hospital-furniture",
-        title: "Hospital Furniture",
+const products = {
+
+    "hospital-beds": {
+
+        number: "CATEGORY 01",
+
+        title: "Hospital Beds",
+
         description:
-            "Hospital beds and furniture designed for patient care and healthcare requirements.",
-        image: "images/hospitalbed.webp",
-        products: [
+            "Reliable hospital beds designed for patient comfort, safety and efficient healthcare delivery.",
+
+        items: [
+
             {
-                id: "hospital-bed",
-                name: "Hospital Bed",
+                name: "Electric Hospital Bed",
+
+                image: "images/hospital-bed.jpg",
+
+                thumbnails: [
+                    "images/hospital-bed.jpg",
+                    "images/hospital-bed-2.jpg",
+                    "images/hospital-bed-3.jpg"
+                ],
+
                 description:
-                    "Hospital bed designed for patient comfort, care and professional healthcare use.",
-                images: [
-                    "images/hospitalbed.webp",
-                    "images/fowlerbed.png",
-                    "images/semi bed.png",
-                    "images/foldingbed.png"
-                ]
+                    "A modern electric hospital bed designed to provide comfortable positioning and convenient operation for patients and healthcare professionals."
             },
+
             {
-                id: "fowler-bed",
-                name: "Fowler Bed",
+                name: "Semi Electric Hospital Bed",
+
+                image: "images/semi-electric-bed.jpg",
+
+                thumbnails: [
+                    "images/semi-electric-bed.jpg",
+                    "images/semi-electric-bed-2.jpg"
+                ],
+
                 description:
-                    "Comfortable adjustable hospital bed suitable for hospitals, clinics and home care.",
-                images: [
-                    "images/fowlerbed.png",
-                    "images/hospitalbed.webp"
-                ]
+                    "A practical semi-electric hospital bed providing adjustable positioning and reliable patient support."
             },
+
             {
-                id: "semi-fowler-bed",
-                name: "Semi Fowler Bed",
+                name: "Manual Hospital Bed",
+
+                image: "images/manual-hospital-bed.jpg",
+
+                thumbnails: [
+                    "images/manual-hospital-bed.jpg",
+                    "images/manual-hospital-bed-2.jpg"
+                ],
+
                 description:
-                    "Semi Fowler hospital bed designed for comfortable patient positioning and care.",
-                images: [
-                    "images/semi bed.png",
-                    "images/hospitalbed.webp"
-                ]
-            },
-            {
-                id: "folding-bed",
-                name: "Folding Hospital Bed",
-                description:
-                    "Practical folding hospital bed for flexible healthcare and home-care requirements.",
-                images: [
-                    "images/foldingbed.png",
-                    "images/hospitalbed.webp"
-                ]
+                    "A durable manual hospital bed suitable for hospitals, clinics and healthcare facilities."
             }
+
         ]
+
     },
 
-    {
-        id: "oxygen-equipment",
-        title: "Oxygen Equipment",
-        description:
-            "Oxygen cylinders and related equipment for healthcare and home-care requirements.",
-        image: "images/oxy1.png",
-        products: [
-            {
-                id: "oxygen-cylinder",
-                name: "Oxygen Cylinder",
-                description:
-                    "Oxygen cylinder with regulator suitable for medical and home healthcare requirements.",
-                images: [
-                    "images/oxy1.png",
-                    "images/oxy5ltr.png",
-                    "images/oxy10ltr.png"
-                ]
-            },
-            {
-                id: "oxygen-cylinder-5ltr",
-                name: "Oxygen Cylinder 5 Litre",
-                description:
-                    "Compact 5 litre oxygen cylinder designed for convenient medical oxygen use.",
-                images: [
-                    "images/oxy5ltr.png",
-                    "images/oxy1.png"
-                ]
-            },
-            {
-                id: "oxygen-cylinder-10ltr",
-                name: "Oxygen Cylinder 10 Litre",
-                description:
-                    "10 litre oxygen cylinder suitable for healthcare and oxygen-support requirements.",
-                images: [
-                    "images/oxy10ltr.png",
-                    "images/oxy1.png"
-                ]
-            }
-        ]
-    },
 
-    /* =====================================================
-       NEW CATEGORY
-       OXYGEN CONCENTRATOR
-       ===================================================== */
+    "patient-care": {
 
-    {
-        id: "oxygen-concentrator",
-        title: "Oxygen Concentrator",
-        description:
-            "Oxygen concentrators designed to provide convenient oxygen support for home healthcare.",
-        image: "images/concentrator.webp",
-        products: [
-            {
-                id: "oxygen-concentrator",
-                name: "Oxygen Concentrator",
-                description:
-                    "Oxygen concentrator designed for convenient home oxygen support and everyday healthcare requirements.",
-                images: [
-                    "images/concentrator.webp"
-                ]
-            }
-        ]
-    },
+        number: "CATEGORY 02",
 
-    {
-        id: "wheelchairs",
-        title: "Wheelchairs",
-        description:
-            "Mobility solutions designed for comfortable patient movement and support.",
-        image: "images/w1.png",
-        products: [
-            {
-                id: "wheelchair",
-                name: "Wheelchair",
-                description:
-                    "Comfortable wheelchair designed for safe and convenient patient mobility.",
-                images: [
-                    "images/w1.png"
-                ]
-            },
-            {
-                id: "wheelchair-2",
-                name: "Wheelchair",
-                description:
-                    "Reliable mobility solution suitable for home, hospital and patient-care requirements.",
-                images: [
-                    "images/w1.png"
-                ]
-            }
-        ]
-    },
+        title: "Patient Care",
 
-    {
-        id: "patient-monitoring",
-        title: "Patient Monitoring",
         description:
-            "Equipment designed for suitable patient monitoring requirements.",
-        image: "images/pm.png",
-        products: [
+            "Essential products designed to support patient monitoring, comfort and daily care.",
+
+        items: [
+
             {
-                id: "patient-monitor",
                 name: "Patient Monitor",
+
+                image: "images/patient-monitor.jpg",
+
+                thumbnails: [
+                    "images/patient-monitor.jpg"
+                ],
+
                 description:
-                    "Patient monitoring equipment designed for professional healthcare environments.",
-                images: [
-                    "images/pm.png"
-                ]
+                    "Patient monitoring equipment designed for healthcare environments."
+            },
+
+            {
+                name: "Bedside Locker",
+
+                image: "images/bedside-locker.jpg",
+
+                thumbnails: [
+                    "images/bedside-locker.jpg"
+                ],
+
+                description:
+                    "Convenient bedside storage solution for patients and healthcare facilities."
             }
+
         ]
+
     },
 
-    {
-        id: "critical-care",
-        title: "Critical Care",
+
+    "hospital-furniture": {
+
+        number: "CATEGORY 03",
+
+        title: "Hospital Furniture",
+
         description:
-            "Respiratory-support equipment for suitable critical-care environments.",
-        image: "images/venti.png",
-        products: [
+            "Functional furniture designed for hospitals, clinics and healthcare environments.",
+
+        items: [
+
             {
-                id: "ventilator",
-                name: "Ventilator",
+                name: "Hospital Bedside Table",
+
+                image: "images/bedside-table.jpg",
+
+                thumbnails: [
+                    "images/bedside-table.jpg"
+                ],
+
                 description:
-                    "Respiratory support equipment designed for critical-care environments.",
-                images: [
-                    "images/venti.png"
-                ]
+                    "Practical bedside furniture designed for hospital environments."
+            },
+
+            {
+                name: "Hospital Stool",
+
+                image: "images/hospital-stool.jpg",
+
+                thumbnails: [
+                    "images/hospital-stool.jpg"
+                ],
+
+                description:
+                    "Strong and practical stool suitable for medical environments."
             }
+
         ]
+
     },
 
-    {
-        id: "diagnostic-equipment",
-        title: "Diagnostic Equipment",
+
+    "examination": {
+
+        number: "CATEGORY 04",
+
+        title: "Examination",
+
         description:
-            "Equipment designed for basic patient measurements and diagnostics.",
-        image: "images/amb.png",
-        products: [
+            "Examination furniture designed for doctors, clinics and healthcare professionals.",
+
+        items: [
+
             {
-                id: "diagnostic-equipment",
-                name: "Diagnostic Equipment",
+                name: "Examination Table",
+
+                image: "images/examination-table.jpg",
+
+                thumbnails: [
+                    "images/examination-table.jpg"
+                ],
+
                 description:
-                    "Healthcare equipment designed to support basic patient measurements and diagnostics.",
-                images: [
-                    "images/amb.png"
-                ]
+                    "Comfortable and practical examination table for clinical environments."
             }
+
         ]
+
     },
 
-    {
-        id: "emergency-care",
-        title: "Emergency Care",
+
+    "mobility": {
+
+        number: "CATEGORY 05",
+
+        title: "Mobility Equipment",
+
         description:
-            "Emergency transportation and urgent patient-care support.",
-        image: "images/amb.png",
-        products: [
+            "Mobility products designed to support movement, independence and patient care.",
+
+        items: [
+
             {
-                id: "ambulance",
-                name: "Ambulance",
+                name: "Wheelchair",
+
+                image: "images/wheelchair.jpg",
+
+                thumbnails: [
+                    "images/wheelchair.jpg"
+                ],
+
                 description:
-                    "Emergency transportation solution for urgent patient-care requirements.",
-                images: [
-                    "images/amb.png"
-                ]
+                    "Reliable wheelchair designed for comfortable and convenient mobility."
+            },
+
+            {
+                name: "Walking Frame",
+
+                image: "images/walking-frame.jpg",
+
+                thumbnails: [
+                    "images/walking-frame.jpg"
+                ],
+
+                description:
+                    "Supportive walking frame designed to assist mobility."
             }
+
         ]
+
+    },
+
+
+    "home-care": {
+
+        number: "CATEGORY 06",
+
+        title: "Home Care",
+
+        description:
+            "Healthcare equipment and accessories suitable for home healthcare needs.",
+
+        items: [
+
+            {
+                name: "Home Care Bed",
+
+                image: "images/home-care-bed.jpg",
+
+                thumbnails: [
+                    "images/home-care-bed.jpg"
+                ],
+
+                description:
+                    "A comfortable healthcare bed designed for home care environments."
+            }
+
+        ]
+
     }
 
-];
-
-
-/* =========================================================
-   COMPANY INFORMATION
-   ========================================================= */
-
-const companyInfo = {
-    title: "Oya Health Care",
-
-    description:
-        "OYA Health Care – Trusted Medical Equipment & Home Healthcare Solutions OYA Health Care is a leading supplier of high-quality medical equipment, hospital supplies, and home healthcare products in India. We are committed to providing reliable, affordable and quality healthcare solutions.",
-
-    address:
-        "Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli",
-
-    phone:
-        "7021235223"
 };
 
 
-/* =========================================================
-   DOM
-   ========================================================= */
+/* =====================================================
+   DOM ELEMENTS
+===================================================== */
 
-const mainContent =
-    document.getElementById("mainContent");
+const homePage =
+    document.getElementById("homePage");
+
+const categoryPage =
+    document.getElementById("categoryPage");
+
+const productList =
+    document.getElementById("productList");
+
+const categoryTitle =
+    document.getElementById("categoryTitle");
+
+const categoryNumber =
+    document.getElementById("categoryNumber");
+
+const categoryDescription =
+    document.getElementById("categoryDescription");
+
+const productModal =
+    document.getElementById("productModal");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalDescription =
+    document.getElementById("modalDescription");
 
 const mobileMenu =
     document.getElementById("mobileMenu");
 
-const menuButton =
-    document.getElementById("menuButton");
+const menuBtn =
+    document.getElementById("menuBtn");
 
 
-/* =========================================================
-   IMAGE PATH HELPER
-   ========================================================= */
-
-function safeImage(path) {
-
-    if (!path) {
-        return "";
-    }
-
-    return path.replaceAll(" ", "%20");
-}
-
-
-/* =========================================================
-   HOME PAGE
-   ========================================================= */
-
-function showHome(scrollTop = true) {
-
-    closeMobileMenu();
-
-    const homeInfo = `
-        <section class="mobile-home-info">
-
-            <a href="#" onclick="showHome(); return false;">
-                <img
-                    src="${safeImage("images/logo (2).png")}"
-                    alt="Oya Health Care"
-                    class="mobile-home-logo"
-                >
-            </a>
-
-            <h1 class="mobile-home-title">
-                ${companyInfo.title}
-            </h1>
-
-            <p class="mobile-home-description">
-                ${companyInfo.description}
-            </p>
-
-            <div class="mobile-home-contact">
-
-                <div class="contact-item">
-                    <div class="contact-icon">⌖</div>
-                    <div>
-                        ${companyInfo.address}
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">♧</div>
-                    <a href="tel:${companyInfo.phone}">
-                        ${companyInfo.phone}
-                    </a>
-                </div>
-
-            </div>
-
-        </section>
-    `;
-
-
-    const heading = `
-        <div class="page-heading">
-
-            <div class="eyebrow">
-                CATALOGUE
-            </div>
-
-            <div class="heading-line"></div>
-
-        </div>
-    `;
-
-
-    mainContent.innerHTML = `
-        ${homeInfo}
-        ${heading}
-
-        <section class="category-grid">
-
-            ${categories.map(categoryCard).join("")}
-
-        </section>
-    `;
-
-
-    if (scrollTop) {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-}
-
-
-/* =========================================================
-   CATEGORY CARD
-   ========================================================= */
-
-function categoryCard(category) {
-
-    const productCount =
-        category.products.length;
-
-    return `
-        <article
-            class="category-card"
-            onclick="openCategory('${category.id}')"
-        >
-
-            <div class="category-image-box">
-
-                <img
-                    src="${safeImage(category.image)}"
-                    alt="${category.title}"
-                    class="category-image"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="category-info">
-
-                <div class="category-label">
-                    OYA COLLECTION
-                </div>
-
-                <h2 class="category-title">
-                    ${category.title}
-                </h2>
-
-                <p class="category-description">
-                    ${category.description}
-                </p>
-
-                <div class="category-bottom">
-
-                    <span class="product-count">
-                        ${productCount}
-                        ${productCount === 1 ? "product" : "products"}
-                    </span>
-
-                    <span class="arrow">
-                        ↗
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-    `;
-}
-
-
-/* =========================================================
-   OPEN CATEGORY
-   ========================================================= */
-
-function openCategory(categoryId) {
-
-    closeMobileMenu();
-
-    const category =
-        categories.find(
-            item => item.id === categoryId
-        );
-
-    if (!category) {
-        return;
-    }
-
-
-    mainContent.innerHTML = `
-
-        <section class="category-page">
-
-            <div class="page-heading">
-
-                <div class="category-page-title">
-                    ${category.title.toUpperCase()}
-                </div>
-
-                <div class="heading-line"></div>
-
-            </div>
-
-
-            <button
-                class="back-button"
-                onclick="showHome()"
-                type="button"
-            >
-                ← Back to Catalogue
-            </button>
-
-
-            <section class="product-grid">
-
-                ${category.products
-                    .map(product =>
-                        productCard(product, category)
-                    )
-                    .join("")
-                }
-
-            </section>
-
-        </section>
-    `;
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-/* =========================================================
-   PRODUCT CARD
-   ========================================================= */
-
-function productCard(product, category) {
-
-    const firstImage =
-        product.images &&
-        product.images.length
-            ? product.images[0]
-            : category.image;
-
-
-    return `
-        <article
-            class="product-card"
-            onclick="openProduct(
-                '${category.id}',
-                '${product.id}'
-            )"
-        >
-
-            <div class="product-image-box">
-
-                <img
-                    src="${safeImage(firstImage)}"
-                    alt="${product.name}"
-                    class="product-image"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="product-card-info">
-
-                <div class="product-category">
-                    ${category.title.toUpperCase()}
-                </div>
-
-                <h2 class="product-title">
-                    ${product.name}
-                </h2>
-
-                <p class="product-description">
-                    ${product.description}
-                </p>
-
-            </div>
-
-        </article>
-    `;
-}
-
-
-/* =========================================================
-   OPEN PRODUCT
-   ========================================================= */
-
-function openProduct(categoryId, productId) {
-
-    closeMobileMenu();
-
-    const category =
-        categories.find(
-            item => item.id === categoryId
-        );
-
-    if (!category) {
-        return;
-    }
-
-
-    const product =
-        category.products.find(
-            item => item.id === productId
-        );
-
-    if (!product) {
-        return;
-    }
-
-
-    const images =
-        product.images &&
-        product.images.length
-            ? product.images
-            : [category.image];
-
-
-    const firstImage =
-        images[0];
-
-
-    mainContent.innerHTML = `
-
-        <section class="product-detail">
-
-            <div class="product-detail-top">
-
-                <button
-                    class="detail-back"
-                    type="button"
-                    onclick="openCategory('${category.id}')"
-                >
-                    ← Back to Catalogue
-                </button>
-
-            </div>
-
-
-            <div class="product-detail-layout">
-
-
-                <!-- =========================
-                     PRODUCT GALLERY
-                ========================= -->
-
-                <div class="detail-gallery">
-
-                    <div class="main-product-image-box">
-
-                        <img
-                            id="mainProductImage"
-                            src="${safeImage(firstImage)}"
-                            alt="${product.name}"
-                            class="main-product-image"
-                        >
-
-                    </div>
-
-
-                    <!-- THUMBNAILS -->
-
-                    <div
-                        class="thumbnail-row"
-                        id="thumbnailRow"
-                    >
-
-                        ${images
-                            .map(
-                                (image, index) => `
-                                    <button
-                                        class="thumbnail ${
-                                            index === 0
-                                                ? "active"
-                                                : ""
-                                        }"
-                                        type="button"
-                                        onclick="changeProductImage(
-                                            '${safeImage(image)}',
-                                            this
-                                        )"
-                                    >
-
-                                        <img
-                                            src="${safeImage(image)}"
-                                            alt="${product.name}"
-                                        >
-
-                                    </button>
-                                `
-                            )
-                            .join("")
-                        }
-
-                    </div>
-
-                </div>
-
-
-                <!-- =========================
-                     PRODUCT INFORMATION
-                ========================= -->
-
-                <div class="product-detail-info">
-
-                    <div class="detail-category">
-                        ${category.title.toUpperCase()}
-                    </div>
-
-
-                    <h1 class="detail-title">
-                        ${product.name}
-                    </h1>
-
-
-                    <p class="detail-description">
-                        ${product.description}
-                    </p>
-
-
-                    <div class="detail-line"></div>
-
-
-                    <span class="detail-label">
-                        QUALITY HEALTHCARE EQUIPMENT
-                    </span>
-
-
-                    <div class="size-option">
-                        Suitable for professional & home care
-                    </div>
-
-
-                    <div class="enquiry-buttons">
-
-                        <a
-                            href="tel:${companyInfo.phone}"
-                            class="enquiry-button call-button"
-                        >
-                            Enquire Now
-                        </a>
-
-
-                        <a
-                            href="https://wa.me/91${companyInfo.phone}"
-                            target="_blank"
-                            rel="noopener"
-                            class="enquiry-button whatsapp-button"
-                        >
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-    `;
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-/* =========================================================
-   CHANGE PRODUCT IMAGE
-   ========================================================= */
-
-function changeProductImage(imagePath, thumbnail) {
-
-    const mainImage =
-        document.getElementById(
-            "mainProductImage"
-        );
-
-    if (!mainImage) {
-        return;
-    }
-
-
-    mainImage.src =
-        imagePath;
-
-
-    document
-        .querySelectorAll(".thumbnail")
-        .forEach(item => {
-
-            item.classList.remove("active");
-
-        });
-
-
-    if (thumbnail) {
-        thumbnail.classList.add("active");
-    }
-}
-
-
-/* =========================================================
+/* =====================================================
    MOBILE MENU
-   ========================================================= */
+===================================================== */
 
-function toggleMobileMenu() {
+menuBtn.addEventListener("click", function () {
 
-    if (!mobileMenu) {
+    mobileMenu.classList.toggle("active");
+
+});
+
+
+/* =====================================================
+   OPEN CATEGORY
+===================================================== */
+
+function openCategory(categoryName) {
+
+    const category =
+        products[categoryName];
+
+    if (!category) {
         return;
     }
 
 
-    mobileMenu.classList.toggle("open");
+    /* ---------------------------------
+       Hide complete home page
+    --------------------------------- */
+
+    homePage.style.display = "none";
 
 
-    if (menuButton) {
+    /* ---------------------------------
+       Show category page
+    --------------------------------- */
 
-        menuButton.classList.toggle(
-            "active"
-        );
+    categoryPage.classList.add("active");
 
-    }
+
+    /* ---------------------------------
+       Update heading
+    --------------------------------- */
+
+    categoryNumber.textContent =
+        category.number;
+
+    categoryTitle.textContent =
+        category.title;
+
+    categoryDescription.textContent =
+        category.description;
+
+
+    /* ---------------------------------
+       Clear previous products
+    --------------------------------- */
+
+    productList.innerHTML = "";
+
+
+    /* ---------------------------------
+       Create products
+    --------------------------------- */
+
+    category.items.forEach(
+        (product, index) => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "product-card";
+
+
+            /* =========================
+               MAIN IMAGE
+            ========================= */
+
+            const mainImage =
+                document.createElement("div");
+
+            mainImage.className =
+                "product-main-image";
+
+
+            const image =
+                document.createElement("img");
+
+            image.src =
+                product.image;
+
+            image.alt =
+                product.name;
+
+
+            mainImage.appendChild(image);
+
+
+            /* =========================
+               THUMBNAILS
+            ========================= */
+
+            const thumbnails =
+                document.createElement("div");
+
+            thumbnails.className =
+                "product-thumbnails";
+
+
+            if (
+                product.thumbnails &&
+                product.thumbnails.length > 0
+            ) {
+
+                product.thumbnails.forEach(
+                    thumbnailSource => {
+
+                        const thumbnail =
+                            document.createElement("div");
+
+                        thumbnail.className =
+                            "thumbnail";
+
+
+                        const thumbImage =
+                            document.createElement("img");
+
+                        thumbImage.src =
+                            thumbnailSource;
+
+                        thumbImage.alt =
+                            product.name;
+
+
+                        thumbnail.appendChild(
+                            thumbImage
+                        );
+
+
+                        thumbnail.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.stopPropagation();
+
+                                image.src =
+                                    thumbnailSource;
+
+                            }
+                        );
+
+
+                        thumbnails.appendChild(
+                            thumbnail
+                        );
+
+                    }
+                );
+
+            }
+
+
+            /* =========================
+               PRODUCT INFO
+            ========================= */
+
+            const info =
+                document.createElement("div");
+
+            info.className =
+                "product-info";
+
+
+            const number =
+                document.createElement("span");
+
+            number.className =
+                "product-number";
+
+            number.textContent =
+                "PRODUCT " +
+                String(index + 1).padStart(2, "0");
+
+
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                product.name;
+
+
+            const description =
+                document.createElement("p");
+
+            description.textContent =
+                product.description;
+
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "product-view-btn";
+
+            button.textContent =
+                "VIEW PRODUCT";
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    openProduct(
+                        product,
+                        category.title
+                    );
+
+                }
+            );
+
+
+            info.appendChild(number);
+            info.appendChild(title);
+            info.appendChild(description);
+            info.appendChild(button);
+
+
+            /* =========================
+               CARD
+            ========================= */
+
+            card.appendChild(mainImage);
+
+            card.appendChild(thumbnails);
+
+            card.appendChild(info);
+
+
+            productList.appendChild(card);
+
+        }
+    );
+
+
+    /* ---------------------------------
+       Close menu
+    --------------------------------- */
+
+    mobileMenu.classList.remove(
+        "active"
+    );
+
+
+    /* ---------------------------------
+       Scroll to top
+    --------------------------------- */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 }
 
 
-/* =========================================================
-   CLOSE MOBILE MENU
-   ========================================================= */
+/* =====================================================
+   GO HOME
+===================================================== */
 
-function closeMobileMenu() {
+function goHome() {
 
-    if (mobileMenu) {
+    categoryPage.classList.remove(
+        "active"
+    );
 
-        mobileMenu.classList.remove(
-            "open"
-        );
-
-    }
+    homePage.style.display =
+        "block";
 
 
-    if (menuButton) {
+    mobileMenu.classList.remove(
+        "active"
+    );
 
-        menuButton.classList.remove(
-            "active"
-        );
 
-    }
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 }
 
 
-/* =========================================================
+/* =====================================================
    SCROLL TO CATALOGUE
-   ========================================================= */
+===================================================== */
 
 function scrollToCatalogue() {
 
-    closeMobileMenu();
+    categoryPage.classList.remove(
+        "active"
+    );
 
-    showHome(false);
+    homePage.style.display =
+        "block";
 
 
-    setTimeout(() => {
+    mobileMenu.classList.remove(
+        "active"
+    );
 
-        const heading =
-            document.querySelector(
-                ".page-heading"
+
+    setTimeout(function () {
+
+        const catalogue =
+            document.getElementById(
+                "catalogue"
             );
 
-        if (heading) {
-
-            heading.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
+        catalogue.scrollIntoView({
+            behavior: "smooth"
+        });
 
     }, 50);
+
 }
 
 
-/* =========================================================
-   SCROLL TO ABOUT
-   ========================================================= */
+/* =====================================================
+   PRODUCT POPUP
+===================================================== */
 
-function scrollToAbout() {
+function openProduct(
+    product,
+    category
+) {
 
-    closeMobileMenu();
+    modalImage.src =
+        product.image;
 
-    showHome(false);
+    modalImage.alt =
+        product.name;
+
+    modalTitle.textContent =
+        product.name;
+
+    modalCategory.textContent =
+        category;
+
+    modalDescription.textContent =
+        product.description;
 
 
-    setTimeout(() => {
+    productModal.classList.add(
+        "active"
+    );
 
-        const info =
-            document.querySelector(
-                ".mobile-home-info"
-            );
 
-        if (info) {
+    document.body.style.overflow =
+        "hidden";
 
-            info.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    }, 50);
 }
 
 
-/* =========================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-   ========================================================= */
+/* =====================================================
+   CLOSE PRODUCT
+===================================================== */
 
-document.addEventListener(
-    "click",
-    function(event) {
+function closeProduct() {
 
-        if (!mobileMenu ||
-            !menuButton) {
-            return;
-        }
+    productModal.classList.remove(
+        "active"
+    );
 
 
-        const clickedInsideMenu =
-            mobileMenu.contains(
-                event.target
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+function showContact() {
+
+    mobileMenu.classList.remove(
+        "active"
+    );
+
+    homePage.style.display =
+        "block";
+
+    categoryPage.classList.remove(
+        "active"
+    );
+
+
+    setTimeout(function () {
+
+        const company =
+            document.querySelector(
+                ".company-section"
             );
 
+        company.scrollIntoView({
+            behavior: "smooth"
+        });
 
-        const clickedButton =
-            menuButton.contains(
-                event.target
-            );
+    }, 50);
 
-
-        if (
-            mobileMenu.classList.contains("open") &&
-            !clickedInsideMenu &&
-            !clickedButton
-        ) {
-
-            closeMobileMenu();
-
-        }
-
-    }
-);
+}
 
 
-/* =========================================================
-   ESCAPE KEY
-   ========================================================= */
+/* =====================================================
+   ESC KEY
+===================================================== */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function (event) {
 
         if (event.key === "Escape") {
 
-            closeMobileMenu();
+            closeProduct();
 
         }
 
@@ -931,29 +731,23 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   HANDLE BROWSER BACK BUTTON
-   ========================================================= */
+/* =====================================================
+   CLICK OUTSIDE MODAL
+===================================================== */
 
-window.addEventListener(
-    "popstate",
-    function() {
+productModal.addEventListener(
+    "click",
+    function (event) {
 
-        showHome();
+        if (
+            event.target.classList.contains(
+                "modal-overlay"
+            )
+        ) {
 
-    }
-);
+            closeProduct();
 
-
-/* =========================================================
-   INITIAL LOAD
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        showHome(false);
+        }
 
     }
 );
