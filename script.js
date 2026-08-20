@@ -433,6 +433,77 @@ const categories = [
 
 
     /* =====================================================
+       BIPAP
+    ===================================================== */
+
+    {
+        id: "bipap-machines",
+
+        title: "BiPAP Machines",
+
+        image: "images/b1.png",
+
+        description:
+            "Non-invasive respiratory-support equipment.",
+
+        products: [
+
+            {
+                name: "Standard BiPAP Machine",
+
+                images: [
+                    "images/b1.png"
+                ],
+
+                description:
+                    "Bi-level respiratory-support solution designed for suitable healthcare requirements.",
+
+                info: {
+                    "TYPE": "BiPAP Machine",
+                    "USE": "Respiratory Support"
+                }
+            },
+
+
+            {
+                name: "Portable BiPAP Machine",
+
+                images: [
+                    "images/b2.png"
+                ],
+
+                description:
+                    "Portable respiratory-support option designed for convenient handling and use.",
+
+                info: {
+                    "TYPE": "Portable BiPAP",
+                    "USE": "Respiratory Support"
+                }
+            },
+
+
+            {
+                name: "Auto BiPAP Machine",
+
+                images: [
+                    "images/b1.png"
+                ],
+
+                description:
+                    "Adaptive BiPAP option designed for suitable respiratory support.",
+
+                info: {
+                    "TYPE": "Auto BiPAP",
+                    "USE": "Respiratory Support"
+                }
+            }
+
+        ]
+    },
+
+
+
+    /* =====================================================
        WALKERS
     ===================================================== */
 
@@ -751,8 +822,6 @@ let currentCategory = null;
 
 let currentProductIndex = 0;
 
-let currentImageIndex = 0;
-
 
 
 /* =========================================================
@@ -825,7 +894,7 @@ function renderCategories() {
                 "click",
                 () => {
 
-                    openCategory(
+                    openCategoryAsProduct(
                         category
                     );
 
@@ -839,6 +908,45 @@ function renderCategories() {
 
         }
     );
+
+}
+
+
+
+/* =========================================================
+   OPEN CATEGORY DIRECTLY AS PRODUCT VIEW
+   (big image + thumbnails of the OTHER
+   products in this category)
+========================================================= */
+
+function openCategoryAsProduct(
+    category
+) {
+
+    currentCategory =
+        category;
+
+
+    currentProductIndex = 0;
+
+
+    updateProductPage();
+
+
+    document.body.classList.add(
+        "product-open"
+    );
+
+
+    productView.classList.add(
+        "active"
+    );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 
 }
 
@@ -1030,12 +1138,6 @@ function updateProductPage() {
 
 
 
-    /* RESET IMAGE INDEX */
-
-    currentImageIndex = 0;
-
-
-
     /* BIG IMAGE */
 
     mainProductImage.src =
@@ -1090,10 +1192,10 @@ function updateProductPage() {
 
 
 
-    /* IMAGE GALLERY THUMBNAILS (SAME PRODUCT) */
+    /* THUMBNAILS: OTHER PRODUCTS IN THIS CATEGORY */
 
     renderProductThumbnails(
-        product
+        category
     );
 
 }
@@ -1101,20 +1203,20 @@ function updateProductPage() {
 
 
 /* =========================================================
-   PRODUCT IMAGE GALLERY
-   (thumbnails = other photos of THIS product)
+   THUMBNAILS = OTHER PRODUCTS IN THE CATEGORY
+   Clicking one swaps the big image + info
 ========================================================= */
 
 function renderProductThumbnails(
-    product
+    category
 ) {
 
     thumbnailContainer.innerHTML =
         "";
 
 
-    product.images.forEach(
-        (image, index) => {
+    category.products.forEach(
+        (product, index) => {
 
             const card =
                 document.createElement(
@@ -1132,7 +1234,7 @@ function renderProductThumbnails(
 
             if (
                 index ===
-                currentImageIndex
+                currentProductIndex
             ) {
 
                 card.classList.add(
@@ -1145,10 +1247,15 @@ function renderProductThumbnails(
             card.innerHTML = `
 
                 <img
-                    src="${image}"
+                    src="${product.images[0]}"
                     alt="${product.name}"
                     loading="lazy"
                 >
+
+
+                <span>
+                    ${product.name}
+                </span>
 
             `;
 
@@ -1157,32 +1264,17 @@ function renderProductThumbnails(
                 "click",
                 () => {
 
-                    currentImageIndex =
+                    currentProductIndex =
                         index;
 
 
-                    mainProductImage.src =
-                        image;
+                    updateProductPage();
 
 
-                    mainProductImage.alt =
-                        product.name;
-
-
-                    thumbnailContainer
-                        .querySelectorAll(
-                            ".thumbnail"
-                        )
-                        .forEach(
-                            t => t.classList.remove(
-                                "active"
-                            )
-                        );
-
-
-                    card.classList.add(
-                        "active"
-                    );
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
 
                 }
             );
@@ -1289,7 +1381,7 @@ function backToCatalogue() {
 
 
 /* =========================================================
-   BACK FROM PRODUCT
+   BACK FROM PRODUCT (STRAIGHT TO CATALOGUE)
 ========================================================= */
 
 function backToProducts() {
@@ -1300,16 +1392,6 @@ function backToProducts() {
 
 
     productView.classList.remove(
-        "active"
-    );
-
-
-    document.body.classList.add(
-        "category-open"
-    );
-
-
-    categoryView.classList.add(
         "active"
     );
 
