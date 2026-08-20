@@ -217,7 +217,7 @@ const categories = [
 
 
     /* =====================================================
-       CPAP MACHINES
+       CPAP
     ===================================================== */
 
     {
@@ -264,7 +264,7 @@ const categories = [
 
 
     /* =====================================================
-       BIPAP MACHINES
+       BIPAP
     ===================================================== */
 
     {
@@ -416,7 +416,7 @@ const categories = [
 
 
     /* =====================================================
-       DIAGNOSTIC EQUIPMENT
+       DIAGNOSTIC
     ===================================================== */
 
     {
@@ -445,7 +445,7 @@ const categories = [
 
 
     /* =====================================================
-       EMERGENCY CARE
+       EMERGENCY
     ===================================================== */
 
     {
@@ -477,26 +477,11 @@ const categories = [
 
 
 /* =========================================================
-   GET HTML ELEMENTS
+   ELEMENTS
 ========================================================= */
 
 const categoryGrid =
     document.getElementById("categoryGrid");
-
-const home =
-    document.querySelector(".home");
-
-const catalogue =
-    document.querySelector(".catalogue");
-
-const about =
-    document.querySelector(".about");
-
-const contact =
-    document.querySelector(".contact");
-
-const footer =
-    document.querySelector("footer");
 
 const categoryView =
     document.getElementById("categoryView");
@@ -540,29 +525,23 @@ const detailDescription =
 const detailWhatsApp =
     document.getElementById("detailWhatsApp");
 
-const thumbs =
-    document.getElementById("thumbs");
+const otherProductsGrid =
+    document.getElementById("otherProductsGrid");
 
 
 
 /* =========================================================
-   RENDER CATEGORY CARDS
+   RENDER CATEGORIES
 ========================================================= */
 
 function renderCategories() {
 
-    if (!categoryGrid) return;
-
-
     categoryGrid.innerHTML = "";
-
 
     categories.forEach(category => {
 
-
         const card =
             document.createElement("article");
-
 
         card.className =
             "category-card";
@@ -582,7 +561,7 @@ function renderCategories() {
 
 
             <div class="category-label">
-                OYA COLLECTION
+                OYA
             </div>
 
 
@@ -646,7 +625,6 @@ function renderCategories() {
 
 function openCategory(categoryId) {
 
-
     const category =
         categories.find(
             item =>
@@ -654,33 +632,21 @@ function openCategory(categoryId) {
         );
 
 
-    if (!category) return;
+    if (!category) {
+        return;
+    }
 
-
-    /* -----------------------------------------------
-       CATEGORY TITLE
-    ----------------------------------------------- */
 
     categoryTitle.textContent =
         category.title;
 
 
-    /* -----------------------------------------------
-       CATEGORY DESCRIPTION
-    ----------------------------------------------- */
-
     categoryDescription.textContent =
         category.description;
 
 
-    /* -----------------------------------------------
-       PRODUCT COUNT
-    ----------------------------------------------- */
-
     categoryCount.textContent =
-
         category.products.length +
-
         (
             category.products.length === 1
                 ? " PRODUCT"
@@ -688,16 +654,15 @@ function openCategory(categoryId) {
         );
 
 
-    /* -----------------------------------------------
-       CREATE PRODUCTS
-    ----------------------------------------------- */
-
     productGrid.innerHTML = "";
 
 
+    /*
+       SHOW EVERY PRODUCT
+    */
+
     category.products.forEach(
         (product, index) => {
-
 
             const card =
                 document.createElement("article");
@@ -721,9 +686,7 @@ function openCategory(categoryId) {
 
 
                 <div class="product-card-category">
-
                     ${category.title}
-
                 </div>
 
 
@@ -758,10 +721,6 @@ function openCategory(categoryId) {
     );
 
 
-    /* -----------------------------------------------
-       HIDE HOME
-    ----------------------------------------------- */
-
     document.body.classList.add(
         "category-open"
     );
@@ -778,10 +737,12 @@ function openCategory(categoryId) {
     );
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
+    window.scrollTo(
+        {
+            top: 0,
+            behavior: "instant"
+        }
+    );
 
 }
 
@@ -792,6 +753,8 @@ function openCategory(categoryId) {
 ========================================================= */
 
 function backToCatalogue() {
+
+    closeProductPage();
 
 
     document.body.classList.remove(
@@ -810,10 +773,12 @@ function backToCatalogue() {
     );
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
+    window.scrollTo(
+        {
+            top: 0,
+            behavior: "instant"
+        }
+    );
 
 }
 
@@ -828,179 +793,11 @@ function openProduct(
     productIndex
 ) {
 
-
-    const product =
-        category.products[productIndex];
-
-
-    if (!product) return;
-
-
-    /* -----------------------------------------------
-       PRODUCT CATEGORY
-    ----------------------------------------------- */
-
-    detailCategory.textContent =
-        category.title;
-
-
-    /* -----------------------------------------------
-       PRODUCT TITLE
-    ----------------------------------------------- */
-
-    detailTitle.textContent =
-        product.name;
-
-
-    /* -----------------------------------------------
-       PRODUCT DESCRIPTION
-    ----------------------------------------------- */
-
-    detailDescription.textContent =
-        product.description;
-
-
-    /* -----------------------------------------------
-       MAIN IMAGE
-    ----------------------------------------------- */
-
-    detailImage.src =
-        product.image;
-
-
-    detailImage.alt =
-        product.name;
-
-
-    /* -----------------------------------------------
-       WHATSAPP MESSAGE
-    ----------------------------------------------- */
-
-    const message =
-        `Hi OYA Health Care, I am interested in ${product.name}. Please share details, price and availability.`;
-
-    detailWhatsApp.href =
-        "https://wa.me/917021235223?text=" +
-        encodeURIComponent(message);
-
-
-    /* -----------------------------------------------
-       CREATE THUMBNAILS
-       
-       The category's products become thumbnails.
-       This means you can swipe/click through them.
-    ----------------------------------------------- */
-
-    thumbs.innerHTML = "";
-
-
-    category.products.forEach(
-        (item, index) => {
-
-
-            const thumbnail =
-                document.createElement("button");
-
-
-            thumbnail.type =
-                "button";
-
-
-            thumbnail.className =
-                "thumb";
-
-
-            if (
-                index === productIndex
-            ) {
-
-                thumbnail.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            thumbnail.innerHTML = `
-
-                <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                >
-
-            `;
-
-
-            thumbnail.addEventListener(
-                "click",
-                () => {
-
-
-                    detailImage.src =
-                        item.image;
-
-
-                    detailImage.alt =
-                        item.name;
-
-
-                    detailTitle.textContent =
-                        item.name;
-
-
-                    detailDescription.textContent =
-                        item.description;
-
-
-                    detailCategory.textContent =
-                        category.title;
-
-
-                    thumbs
-                        .querySelectorAll(
-                            ".thumb"
-                        )
-                        .forEach(
-                            thumb => {
-
-                                thumb.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-                    thumbnail.classList.add(
-                        "active"
-                    );
-
-
-                    const newMessage =
-                        `Hi OYA Health Care, I am interested in ${item.name}. Please share details, price and availability.`;
-
-
-                    detailWhatsApp.href =
-                        "https://wa.me/917021235223?text=" +
-                        encodeURIComponent(
-                            newMessage
-                        );
-
-                }
-            );
-
-
-            thumbs.appendChild(
-                thumbnail
-            );
-
-        }
+    showProduct(
+        category,
+        productIndex
     );
 
-
-    /* -----------------------------------------------
-       OPEN PRODUCT PAGE
-    ----------------------------------------------- */
 
     document.body.classList.add(
         "modal-open"
@@ -1018,10 +815,168 @@ function openProduct(
     );
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
+    productModal.scrollTop = 0;
+
+}
+
+
+
+/* =========================================================
+   SHOW PRODUCT
+========================================================= */
+
+function showProduct(
+    category,
+    productIndex
+) {
+
+    const product =
+        category.products[productIndex];
+
+
+    if (!product) {
+        return;
+    }
+
+
+    detailCategory.textContent =
+        category.title;
+
+
+    detailTitle.textContent =
+        product.name;
+
+
+    detailDescription.textContent =
+        product.description;
+
+
+    detailImage.src =
+        product.image;
+
+
+    detailImage.alt =
+        product.name;
+
+
+    const message =
+        `Hi OYA Health Care, I am interested in ${product.name}. Please share details, price and availability.`;
+
+
+    detailWhatsApp.href =
+        "https://wa.me/917021235223?text=" +
+        encodeURIComponent(message);
+
+
+    renderOtherProducts(
+        category,
+        productIndex
+    );
+
+}
+
+
+
+/* =========================================================
+   OTHER PRODUCTS
+========================================================= */
+
+function renderOtherProducts(
+    category,
+    selectedIndex
+) {
+
+    otherProductsGrid.innerHTML = "";
+
+
+    category.products.forEach(
+        (product, index) => {
+
+            const card =
+                document.createElement("article");
+
+
+            card.className =
+                "other-product-card";
+
+
+            if (
+                index === selectedIndex
+            ) {
+
+                card.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            card.innerHTML = `
+
+                <div class="other-product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <div class="other-product-info">
+
+                    <span>
+
+                        ${
+                            index === selectedIndex
+                                ? "CURRENT"
+                                : "OYA COLLECTION"
+                        }
+
+                    </span>
+
+
+                    <h4>
+                        ${product.name}
+                    </h4>
+
+
+                    <button type="button">
+                        View Product →
+                    </button>
+
+                </div>
+
+            `;
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    showProduct(
+                        category,
+                        index
+                    );
+
+
+                    productModal.scrollTo(
+                        {
+                            top: 0,
+                            behavior: "smooth"
+                        }
+                    );
+
+                }
+            );
+
+
+            otherProductsGrid.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
@@ -1032,7 +987,6 @@ function openProduct(
 ========================================================= */
 
 function closeProductPage() {
-
 
     document.body.classList.remove(
         "modal-open"
@@ -1057,122 +1011,105 @@ function closeProductPage() {
    BACK BUTTON
 ========================================================= */
 
-if (backBtn) {
+backBtn.addEventListener(
+    "click",
+    () => {
 
-    backBtn.addEventListener(
-        "click",
-        () => {
+        backToCatalogue();
 
-            backToCatalogue();
-
-        }
-    );
-
-}
+    }
+);
 
 
 
 /* =========================================================
-   CLOSE PRODUCT BUTTON
+   CLOSE PRODUCT
 ========================================================= */
 
-if (closeProduct) {
+closeProduct.addEventListener(
+    "click",
+    () => {
 
-    closeProduct.addEventListener(
-        "click",
-        () => {
+        closeProductPage();
+
+    }
+);
+
+
+
+/* =========================================================
+   PRODUCT BACK
+========================================================= */
+
+modalBack.addEventListener(
+    "click",
+    () => {
+
+        closeProductPage();
+
+    }
+);
+
+
+
+/* =========================================================
+   CLICK OUTSIDE
+========================================================= */
+
+productModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target === productModal
+        ) {
 
             closeProductPage();
 
         }
-    );
 
-}
-
-
-
-/* =========================================================
-   PRODUCT BACK BUTTON
-========================================================= */
-
-if (modalBack) {
-
-    modalBack.addEventListener(
-        "click",
-        () => {
-
-            closeProductPage();
-
-        }
-    );
-
-}
+    }
+);
 
 
 
 /* =========================================================
-   CLICK OUTSIDE PRODUCT
-========================================================= */
-
-if (productModal) {
-
-    productModal.addEventListener(
-        "click",
-        event => {
-
-
-            if (
-                event.target ===
-                productModal
-            ) {
-
-                closeProductPage();
-
-            }
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   ESCAPE KEY
+   ESCAPE
 ========================================================= */
 
 document.addEventListener(
     "keydown",
     event => {
 
-
         if (
-            event.key === "Escape"
+            event.key !== "Escape"
         ) {
 
+            return;
 
-            if (
-                productModal.classList.contains(
-                    "active"
-                )
-            ) {
-
-                closeProductPage();
-
-                return;
-
-            }
+        }
 
 
-            if (
-                categoryView.classList.contains(
-                    "active"
-                )
-            ) {
+        if (
+            productModal.classList.contains(
+                "active"
+            )
+        ) {
 
-                backToCatalogue();
+            closeProductPage();
 
-            }
+            return;
+
+        }
+
+
+        if (
+            categoryView.classList.contains(
+                "active"
+            )
+        ) {
+
+            backToCatalogue();
 
         }
 
@@ -1196,73 +1133,62 @@ const mobileNav =
     );
 
 
-if (
-    menuBtn &&
-    mobileNav
-) {
+menuBtn.addEventListener(
+    "click",
+    () => {
+
+        mobileNav.classList.toggle(
+            "active"
+        );
 
 
-    menuBtn.addEventListener(
-        "click",
-        () => {
-
-
-            mobileNav.classList.toggle(
+        if (
+            mobileNav.classList.contains(
                 "active"
+            )
+        ) {
+
+            menuBtn.textContent =
+                "×";
+
+        } else {
+
+            menuBtn.textContent =
+                "☰";
+
+        }
+
+    }
+);
+
+
+
+mobileNav
+    .querySelectorAll("a")
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mobileNav.classList.remove(
+                        "active"
+                    );
+
+                    menuBtn.textContent =
+                        "☰";
+
+                }
             );
-
-
-            if (
-                mobileNav.classList.contains(
-                    "active"
-                )
-            ) {
-
-                menuBtn.textContent =
-                    "×";
-
-            } else {
-
-                menuBtn.textContent =
-                    "☰";
-
-            }
 
         }
     );
 
 
-    mobileNav
-        .querySelectorAll("a")
-        .forEach(
-            link => {
-
-
-                link.addEventListener(
-                    "click",
-                    () => {
-
-
-                        mobileNav.classList.remove(
-                            "active"
-                        );
-
-
-                        menuBtn.textContent =
-                            "☰";
-
-                    }
-                );
-
-            }
-        );
-
-}
-
-
 
 /* =========================================================
-   HOME LOGO CLICK
+   HOME LINK
 ========================================================= */
 
 document
@@ -1272,10 +1198,11 @@ document
     .forEach(
         link => {
 
-
             link.addEventListener(
                 "click",
                 () => {
+
+                    closeProductPage();
 
 
                     document.body.classList.remove(
@@ -1287,9 +1214,6 @@ document
                         "active"
                     );
 
-
-                    closeProductPage();
-
                 }
             );
 
@@ -1299,11 +1223,10 @@ document
 
 
 /* =========================================================
-   START WEBSITE
+   START
 ========================================================= */
 
 renderCategories();
-
 
 console.log(
     "OYA Health Care catalogue loaded successfully."
