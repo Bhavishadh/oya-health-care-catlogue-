@@ -55,7 +55,7 @@ a {
 
 
 /* =========================================================
-   MAIN LAYOUT
+   MAIN DESKTOP LAYOUT
 ========================================================= */
 
 .website-layout {
@@ -66,7 +66,7 @@ a {
 
 
 /* =========================================================
-   LEFT PANEL
+   LEFT PANEL - DESKTOP
 ========================================================= */
 
 .sidebar {
@@ -115,7 +115,7 @@ a {
 
     margin-bottom: 22px;
 
-    background: white;
+    background: #ffffff;
 
     box-shadow:
         0 10px 28px
@@ -125,6 +125,7 @@ a {
 .sidebar-logo img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
@@ -186,6 +187,7 @@ a {
 .sidebar-contact {
     display: flex;
     flex-direction: column;
+
     gap: 23px;
 }
 
@@ -211,6 +213,7 @@ a {
 
 .contact-icon {
     width: 16px;
+
     flex: none;
 
     color: var(--gold);
@@ -240,6 +243,7 @@ a {
     color: var(--green);
 
     font-size: 9px;
+
     font-weight: 800;
 
     letter-spacing: 0.18em;
@@ -398,11 +402,6 @@ a {
 }
 
 .category-content h2 {
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
     font-size: 18px;
 
     line-height: 1.25;
@@ -509,7 +508,7 @@ a {
 
 
 /* =========================================================
-   VIEWER LEFT
+   PRODUCT VIEWER LEFT
 ========================================================= */
 
 .viewer-left {
@@ -609,7 +608,7 @@ a {
 
 
 /* =========================================================
-   VIEWER RIGHT
+   PRODUCT VIEWER RIGHT
 ========================================================= */
 
 .viewer-right {
@@ -632,11 +631,6 @@ a {
 }
 
 .viewer-title {
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
     font-size:
         clamp(32px, 4vw, 54px);
 
@@ -840,13 +834,11 @@ a {
     position: absolute;
 
     top: 17px;
-
     right: 17px;
 
     z-index: 5;
 
     width: 40px;
-
     height: 40px;
 
     border: 0;
@@ -928,11 +920,6 @@ a {
 }
 
 .modal-product-details h2 {
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
     font-size: 39px;
 
     line-height: 1.05;
@@ -1067,19 +1054,18 @@ a {
 
 
 /* =========================================================
-   MOBILE
+   MOBILE HOME PAGE
 ========================================================= */
 
 @media (max-width: 750px) {
 
     body {
-        background:
-            var(--background);
+        background: #f3f0e8;
     }
 
 
     /* =====================================================
-       MOBILE HEADER
+       MOBILE TOP BAR
     ===================================================== */
 
     .mobile-header {
@@ -1089,7 +1075,7 @@ a {
 
         z-index: 900;
 
-        height: 72px;
+        height: 76px;
 
         padding:
             10px 18px;
@@ -1103,48 +1089,54 @@ a {
         background:
             rgba(251, 250, 246, 0.97);
 
+        border-bottom:
+            1px solid #d8d6ce;
+
         backdrop-filter:
             blur(12px);
-
-        border-bottom:
-            1px solid var(--line);
     }
 
     .mobile-header img {
-        width: 52px;
-        height: 52px;
+        width: 54px;
+        height: 54px;
+
+        border-radius: 15px;
 
         object-fit: cover;
 
-        border-radius: 13px;
-
         box-shadow:
-            0 5px 15px
-            rgba(23, 79, 69, 0.08);
+            0 5px 18px
+            rgba(23, 79, 69, 0.10);
     }
 
     .mobile-menu-button {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
 
-        border: 0;
+        border: none;
 
         border-radius: 50%;
 
         background:
-            var(--green-light);
+            #dce9e2;
 
         color:
-            var(--green);
+            #174f45;
 
-        font-size: 24px;
+        font-size: 25px;
 
         cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
 
     /* =====================================================
-       LAYOUT
+       MAIN LAYOUT
     ===================================================== */
 
     .website-layout {
@@ -1155,98 +1147,240 @@ a {
 
 
     /* =====================================================
-       SIDEBAR
+       LEFT PANEL ON MOBILE
     ===================================================== */
 
     .sidebar {
-        position: fixed;
 
-        top: 72px;
+        position: relative;
 
-        left: 0;
+        top: auto;
+        left: auto;
 
         width: 100%;
+        height: auto;
 
-        height:
-            calc(100vh - 72px);
+        transform: none !important;
 
-        transform:
-            translateX(-100%);
+        background:
+            linear-gradient(
+                145deg,
+                #fbfaf6 0%,
+                #f1eee5 100%
+            );
 
-        transition:
-            transform 0.3s ease;
+        border-right: none;
 
-        z-index: 850;
+        border-bottom:
+            1px solid #d4d1c7;
+
+        overflow: visible;
+
+        z-index: 10;
 
         box-shadow:
-            10px 0 40px
-            rgba(23, 79, 69, 0.15);
-    }
-
-    .sidebar.open {
-        transform:
-            translateX(0);
+            0 8px 25px
+            rgba(23, 79, 69, 0.04);
     }
 
     .sidebar-inner {
-        min-height: 100%;
+
+        min-height: auto;
 
         padding:
-            30px 24px;
-    }
+            25px 22px 24px;
 
-    .sidebar-logo {
-        width: 65px;
-        height: 65px;
-    }
-
-    .sidebar h1 {
-        font-size: 28px;
-    }
-
-    .company-description {
-        font-size: 14px;
-
-        line-height: 1.55;
+        display: block;
     }
 
 
     /* =====================================================
-       CATALOGUE
+       MOBILE LOGO
+    ===================================================== */
+
+    .sidebar-logo {
+
+        width: 68px;
+        height: 68px;
+
+        border-radius: 18px;
+
+        margin:
+            0 0 15px;
+
+        box-shadow:
+            0 7px 20px
+            rgba(23, 79, 69, 0.10);
+    }
+
+
+    /* =====================================================
+       MOBILE COMPANY NAME
+    ===================================================== */
+
+    .sidebar h1 {
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size: 30px;
+
+        line-height: 1.05;
+
+        font-weight: 500;
+
+        color:
+            #174f45;
+
+        margin-bottom: 11px;
+    }
+
+
+    /* =====================================================
+       MOBILE DESCRIPTION
+    ===================================================== */
+
+    .company-description {
+
+        max-width: 100%;
+
+        color:
+            #707a75;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE DIVIDER
+    ===================================================== */
+
+    .sidebar-divider {
+
+        width: 100%;
+
+        height: 1px;
+
+        background:
+            #174f45;
+
+        opacity: 0.25;
+
+        margin:
+            20px 0 17px;
+    }
+
+
+    /* =====================================================
+       MOBILE CONTACT
+    ===================================================== */
+
+    .sidebar-contact {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .contact-row {
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        color:
+            #737d78;
+
+        font-size: 12px;
+
+        line-height: 1.45;
+    }
+
+    .contact-icon {
+
+        width: 18px;
+
+        flex: none;
+
+        color:
+            #b89a62;
+
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       HIDE BOTTOM SIDEBAR BRAND
+    ===================================================== */
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+
+    /* =====================================================
+       CATALOGUE AREA
     ===================================================== */
 
     .catalogue-area {
+
         width: 100%;
 
         grid-column: auto;
 
         padding:
-            32px 18px 30px;
-    }
-
-    .catalogue-header {
-        margin-bottom: 28px;
-    }
-
-    .catalogue-title span {
-        font-size: 12px;
-
-        letter-spacing:
-            0.30em;
-    }
-
-    .catalogue-line {
-        margin-top: 13px;
+            32px 18px 40px;
     }
 
 
     /* =====================================================
-       TWO COLUMNS ON MOBILE
+       CATALOGUE TITLE
+    ===================================================== */
+
+    .catalogue-header {
+
+        margin-bottom: 26px;
+    }
+
+    .catalogue-title span {
+
+        font-size: 12px;
+
+        letter-spacing:
+            0.30em;
+
+        color:
+            #174f45;
+    }
+
+    .catalogue-line {
+
+        margin-top: 12px;
+
+        height: 1px;
+
+        background:
+            #8b9690;
+    }
+
+
+    /* =====================================================
+       CATEGORY GRID
     ===================================================== */
 
     .catalogue-grid.category-grid-view {
 
-        display: grid;
+        display: grid !important;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -1254,30 +1388,45 @@ a {
         column-gap: 12px;
 
         row-gap: 28px;
+
+        width: 100%;
     }
 
 
     /* =====================================================
-       CATEGORY IMAGE
+       CATEGORY CARD
     ===================================================== */
 
-    .catalogue-category
+    .catalogue-category {
+
+        min-width: 0;
+
+        cursor: pointer;
+
+        transform: none !important;
+    }
+
     .category-image-box {
 
         width: 100%;
 
         height: 190px;
 
-        border-radius: 16px;
+        border-radius: 18px;
 
         overflow: hidden;
+
+        background:
+            #e8eee9;
+
+        box-shadow:
+            0 5px 18px
+            rgba(23, 79, 69, 0.04);
     }
 
-    .catalogue-category
     .category-image-box img {
 
         width: 100%;
-
         height: 100%;
 
         object-fit: cover;
@@ -1285,7 +1434,7 @@ a {
 
 
     /* =====================================================
-       CATEGORY TEXT
+       CATEGORY CONTENT
     ===================================================== */
 
     .category-content {
@@ -1299,34 +1448,34 @@ a {
         font-size: 7px;
 
         letter-spacing:
-            0.12em;
+            0.14em;
 
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
 
     .category-content h2 {
 
-        font-size: 14px;
+        font-size: 15px;
 
-        line-height: 1.25;
+        line-height: 1.2;
 
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
 
     .category-content p {
 
-        font-size: 9px;
+        font-size: 9.5px;
 
         line-height: 1.45;
 
-        margin-bottom: 9px;
+        margin-bottom: 10px;
     }
 
     .category-content strong {
 
-        font-size: 9px;
-
         padding-top: 9px;
+
+        font-size: 9px;
     }
 
     .category-content strong b {
@@ -1336,308 +1485,392 @@ a {
 
 
     /* =====================================================
-       PRODUCT VIEWER
+       PRODUCT CATEGORY PAGE
     ===================================================== */
+
+    .catalogue-grid.category-viewer-grid {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        grid-template-columns: none !important;
+
+        column-gap: 0 !important;
+
+        row-gap: 0 !important;
+    }
 
     .category-product-viewer {
 
-        display: block;
+        display: block !important;
 
-        width: 100%;
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 0 !important;
     }
 
-    .viewer-main-image {
+    .category-product-viewer .viewer-left {
 
-        width: 100%;
+        width: 100% !important;
 
-        height: 350px;
-
-        border-radius: 16px;
-
-        background:
-            #ffffff;
-
-        overflow: hidden;
-    }
-
-    .viewer-main-image img {
-
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: contain;
+        max-width: 100% !important;
     }
 
 
     /* =====================================================
-       THUMBNAILS
-    ===================================================== */
-
-    .viewer-thumbnails {
-
-        display: flex;
-
-        gap: 8px;
-
-        overflow-x: auto;
-
-        padding:
-            10px 0 6px;
-
-        scrollbar-width: none;
-    }
-
-    .viewer-thumbnails::-webkit-scrollbar {
-        display: none;
-    }
-
-    .viewer-thumbnail {
-
-        flex:
-            0 0 62px;
-
-        width: 62px;
-
-        height: 62px;
-
-        border-radius: 10px;
-    }
-
-
-    /* =====================================================
-       VIEWER DETAILS
-    ===================================================== */
-
-    .viewer-right {
-
-        padding:
-            28px 2px 20px;
-    }
-
-    .viewer-category {
-
-        font-size: 8px;
-
-        margin-bottom: 10px;
-    }
-
-    .viewer-title {
-
-        font-size: 30px;
-
-        line-height: 1.08;
-
-        margin-bottom: 16px;
-    }
-
-    .viewer-description {
-
-        font-size: 12px;
-
-        line-height: 1.6;
-
-        margin-bottom: 20px;
-    }
-
-    .viewer-divider {
-
-        margin:
-            20px 0;
-    }
-
-    .viewer-details span {
-
-        font-size: 8px;
-    }
-
-    .viewer-details strong {
-
-        font-size: 12px;
-    }
-
-    .viewer-product-count {
-
-        font-size: 9px;
-
-        margin-bottom: 20px;
-    }
-
-    .viewer-enquiry {
-
-        width: 170px;
-
-        min-height: 45px;
-
-        font-size: 10px;
-    }
-
-
-    /* =====================================================
-       BACK BUTTON
+       BACK
     ===================================================== */
 
     .category-back-button {
 
-        margin:
-            0 0 18px;
+        display: block;
 
-        font-size: 11px;
+        border: none;
+
+        background:
+            transparent;
+
+        padding: 0;
+
+        margin:
+            0 0 20px;
+
+        color:
+            #65716c;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        cursor: pointer;
     }
 
 
     /* =====================================================
-       FOOTER
+       PRODUCT MAIN IMAGE
+    ===================================================== */
+
+    .category-product-viewer
+    .viewer-main-image {
+
+        width: 100% !important;
+
+        height: 390px !important;
+
+        min-height: 390px !important;
+
+        border-radius: 20px !important;
+
+        background:
+            #ffffff;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        overflow: hidden !important;
+    }
+
+    .category-product-viewer
+    .viewer-main-image img {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        object-fit:
+            contain !important;
+
+        object-position:
+            center !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT THUMBNAILS
+    ===================================================== */
+
+    .category-product-viewer
+    .viewer-thumbnails {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        gap: 9px;
+
+        overflow-x: auto;
+
+        padding:
+            11px 0 8px;
+
+        margin: 0;
+
+        scrollbar-width: none;
+    }
+
+    .category-product-viewer
+    .viewer-thumbnails::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-product-viewer
+    .viewer-thumbnail {
+
+        flex:
+            0 0 68px !important;
+
+        width: 68px !important;
+
+        height: 68px !important;
+
+        border-radius: 11px;
+
+        background:
+            #ffffff;
+
+        padding: 3px;
+    }
+
+
+    /* =====================================================
+       PRODUCT DETAILS
+    ===================================================== */
+
+    .category-product-viewer
+    .viewer-right {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding:
+            30px 3px 40px !important;
+    }
+
+    .category-product-viewer
+    .viewer-category {
+
+        font-size: 9px;
+
+        letter-spacing:
+            0.18em;
+
+        margin-bottom: 11px;
+    }
+
+    .category-product-viewer
+    .viewer-title {
+
+        width: 100%;
+
+        font-size: 36px;
+
+        line-height: 1.05;
+
+        letter-spacing:
+            -0.035em;
+
+        margin:
+            0 0 16px;
+    }
+
+    .category-product-viewer
+    .viewer-description {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        margin-bottom: 25px;
+    }
+
+    .category-product-viewer
+    .viewer-divider {
+
+        width: 100%;
+
+        margin:
+            22px 0;
+    }
+
+
+    /* =====================================================
+       MOBILE FOOTER
     ===================================================== */
 
     .catalogue-footer {
 
         margin-top: 50px;
 
-        padding-top: 18px;
+        padding:
+            20px 3px;
 
         flex-direction: column;
 
-        gap: 6px;
-    }
-
-
-    /* =====================================================
-       MODAL
-    ===================================================== */
-
-    .product-modal {
-
-        padding: 12px;
-    }
-
-    .product-modal-box {
-
-        width: 100%;
-
-        max-height: 94vh;
-
-        border-radius: 20px;
-    }
-
-    .modal-content {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .modal-product-image {
-
-        min-height: 260px;
-
-        height: 260px;
-
-        padding: 20px;
-    }
-
-    .modal-product-details {
-
-        padding:
-            28px 22px 32px;
-    }
-
-    .modal-product-details h2 {
-
-        font-size: 28px;
-    }
-
-    .modal-product-details > p {
-
-        font-size: 12px;
+        gap: 7px;
     }
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 430px) {
 
-    .catalogue-area {
+    .mobile-header {
+
+        height: 72px;
 
         padding:
-            28px 14px 25px;
+            9px 16px;
+    }
+
+    .mobile-header img {
+
+        width: 52px;
+        height: 52px;
+    }
+
+    .mobile-menu-button {
+
+        width: 48px;
+        height: 48px;
     }
 
 
-    /* TWO CARDS */
+    /* LEFT PANEL */
+
+    .sidebar-inner {
+
+        padding:
+            22px 20px 22px;
+    }
+
+    .sidebar-logo {
+
+        width: 62px;
+        height: 62px;
+
+        border-radius: 16px;
+    }
+
+    .sidebar h1 {
+
+        font-size: 28px;
+    }
+
+    .company-description {
+
+        font-size: 12.5px;
+
+        line-height: 1.52;
+    }
+
+    .sidebar-divider {
+
+        margin:
+            18px 0 15px;
+    }
+
+    .contact-row {
+
+        font-size: 11.5px;
+    }
+
+
+    /* CATALOGUE */
+
+    .catalogue-area {
+
+        padding:
+            29px 16px 35px;
+    }
 
     .catalogue-grid.category-grid-view {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
 
         column-gap: 10px;
 
         row-gap: 24px;
     }
 
-
-    /* IMAGE */
-
-    .catalogue-category
     .category-image-box {
 
-        height: 165px;
+        height: 170px;
 
-        border-radius: 14px;
-    }
-
-
-    /* TEXT */
-
-    .category-content {
-
-        padding-top: 10px;
-    }
-
-    .category-content > span {
-
-        font-size: 6.5px;
+        border-radius: 16px;
     }
 
     .category-content h2 {
 
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .category-content p {
 
-        font-size: 8.5px;
+        font-size: 9px;
     }
 
-    .category-content strong {
 
+    /* PRODUCT */
+
+    .category-product-viewer
+    .viewer-main-image {
+
+        height: 330px !important;
+
+        min-height: 330px !important;
+
+        border-radius: 17px !important;
+    }
+
+    .category-product-viewer
+    .viewer-title {
+
+        font-size: 34px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .sidebar h1 {
+        font-size: 25px;
+    }
+
+    .company-description {
+        font-size: 11.5px;
+    }
+
+    .category-image-box {
+        height: 150px;
+    }
+
+    .category-content h2 {
+        font-size: 13px;
+    }
+
+    .category-content p {
         font-size: 8px;
     }
 
-
-    /* PRODUCT VIEWER */
-
+    .category-product-viewer
     .viewer-main-image {
-
-        height: 300px;
-
-        border-radius: 14px;
-    }
-
-    .viewer-thumbnail {
-
-        flex-basis: 56px;
-
-        width: 56px;
-
-        height: 56px;
-    }
-
-    .viewer-title {
-
-        font-size: 27px;
+        height: 290px !important;
+        min-height: 290px !important;
     }
 }
