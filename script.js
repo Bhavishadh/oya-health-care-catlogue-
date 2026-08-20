@@ -18,251 +18,364 @@ document.addEventListener("DOMContentLoaded", () => {
     ===================================================== */
 
     const categories = [
+
+        /* =================================================
+           01 HOSPITAL FURNITURE
+        ================================================= */
+
         {
             name: "Hospital Furniture",
             category: "Hospital Furniture",
             description:
                 "Hospital beds and furniture designed for patient care and healthcare requirements.",
+
             products: [
+
                 {
                     name: "Hospital Bed",
                     image: "images/hospitalbed.webp",
                     description:
                         "Hospital bed designed for patient comfort, care and healthcare requirements."
                 },
+
                 {
                     name: "Semi Fowler Hospital Bed",
                     image: "images/semi bed.png",
                     description:
                         "Semi Fowler hospital bed designed for comfortable patient positioning."
                 },
+
                 {
                     name: "Fowler Hospital Bed",
                     image: "images/fowlerbed.png",
                     description:
                         "Fowler hospital bed designed for flexible patient positioning and patient care."
                 },
+
                 {
                     name: "2 Function Hospital Bed",
                     image: "images/2fbed.png",
                     description:
                         "2-function hospital bed suitable for everyday patient-care requirements."
                 },
+
                 {
                     name: "3 Function Hospital Bed",
                     image: "images/3fbed.png",
                     description:
                         "3-function hospital bed designed for flexible healthcare requirements."
                 },
+
                 {
                     name: "4 Function Hospital Bed",
                     image: "images/4fbed.png",
                     description:
                         "4-function hospital bed designed for professional healthcare environments."
                 },
+
                 {
                     name: "Folding Hospital Bed",
                     image: "images/foldingbed.png",
                     description:
                         "Folding hospital bed designed for convenient healthcare use."
                 }
+
             ]
         },
 
+
+        /* =================================================
+           02 OXYGEN CYLINDERS
+        ================================================= */
+
         {
-            name: "Oxygen Equipment",
+            name: "Oxygen Cylinders",
             category: "Oxygen",
             description:
-                "Oxygen cylinders and concentrators for healthcare and home-care requirements.",
+                "Medical oxygen cylinders designed for healthcare and patient-care requirements.",
+
             products: [
+
                 {
                     name: "Oxygen Cylinder 5 Litre",
                     image: "images/oxy5ltr.png",
                     description:
                         "5 litre oxygen cylinder suitable for healthcare requirements."
                 },
+
                 {
                     name: "Oxygen Cylinder 10 Litre",
                     image: "images/oxy10ltr.png",
                     description:
                         "10 litre oxygen cylinder suitable for medical and healthcare requirements."
-                },
+                }
+
+            ]
+        },
+
+
+        /* =================================================
+           03 OXYGEN CONCENTRATOR
+        ================================================= */
+
+        {
+            name: "Oxygen Concentrator",
+            category: "Oxygen Concentrator",
+            description:
+                "Oxygen concentrator equipment designed for suitable healthcare and home-care requirements.",
+
+            products: [
+
                 {
                     name: "Oxygen Concentrator",
                     image: "images/concentrator.webp",
                     description:
                         "Oxygen concentrator suitable for healthcare and home-care requirements."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           04 WHEELCHAIRS
+        ================================================= */
 
         {
             name: "Wheelchairs",
             category: "Wheelchair",
             description:
                 "Mobility solutions designed for comfortable patient movement and support.",
+
             products: [
+
                 {
                     name: "Standard Wheelchair",
                     image: "images/w1.png",
                     description:
                         "Standard manual wheelchair designed for everyday mobility."
                 },
+
                 {
                     name: "Folding Wheelchair",
                     image: "images/w2.png",
                     description:
                         "Folding wheelchair designed for convenient transportation and storage."
                 },
+
                 {
                     name: "Commode Wheelchair",
                     image: "images/w3.png",
                     description:
                         "Commode wheelchair designed for additional patient-care convenience."
                 },
+
                 {
                     name: "Reclining Wheelchair",
                     image: "images/w4.png",
                     description:
                         "Reclining wheelchair designed for enhanced patient comfort."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           05 CPAP MACHINES
+        ================================================= */
 
         {
             name: "CPAP Machines",
             category: "CPAP",
             description:
                 "CPAP equipment designed for suitable sleep-care requirements.",
+
             products: [
+
                 {
                     name: "CPAP Machine",
                     image: "images/c1.png",
                     description:
                         "CPAP machine designed for suitable sleep-care requirements."
                 },
+
                 {
                     name: "Auto CPAP Machine",
                     image: "images/c2.png",
                     description:
                         "Auto CPAP machine designed for convenient sleep-care use."
                 },
+
                 {
                     name: "Portable CPAP Machine",
                     image: "images/c3.png",
                     description:
                         "Portable CPAP equipment designed for convenient use."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           06 BIPAP MACHINES
+        ================================================= */
 
         {
             name: "BiPAP Machines",
             category: "BiPAP",
             description:
                 "Bi-level respiratory-support equipment for suitable healthcare requirements.",
+
             products: [
+
                 {
                     name: "BiPAP Machine",
                     image: "images/b1.png",
                     description:
                         "BiPAP machine designed for suitable respiratory-support requirements."
                 },
+
                 {
                     name: "Portable BiPAP Machine",
                     image: "images/b2.png",
                     description:
                         "Portable BiPAP equipment designed for convenient use."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           07 MOBILITY AIDS
+        ================================================= */
 
         {
             name: "Mobility Aids",
             category: "Mobility Aids",
             description:
                 "Walking aids designed to provide everyday mobility support.",
+
             products: [
+
                 {
                     name: "Walking Walker",
                     image: "images/wl1.png",
                     description:
                         "Walking support designed for everyday mobility and stability."
                 },
+
                 {
                     name: "Folding Walker",
                     image: "images/wl2.png",
                     description:
                         "Folding walker designed for convenient storage and transportation."
                 },
+
                 {
                     name: "Adjustable Walker",
                     image: "images/wl3.png",
                     description:
                         "Adjustable walking support designed for everyday mobility."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           08 PATIENT MONITORING
+        ================================================= */
 
         {
             name: "Patient Monitoring",
             category: "Patient Monitoring",
             description:
                 "Equipment designed for suitable patient monitoring requirements.",
+
             products: [
+
                 {
                     name: "Patient Monitor",
                     image: "images/pm.png",
                     description:
                         "Patient monitoring equipment designed for healthcare requirements."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           09 CRITICAL CARE
+        ================================================= */
 
         {
             name: "Critical Care",
             category: "Critical Care",
             description:
                 "Respiratory-support equipment for suitable critical-care environments.",
+
             products: [
+
                 {
                     name: "ICU Ventilator",
                     image: "images/venti.png",
                     description:
                         "Respiratory-support equipment for appropriate critical-care environments."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           10 DIAGNOSTICS
+        ================================================= */
 
         {
             name: "Diagnostics",
             category: "Diagnostics",
             description:
                 "Equipment designed for basic patient measurements and diagnostics.",
+
             products: [
+
                 {
                     name: "Pulse Oximeter",
                     image: "images/pu.png",
                     description:
                         "Compact diagnostic equipment designed for basic patient measurements."
                 }
+
             ]
         },
+
+
+        /* =================================================
+           11 EMERGENCY CARE
+        ================================================= */
 
         {
             name: "Emergency Care",
             category: "Emergency",
             description:
                 "Emergency transportation and urgent patient-care support.",
+
             products: [
+
                 {
                     name: "Ambulance Service",
                     image: "images/amb.png",
                     description:
                         "Emergency transportation support for urgent patient-care requirements."
                 }
+
             ]
         }
+
     ];
 
 
@@ -280,6 +393,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       REMOVE ALL OLD BACK BUTTONS
+    ===================================================== */
+
+    function removeOldBackButtons() {
+
+        document
+            .querySelectorAll(".category-back-button")
+            .forEach(button => {
+                button.remove();
+            });
+
+    }
+
+
+    /* =====================================================
        CREATE CATEGORY CARD
     ===================================================== */
 
@@ -290,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.className = "catalogue-category";
 
         card.innerHTML = `
+
             <div class="category-image-box">
 
                 <img
@@ -300,6 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 >
 
             </div>
+
 
             <div class="category-content">
 
@@ -329,7 +459,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </strong>
 
             </div>
+
         `;
+
 
         card.addEventListener("click", () => {
 
@@ -337,7 +469,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
         return card;
+
     }
 
 
@@ -347,10 +481,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showHome() {
 
+        /* REMOVE EVERY OLD BACK BUTTON FIRST */
+        removeOldBackButtons();
+
+
         grid.innerHTML = "";
 
         grid.className =
             "catalogue-grid category-grid-view";
+
 
         setTitle("CATALOGUE");
 
@@ -379,10 +518,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openCategory(category) {
 
+        /*
+           VERY IMPORTANT:
+
+           Remove old back buttons BEFORE creating
+           a new one.
+
+           This prevents:
+
+           Back to Catalogue
+           Back to Catalogue
+           Back to Catalogue
+        */
+
+        removeOldBackButtons();
+
+
         grid.innerHTML = "";
 
         grid.className =
             "catalogue-grid category-viewer-grid";
+
 
         setTitle(
             category.name.toUpperCase()
@@ -396,10 +552,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const back =
             document.createElement("button");
 
+
         back.className =
             "category-back-button";
 
+
         back.type = "button";
+
 
         back.innerHTML =
             "← Back to Catalogue";
@@ -407,9 +566,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         back.addEventListener(
             "click",
-            showHome
+            () => {
+
+                showHome();
+
+            }
         );
 
+
+        /*
+           Insert ONLY ONE back button.
+        */
 
         grid.parentNode.insertBefore(
             back,
@@ -423,6 +590,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const viewer =
             document.createElement("section");
+
 
         viewer.className =
             "category-product-viewer";
@@ -496,6 +664,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="viewer-product-count">
 
                     ${category.products.length}
+
                     ${
                         category.products.length === 1
                             ? " PRODUCT"
@@ -509,6 +678,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     class="viewer-enquiry"
                     href="https://wa.me/917021235223"
                     target="_blank"
+                    rel="noopener"
                 >
 
                     Enquire Now
@@ -536,15 +706,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 "#mainProductImage"
             );
 
+
         const productTitle =
             viewer.querySelector(
                 "#viewerProductTitle"
             );
 
+
         const productDescription =
             viewer.querySelector(
                 "#viewerProductDescription"
             );
+
 
         const thumbnails =
             viewer.querySelector(
@@ -564,11 +737,14 @@ document.addEventListener("DOMContentLoaded", () => {
             mainImage.src =
                 product.image;
 
+
             mainImage.alt =
                 product.name;
 
+
             productTitle.textContent =
                 product.name;
+
 
             productDescription.textContent =
                 product.description;
@@ -606,8 +782,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         "button"
                     );
 
+
                 thumbnail.type =
                     "button";
+
 
                 thumbnail.className =
                     "viewer-thumbnail";
@@ -645,7 +823,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /* FIRST PRODUCT */
+        /* ================================================
+           FIRST PRODUCT
+        ================================================= */
 
         selectProduct(
             category.products[0],
@@ -659,33 +839,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
-
-
-    /* =====================================================
-       REMOVE OLD BACK BUTTONS
-    ===================================================== */
-
-    function removeOldBackButtons() {
-
-        document
-            .querySelectorAll(
-                ".category-back-button"
-            )
-            .forEach(button => {
-
-                button.remove();
-
-            });
-
-    }
-
-
-    /* =====================================================
-       OBSERVE CATEGORY PAGE
-    ===================================================== */
-
-    const originalShowHome =
-        showHome;
 
 
     /* =====================================================
@@ -706,6 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ".mobile-menu-button"
         );
 
+
     const sidebar =
         document.querySelector(
             ".sidebar"
@@ -722,6 +876,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event => {
 
                 event.stopPropagation();
+
 
                 sidebar.classList.toggle(
                     "open"
@@ -756,9 +911,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     sidebar.classList.contains(
                         "open"
                     ) &&
+
                     !sidebar.contains(
                         event.target
                     ) &&
+
                     !mobileMenuButton.contains(
                         event.target
                     )
@@ -767,6 +924,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     sidebar.classList.remove(
                         "open"
                     );
+
 
                     mobileMenuButton.innerHTML =
                         "☰";
