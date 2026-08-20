@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Oya Health Care | Premium Healthcare Equipment</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      MOBILE HEADER
@@ -26,27 +18,20 @@
 
 <header class="mobile-header">
 
-    <a
-        href="#"
-        class="mobile-logo-link"
-        onclick="showHome(); return false;"
-    >
+    <button class="mobile-logo-button"
+            onclick="showHome()"
+            aria-label="Home">
 
-        <img
-            src="images/logo%20(2).png"
-            alt="Oya Health Care"
-            class="mobile-logo"
-        >
+        <img src="images/logo%20(2).png"
+             alt="Oya Health Care"
+             class="mobile-logo">
 
-    </a>
+    </button>
 
-
-    <button
-        class="menu-button"
-        id="menuButton"
-        onclick="toggleMobileMenu()"
-        aria-label="Open menu"
-    >
+    <button class="menu-button"
+            id="menuButton"
+            onclick="toggleMobileMenu()"
+            aria-label="Menu">
 
         <span></span>
         <span></span>
@@ -57,47 +42,34 @@
 </header>
 
 
-
 <!-- =====================================================
      MOBILE MENU
 ===================================================== -->
 
-<div
-    class="mobile-menu"
-    id="mobileMenu"
->
+<nav class="mobile-menu" id="mobileMenu">
 
-    <button
-        onclick="showHome(); closeMobileMenu();"
-    >
+    <button onclick="showHome(); closeMobileMenu();">
         Home
     </button>
 
-
-    <button
-        onclick="scrollToCatalogue(); closeMobileMenu();"
-    >
+    <button onclick="scrollToCatalogue(); closeMobileMenu();">
         Catalogue
     </button>
 
-
-    <button
-        onclick="scrollToAbout(); closeMobileMenu();"
-    >
+    <button onclick="scrollToAbout(); closeMobileMenu();">
         About OYA
     </button>
 
-
-    <a href="tel:7021235223">
+    <a href="tel:7021235223"
+       onclick="closeMobileMenu()">
         Contact
     </a>
 
-</div>
-
+</nav>
 
 
 <!-- =====================================================
-     WEBSITE LAYOUT
+     WEBSITE
 ===================================================== -->
 
 <div class="site-layout">
@@ -109,22 +81,16 @@
 
     <aside class="left-panel">
 
-
         <div class="left-panel-top">
 
+            <button class="desktop-logo-button"
+                    onclick="showHome()">
 
-            <a
-                href="#"
-                onclick="showHome(); return false;"
-            >
+                <img src="images/logo%20(2).png"
+                     alt="Oya Health Care Logo"
+                     class="main-logo">
 
-                <img
-                    src="images/logo%20(2).png"
-                    alt="Oya Health Care Logo"
-                    class="main-logo"
-                >
-
-            </a>
+            </button>
 
 
             <h1>
@@ -133,13 +99,12 @@
 
 
             <p class="company-description">
-
-                OYA Health Care – Trusted Medical Equipment & Home Healthcare
-                Solutions OYA Health Care is a leading supplier of high-quality
-                medical equipment, hospital supplies, and home healthcare
-                products in India. We are committed to providing reliable,
+                OYA Health Care – Trusted Medical Equipment &
+                Home Healthcare Solutions OYA Health Care is a
+                leading supplier of high-quality medical equipment,
+                hospital supplies, and home healthcare products
+                in India. We are committed to providing reliable,
                 affordable and quality healthcare solutions.
-
             </p>
 
 
@@ -148,29 +113,29 @@
 
             <div class="contact-item">
 
-                <div class="contact-icon">
+                <span class="contact-icon">
                     ⌖
-                </div>
+                </span>
 
-                <div>
-                    Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
-                </div>
+                <span>
+                    Shop no 9 Shiv Vithai Galaxy near SBI Bank
+                    Thakurli
+                </span>
 
             </div>
 
 
             <div class="contact-item">
 
-                <div class="contact-icon">
+                <span class="contact-icon">
                     ♧
-                </div>
+                </span>
 
                 <a href="tel:7021235223">
                     7021235223
                 </a>
 
             </div>
-
 
         </div>
 
@@ -187,27 +152,22 @@
 
         </div>
 
-
     </aside>
-
 
 
     <!-- =================================================
          MAIN CONTENT
     ================================================= -->
 
-    <main
-        class="main-content"
-        id="mainContent"
-    ></main>
+    <main class="main-content"
+          id="mainContent">
 
+    </main>
 
 </div>
-
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
