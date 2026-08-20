@@ -1567,3 +1567,281 @@ body.product-open footer {
         font-size: 35px;
     }
 }
+/* =========================================================
+   OYA PRODUCT PAGE
+   BIG IMAGE + NEAT PRODUCT CARDS UNDER IT
+========================================================= */
+
+
+/* =========================================================
+   PRODUCT THUMBNAIL AREA
+========================================================= */
+
+.thumbs {
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 0 0 8px;
+
+    overflow: visible;
+
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.thumb {
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-width: 0 !important;
+
+    flex: none !important;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 7px !important;
+
+    background: #ffffff;
+
+    border: 1px solid #deded9 !important;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.thumb:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #075c50 !important;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.07);
+
+}
+
+
+/* =========================================================
+   SELECTED PRODUCT
+========================================================= */
+
+.thumb.active {
+
+    border:
+        2px solid #075c50 !important;
+
+    box-shadow:
+        0 5px 18px
+        rgba(7,92,80,.12);
+
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE BOX
+========================================================= */
+
+.thumb img {
+
+    width: 100% !important;
+
+    height: 125px !important;
+
+    display: block;
+
+    object-fit: contain !important;
+
+    background: #f7f7f4;
+
+    border-radius: 8px;
+
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.thumb::after {
+
+    content: attr(title);
+
+    display: block;
+
+    color: #222;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    padding:
+        9px 3px 4px;
+
+}
+
+
+/* =========================================================
+   DESKTOP PRODUCT PAGE
+========================================================= */
+
+.main-product-image {
+
+    width: 100%;
+
+    aspect-ratio: 1 / .88;
+
+    background: #f7f7f4;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+}
+
+
+.main-product-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .thumbs {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 9px;
+
+        margin-top: 14px;
+
+        padding:
+            0 0 6px;
+
+    }
+
+
+    .thumb {
+
+        padding: 5px !important;
+
+        border-radius: 10px;
+
+    }
+
+
+    .thumb img {
+
+        height: 85px !important;
+
+        border-radius: 7px;
+
+    }
+
+
+    .thumb::after {
+
+        font-size: 9px;
+
+        line-height: 1.25;
+
+        padding:
+            6px 2px 3px;
+
+    }
+
+
+    .main-product-image {
+
+        aspect-ratio: 1 / .9;
+
+        border-radius: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .thumbs {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 7px;
+
+    }
+
+
+    .thumb img {
+
+        height: 72px !important;
+
+    }
+
+
+    .thumb::after {
+
+        font-size: 8px;
+
+    }
+
+}
