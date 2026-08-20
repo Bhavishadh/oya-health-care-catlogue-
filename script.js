@@ -1067,17 +1067,6 @@ function updateProductPage() {
         product.name;
 
 
-    /*
-       IMPORTANT:
-
-       THUMBNAILS ARE NOW
-       OTHER PRODUCTS
-       FROM THE SAME CATEGORY
-    */
-
-    renderProductThumbnails();
-
-
     /* PRODUCT INFORMATION */
 
     renderProductInfo(product);
@@ -1091,93 +1080,6 @@ function updateProductPage() {
     productWhatsApp.href =
         "https://wa.me/917021235223?text=" +
         encodeURIComponent(message);
-
-
-    /*
-       RELATED PRODUCTS BELOW
-       CAN STAY AS THEY ARE
-    */
-
-    renderRelatedProducts();
-
-}
-
-
-
-/* =========================================================
-   PRODUCT THUMBNAILS
-   OTHER PRODUCTS FROM SAME CATEGORY
-========================================================= */
-
-function renderProductThumbnails() {
-
-    thumbnailContainer.innerHTML = "";
-
-
-    if (!currentCategory) return;
-
-
-    currentCategory.products.forEach(
-        (product, index) => {
-
-            const thumbnail =
-                document.createElement("button");
-
-            thumbnail.className =
-                "thumbnail";
-
-
-            /*
-               CURRENT PRODUCT GETS
-               PURPLE BORDER
-            */
-
-            if (
-                index === currentProductIndex
-            ) {
-
-                thumbnail.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            thumbnail.innerHTML = `
-
-                <img
-                    src="${product.images[0]}"
-                    alt="${product.name}"
-                    title="${product.name}"
-                >
-
-            `;
-
-
-            /*
-               CLICK SMALL PRODUCT
-               → CHANGE BIG PRODUCT
-            */
-
-            thumbnail.addEventListener(
-                "click",
-                () => {
-
-                    currentProductIndex =
-                        index;
-
-                    updateProductPage();
-
-                }
-            );
-
-
-            thumbnailContainer.appendChild(
-                thumbnail
-            );
-
-        }
-    );
 
 }
 
@@ -1239,103 +1141,6 @@ function renderProductInfo(product) {
 
 
 /* =========================================================
-   RELATED PRODUCTS
-========================================================= */
-
-function renderRelatedProducts() {
-
-    relatedProductsGrid.innerHTML = "";
-
-
-    if (!currentCategory) return;
-
-
-    currentCategory.products.forEach(
-        (product, index) => {
-
-            /*
-               Keep related products section
-               working below the detail page.
-            */
-
-            const card =
-                document.createElement("article");
-
-            card.className =
-                "related-product-card";
-
-
-            if (
-                index === currentProductIndex
-            ) {
-
-                card.classList.add(
-                    "selected"
-                );
-
-            }
-
-
-            card.innerHTML = `
-
-                <div class="related-image">
-
-                    <img
-                        src="${product.images[0]}"
-                        alt="${product.name}"
-                    >
-
-                </div>
-
-                <div class="related-content">
-
-                    <small>
-                        ${
-                            index === currentProductIndex
-                                ? "CURRENT PRODUCT"
-                                : currentCategory.title
-                        }
-                    </small>
-
-                    <h3>
-                        ${product.name}
-                    </h3>
-
-                </div>
-
-            `;
-
-
-            card.addEventListener(
-                "click",
-                () => {
-
-                    currentProductIndex =
-                        index;
-
-                    updateProductPage();
-
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-
-                }
-            );
-
-
-            relatedProductsGrid.appendChild(
-                card
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
    BACK TO CATALOGUE
 ========================================================= */
 
@@ -1372,10 +1177,6 @@ function backToProducts() {
         "active"
     );
 
-
-    /*
-       Return to the category page
-    */
 
     document.body.classList.add(
         "category-open"
@@ -1549,7 +1350,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   START
+   START WEBSITE
 ========================================================= */
 
 renderCategories();
