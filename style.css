@@ -1,2125 +1,1133 @@
-/* =========================================================
-   OYA HEALTH CARE
-   PREMIUM FOREST GREEN + CREAM THEME
-   LAYOUT KEPT EXACTLY THE SAME
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-:root{
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
-    /* MAIN COLORS */
-    --background:#f3f0e8;
-    --sidebar:#fbfaf6;
-    --card:#f8f6ef;
+    const catalogueGrid =
+        document.getElementById("catalogueGrid");
 
-    --text:#17221f;
-    --muted:#727b76;
+    const catalogueHeader =
+        document.querySelector(".catalogue-header");
 
-    /* OYA GREEN */
-    --green:#174f45;
-    --green-dark:#0d3932;
-    --green-light:#dce9e2;
+    const productModal =
+        document.getElementById("productModal");
 
-    /* ACCENT */
-    --gold:#b89a62;
-    --gold-light:#e7d9bc;
+    const modalClose =
+        document.getElementById("modalClose");
 
-    --line:#d7d5cb;
+    const modalImage =
+        document.getElementById("modalImage");
 
-    --image-bg:#e8eee9;
+    const modalTitle =
+        document.getElementById("modalTitle");
 
-    --shadow:
-        0 18px 45px rgba(23,79,69,.10);
-}
+    const modalCategory =
+        document.getElementById("modalCategory");
 
+    const modalDescription =
+        document.getElementById("modalDescription");
 
-/* =========================================================
-   RESET
-========================================================= */
+    const whatsappBtn =
+        document.getElementById("whatsappBtn");
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    background:var(--background);
-
-    color:var(--text);
-
-    font-family:
-        "DM Sans",
-        Arial,
-        sans-serif;
-
-    overflow-x:hidden;
-
-}
-
-img{
-    display:block;
-    max-width:100%;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button{
-    font-family:inherit;
-}
+    const sidebar =
+        document.getElementById("sidebar");
 
 
-/* =========================================================
-   MAIN LAYOUT
-========================================================= */
+    /* =====================================================
+       ALL PRODUCTS
+    ===================================================== */
 
-.website-layout{
+    const productData = [
 
-    display:grid;
+        /* =========================
+           HOSPITAL FURNITURE
+        ========================= */
 
-    grid-template-columns:
-        390px
-        1fr;
+        {
+            category: "Hospital Furniture",
+            title: "Manual Hospital Bed",
+            image: "images/hospitalbed.webp",
+            description:
+                "Quality hospital bed designed for patient care, comfort and everyday healthcare requirements."
+        },
 
-    min-height:100vh;
+        {
+            category: "Hospital Furniture",
+            title: "Semi-Fowler Bed",
+            image: "images/semi bed.png",
+            description:
+                "Comfortable semi-Fowler hospital bed designed for flexible patient positioning."
+        },
 
-}
+        {
+            category: "Hospital Furniture",
+            title: "Fowler Hospital Bed",
+            image: "images/fowlerbed.png",
+            description:
+                "Reliable Fowler hospital bed designed for flexible patient positioning and professional care."
+        },
+
+        {
+            category: "Hospital Furniture",
+            title: "2-Function Hospital Bed",
+            image: "images/2fbed.png",
+            description:
+                "Practical 2-function hospital bed designed for everyday patient care."
+        },
+
+        {
+            category: "Hospital Furniture",
+            title: "3-Function Hospital Bed",
+            image: "images/3fbed.png",
+            description:
+                "Multi-function hospital bed designed for flexible patient positioning."
+        },
+
+        {
+            category: "Hospital Furniture",
+            title: "4-Function Hospital Bed",
+            image: "images/4fbed.png",
+            description:
+                "Advanced multi-function hospital bed designed for professional healthcare environments."
+        },
+
+        {
+            category: "Hospital Furniture",
+            title: "Folding Hospital Bed",
+            image: "images/foldingbed.png",
+            description:
+                "Practical folding hospital bed designed for flexible healthcare requirements."
+        },
 
 
-/* =========================================================
-   LEFT SIDEBAR
-========================================================= */
+        /* =========================
+           OXYGEN
+        ========================= */
 
-.sidebar{
+        {
+            category: "Oxygen",
+            title: 'Oxygen Cylinder "5 Ltr"',
+            image: "images/oxy5ltr.png",
+            description:
+                "Compact oxygen cylinder suitable for appropriate healthcare requirements."
+        },
 
-    position:fixed;
+        {
+            category: "Oxygen",
+            title: 'Oxygen Cylinder "10 Ltr"',
+            image: "images/oxy10ltr.png",
+            description:
+                "Higher-capacity oxygen cylinder suitable for medical and healthcare applications."
+        },
 
-    left:0;
-    top:0;
+        {
+            category: "Oxygen",
+            title: "Oxygen Concentrator",
+            image: "images/concentrator.webp",
+            description:
+                "Oxygen concentrator suitable for healthcare and home-care requirements."
+        },
 
-    width:390px;
 
-    height:100vh;
+        /* =========================
+           WHEELCHAIRS
+        ========================= */
 
-    background:
-        linear-gradient(
-            180deg,
-            #fbfaf6 0%,
-            #f2eee4 100%
+        {
+            category: "Wheelchair",
+            title: "Standard Manual Wheelchair",
+            image: "images/w1.png",
+            description:
+                "Practical mobility solution designed for everyday patient movement and support."
+        },
+
+        {
+            category: "Wheelchair",
+            title: "Folding Wheelchair",
+            image: "images/w2.png",
+            description:
+                "Foldable wheelchair designed for convenient transportation and storage."
+        },
+
+        {
+            category: "Wheelchair",
+            title: "Commode Wheelchair",
+            image: "images/w3.png",
+            description:
+                "Mobility and patient-care solution designed for additional convenience and support."
+        },
+
+        {
+            category: "Wheelchair",
+            title: "Reclining Wheelchair",
+            image: "images/w4.png",
+            description:
+                "Supportive reclining wheelchair designed for enhanced patient comfort."
+        },
+
+
+        /* =========================
+           CPAP
+        ========================= */
+
+        {
+            category: "CPAP",
+            title: "Standard CPAP Machine",
+            image: "images/c1.png",
+            description:
+                "CPAP equipment designed for suitable sleep-care requirements."
+        },
+
+        {
+            category: "CPAP",
+            title: "Auto CPAP Machine",
+            image: "images/c2.png",
+            description:
+                "Auto-adjusting CPAP solution designed for suitable sleep-care requirements."
+        },
+
+        {
+            category: "CPAP",
+            title: "Portable CPAP Machine",
+            image: "images/c3.png",
+            description:
+                "Compact CPAP equipment designed for convenient use."
+        },
+
+
+        /* =========================
+           BIPAP
+        ========================= */
+
+        {
+            category: "BiPAP",
+            title: "Standard BiPAP Machine",
+            image: "images/b1.png",
+            description:
+                "Bi-level respiratory-support equipment designed for suitable healthcare requirements."
+        },
+
+        {
+            category: "BiPAP",
+            title: "Portable BiPAP Machine",
+            image: "images/b2.png",
+            description:
+                "Portable respiratory-support equipment designed for convenient use."
+        },
+
+
+        /* =========================
+           MOBILITY AIDS
+        ========================= */
+
+        {
+            category: "Mobility Aids",
+            title: "Standard Walker",
+            image: "images/wl1.png",
+            description:
+                "Walking support designed for everyday mobility and stability."
+        },
+
+        {
+            category: "Mobility Aids",
+            title: "Folding Walker",
+            image: "images/wl2.png",
+            description:
+                "Folding mobility aid designed for convenient storage and transportation."
+        },
+
+        {
+            category: "Mobility Aids",
+            title: "Adjustable Walker",
+            image: "images/wl3.png",
+            description:
+                "Adjustable walking support designed for everyday mobility."
+        },
+
+
+        /* =========================
+           PATIENT MONITORING
+        ========================= */
+
+        {
+            category: "Patient Monitoring",
+            title: "Patient Monitor",
+            image: "images/pm.png",
+            description:
+                "Equipment designed for suitable patient monitoring requirements."
+        },
+
+
+        /* =========================
+           CRITICAL CARE
+        ========================= */
+
+        {
+            category: "Critical Care",
+            title: "ICU Ventilator",
+            image: "images/venti.png",
+            description:
+                "Respiratory-support equipment intended for appropriate critical-care environments."
+        },
+
+
+        /* =========================
+           DIAGNOSTICS
+        ========================= */
+
+        {
+            category: "Diagnostics",
+            title: "Pulse Oximeter",
+            image: "images/pu.png",
+            description:
+                "Compact diagnostic equipment designed for basic patient measurements."
+        },
+
+
+        /* =========================
+           EMERGENCY
+        ========================= */
+
+        {
+            category: "Emergency",
+            title: "Ambulance Service 24/7",
+            image: "images/amb.png",
+            description:
+                "Emergency transportation support for urgent patient-care requirements."
+        }
+
+    ];
+
+
+    /* =====================================================
+       CATEGORY INFORMATION
+    ===================================================== */
+
+    const categoryInfo = {
+
+        "Hospital Furniture": {
+            title: "Hospital Furniture",
+            description:
+                "Hospital beds and furniture designed for patient care and healthcare requirements."
+        },
+
+        "Oxygen": {
+            title: "Oxygen Equipment",
+            description:
+                "Oxygen cylinders and concentrators for healthcare and home-care requirements."
+        },
+
+        "Wheelchair": {
+            title: "Wheelchairs",
+            description:
+                "Mobility solutions designed for comfortable patient movement and support."
+        },
+
+        "CPAP": {
+            title: "CPAP Machines",
+            description:
+                "CPAP equipment designed for suitable sleep-care requirements."
+        },
+
+        "BiPAP": {
+            title: "BiPAP Machines",
+            description:
+                "Bi-level respiratory-support equipment for suitable healthcare requirements."
+        },
+
+        "Mobility Aids": {
+            title: "Walkers",
+            description:
+                "Walking aids designed to provide everyday mobility support."
+        },
+
+        "Patient Monitoring": {
+            title: "Patient Monitoring",
+            description:
+                "Equipment designed for suitable patient monitoring requirements."
+        },
+
+        "Critical Care": {
+            title: "Critical Care",
+            description:
+                "Respiratory-support equipment for suitable critical-care environments."
+        },
+
+        "Diagnostics": {
+            title: "Diagnostic Equipment",
+            description:
+                "Equipment designed for basic patient measurements and diagnostics."
+        },
+
+        "Emergency": {
+            title: "Emergency Care",
+            description:
+                "Emergency transportation and urgent patient-care support."
+        }
+
+    };
+
+
+    /* =====================================================
+       GROUP PRODUCTS BY CATEGORY
+    ===================================================== */
+
+    const groupedProducts = {};
+
+
+    productData.forEach(function (product) {
+
+        if (!groupedProducts[product.category]) {
+
+            groupedProducts[product.category] = [];
+
+        }
+
+        groupedProducts[product.category].push(product);
+
+    });
+
+
+    /* =====================================================
+       CHANGE CATALOGUE HEADING
+    ===================================================== */
+
+    function changeCatalogueHeading(text) {
+
+        const heading =
+            catalogueHeader.querySelector(
+                ".catalogue-title span"
+            );
+
+        if (heading) {
+
+            heading.textContent = text;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MAIN CATEGORY CATALOGUE
+    ===================================================== */
+
+    function showMainCatalogue() {
+
+        catalogueGrid.innerHTML = "";
+
+        catalogueGrid.className =
+            "catalogue-grid category-grid-view";
+
+
+        changeCatalogueHeading(
+            "CATALOGUE"
         );
 
-    border-right:
-        1px solid var(--line);
 
-    overflow-y:auto;
+        Object.keys(groupedProducts).forEach(
+            function (category) {
 
-    z-index:100;
+                const products =
+                    groupedProducts[category];
 
-}
+                const info =
+                    categoryInfo[category];
 
 
-.sidebar-inner{
+                const card =
+                    document.createElement("article");
 
-    min-height:100vh;
 
-    padding:
-        48px 42px 35px;
+                card.className =
+                    "catalogue-category";
 
-    display:flex;
 
-    flex-direction:column;
+                card.innerHTML = `
 
-}
+                    <div class="category-image-box">
 
+                        <img
+                            src="${products[0].image}"
+                            alt="${info.title}"
+                        >
 
-/* =========================================================
-   LOGO
-========================================================= */
+                    </div>
 
-.sidebar-logo{
 
-    width:78px;
-    height:78px;
+                    <div class="category-content">
 
-    border-radius:20px;
+                        <span>
+                            OYA COLLECTION
+                        </span>
 
-    overflow:hidden;
 
-    margin-bottom:22px;
+                        <h2>
+                            ${info.title}
+                        </h2>
 
-    background:#fff;
 
-    box-shadow:
-        0 10px 28px
-        rgba(23,79,69,.13);
+                        <p>
+                            ${info.description}
+                        </p>
 
-}
 
-.sidebar-logo img{
+                        <strong>
 
-    width:100%;
-    height:100%;
+                            <span>
+                                ${products.length}
+                                ${
+                                    products.length === 1
+                                    ? "product"
+                                    : "products"
+                                }
+                            </span>
 
-    object-fit:cover;
+                            <b>
+                                ↗
+                            </b>
 
-}
+                        </strong>
 
+                    </div>
 
-/* =========================================================
-   SIDEBAR TITLE
-========================================================= */
+                `;
 
-.sidebar h1{
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+                card.addEventListener(
+                    "click",
+                    function () {
 
-    font-size:31px;
+                        showCategoryViewer(
+                            category
+                        );
 
-    line-height:1.1;
+                    }
+                );
 
-    font-weight:500;
 
-    color:var(--green);
+                catalogueGrid.appendChild(
+                    card
+                );
 
-    margin-bottom:10px;
-
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.company-description{
-
-    max-width:300px;
-
-    font-size:15px;
-
-    line-height:1.58;
-
-    color:#68716d;
-
-}
-
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.sidebar-divider{
-
-    width:100%;
-
-    height:1px;
-
-    background:var(--green);
-
-    opacity:.35;
-
-    margin:
-        34px 0 29px;
-
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.sidebar-contact{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:23px;
-
-}
-
-.contact-row{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:12px;
-
-    color:#707a75;
-
-    font-size:13px;
-
-    line-height:1.6;
-
-}
-
-.contact-row a{
-
-    color:#707a75;
-
-    transition:.2s;
-
-}
-
-.contact-row a:hover{
-
-    color:var(--green);
-
-}
-
-.contact-icon{
-
-    width:16px;
-
-    flex:none;
-
-    color:var(--gold);
-
-    font-size:19px;
-
-    line-height:1.2;
-
-}
-
-
-/* =========================================================
-   SIDEBAR BOTTOM
-========================================================= */
-
-.sidebar-bottom{
-
-    margin-top:auto;
-
-    padding-top:35px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:5px;
-
-    color:#7c8580;
-
-}
-
-.sidebar-bottom span{
-
-    color:var(--green);
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.18em;
-
-}
-
-.sidebar-bottom small{
-
-    font-size:10px;
-
-}
-
-
-/* =========================================================
-   CATALOGUE AREA
-========================================================= */
-
-.catalogue-area{
-
-    grid-column:2;
-
-    min-width:0;
-
-    padding:
-        65px 52px 40px;
-
-}
-
-
-/* =========================================================
-   CATALOGUE HEADER
-========================================================= */
-
-.catalogue-header{
-
-    width:100%;
-
-    margin-bottom:35px;
-
-}
-
-.catalogue-title span{
-
-    color:var(--green);
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size:13px;
-
-    font-style:italic;
-
-    font-weight:700;
-
-    letter-spacing:.35em;
-
-}
-
-.catalogue-line{
-
-    width:100%;
-
-    height:1px;
-
-    background:#8d9993;
-
-    margin-top:14px;
-
-}
-
-
-/* =========================================================
-   PRODUCT / CATEGORY GRID
-========================================================= */
-
-.catalogue-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    column-gap:32px;
-
-    row-gap:43px;
-
-}
-
-
-/* =========================================================
-   CATEGORY CARD
-========================================================= */
-
-.catalogue-category{
-
-    min-width:0;
-
-    cursor:pointer;
-
-    transition:
-        transform .3s ease;
-
-}
-
-.catalogue-category:hover{
-
-    transform:
-        translateY(-5px);
-
-}
-
-
-/* =========================================================
-   CATEGORY IMAGE
-========================================================= */
-
-.category-image-box{
-
-    width:100%;
-
-    height:320px;
-
-    border-radius:21px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e5ece7,
-            #f5f2e9
+            }
         );
 
-    box-shadow:
-        0 7px 22px
-        rgba(23,79,69,.055);
 
-}
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-.category-image-box img{
+    }
 
-    width:100%;
-    height:100%;
 
-    object-fit:cover;
+    /* =====================================================
+       CATEGORY PRODUCT VIEWER
+    ===================================================== */
 
-    transition:
-        transform .45s ease;
+    function showCategoryViewer(category) {
 
-}
+        const products =
+            groupedProducts[category];
 
-.catalogue-category:hover
-.category-image-box img{
 
-    transform:
-        scale(1.035);
+        if (
+            !products ||
+            products.length === 0
+        ) {
 
-}
+            return;
 
+        }
 
-/* =========================================================
-   CATEGORY CONTENT
-========================================================= */
 
-.category-content{
+        const info =
+            categoryInfo[category];
 
-    padding:
-        19px 4px 0;
 
-}
+        catalogueGrid.innerHTML = "";
 
-.category-content span{
+        catalogueGrid.className =
+            "catalogue-grid category-viewer-grid";
 
-    display:block;
 
-    color:var(--green);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:.15em;
-
-    margin-bottom:7px;
-
-}
-
-.category-content h2{
-
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
-    font-size:18px;
-
-    line-height:1.25;
-
-    font-weight:600;
-
-    color:var(--text);
-
-    margin-bottom:7px;
-
-}
-
-.category-content p{
-
-    color:#727a76;
-
-    font-size:13px;
-
-    line-height:1.55;
-
-    margin-bottom:12px;
-
-}
-
-.category-content strong{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    color:var(--green);
-
-    font-size:11px;
-
-    padding-top:12px;
-
-    border-top:
-        1px solid var(--line);
-
-}
-
-.category-content strong b{
-
-    color:var(--gold);
-
-    font-size:18px;
-
-    transition:.2s;
-
-}
-
-.catalogue-category:hover
-.category-content strong b{
-
-    transform:
-        translate(3px,-3px);
-
-}
-
-
-/* =========================================================
-   PRODUCT CARDS
-========================================================= */
-
-.catalogue-product{
-
-    min-width:0;
-
-    cursor:pointer;
-
-    transition:
-        transform .25s ease;
-
-}
-
-.catalogue-product:hover{
-
-    transform:
-        translateY(-4px);
-
-}
-
-.product-image{
-
-    width:100%;
-
-    height:320px;
-
-    border-radius:21px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e8eee9,
-            #f5f2e9
+        changeCatalogueHeading(
+            info.title.toUpperCase()
         );
 
-}
 
-.product-image img{
+        /* ================================================
+           BACK BUTTON
+        ================================================= */
 
-    width:100%;
-    height:100%;
+        const backButton =
+            document.createElement("button");
 
-    object-fit:cover;
 
-    transition:
-        transform .45s ease;
+        backButton.type =
+            "button";
 
-}
 
-.catalogue-product:hover
-.product-image img{
+        backButton.className =
+            "category-back-button";
 
-    transform:
-        scale(1.035);
 
-}
+        backButton.textContent =
+            "← Back to Catalogue";
 
-.product-info{
 
-    padding:
-        19px 4px 0;
+        backButton.addEventListener(
+            "click",
+            function () {
 
-}
+                showMainCatalogue();
 
-.product-info span{
-
-    position:relative;
-
-    display:block;
-
-    padding-left:12px;
-
-    color:var(--green);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
-
-    margin-bottom:7px;
-
-}
-
-.product-info span::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:50%;
-
-    width:5px;
-    height:5px;
-
-    transform:
-        translateY(-50%);
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-}
-
-.product-info h2{
-
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
-    font-size:17px;
-
-    line-height:1.25;
-
-    font-weight:600;
-
-    color:var(--text);
-
-    margin-bottom:7px;
-
-}
-
-.product-info p{
-
-    color:#727a76;
-
-    font-size:13px;
-
-    line-height:1.55;
-
-}
-
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.category-back-button{
-
-    border:0;
-
-    background:none;
-
-    padding:0;
-
-    margin-bottom:25px;
-
-    color:var(--green);
-
-    font-size:11px;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    transition:.2s;
-
-}
-
-.category-back-button:hover{
-
-    color:var(--gold);
-
-    transform:
-        translateX(-3px);
-
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.catalogue-footer{
-
-    margin-top:75px;
-
-    padding:
-        20px 4px;
-
-    border-top:
-        1px solid var(--line);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    color:#808983;
-
-    font-size:10px;
-
-}
-
-
-/* =========================================================
-   PRODUCT MODAL
-========================================================= */
-
-.product-modal{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:1000;
-
-    display:none;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:25px;
-
-    background:
-        rgba(13,35,31,.78);
-
-    backdrop-filter:
-        blur(10px);
-
-}
-
-.product-modal.active{
-
-    display:flex;
-
-    animation:
-        fadeIn .2s ease;
-
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-
-}
-
-
-/* =========================================================
-   MODAL BOX
-========================================================= */
-
-.product-modal-box{
-
-    width:
-        min(950px,100%);
-
-    max-height:
-        90vh;
-
-    overflow:auto;
-
-    background:
-        #f8f5ec;
-
-    border-radius:24px;
-
-    box-shadow:
-        0 35px 100px
-        rgba(10,40,34,.35);
-
-    position:relative;
-
-    animation:
-        modalUp .25s ease;
-
-}
-
-@keyframes modalUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(18px)
-            scale(.98);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-
-/* =========================================================
-   MODAL CLOSE
-========================================================= */
-
-.modal-close{
-
-    position:absolute;
-
-    top:17px;
-    right:17px;
-
-    z-index:5;
-
-    width:40px;
-    height:40px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    box-shadow:
-        0 5px 20px
-        rgba(23,79,69,.12);
-
-    font-size:25px;
-
-    color:var(--green);
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.modal-close:hover{
-
-    background:var(--green);
-
-    color:#fff;
-
-}
-
-
-/* =========================================================
-   MODAL CONTENT
-========================================================= */
-
-.modal-content{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    min-height:520px;
-
-}
-
-
-/* =========================================================
-   MODAL IMAGE
-========================================================= */
-
-.modal-product-image{
-
-    min-height:520px;
-
-    padding:40px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e4ece6,
-            #f1eadc
+            }
         );
 
-    display:flex;
 
-    align-items:center;
+        catalogueGrid.before(
+            backButton
+        );
 
-    justify-content:center;
 
-}
+        /* ================================================
+           VIEWER
+        ================================================= */
 
-.modal-product-image img{
+        const viewer =
+            document.createElement("section");
 
-    width:100%;
-    height:100%;
 
-    max-height:440px;
+        viewer.className =
+            "category-product-viewer";
 
-    object-fit:contain;
 
-}
+        viewer.innerHTML = `
 
+            <div class="viewer-left">
 
-/* =========================================================
-   MODAL DETAILS
-========================================================= */
+                <div class="viewer-main-image">
 
-.modal-product-details{
+                    <img
+                        id="viewerMainImage"
+                        src=""
+                        alt=""
+                    >
 
-    padding:
-        65px 45px;
+                </div>
 
-    display:flex;
 
-    flex-direction:column;
+                <div
+                    class="viewer-thumbnails"
+                    id="viewerThumbnails"
+                ></div>
 
-    justify-content:center;
+            </div>
 
-}
 
-.modal-category{
+            <div class="viewer-right">
 
-    color:var(--green);
+                <div class="viewer-category">
+                    ${category.toUpperCase()}
+                </div>
 
-    font-size:10px;
 
-    font-weight:800;
+                <h1
+                    id="viewerTitle"
+                    class="viewer-title"
+                >
+                </h1>
 
-    letter-spacing:.18em;
 
-}
+                <p
+                    id="viewerDescription"
+                    class="viewer-description"
+                >
+                </p>
 
-.modal-product-details h2{
 
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
+                <div
+                    class="viewer-divider"
+                ></div>
 
-    font-size:39px;
 
-    line-height:1.05;
+                <div class="viewer-details">
 
-    font-weight:700;
+                    <span>
+                        CATEGORY
+                    </span>
 
-    letter-spacing:-.04em;
+                    <strong>
+                        ${info.title}
+                    </strong>
 
-    color:var(--text);
+                </div>
 
-    margin:
-        12px 0 18px;
 
-}
+                <div
+                    class="viewer-divider"
+                ></div>
 
-.modal-product-details > p{
 
-    color:#727a76;
+                <div class="viewer-product-count">
 
-    font-size:14px;
+                    ${products.length}
+                    ${
+                        products.length === 1
+                        ? "PRODUCT"
+                        : "PRODUCTS"
+                    }
 
-    line-height:1.75;
+                </div>
 
-}
 
+                <a
+                    href="tel:7021235223"
+                    class="viewer-enquiry"
+                >
 
-/* =========================================================
-   MODAL FEATURES
-========================================================= */
+                    Enquire Now
 
-.modal-features{
+                    <span>
+                        ↗
+                    </span>
 
-    margin:
-        28px 0;
+                </a>
 
-    display:flex;
+            </div>
 
-    flex-direction:column;
+        `;
 
-    gap:11px;
 
-    color:#52615c;
+        catalogueGrid.appendChild(
+            viewer
+        );
 
-    font-size:12px;
 
-}
+        /* ================================================
+           VIEWER ELEMENTS
+        ================================================= */
 
+        const mainImage =
+            viewer.querySelector(
+                "#viewerMainImage"
+            );
 
-/* =========================================================
-   MODAL ACTIONS
-========================================================= */
 
-.modal-actions{
+        const viewerTitle =
+            viewer.querySelector(
+                "#viewerTitle"
+            );
 
-    display:flex;
 
-    gap:10px;
+        const viewerDescription =
+            viewer.querySelector(
+                "#viewerDescription"
+            );
 
-    flex-wrap:wrap;
 
-}
+        const thumbnails =
+            viewer.querySelector(
+                "#viewerThumbnails"
+            );
 
-.modal-enquiry,
-.modal-whatsapp{
 
-    display:inline-flex;
+        /* ================================================
+           SELECT PRODUCT
+        ================================================= */
 
-    align-items:center;
+        function selectProduct(
+            product,
+            index
+        ) {
 
-    justify-content:center;
+            mainImage.src =
+                product.image;
 
-    min-height:45px;
+            mainImage.alt =
+                product.title;
 
-    padding:
-        11px 20px;
+            viewerTitle.textContent =
+                product.title;
 
-    border-radius:999px;
+            viewerDescription.textContent =
+                product.description;
 
-    font-size:11px;
 
-    font-weight:800;
+            const buttons =
+                thumbnails.querySelectorAll(
+                    ".viewer-thumbnail"
+                );
 
-    transition:.25s;
 
-}
+            buttons.forEach(
+                function (button, i) {
 
-.modal-enquiry{
+                    if (i === index) {
 
-    background:
-        var(--green);
+                        button.classList.add(
+                            "active"
+                        );
 
-    color:#fff;
+                    } else {
 
-}
+                        button.classList.remove(
+                            "active"
+                        );
 
-.modal-enquiry:hover{
+                    }
 
-    background:
-        var(--green-dark);
+                }
+            );
 
-    transform:
-        translateY(-2px);
+        }
 
-}
 
-.modal-whatsapp{
+        /* ================================================
+           CREATE PRODUCT THUMBNAILS
+        ================================================= */
 
-    background:
-        var(--green-light);
+        products.forEach(
+            function (product, index) {
 
-    color:
-        var(--green-dark);
+                const thumbnail =
+                    document.createElement(
+                        "button"
+                    );
 
-}
 
-.modal-whatsapp:hover{
+                thumbnail.type =
+                    "button";
 
-    background:
-        #c9ddd4;
 
-    transform:
-        translateY(-2px);
+                thumbnail.className =
+                    "viewer-thumbnail";
 
-}
 
+                thumbnail.setAttribute(
+                    "aria-label",
+                    product.title
+                );
 
-/* =========================================================
-   MOBILE HEADER
-========================================================= */
 
-.mobile-header{
+                thumbnail.innerHTML = `
 
-    display:none;
+                    <img
+                        src="${product.image}"
+                        alt="${product.title}"
+                    >
 
-}
+                `;
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+                thumbnail.addEventListener(
+                    "click",
+                    function () {
 
-@media(max-width:1100px){
+                        selectProduct(
+                            product,
+                            index
+                        );
 
-    .website-layout{
+                    }
+                );
 
-        grid-template-columns:
-            310px
-            1fr;
 
-    }
+                thumbnails.appendChild(
+                    thumbnail
+                );
 
-    .sidebar{
+            }
+        );
 
-        width:310px;
 
-    }
+        /* ================================================
+           FIRST PRODUCT
+        ================================================= */
 
-    .sidebar-inner{
+        selectProduct(
+            products[0],
+            0
+        );
 
-        padding:
-            35px 28px;
 
-    }
-
-    .sidebar h1{
-
-        font-size:27px;
-
-    }
-
-    .company-description{
-
-        font-size:13px;
-
-    }
-
-    .catalogue-area{
-
-        padding:
-            50px 30px;
-
-    }
-
-    .catalogue-grid{
-
-        gap:25px;
-
-    }
-
-    .category-image-box,
-    .product-image{
-
-        height:260px;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:750px){
-
-    body{
-
-        background:
-            #f3f0e8;
-
-    }
-
-
-    /* MOBILE HEADER */
-
-    .mobile-header{
-
-        position:sticky;
-
-        top:0;
-
-        z-index:900;
-
-        height:70px;
-
-        padding:
-            10px 18px;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:space-between;
-
-        background:
-            rgba(251,250,246,.95);
-
-        backdrop-filter:
-            blur(12px);
-
-        border-bottom:
-            1px solid var(--line);
-
-    }
-
-    .mobile-header img{
-
-        width:48px;
-
-        height:48px;
-
-        object-fit:cover;
-
-        border-radius:12px;
-
-    }
-
-    .mobile-menu-button{
-
-        width:42px;
-        height:42px;
-
-        border:0;
-
-        border-radius:50%;
-
-        background:
-            var(--green-light);
-
-        color:
-            var(--green);
-
-        font-size:21px;
-
-        cursor:pointer;
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 
 
-    /* MAIN */
+    /* =====================================================
+       PRODUCT POPUP
+    ===================================================== */
 
-    .website-layout{
+    function openProductPopup(product) {
 
-        display:block;
-
-    }
-
-
-    /* SIDEBAR */
-
-    .sidebar{
-
-        position:fixed;
-
-        top:70px;
-        left:0;
-
-        width:100%;
-
-        height:
-            calc(100vh - 70px);
-
-        transform:
-            translateX(-100%);
-
-        transition:
-            transform .3s ease;
-
-        z-index:850;
-
-        box-shadow:
-            10px 0 40px
-            rgba(23,79,69,.12);
-
-    }
-
-    .sidebar.open{
-
-        transform:
-            translateX(0);
-
-    }
-
-    .sidebar-inner{
-
-        padding:
-            30px 24px;
-
-    }
-
-    .sidebar-logo{
-
-        width:65px;
-        height:65px;
-
-    }
+        if (!productModal) {
+            return;
+        }
 
 
-    /* CONTENT */
+        if (modalImage) {
 
-    .catalogue-area{
+            modalImage.src =
+                product.image;
 
-        width:100%;
+            modalImage.alt =
+                product.title;
 
-        padding:
-            32px 18px 25px;
-
-    }
+        }
 
 
-    /* HEADER */
+        if (modalCategory) {
 
-    .catalogue-header{
+            modalCategory.textContent =
+                product.category.toUpperCase();
 
-        margin-bottom:28px;
+        }
 
-    }
 
-    .catalogue-title span{
+        if (modalTitle) {
 
-        font-size:11px;
+            modalTitle.textContent =
+                product.title;
 
-        letter-spacing:.28em;
+        }
+
+
+        if (modalDescription) {
+
+            modalDescription.textContent =
+                product.description;
+
+        }
+
+
+        if (whatsappBtn) {
+
+            const message =
+                "Hi OYA Health Care, " +
+                "I am interested in " +
+                product.title +
+                ". Please share details, pricing and availability.";
+
+
+            whatsappBtn.href =
+                "https://wa.me/917021235223?text=" +
+                encodeURIComponent(message);
+
+        }
+
+
+        productModal.classList.add(
+            "active"
+        );
+
+
+        productModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        document.body.style.overflow =
+            "hidden";
 
     }
 
 
-    /* GRID */
+    /* =====================================================
+       CLOSE POPUP
+    ===================================================== */
 
-    .catalogue-grid{
+    function closeProductPopup() {
 
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-        column-gap:13px;
-
-        row-gap:30px;
-
-    }
+        if (!productModal) {
+            return;
+        }
 
 
-    /* CATEGORY */
-
-    .category-image-box{
-
-        height:210px;
-
-        border-radius:15px;
-
-    }
+        productModal.classList.remove(
+            "active"
+        );
 
 
-    .category-content{
+        productModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
 
-        padding:
-            13px 2px 0;
 
-    }
-
-    .category-content span{
-
-        font-size:8px;
-
-    }
-
-    .category-content h2{
-
-        font-size:14px;
-
-    }
-
-    .category-content p{
-
-        font-size:10px;
+        document.body.style.overflow =
+            "";
 
     }
 
 
-    /* PRODUCT */
+    if (modalClose) {
 
-    .product-image{
-
-        height:210px;
-
-        border-radius:15px;
-
-    }
-
-    .product-info{
-
-        padding:
-            13px 2px 0;
-
-    }
-
-    .product-info span{
-
-        font-size:8px;
-
-        padding-left:10px;
-
-        letter-spacing:.11em;
-
-    }
-
-    .product-info span::before{
-
-        width:4px;
-        height:4px;
-
-    }
-
-    .product-info h2{
-
-        font-size:13px;
-
-        line-height:1.3;
-
-        margin-bottom:5px;
-
-    }
-
-    .product-info p{
-
-        font-size:10px;
-
-        line-height:1.45;
+        modalClose.addEventListener(
+            "click",
+            closeProductPopup
+        );
 
     }
 
 
-    /* FOOTER */
+    if (productModal) {
 
-    .catalogue-footer{
+        productModal.addEventListener(
+            "click",
+            function (event) {
 
-        margin-top:55px;
+                if (
+                    event.target ===
+                    productModal
+                ) {
 
-        flex-direction:column;
+                    closeProductPopup();
 
-        gap:7px;
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeProductPopup();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    if (
+        mobileMenuButton &&
+        sidebar
+    ) {
+
+        mobileMenuButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle(
+                    "open"
+                );
+
+
+                if (
+                    sidebar.classList.contains(
+                        "open"
+                    )
+                ) {
+
+                    mobileMenuButton.textContent =
+                        "×";
+
+                } else {
+
+                    mobileMenuButton.textContent =
+                        "☰";
+
+                }
+
+            }
+        );
 
     }
 
 
-    /* MODAL */
+    /* =====================================================
+       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
 
-    .product-modal{
+    document.addEventListener(
+        "click",
+        function (event) {
 
-        padding:12px;
+            if (
+                !sidebar ||
+                !mobileMenuButton
+            ) {
 
-    }
+                return;
 
-    .product-modal-box{
+            }
 
-        max-height:
-            94vh;
 
-        border-radius:20px;
+            if (
+                !sidebar.classList.contains(
+                    "open"
+                )
+            ) {
 
-    }
+                return;
 
-    .modal-content{
+            }
 
-        grid-template-columns:1fr;
 
-    }
+            if (
+                sidebar.contains(
+                    event.target
+                ) ||
+                mobileMenuButton.contains(
+                    event.target
+                )
+            ) {
 
-    .modal-product-image{
+                return;
 
-        min-height:290px;
+            }
 
-        height:290px;
 
-        padding:25px;
+            sidebar.classList.remove(
+                "open"
+            );
 
-    }
 
-    .modal-product-details{
+            mobileMenuButton.textContent =
+                "☰";
 
-        padding:
-            30px 24px 35px;
+        }
+    );
 
-    }
 
-    .modal-product-details h2{
+    /* =====================================================
+       START WEBSITE
+    ===================================================== */
 
-        font-size:30px;
+    showMainCatalogue();
 
-    }
 
-}
+    console.log(
+        "OYA Health Care website ready."
+    );
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media(max-width:430px){
-
-    .catalogue-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .category-image-box{
-
-        height:260px;
-
-    }
-
-    .product-image{
-
-        height:260px;
-
-    }
-
-    .product-info h2{
-
-        font-size:15px;
-
-    }
-
-    .product-info p{
-
-        font-size:11px;
-
-    }
-
-}
-/* =========================================================
-   CATEGORY PRODUCT VIEWER
-   CATALOGAPP STYLE
-========================================================= */
-
-.category-viewer-grid{
-
-    display:block !important;
-
-}
-
-
-/* =========================================================
-   CATEGORY VIEWER
-========================================================= */
-
-.category-product-viewer{
-
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(0,1.05fr)
-        minmax(0,.95fr);
-
-    gap:58px;
-
-    margin-top:5px;
-
-}
-
-
-/* =========================================================
-   LEFT SIDE
-========================================================= */
-
-.viewer-left{
-
-    min-width:0;
-
-}
-
-
-/* =========================================================
-   MAIN PRODUCT IMAGE
-========================================================= */
-
-.viewer-main-image{
-
-    width:100%;
-
-    height:550px;
-
-    background:
-        #ffffff;
-
-    border-radius:0;
-
-    overflow:hidden;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.viewer-main-image img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-
-}
-
-
-/* =========================================================
-   THUMBNAILS
-========================================================= */
-
-.viewer-thumbnails{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-    margin-top:14px;
-
-    overflow-x:auto;
-
-    padding-bottom:6px;
-
-}
-
-
-.viewer-thumbnail{
-
-    flex:0 0 72px;
-
-    width:72px;
-
-    height:72px;
-
-    padding:3px;
-
-    border:1px solid transparent;
-
-    border-radius:11px;
-
-    background:#ffffff;
-
-    cursor:pointer;
-
-    overflow:hidden;
-
-    transition:
-        border .2s ease,
-        transform .2s ease;
-
-}
-
-
-.viewer-thumbnail:hover{
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.viewer-thumbnail.active{
-
-    border:
-        2px solid var(--green);
-
-}
-
-
-.viewer-thumbnail img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:8px;
-
-}
-
-
-/* =========================================================
-   RIGHT SIDE
-========================================================= */
-
-.viewer-right{
-
-    min-width:0;
-
-    padding:
-        15px 25px 0 0;
-
-}
-
-
-.viewer-category{
-
-    color:var(--green);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:.18em;
-
-    margin-bottom:18px;
-
-}
-
-
-.viewer-title{
-
-    font-family:
-        "Manrope",
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(32px,4vw,54px);
-
-    line-height:1.04;
-
-    letter-spacing:-.045em;
-
-    font-weight:700;
-
-    color:var(--text);
-
-    margin:0 0 27px;
-
-}
-
-
-.viewer-description{
-
-    color:#68726d;
-
-    font-size:15px;
-
-    line-height:1.75;
-
-    max-width:500px;
-
-    margin-bottom:30px;
-
-}
-
-
-.viewer-divider{
-
-    width:100%;
-
-    height:1px;
-
-    background:var(--line);
-
-    margin:
-        27px 0;
-
-}
-
-
-/* =========================================================
-   DETAILS
-========================================================= */
-
-.viewer-details{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:9px;
-
-}
-
-
-.viewer-details span{
-
-    color:#7c8580;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.18em;
-
-}
-
-
-.viewer-details strong{
-
-    color:var(--green);
-
-    font-size:14px;
-
-    font-weight:600;
-
-}
-
-
-/* =========================================================
-   PRODUCT COUNT
-========================================================= */
-
-.viewer-product-count{
-
-    color:#7b8580;
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:.16em;
-
-    margin-bottom:25px;
-
-}
-
-
-/* =========================================================
-   ENQUIRE BUTTON
-========================================================= */
-
-.viewer-enquiry{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    width:190px;
-
-    min-height:48px;
-
-    padding:
-        0 19px;
-
-    border:
-        1px solid var(--green);
-
-    border-radius:0;
-
-    background:var(--green);
-
-    color:#ffffff;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    transition:.25s;
-
-}
-
-
-.viewer-enquiry span{
-
-    font-size:17px;
-
-}
-
-
-.viewer-enquiry:hover{
-
-    background:
-        var(--green-dark);
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.category-back-button{
-
-    display:block;
-
-    margin:
-        0 0 22px;
-
-    border:0;
-
-    background:transparent;
-
-    color:#6c7671;
-
-    font-size:12px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    padding:0;
-
-}
-
-
-.category-back-button:hover{
-
-    color:var(--green);
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:1100px){
-
-    .category-product-viewer{
-
-        gap:35px;
-
-    }
-
-
-    .viewer-main-image{
-
-        height:460px;
-
-    }
-
-
-    .viewer-right{
-
-        padding-right:0;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:750px){
-
-    .category-product-viewer{
-
-        display:block;
-
-        margin-top:0;
-
-    }
-
-
-    .viewer-main-image{
-
-        height:390px;
-
-        border-radius:16px;
-
-        background:#ffffff;
-
-    }
-
-
-    .viewer-thumbnails{
-
-        gap:8px;
-
-        margin-top:11px;
-
-    }
-
-
-    .viewer-thumbnail{
-
-        flex-basis:62px;
-
-        width:62px;
-
-        height:62px;
-
-    }
-
-
-    .viewer-right{
-
-        padding:
-            35px 2px 20px;
-
-    }
-
-
-    .viewer-category{
-
-        font-size:9px;
-
-        margin-bottom:12px;
-
-    }
-
-
-    .viewer-title{
-
-        font-size:32px;
-
-        margin-bottom:18px;
-
-    }
-
-
-    .viewer-description{
-
-        font-size:13px;
-
-        line-height:1.65;
-
-    }
-
-
-    .viewer-divider{
-
-        margin:
-            22px 0;
-
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media(max-width:430px){
-
-    .viewer-main-image{
-
-        height:320px;
-
-    }
-
-
-    .viewer-thumbnail{
-
-        flex-basis:57px;
-
-        width:57px;
-
-        height:57px;
-
-    }
-
-
-    .viewer-title{
-
-        font-size:28px;
-
-    }
-
-}
+});
