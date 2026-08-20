@@ -1,42 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
-       CATEGORY ELEMENTS
+       ELEMENTS
     ===================================================== */
 
-    const categoryCards =
-        document.querySelectorAll(".category-card");
+    const catalogueGrid =
+        document.getElementById("catalogueGrid");
 
-    const categoryBlocks =
-        document.querySelectorAll(".category-block");
+    const catalogueHeader =
+        document.querySelector(".catalogue-header");
 
-
-    /* =====================================================
-       CATEGORY POPUP
-    ===================================================== */
-
-    const categoryModal =
-        document.getElementById("categoryModal");
-
-    const categoryModalClose =
-        document.getElementById("categoryModalClose");
-
-    const categoryModalBack =
-        document.getElementById("categoryModalBack");
-
-    const categoryModalTitle =
-        document.getElementById("categoryModalTitle");
-
-    const categoryModalDescription =
-        document.getElementById("categoryModalDescription");
-
-    const categoryModalProducts =
-        document.getElementById("categoryModalProducts");
-
-
-    /* =====================================================
-       PRODUCT DETAIL POPUP
-    ===================================================== */
+    const originalProducts =
+        Array.from(
+            document.querySelectorAll(".catalogue-product")
+        );
 
     const productModal =
         document.getElementById("productModal");
@@ -59,205 +36,314 @@ document.addEventListener("DOMContentLoaded", function () {
     const whatsappBtn =
         document.getElementById("whatsappBtn");
 
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const sidebar =
+        document.getElementById("sidebar");
+
 
     /* =====================================================
-       CATEGORY DATA
+       CATEGORY INFORMATION
     ===================================================== */
 
-    const categoryData = {};
+    const categoryInfo = {
+
+        "Hospital Furniture": {
+            title: "Hospital Furniture",
+            label: "HOSPITAL FURNITURE",
+            description:
+                "Hospital beds and furniture designed for patient care and healthcare requirements."
+        },
+
+        "Oxygen": {
+            title: "Oxygen Equipment",
+            label: "OXYGEN",
+            description:
+                "Oxygen cylinders and concentrators for healthcare and home-care requirements."
+        },
+
+        "Wheelchair": {
+            title: "Wheelchairs",
+            label: "WHEELCHAIR",
+            description:
+                "Mobility solutions designed for comfortable patient movement and support."
+        },
+
+        "CPAP": {
+            title: "CPAP Machines",
+            label: "CPAP",
+            description:
+                "CPAP equipment designed for suitable sleep-care requirements."
+        },
+
+        "BiPAP": {
+            title: "BiPAP Machines",
+            label: "BIPAP",
+            description:
+                "Bi-level respiratory-support equipment for suitable healthcare requirements."
+        },
+
+        "Mobility Aids": {
+            title: "Walkers",
+            label: "MOBILITY AIDS",
+            description:
+                "Walking aids designed to provide everyday mobility support."
+        },
+
+        "Patient Monitoring": {
+            title: "Patient Monitoring",
+            label: "PATIENT MONITORING",
+            description:
+                "Equipment designed for suitable patient monitoring requirements."
+        },
+
+        "Critical Care": {
+            title: "Critical Care",
+            label: "CRITICAL CARE",
+            description:
+                "Respiratory-support equipment for suitable critical-care environments."
+        },
+
+        "Diagnostics": {
+            title: "Diagnostic Equipment",
+            label: "DIAGNOSTICS",
+            description:
+                "Equipment designed for basic patient measurements and diagnostics."
+        },
+
+        "Emergency": {
+            title: "Emergency Care",
+            label: "EMERGENCY",
+            description:
+                "Emergency transportation and urgent patient-care support."
+        }
+
+    };
 
 
-    categoryBlocks.forEach(function (category) {
+    /* =====================================================
+       GROUP PRODUCTS
+    ===================================================== */
 
-        const title =
-            category.querySelector(
-                ".category-copy h3"
-            );
-
-        const description =
-            category.querySelector(
-                ".category-copy p"
-            );
+    const groupedProducts = {};
 
 
-        categoryData[category.id] = {
+    originalProducts.forEach(function (product) {
 
-            title: title
-                ? title.textContent.trim()
-                : "Healthcare",
+        const category =
+            product.dataset.category;
 
-            description: description
-                ? description.textContent.trim()
-                : ""
 
-        };
+        if (!groupedProducts[category]) {
+
+            groupedProducts[category] = [];
+
+        }
+
+
+        groupedProducts[category].push(product);
 
     });
 
-
-    /* =====================================================
-       PRODUCT DESCRIPTIONS
-    ===================================================== */
-
-    const descriptions = {
-
-        "Manual Hospital Bed":
-            "A practical hospital bed designed for patient comfort, positioning and everyday clinical care.",
-
-        "Semi-Fowler Bed":
-            "A versatile hospital bed designed for comfortable patient positioning and everyday healthcare use.",
-
-        "Fowler Hospital Bed":
-            "A reliable hospital bed designed for convenient patient positioning and professional care.",
-
-        "2-Function Hospital Bed":
-            "A functional hospital bed designed for dependable patient care and comfortable positioning.",
-
-        "3-Function Hospital Bed":
-            "A multi-function hospital bed designed for flexible patient positioning and professional healthcare environments.",
-
-        "4-Function Hospital Bed":
-            "An advanced multi-function hospital bed designed for flexible positioning and professional healthcare environments.",
-
-        "Folding Hospital Bed":
-            "A practical folding hospital bed designed for flexible healthcare and patient-care requirements.",
-
-
-        "Oxygen Cylinder \"5Ltr\"":
-            "A compact oxygen cylinder suitable for appropriate oxygen-support requirements.",
-
-        "Oxygen Cylinder \"10Ltr\"":
-            "A higher-capacity oxygen cylinder suitable for appropriate medical and healthcare applications.",
-
-        "Oxygen Concentrator":
-            "A convenient oxygen-support device designed for suitable healthcare and home-care applications.",
-
-
-        "Standard Manual Wheelchair":
-            "A practical mobility solution designed for comfortable everyday movement and patient support.",
-
-        "Folding Wheelchair":
-            "A convenient foldable mobility solution designed for easier transport and storage.",
-
-        "Commode Wheelchair":
-            "A mobility and patient-care solution designed for additional convenience and support.",
-
-        "Reclining Wheelchair":
-            "A supportive wheelchair designed with reclining functionality for enhanced patient comfort.",
-
-
-        "Standard CPAP Machine":
-            "A CPAP solution designed for suitable sleep-care requirements.",
-
-        "Auto CPAP (APAP) Machine":
-            "An auto-adjusting CPAP solution designed for suitable sleep-care requirements.",
-
-        "Portable CPAP Machine":
-            "A compact CPAP option designed for convenient use.",
-
-
-        "Standard BiPAP Machine":
-            "A bi-level respiratory-support solution designed for suitable healthcare requirements.",
-
-        "Portable BiPAP Machine":
-            "A portable respiratory-support option designed for convenient handling and use.",
-
-        "Auto BiPAP Machine":
-            "An adaptive BiPAP option designed for suitable respiratory support.",
-
-
-        "Standard Walker":
-            "A dependable mobility aid designed to provide walking support and stability.",
-
-        "Folding Walker":
-            "A practical folding mobility aid designed for easier storage and transportation.",
-
-        "Adjustable Walker":
-            "A height-adjustable mobility aid designed for adaptable everyday walking support.",
-
-
-        "ICU Ventilator":
-            "A critical-care respiratory support device intended for appropriate clinical environments.",
-
-        "Patient Monitor":
-            "A patient-monitoring solution designed for suitable healthcare monitoring requirements.",
-
-        "Pulse Oximeter":
-            "A compact diagnostic device for measuring oxygen saturation and pulse rate.",
-
-        "Ambulance Service (24/7)":
-            "Emergency transportation support for urgent patient-care requirements."
-
-    };
 
 
     /* =====================================================
        GET PRODUCT DATA
     ===================================================== */
 
-    function getProductData(card) {
-
-        const image =
-            card.querySelector(
-                ".product-image img"
-            );
-
-        const title =
-            card.querySelector("h4");
-
-        const category =
-            card.querySelector(
-                ".product-info span"
-            );
-
+    function getProductData(product) {
 
         return {
 
-            title: title
-                ? title.textContent.trim()
-                : "Healthcare Product",
+            title:
+                product.dataset.title ||
+                "Healthcare Product",
 
-            category: category
-                ? category.textContent.trim()
-                : "Healthcare",
+            category:
+                product.dataset.category ||
+                "Healthcare",
 
-            /*
-             * IMPORTANT:
-             * Uses your ORIGINAL image filename.
-             * Nothing is renamed.
-             */
+            image:
+                product.dataset.image ||
+                "",
 
-            image: image
-                ? image.getAttribute("src")
-                : "",
-
-            alt: image
-                ? image.getAttribute("alt")
-                : ""
+            description:
+                product.dataset.description ||
+                "Please contact OYA Health Care for more details."
 
         };
 
     }
 
 
+
     /* =====================================================
-       OPEN CATEGORY POPUP
+       CREATE MAIN CATEGORY VIEW
     ===================================================== */
 
-    function openCategory(categoryId) {
+    function showMainCatalogue() {
 
-        const category =
+        catalogueGrid.innerHTML = "";
+
+        catalogueGrid.className =
+            "catalogue-grid category-grid-view";
+
+
+        const oldBackButton =
             document.getElementById(
-                categoryId
+                "categoryBackButton"
             );
 
 
-        if (!category) {
+        if (oldBackButton) {
 
-            console.error(
-                "Category not found:",
-                categoryId
+            oldBackButton.remove();
+
+        }
+
+
+        const heading =
+            catalogueHeader.querySelector(
+                ".catalogue-title span"
             );
+
+
+        if (heading) {
+
+            heading.textContent =
+                "CATALOGUE";
+
+        }
+
+
+        Object.keys(groupedProducts).forEach(
+            function (category) {
+
+                const products =
+                    groupedProducts[category];
+
+
+                const info =
+                    categoryInfo[category] || {
+
+                        title: category,
+
+                        label: category,
+
+                        description:
+                            "Healthcare products from OYA Health Care."
+
+                    };
+
+
+                const firstProduct =
+                    getProductData(
+                        products[0]
+                    );
+
+
+                const categoryCard =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                categoryCard.className =
+                    "catalogue-category";
+
+
+                categoryCard.innerHTML = `
+
+                    <div class="category-image-box">
+
+                        <img
+                            src="${firstProduct.image}"
+                            alt="${info.title}"
+                        >
+
+                    </div>
+
+
+                    <div class="category-content">
+
+                        <span>
+                            OYA COLLECTION
+                        </span>
+
+
+                        <h2>
+                            ${info.title}
+                        </h2>
+
+
+                        <p>
+                            ${info.description}
+                        </p>
+
+
+                        <strong>
+
+                            <span>
+                                ${products.length}
+                                ${
+                                    products.length === 1
+                                    ? "product"
+                                    : "products"
+                                }
+                            </span>
+
+                            <b>↗</b>
+
+                        </strong>
+
+                    </div>
+
+                `;
+
+
+                categoryCard.addEventListener(
+                    "click",
+                    function () {
+
+                        showCategoryViewer(
+                            category
+                        );
+
+                    }
+                );
+
+
+                catalogueGrid.appendChild(
+                    categoryCard
+                );
+
+            }
+        );
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* =====================================================
+       CATEGORY PRODUCT VIEWER
+    ===================================================== */
+
+    function showCategoryViewer(
+        category
+    ) {
+
+        const products =
+            groupedProducts[category] || [];
+
+
+        if (!products.length) {
 
             return;
 
@@ -265,44 +351,316 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const info =
-            categoryData[categoryId];
+            categoryInfo[category] || {
+
+                title: category,
+
+                label: category,
+
+                description:
+                    ""
+
+            };
 
 
-        /* Category title */
+        /* ================================================
+           REMOVE OLD BACK BUTTON
+        ================================================= */
 
-        categoryModalTitle.textContent =
-            info
-                ? info.title
-                : "Healthcare";
-
-
-        /* Category description */
-
-        categoryModalDescription.textContent =
-            info
-                ? info.description
-                : "";
-
-
-        /* Clear old products */
-
-        categoryModalProducts.innerHTML = "";
-
-
-        /*
-         * IMPORTANT:
-         * Get products ONLY from
-         * the selected category.
-         */
-
-        const products =
-            category.querySelectorAll(
-                ".product-card"
+        const oldBackButton =
+            document.getElementById(
+                "categoryBackButton"
             );
 
 
+        if (oldBackButton) {
+
+            oldBackButton.remove();
+
+        }
+
+
+        /* ================================================
+           HEADER TITLE
+        ================================================= */
+
+        const heading =
+            catalogueHeader.querySelector(
+                ".catalogue-title span"
+            );
+
+
+        if (heading) {
+
+            heading.textContent =
+                info.title.toUpperCase();
+
+        }
+
+
+        /* ================================================
+           CLEAR GRID
+        ================================================= */
+
+        catalogueGrid.innerHTML = "";
+
+        catalogueGrid.className =
+            "catalogue-grid category-viewer-grid";
+
+
+        /* ================================================
+           BACK BUTTON
+        ================================================= */
+
+        const backButton =
+            document.createElement(
+                "button"
+            );
+
+
+        backButton.id =
+            "categoryBackButton";
+
+
+        backButton.className =
+            "category-back-button";
+
+
+        backButton.innerHTML =
+            "← Back to Catalogue";
+
+
+        backButton.addEventListener(
+            "click",
+            function () {
+
+                showMainCatalogue();
+
+            }
+        );
+
+
+        catalogueGrid.before(
+            backButton
+        );
+
+
+        /* ================================================
+           CATEGORY VIEWER
+        ================================================= */
+
+        const viewer =
+            document.createElement(
+                "section"
+            );
+
+
+        viewer.className =
+            "category-product-viewer";
+
+
+        viewer.innerHTML = `
+
+            <div class="viewer-left">
+
+                <div class="viewer-main-image">
+
+                    <img
+                        id="viewerMainImage"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div
+                    class="viewer-thumbnails"
+                    id="viewerThumbnails"
+                ></div>
+
+            </div>
+
+
+            <div class="viewer-right">
+
+                <div class="viewer-category">
+                    ${info.label}
+                </div>
+
+
+                <h1
+                    id="viewerTitle"
+                    class="viewer-title"
+                >
+                </h1>
+
+
+                <p
+                    id="viewerDescription"
+                    class="viewer-description"
+                >
+                </p>
+
+
+                <div class="viewer-divider"></div>
+
+
+                <div class="viewer-details">
+
+                    <span>
+                        CATEGORY
+                    </span>
+
+                    <strong>
+                        ${info.title}
+                    </strong>
+
+                </div>
+
+
+                <div class="viewer-divider"></div>
+
+
+                <div class="viewer-product-count">
+
+                    ${products.length}
+                    ${
+                        products.length === 1
+                        ? "PRODUCT"
+                        : "PRODUCTS"
+                    }
+
+                </div>
+
+
+                <a
+                    href="tel:7021235223"
+                    class="viewer-enquiry"
+                >
+                    Enquire Now
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        `;
+
+
+        catalogueGrid.appendChild(
+            viewer
+        );
+
+
+        /* ================================================
+           ELEMENTS INSIDE VIEWER
+        ================================================= */
+
+        const mainImage =
+            viewer.querySelector(
+                "#viewerMainImage"
+            );
+
+
+        const viewerTitle =
+            viewer.querySelector(
+                "#viewerTitle"
+            );
+
+
+        const viewerDescription =
+            viewer.querySelector(
+                "#viewerDescription"
+            );
+
+
+        const thumbnails =
+            viewer.querySelector(
+                "#viewerThumbnails"
+            );
+
+
+
+        /* ================================================
+           SHOW FIRST PRODUCT
+        ================================================= */
+
+        function selectProduct(
+            product,
+            index
+        ) {
+
+            const data =
+                getProductData(
+                    product
+                );
+
+
+            /* MAIN IMAGE */
+
+            mainImage.src =
+                data.image;
+
+            mainImage.alt =
+                data.title;
+
+
+            /* TITLE */
+
+            viewerTitle.textContent =
+                data.title;
+
+
+            /* DESCRIPTION */
+
+            viewerDescription.textContent =
+                data.description;
+
+
+            /* ==========================================
+               THUMBNAILS
+            ========================================== */
+
+            const thumbnailButtons =
+                thumbnails.querySelectorAll(
+                    ".viewer-thumbnail"
+                );
+
+
+            thumbnailButtons.forEach(
+                function (button, buttonIndex) {
+
+                    if (
+                        buttonIndex === index
+                    ) {
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                    else {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* ================================================
+           CREATE THUMBNAILS
+        ================================================= */
+
         products.forEach(
-            function (product) {
+            function (product, index) {
 
                 const data =
                     getProductData(
@@ -310,188 +668,108 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                const productCard =
+                const thumbnail =
                     document.createElement(
-                        "div"
+                        "button"
                     );
 
 
-                productCard.className =
-                    "category-popup-product";
+                thumbnail.className =
+                    "viewer-thumbnail";
 
 
-                productCard.innerHTML = `
+                thumbnail.type =
+                    "button";
 
-                    <div class="category-popup-image">
 
-                        <img
-                            src="${data.image}"
-                            alt="${data.alt}"
-                        >
+                thumbnail.innerHTML = `
 
-                    </div>
-
-                    <div class="category-popup-info">
-
-                        <span>
-                            ${data.category}
-                        </span>
-
-                        <h4>
-                            ${data.title}
-                        </h4>
-
-                    </div>
+                    <img
+                        src="${data.image}"
+                        alt="${data.title}"
+                    >
 
                 `;
 
 
-                /*
-                 * Click product
-                 * → product popup
-                 */
-
-                productCard.addEventListener(
+                thumbnail.addEventListener(
                     "click",
                     function () {
 
-                        openProduct(
-                            data
+                        selectProduct(
+                            product,
+                            index
                         );
 
                     }
                 );
 
 
-                categoryModalProducts.appendChild(
-                    productCard
+                thumbnails.appendChild(
+                    thumbnail
                 );
 
             }
         );
 
 
-        /* Show category popup */
+        /* ================================================
+           FIRST PRODUCT
+        ================================================= */
 
-        categoryModal.classList.add(
-            "active"
+        selectProduct(
+            products[0],
+            0
         );
 
-        document.body.classList.add(
-            "modal-open"
-        );
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 
 
+
     /* =====================================================
-       CATEGORY CARD CLICK
+       PRODUCT POPUP
     ===================================================== */
 
-    categoryCards.forEach(
-        function (card) {
+    function openProductPopup(
+        product
+    ) {
 
-            card.addEventListener(
-                "click",
-                function () {
-
-                    const categoryId =
-                        card.getAttribute(
-                            "data-category"
-                        );
-
-
-                    openCategory(
-                        categoryId
-                    );
-
-                }
+        const data =
+            getProductData(
+                product
             );
 
-        }
-    );
-
-
-    /* =====================================================
-       CLOSE CATEGORY POPUP
-    ===================================================== */
-
-    function closeCategory() {
-
-        categoryModal.classList.remove(
-            "active"
-        );
-
-        document.body.classList.remove(
-            "modal-open"
-        );
-
-    }
-
-
-    categoryModalClose.addEventListener(
-        "click",
-        closeCategory
-    );
-
-
-    categoryModalBack.addEventListener(
-        "click",
-        closeCategory
-    );
-
-
-    categoryModal.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                event.target ===
-                categoryModal
-            ) {
-
-                closeCategory();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       OPEN PRODUCT POPUP
-    ===================================================== */
-
-    function openProduct(product) {
 
         modalImage.src =
-            product.image;
+            data.image;
+
 
         modalImage.alt =
-            product.alt;
-
-
-        modalTitle.textContent =
-            product.title;
+            data.title;
 
 
         modalCategory.textContent =
-            product.category;
+            data.category.toUpperCase();
+
+
+        modalTitle.textContent =
+            data.title;
 
 
         modalDescription.textContent =
-            descriptions[
-                product.title
-            ] ||
-            "A quality healthcare solution from OYA Healthcare.";
+            data.description;
 
-
-        /* WhatsApp */
 
         const message =
-            "Hi OYA Healthcare, " +
+            "Hi OYA Health Care, " +
             "I am interested in " +
-            product.title +
+            data.title +
             ". Please share details, pricing and availability.";
 
 
@@ -502,80 +780,108 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /*
-         * Close category popup
-         * before opening product popup.
-         */
-
-        categoryModal.classList.remove(
-            "active"
-        );
-
-
-        /* Open product popup */
-
         productModal.classList.add(
             "active"
         );
+
 
         productModal.setAttribute(
             "aria-hidden",
             "false"
         );
 
+
+        document.body.style.overflow =
+            "hidden";
+
     }
+
+
+
+    /* =====================================================
+       PRODUCT CLICK SUPPORT
+    ===================================================== */
+
+    originalProducts.forEach(
+        function (product) {
+
+            product.addEventListener(
+                "click",
+                function () {
+
+                    openProductPopup(
+                        product
+                    );
+
+                }
+            );
+
+        }
+    );
+
 
 
     /* =====================================================
        CLOSE PRODUCT POPUP
     ===================================================== */
 
-    function closeProduct() {
+    function closeProductPopup() {
 
         productModal.classList.remove(
             "active"
         );
+
 
         productModal.setAttribute(
             "aria-hidden",
             "true"
         );
 
-        document.body.classList.remove(
-            "modal-open"
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    if (modalClose) {
+
+        modalClose.addEventListener(
+            "click",
+            closeProductPopup
         );
 
     }
 
 
-    modalClose.addEventListener(
-        "click",
-        closeProduct
-    );
+    /* ================================================
+       CLICK OUTSIDE POPUP
+    ================================================= */
 
+    if (productModal) {
 
-    /* Click outside */
+        productModal.addEventListener(
+            "click",
+            function (event) {
 
-    productModal.addEventListener(
-        "click",
-        function (event) {
+                if (
+                    event.target ===
+                    productModal
+                ) {
 
-            if (
-                event.target ===
-                productModal
-            ) {
+                    closeProductPopup();
 
-                closeProduct();
+                }
 
             }
+        );
 
-        }
-    );
+    }
 
 
-    /* =====================================================
-       ESC KEY
-    ===================================================== */
+    /* ================================================
+       ESCAPE
+    ================================================= */
 
     document.addEventListener(
         "keydown",
@@ -586,21 +892,13 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 if (
+                    productModal &&
                     productModal.classList.contains(
                         "active"
                     )
                 ) {
 
-                    closeProduct();
-
-                }
-                else if (
-                    categoryModal.classList.contains(
-                        "active"
-                    )
-                ) {
-
-                    closeCategory();
+                    closeProductPopup();
 
                 }
 
@@ -610,73 +908,115 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+
     /* =====================================================
-       MOBILE MENU
+       MOBILE SIDEBAR
     ===================================================== */
 
-    const menuButton =
-        document.querySelector(
-            ".menu-btn"
-        );
-
-    const navigation =
-        document.querySelector(
-            ".nav-links"
-        );
-
-
     if (
-        menuButton &&
-        navigation
+        mobileMenuButton &&
+        sidebar
     ) {
 
-        menuButton.addEventListener(
+        mobileMenuButton.addEventListener(
             "click",
             function () {
 
-                navigation.classList.toggle(
+                sidebar.classList.toggle(
                     "open"
                 );
 
 
-                menuButton.textContent =
-                    navigation.classList.contains(
+                if (
+                    sidebar.classList.contains(
                         "open"
                     )
-                        ? "×"
-                        : "☰";
+                ) {
+
+                    mobileMenuButton.textContent =
+                        "×";
+
+                }
+
+                else {
+
+                    mobileMenuButton.textContent =
+                        "☰";
+
+                }
 
             }
         );
 
-
-        navigation
-            .querySelectorAll("a")
-            .forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            navigation.classList.remove(
-                                "open"
-                            );
-
-                            menuButton.textContent =
-                                "☰";
-
-                        }
-                    );
-
-                }
-            );
-
     }
 
 
+
+    /* =====================================================
+       CLOSE MOBILE SIDEBAR OUTSIDE
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !sidebar ||
+                !mobileMenuButton
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                !sidebar.classList.contains(
+                    "open"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                sidebar.contains(
+                    event.target
+                ) ||
+                mobileMenuButton.contains(
+                    event.target
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            sidebar.classList.remove(
+                "open"
+            );
+
+
+            mobileMenuButton.textContent =
+                "☰";
+
+        }
+    );
+
+
+
+    /* =====================================================
+       START WEBSITE
+    ===================================================== */
+
+    showMainCatalogue();
+
+
     console.log(
-        "OYA Healthcare two-level popup system ready."
+        "OYA Health Care catalogue ready."
     );
 
 });
