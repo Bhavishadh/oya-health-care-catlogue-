@@ -5,87 +5,111 @@
 
 
 /* =====================================================
-   DATA
+   CATEGORY DATA
 ===================================================== */
 
 const categories = [
 
+    /* =================================================
+       01 HOSPITAL FURNITURE
+    ================================================= */
+
     {
         id: "hospital-furniture",
 
-        title: "Hospital Furniture",
+        name: "Hospital Furniture",
+
+        category: "Hospital Furniture",
+
+        image: "images/hospitalbed.webp",
 
         description:
             "Hospital beds and furniture designed for patient care and healthcare requirements.",
 
-        image: "images/hospitalbed.webp",
-
         products: [
 
             {
-                id: "hospital-bed",
-
-                title: "Hospital Bed",
+                name: "Hospital Bed",
 
                 image: "images/hospitalbed.webp",
 
-                images: [
-                    "images/hospitalbed.webp",
-                    "images/semi bed.png",
-                    "images/foldingbed.png",
-                    "images/fowlerbed.png"
-                ],
-
                 description:
-                    "Hospital bed designed for patient care, comfort and healthcare requirements."
+                    "Hospital bed designed for patient comfort, care and healthcare requirements.",
+
+                size:
+                    "Standard Hospital Bed"
             },
 
             {
-                id: "semi-fowler-bed",
-
-                title: "Semi Fowler Bed",
+                name: "Semi Fowler Hospital Bed",
 
                 image: "images/semi bed.png",
 
-                images: [
-                    "images/semi bed.png",
-                    "images/hospitalbed.webp"
-                ],
-
                 description:
-                    "Semi Fowler hospital bed designed for comfortable patient positioning."
+                    "Semi Fowler hospital bed designed for comfortable patient positioning.",
+
+                size:
+                    "Standard Hospital Bed"
             },
 
             {
-                id: "folding-bed",
-
-                title: "Folding Bed",
-
-                image: "images/foldingbed.png",
-
-                images: [
-                    "images/foldingbed.png",
-                    "images/hospitalbed.webp"
-                ],
-
-                description:
-                    "Practical folding hospital bed for healthcare and patient-care environments."
-            },
-
-            {
-                id: "fowler-bed",
-
-                title: "Fowler Bed",
+                name: "Fowler Hospital Bed",
 
                 image: "images/fowlerbed.png",
 
-                images: [
-                    "images/fowlerbed.png",
-                    "images/hospitalbed.webp"
-                ],
+                description:
+                    "Fowler hospital bed designed for flexible patient positioning and patient care.",
+
+                size:
+                    "Standard Hospital Bed"
+            },
+
+            {
+                name: "2 Function Hospital Bed",
+
+                image: "images/2fbed.png",
 
                 description:
-                    "Fowler hospital bed designed for patient comfort and positioning."
+                    "2-function hospital bed suitable for everyday patient-care requirements.",
+
+                size:
+                    "2 Function"
+            },
+
+            {
+                name: "3 Function Hospital Bed",
+
+                image: "images/3fbed.png",
+
+                description:
+                    "3-function hospital bed designed for flexible healthcare requirements.",
+
+                size:
+                    "3 Function"
+            },
+
+            {
+                name: "4 Function Hospital Bed",
+
+                image: "images/4fbed.png",
+
+                description:
+                    "4-function hospital bed designed for professional healthcare environments.",
+
+                size:
+                    "4 Function"
+            },
+
+            {
+                name: "Folding Hospital Bed",
+
+                image: "images/foldingbed.png",
+
+                description:
+                    "Folding hospital bed designed for convenient healthcare use.",
+
+                size:
+                    "Folding"
             }
 
         ]
@@ -93,138 +117,57 @@ const categories = [
 
 
     /* =================================================
-       OXYGEN CYLINDER
+       02 OXYGEN EQUIPMENT
     ================================================= */
 
     {
-        id: "oxygen-cylinder",
+        id: "oxygen-equipment",
 
-        title: "Oxygen Cylinder",
+        name: "Oxygen Equipment",
 
-        description:
-            "Oxygen cylinders and accessories for medical oxygen requirements.",
-
-        image: "images/oxy10ltr.png",
-
-        products: [
-
-            {
-                id: "oxygen-cylinder-5",
-
-                title: "Oxygen Cylinder 5 Litre",
-
-                image: "images/oxy5ltr.png",
-
-                images: [
-                    "images/oxy5ltr.png",
-                    "images/oxy10ltr.png"
-                ],
-
-                description:
-                    "Medical oxygen cylinder designed for healthcare and home-care oxygen requirements."
-            },
-
-            {
-                id: "oxygen-cylinder-10",
-
-                title: "Oxygen Cylinder 10 Litre",
-
-                image: "images/oxy10ltr.png",
-
-                images: [
-                    "images/oxy10ltr.png",
-                    "images/oxy5ltr.png"
-                ],
-
-                description:
-                    "10 litre oxygen cylinder suitable for medical oxygen applications."
-            },
-
-            {
-                id: "oxygen-cylinder-accessory",
-
-                title: "Oxygen Cylinder With Regulator",
-
-                image: "images/oxy10ltr.png",
-
-                images: [
-                    "images/oxy10ltr.png",
-                    "images/oxy5ltr.png"
-                ],
-
-                description:
-                    "Oxygen cylinder setup with regulator for controlled oxygen delivery."
-            }
-
-        ]
-    },
-
-
-    /* =================================================
-       OXYGEN CONCENTRATOR
-    ================================================= */
-
-    {
-        id: "oxygen-concentrator",
-
-        title: "Oxygen Concentrator",
-
-        description:
-            "Oxygen concentrators designed for convenient oxygen support at home and healthcare environments.",
+        category: "Oxygen",
 
         image: "images/concentrator.webp",
 
+        description:
+            "Oxygen cylinders and concentrators for healthcare and home-care requirements.",
+
         products: [
 
             {
-                id: "oxygen-concentrator",
+                name: "Oxygen Cylinder 5 Litre",
 
-                title: "Oxygen Concentrator",
+                image: "images/oxy5ltr.png",
+
+                description:
+                    "5 litre oxygen cylinder suitable for healthcare requirements.",
+
+                size:
+                    "5 Litre"
+            },
+
+            {
+                name: "Oxygen Cylinder 10 Litre",
+
+                image: "images/oxy10ltr.png",
+
+                description:
+                    "10 litre oxygen cylinder suitable for medical and healthcare requirements.",
+
+                size:
+                    "10 Litre"
+            },
+
+            {
+                name: "Oxygen Concentrator",
 
                 image: "images/concentrator.webp",
 
-                images: [
-                    "images/concentrator.webp",
-                    "images/c1.png",
-                    "images/c2.png"
-                ],
-
                 description:
-                    "Oxygen concentrator designed to provide convenient oxygen support for home healthcare."
-            },
+                    "Oxygen concentrator suitable for healthcare and home-care requirements.",
 
-            {
-                id: "oxygen-concentrator-2",
-
-                title: "Portable Oxygen Concentrator",
-
-                image: "images/c1.png",
-
-                images: [
-                    "images/c1.png",
-                    "images/c2.png",
-                    "images/concentrator.webp"
-                ],
-
-                description:
-                    "Compact oxygen concentrator suitable for home healthcare and patient support."
-            },
-
-            {
-                id: "oxygen-concentrator-3",
-
-                title: "Oxygen Concentrator System",
-
-                image: "images/c2.png",
-
-                images: [
-                    "images/c2.png",
-                    "images/c1.png",
-                    "images/concentrator.webp"
-                ],
-
-                description:
-                    "Oxygen concentrator system designed for reliable oxygen support."
+                size:
+                    "5 Liter to 10 Liter"
             }
 
         ]
@@ -232,171 +175,321 @@ const categories = [
 
 
     /* =================================================
-       WHEELCHAIRS
+       03 WHEELCHAIRS
     ================================================= */
 
     {
         id: "wheelchairs",
 
-        title: "Wheelchairs",
+        name: "Wheelchairs",
+
+        category: "Wheelchair",
+
+        image: "images/w1.png",
 
         description:
             "Mobility solutions designed for comfortable patient movement and support.",
 
-        image: "images/w1.png",
-
         products: [
 
             {
-                id: "wheelchair",
-
-                title: "Wheelchair",
+                name: "Standard Wheelchair",
 
                 image: "images/w1.png",
 
-                images: [
-                    "images/w1.png"
-                ],
+                description:
+                    "Standard manual wheelchair designed for everyday mobility."
+            },
+
+            {
+                name: "Folding Wheelchair",
+
+                image: "images/w2.png",
 
                 description:
-                    "Comfortable wheelchair designed for patient mobility and everyday support."
+                    "Folding wheelchair designed for convenient transportation and storage."
+            },
+
+            {
+                name: "Commode Wheelchair",
+
+                image: "images/w3.png",
+
+                description:
+                    "Commode wheelchair designed for additional patient-care convenience."
+            },
+
+            {
+                name: "Reclining Wheelchair",
+
+                image: "images/w4.png",
+
+                description:
+                    "Reclining wheelchair designed for enhanced patient comfort."
             }
+
         ]
     },
 
 
     /* =================================================
-       PATIENT MONITORING
+       04 CPAP MACHINES
+    ================================================= */
+
+    {
+        id: "cpap-machines",
+
+        name: "CPAP Machines",
+
+        category: "CPAP",
+
+        image: "images/c1.png",
+
+        description:
+            "CPAP equipment designed for suitable sleep-care requirements.",
+
+        products: [
+
+            {
+                name: "CPAP Machine",
+
+                image: "images/c1.png",
+
+                description:
+                    "CPAP machine designed for suitable sleep-care requirements."
+            },
+
+            {
+                name: "Auto CPAP Machine",
+
+                image: "images/c2.png",
+
+                description:
+                    "Auto CPAP machine designed for convenient sleep-care use."
+            },
+
+            {
+                name: "Portable CPAP Machine",
+
+                image: "images/c3.png",
+
+                description:
+                    "Portable CPAP equipment designed for convenient use."
+            }
+
+        ]
+    },
+
+
+    /* =================================================
+       05 BIPAP MACHINES
+    ================================================= */
+
+    {
+        id: "bipap-machines",
+
+        name: "BiPAP Machines",
+
+        category: "BiPAP",
+
+        image: "images/b1.png",
+
+        description:
+            "Bi-level respiratory-support equipment for suitable healthcare requirements.",
+
+        products: [
+
+            {
+                name: "BiPAP Machine",
+
+                image: "images/b1.png",
+
+                description:
+                    "BiPAP machine designed for suitable respiratory-support requirements."
+            },
+
+            {
+                name: "Portable BiPAP Machine",
+
+                image: "images/b2.png",
+
+                description:
+                    "Portable BiPAP equipment designed for convenient use."
+            }
+
+        ]
+    },
+
+
+    /* =================================================
+       06 MOBILITY AIDS
+    ================================================= */
+
+    {
+        id: "mobility-aids",
+
+        name: "Mobility Aids",
+
+        category: "Mobility Aids",
+
+        image: "images/wl1.png",
+
+        description:
+            "Walking aids designed to provide everyday mobility support.",
+
+        products: [
+
+            {
+                name: "Walking Walker",
+
+                image: "images/wl1.png",
+
+                description:
+                    "Walking support designed for everyday mobility and stability."
+            },
+
+            {
+                name: "Folding Walker",
+
+                image: "images/wl2.png",
+
+                description:
+                    "Folding walker designed for convenient storage and transportation."
+            },
+
+            {
+                name: "Adjustable Walker",
+
+                image: "images/wl3.png",
+
+                description:
+                    "Adjustable walking support designed for everyday mobility."
+            }
+
+        ]
+    },
+
+
+    /* =================================================
+       07 PATIENT MONITORING
     ================================================= */
 
     {
         id: "patient-monitoring",
 
-        title: "Patient Monitoring",
+        name: "Patient Monitoring",
+
+        category: "Patient Monitoring",
+
+        image: "images/pm.png",
 
         description:
             "Equipment designed for suitable patient monitoring requirements.",
 
-        image: "images/pm.png",
-
         products: [
 
             {
-                id: "patient-monitor",
-
-                title: "Patient Monitor",
+                name: "Patient Monitor",
 
                 image: "images/pm.png",
 
-                images: [
-                    "images/pm.png"
-                ],
-
                 description:
-                    "Patient monitoring equipment designed for healthcare environments."
+                    "Patient monitoring equipment designed for healthcare requirements."
             }
+
         ]
     },
 
 
     /* =================================================
-       AMBULANCE
-    ================================================= */
-
-    {
-        id: "emergency-care",
-
-        title: "Emergency Care",
-
-        description:
-            "Emergency transportation and urgent patient-care support.",
-
-        image: "images/amb.png",
-
-        products: [
-
-            {
-                id: "ambulance",
-
-                title: "Ambulance",
-
-                image: "images/amb.png",
-
-                images: [
-                    "images/amb.png"
-                ],
-
-                description:
-                    "Emergency transportation solution for urgent patient-care requirements."
-            }
-        ]
-    },
-
-
-    /* =================================================
-       CRITICAL CARE
+       08 CRITICAL CARE
     ================================================= */
 
     {
         id: "critical-care",
 
-        title: "Critical Care",
+        name: "Critical Care",
+
+        category: "Critical Care",
+
+        image: "images/venti.png",
 
         description:
             "Respiratory-support equipment for suitable critical-care environments.",
 
-        image: "images/venti.png",
-
         products: [
 
             {
-                id: "ventilator",
-
-                title: "Ventilator",
+                name: "ICU Ventilator",
 
                 image: "images/venti.png",
 
-                images: [
-                    "images/venti.png"
-                ],
-
                 description:
-                    "Critical-care respiratory support equipment."
+                    "Respiratory-support equipment for appropriate critical-care environments."
             }
+
         ]
     },
 
 
     /* =================================================
-       DIAGNOSTIC
+       09 DIAGNOSTICS
     ================================================= */
 
     {
-        id: "diagnostic-equipment",
+        id: "diagnostics",
 
-        title: "Diagnostic Equipment",
+        name: "Diagnostics",
+
+        category: "Diagnostics",
+
+        image: "images/pu.png",
 
         description:
             "Equipment designed for basic patient measurements and diagnostics.",
 
-        image: "images/pu.png",
+        products: [
+
+            {
+                name: "Pulse Oximeter",
+
+                image: "images/pu.png",
+
+                description:
+                    "Compact diagnostic equipment designed for basic patient measurements."
+            }
+
+        ]
+    },
+
+
+    /* =================================================
+       10 EMERGENCY CARE
+    ================================================= */
+
+    {
+        id: "emergency-care",
+
+        name: "Emergency Care",
+
+        category: "Emergency",
+
+        image: "images/amb.png",
+
+        description:
+            "Emergency transportation and urgent patient-care support.",
 
         products: [
 
             {
-                id: "diagnostic-device",
+                name: "Ambulance Service",
 
-                title: "Diagnostic Equipment",
-
-                image: "images/pu.png",
-
-                images: [
-                    "images/pu.png"
-                ],
+                image: "images/amb.png",
 
                 description:
-                    "Diagnostic equipment designed for basic patient measurements."
+                    "Emergency transportation support for urgent patient-care requirements."
             }
+
         ]
     }
 
@@ -412,66 +505,41 @@ const mainContent =
 
 
 /* =====================================================
-   MOBILE MENU
-===================================================== */
-
-function toggleMobileMenu() {
-
-    const menu =
-        document.getElementById("mobileMenu");
-
-    menu.classList.toggle("open");
-}
-
-
-function closeMobileMenu() {
-
-    const menu =
-        document.getElementById("mobileMenu");
-
-    menu.classList.remove("open");
-}
-
-
-/* =====================================================
    HOME PAGE
 ===================================================== */
 
 function showHome() {
 
-    closeMobileMenu();
+    if (!mainContent) return;
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 
     mainContent.innerHTML = `
 
-        <!-- =========================================
+        <!-- =============================================
              HOME INFORMATION
-        ========================================== -->
+        ============================================== -->
 
-        <section class="home-info" id="about">
-
-            <!--
-                IMPORTANT:
-                NO SECOND LOGO HERE.
-
-                The only mobile logo is in the header.
-            -->
+        <section
+            class="home-info"
+            id="about"
+        >
 
             <h1 class="home-title">
                 Oya Health Care
             </h1>
 
+
             <p class="home-description">
-                OYA Health Care – Trusted Medical Equipment & Home Healthcare
-                Solutions OYA Health Care is a leading supplier of high-quality
-                medical equipment, hospital supplies, and home healthcare
-                products in India. We are committed to providing reliable,
+
+                OYA Health Care – Trusted Medical Equipment &
+                Home Healthcare Solutions OYA Health Care is a
+                leading supplier of high-quality medical equipment,
+                hospital supplies, and home healthcare products
+                in India. We are committed to providing reliable,
                 affordable and quality healthcare solutions.
+
             </p>
+
 
             <div class="home-contact">
 
@@ -482,10 +550,12 @@ function showHome() {
                     </span>
 
                     <span>
-                        Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
+                        Shop no 9 Shiv Vithai Galaxy near SBI Bank
+                        Thakurli
                     </span>
 
                 </div>
+
 
                 <div class="home-contact-item">
 
@@ -504,56 +574,83 @@ function showHome() {
         </section>
 
 
-        <!-- =========================================
+        <!-- =============================================
              CATALOGUE
-        ========================================== -->
+        ============================================== -->
 
         <section id="catalogue">
 
             <div class="page-heading">
 
-                <div class="eyebrow">
+                <span class="eyebrow">
                     CATALOGUE
-                </div>
+                </span>
 
                 <div class="heading-line"></div>
 
             </div>
 
 
-            <div class="category-grid">
-
-                ${categories.map(createCategoryCard).join("")}
+            <div
+                class="category-grid"
+                id="categoryGrid"
+            >
 
             </div>
 
         </section>
 
     `;
+
+
+    renderCategories();
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
 /* =====================================================
-   CATEGORY CARD
+   RENDER CATEGORY CARDS
 ===================================================== */
 
-function createCategoryCard(category) {
+function renderCategories() {
 
-    return `
+    const grid =
+        document.getElementById("categoryGrid");
 
-        <article
-            class="category-card"
-            onclick="openCategory('${category.id}')"
-        >
+
+    if (!grid) return;
+
+
+    grid.innerHTML = "";
+
+
+    categories.forEach(category => {
+
+        const card =
+            document.createElement("button");
+
+
+        card.type = "button";
+
+
+        card.className =
+            "category-card";
+
+
+        card.innerHTML = `
 
             <div class="category-image-box">
 
                 <img
                     src="${category.image}"
-                    alt="${category.title}"
-                    class="category-image"
+                    alt="${category.name}"
                     loading="lazy"
-                    onerror="this.style.display='none'"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
@@ -561,13 +658,15 @@ function createCategoryCard(category) {
 
             <div class="category-info">
 
-                <div class="category-label">
+                <span class="category-label">
                     OYA COLLECTION
-                </div>
+                </span>
+
 
                 <h2 class="category-title">
-                    ${category.title}
+                    ${category.name}
                 </h2>
+
 
                 <p class="category-description">
                     ${category.description}
@@ -577,11 +676,18 @@ function createCategoryCard(category) {
                 <div class="category-bottom">
 
                     <span class="product-count">
+
                         ${category.products.length}
-                        ${category.products.length === 1 ? "product" : "products"}
+                        ${
+                            category.products.length === 1
+                                ? " product"
+                                : " products"
+                        }
+
                     </span>
 
-                    <span class="arrow">
+
+                    <span class="category-arrow">
                         ↗
                     </span>
 
@@ -589,52 +695,41 @@ function createCategoryCard(category) {
 
             </div>
 
-        </article>
+        `;
 
-    `;
+
+        card.addEventListener(
+            "click",
+            () => openCategory(category)
+        );
+
+
+        grid.appendChild(card);
+
+    });
+
 }
 
 
 /* =====================================================
-   OPEN CATEGORY
+   CATEGORY PAGE
 ===================================================== */
 
-function openCategory(categoryId) {
+function openCategory(category) {
 
-    closeMobileMenu();
+    if (!mainContent) return;
 
-    const category =
-        categories.find(
-            item => item.id === categoryId
-        );
-
-    if (!category) {
-        return;
-    }
-
-    /*
-       IMPORTANT:
-       We REPLACE mainContent completely.
-
-       Therefore:
-       - company information does NOT repeat
-       - catalogue does NOT repeat
-       - previous back buttons do NOT multiply
-    */
 
     mainContent.innerHTML = `
 
         <section class="category-page">
 
-            <div class="page-heading">
+            <h1 class="category-page-title">
+                ${category.name.toUpperCase()}
+            </h1>
 
-                <div class="category-page-title">
-                    ${category.title.toUpperCase()}
-                </div>
 
-                <div class="heading-line"></div>
-
-            </div>
+            <div class="category-page-line"></div>
 
 
             <button
@@ -645,20 +740,20 @@ function openCategory(categoryId) {
             </button>
 
 
-            <div class="product-grid">
-
-                ${category.products
-                    .map(product =>
-                        createProductCard(product, category)
-                    )
-                    .join("")
-                }
+            <div
+                class="product-grid"
+                id="productGrid"
+            >
 
             </div>
 
         </section>
 
     `;
+
+
+    renderProducts(category);
+
 
     window.scrollTo({
         top: 0,
@@ -668,30 +763,43 @@ function openCategory(categoryId) {
 
 
 /* =====================================================
-   PRODUCT CARD
+   RENDER PRODUCTS
 ===================================================== */
 
-function createProductCard(product, category) {
+function renderProducts(category) {
 
-    return `
+    const grid =
+        document.getElementById("productGrid");
 
-        <article
-            class="product-card"
-            onclick="
-                openProduct(
-                    '${category.id}',
-                    '${product.id}'
-                )
-            "
-        >
+
+    if (!grid) return;
+
+
+    grid.innerHTML = "";
+
+
+    category.products.forEach(product => {
+
+        const card =
+            document.createElement("button");
+
+
+        card.type = "button";
+
+
+        card.className =
+            "product-card";
+
+
+        card.innerHTML = `
 
             <div class="product-image-box">
 
                 <img
                     src="${product.image}"
-                    alt="${product.title}"
-                    class="product-image"
+                    alt="${product.name}"
                     loading="lazy"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
@@ -699,13 +807,15 @@ function createProductCard(product, category) {
 
             <div class="product-card-info">
 
-                <div class="product-category">
-                    ${category.title.toUpperCase()}
-                </div>
+                <span class="product-category">
+                    ${category.category}
+                </span>
+
 
                 <h2 class="product-title">
-                    ${product.title}
+                    ${product.name}
                 </h2>
+
 
                 <p class="product-description">
                     ${product.description}
@@ -713,209 +823,368 @@ function createProductCard(product, category) {
 
             </div>
 
-        </article>
+        `;
 
-    `;
+
+        card.addEventListener(
+            "click",
+            () => openProduct(product, category)
+        );
+
+
+        grid.appendChild(card);
+
+    });
+
 }
 
 
 /* =====================================================
-   OPEN PRODUCT
+   PRODUCT DETAIL PAGE
 ===================================================== */
 
-function openProduct(categoryId, productId) {
+function openProduct(product, category) {
 
-    closeMobileMenu();
-
-    const category =
-        categories.find(
-            item => item.id === categoryId
-        );
-
-    if (!category) {
-        return;
-    }
-
-    const product =
-        category.products.find(
-            item => item.id === productId
-        );
-
-    if (!product) {
-        return;
-    }
+    if (!mainContent) return;
 
 
     /*
-       IMPORTANT:
-       Again we completely replace the content.
-
-       This prevents:
-       Back to Catalogue
-       Back to Catalogue
-       Back to Catalogue
-       Back to Catalogue
-
-       from appearing repeatedly.
+       At the moment every product has one main image.
+       If you later add more images, put them inside
+       product.gallery.
     */
+
+    const gallery =
+        product.gallery &&
+        product.gallery.length
+            ? product.gallery
+            : [product.image];
+
 
     mainContent.innerHTML = `
 
         <section class="product-detail">
 
+
+            <!-- =========================================
+                 BACK
+            ========================================== -->
+
             <div class="product-detail-top">
 
                 <button
                     class="detail-back"
-                    onclick="openCategory('${category.id}')"
+                    onclick="openCategoryById('${category.id}')"
                 >
-                    ← Back to ${category.title}
+                    ← Back
                 </button>
 
             </div>
 
 
+            <!-- =========================================
+                 PRODUCT
+            ========================================== -->
+
             <div class="product-detail-layout">
 
 
                 <!-- =====================================
-                     GALLERY
+                     LEFT
                 ====================================== -->
 
                 <div class="detail-gallery">
+
 
                     <div class="main-product-image-box">
 
                         <img
                             id="mainProductImage"
-                            src="${product.images[0]}"
-                            alt="${product.title}"
                             class="main-product-image"
+                            src="${gallery[0]}"
+                            alt="${product.name}"
                         >
 
                     </div>
 
 
-                    <div class="thumbnail-row">
-
-                        ${product.images
-                            .map(
-                                (image, index) => `
-                                    <button
-                                        class="
-                                            thumbnail
-                                            ${index === 0 ? "active" : ""}
-                                        "
-                                        onclick="
-                                            changeProductImage(
-                                                '${image}',
-                                                this
-                                            )
-                                        "
-                                    >
-
-                                        <img
-                                            src="${image}"
-                                            alt="${product.title}"
-                                        >
-
-                                    </button>
-                                `
-                            )
-                            .join("")
-                        }
+                    <div
+                        class="thumbnail-row"
+                        id="thumbnailRow"
+                    >
 
                     </div>
+
 
                 </div>
 
 
                 <!-- =====================================
-                     PRODUCT INFORMATION
+                     RIGHT
                 ====================================== -->
 
                 <div class="product-detail-info">
 
+
                     <div class="detail-category">
-                        ${category.title.toUpperCase()}
+
+                        ${category.category}
+
                     </div>
 
+
                     <h1 class="detail-title">
-                        ${product.title}
+
+                        ${product.name}
+
                     </h1>
 
+
                     <p class="detail-description">
+
                         ${product.description}
+
                     </p>
+
 
                     <div class="detail-line"></div>
 
-                    <span class="detail-label">
-                        ENQUIRY
-                    </span>
+
+                    ${
+                        product.size
+                            ? `
+
+                                <span class="detail-label">
+                                    SIZE
+                                </span>
+
+                                <div class="size-option">
+                                    ${product.size}
+                                </div>
+
+                              `
+                            : ""
+                    }
+
+
+                    ${
+                        product.specification
+                            ? `
+
+                                <div class="detail-line"></div>
+
+                                <span class="detail-label">
+                                    SPECIFICATION
+                                </span>
+
+                                <p class="detail-description">
+                                    ${product.specification}
+                                </p>
+
+                              `
+                            : ""
+                    }
+
 
                     <div class="enquiry-buttons">
+
 
                         <a
                             href="tel:7021235223"
                             class="enquiry-button call-button"
                         >
-                            Call OYA
+                            Call Now
                         </a>
+
 
                         <a
                             href="https://wa.me/917021235223"
-                            class="enquiry-button whatsapp-button"
                             target="_blank"
+                            rel="noopener"
+                            class="enquiry-button whatsapp-button"
                         >
-                            WhatsApp
+                            WhatsApp Enquiry
                         </a>
+
 
                     </div>
 
+
                 </div>
 
+
             </div>
+
 
         </section>
 
     `;
 
+
+    renderThumbnails(gallery);
+
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 
 /* =====================================================
-   CHANGE PRODUCT IMAGE
+   PRODUCT THUMBNAILS
 ===================================================== */
 
-function changeProductImage(image, button) {
+function renderThumbnails(gallery) {
+
+    const row =
+        document.getElementById("thumbnailRow");
+
 
     const mainImage =
-        document.getElementById(
-            "mainProductImage"
+        document.getElementById("mainProductImage");
+
+
+    if (!row || !mainImage) return;
+
+
+    row.innerHTML = "";
+
+
+    gallery.forEach(
+        (image, index) => {
+
+            const thumbnail =
+                document.createElement("button");
+
+
+            thumbnail.type =
+                "button";
+
+
+            thumbnail.className =
+                "thumbnail";
+
+
+            if (index === 0) {
+
+                thumbnail.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            thumbnail.innerHTML = `
+
+                <img
+                    src="${image}"
+                    alt="Product image"
+                >
+
+            `;
+
+
+            thumbnail.addEventListener(
+                "click",
+                () => {
+
+                    mainImage.src =
+                        image;
+
+
+                    document
+                        .querySelectorAll(
+                            ".thumbnail"
+                        )
+                        .forEach(
+                            item =>
+                                item.classList.remove(
+                                    "active"
+                                )
+                        );
+
+
+                    thumbnail.classList.add(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            row.appendChild(
+                thumbnail
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   OPEN CATEGORY BY ID
+===================================================== */
+
+function openCategoryById(id) {
+
+    const category =
+        categories.find(
+            item => item.id === id
         );
 
-    if (!mainImage) {
+
+    if (!category) {
+
+        showHome();
+
         return;
     }
 
-    mainImage.src = image;
+
+    openCategory(category);
+}
 
 
-    document
-        .querySelectorAll(".thumbnail")
-        .forEach(item => {
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-            item.classList.remove("active");
+function toggleMobileMenu() {
 
-        });
+    const menu =
+        document.getElementById(
+            "mobileMenu"
+        );
 
 
-    button.classList.add("active");
+    if (!menu) return;
+
+
+    menu.classList.toggle(
+        "open"
+    );
+
+}
+
+
+function closeMobileMenu() {
+
+    const menu =
+        document.getElementById(
+            "mobileMenu"
+        );
+
+
+    if (!menu) return;
+
+
+    menu.classList.remove(
+        "open"
+    );
+
 }
 
 
@@ -927,62 +1196,62 @@ function scrollToCatalogue() {
 
     showHome();
 
-    setTimeout(() => {
 
-        const catalogue =
-            document.getElementById("catalogue");
+    setTimeout(
+        () => {
 
-        if (catalogue) {
+            const catalogue =
+                document.getElementById(
+                    "catalogue"
+                );
 
-            catalogue.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
 
-        }
+            if (catalogue) {
 
-    }, 100);
+                catalogue.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        },
+        100
+    );
+
 }
 
 
 /* =====================================================
-   SCROLL TO ABOUT
+   ABOUT
 ===================================================== */
 
 function scrollToAbout() {
 
     showHome();
 
-    setTimeout(() => {
 
-        const about =
-            document.getElementById("about");
+    setTimeout(
+        () => {
 
-        if (about) {
+            const about =
+                document.getElementById(
+                    "about"
+                );
 
-            about.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
 
-        }
+            if (about) {
 
-    }, 100);
+                about.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        },
+        100
+    );
+
 }
-
-
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        showHome();
-
-    }
-);
 
 
 /* =====================================================
@@ -991,17 +1260,22 @@ document.addEventListener(
 
 document.addEventListener(
     "click",
-    function (event) {
+    event => {
 
         const menu =
-            document.getElementById("mobileMenu");
+            document.getElementById(
+                "mobileMenu"
+            );
+
 
         const button =
-            document.getElementById("menuButton");
+            document.getElementById(
+                "menuButton"
+            );
 
-        if (!menu || !button) {
-            return;
-        }
+
+        if (!menu || !button) return;
+
 
         if (
             menu.classList.contains("open") &&
@@ -1009,9 +1283,29 @@ document.addEventListener(
             !button.contains(event.target)
         ) {
 
-            menu.classList.remove("open");
+            menu.classList.remove(
+                "open"
+            );
 
         }
+
+    }
+);
+
+
+/* =====================================================
+   START WEBSITE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        showHome();
+
+        console.log(
+            "OYA Health Care loaded successfully."
+        );
 
     }
 );
