@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Oya Health Care | Premium Healthcare Equipment</title>
 
@@ -13,30 +12,28 @@
 <body>
 
 <!-- =====================================================
-     MOBILE HEADER
+     HEADER
 ===================================================== -->
 
 <header class="mobile-header">
 
-    <button class="mobile-logo-button"
-            onclick="showHome()"
-            aria-label="Home">
+    <a href="#" onclick="showHome(); return false;" class="header-logo-link">
+        <img
+            src="images/logo%20(2).png"
+            alt="Oya Health Care"
+            class="header-logo"
+        >
+    </a>
 
-        <img src="images/logo%20(2).png"
-             alt="Oya Health Care"
-             class="mobile-logo">
-
-    </button>
-
-    <button class="menu-button"
-            id="menuButton"
-            onclick="toggleMobileMenu()"
-            aria-label="Menu">
-
+    <button
+        class="menu-button"
+        id="menuButton"
+        onclick="toggleMobileMenu()"
+        aria-label="Open menu"
+    >
         <span></span>
         <span></span>
         <span></span>
-
     </button>
 
 </header>
@@ -60,8 +57,7 @@
         About OYA
     </button>
 
-    <a href="tel:7021235223"
-       onclick="closeMobileMenu()">
+    <a href="tel:7021235223" onclick="closeMobileMenu();">
         Contact
     </a>
 
@@ -81,75 +77,47 @@
 
     <aside class="left-panel">
 
-        <div class="left-panel-top">
+        <div>
 
-            <button class="desktop-logo-button"
-                    onclick="showHome()">
+            <a href="#" onclick="showHome(); return false;">
+                <img
+                    src="images/logo%20(2).png"
+                    alt="Oya Health Care"
+                    class="desktop-logo"
+                >
+            </a>
 
-                <img src="images/logo%20(2).png"
-                     alt="Oya Health Care Logo"
-                     class="main-logo">
-
-            </button>
-
-
-            <h1>
-                Oya Health Care
-            </h1>
-
+            <h1>Oya Health Care</h1>
 
             <p class="company-description">
-                OYA Health Care – Trusted Medical Equipment &
-                Home Healthcare Solutions OYA Health Care is a
-                leading supplier of high-quality medical equipment,
-                hospital supplies, and home healthcare products
-                in India. We are committed to providing reliable,
+                OYA Health Care – Trusted Medical Equipment & Home Healthcare
+                Solutions OYA Health Care is a leading supplier of high-quality
+                medical equipment, hospital supplies, and home healthcare
+                products in India. We are committed to providing reliable,
                 affordable and quality healthcare solutions.
             </p>
 
-
             <div class="panel-line"></div>
 
-
             <div class="contact-item">
-
-                <span class="contact-icon">
-                    ⌖
-                </span>
-
+                <span>⌖</span>
                 <span>
-                    Shop no 9 Shiv Vithai Galaxy near SBI Bank
-                    Thakurli
+                    Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
                 </span>
-
             </div>
 
-
             <div class="contact-item">
-
-                <span class="contact-icon">
-                    ♧
-                </span>
-
+                <span>♧</span>
                 <a href="tel:7021235223">
                     7021235223
                 </a>
-
             </div>
 
         </div>
 
-
-        <div class="left-panel-bottom">
-
-            <strong>
-                OYA HEALTH CARE
-            </strong>
-
-            <span>
-                Healthcare • Medical Equipment
-            </span>
-
+        <div class="left-footer">
+            <strong>OYA HEALTH CARE</strong>
+            <span>Healthcare • Medical Equipment</span>
         </div>
 
     </aside>
@@ -159,10 +127,7 @@
          MAIN CONTENT
     ================================================= -->
 
-    <main class="main-content"
-          id="mainContent">
-
-    </main>
+    <main id="mainContent" class="main-content"></main>
 
 </div>
 
