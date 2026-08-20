@@ -1889,3 +1889,111 @@ a {
     }
 
 }
+/* =========================================================
+   PRODUCT IMAGES - NEVER CROP
+========================================================= */
+
+.category-image-box {
+    width: 100% !important;
+
+    height: 320px !important;
+
+    border-radius: 21px !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    position: relative !important;
+}
+
+.category-image-box img {
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: contain !important;
+
+    object-position: center center !important;
+
+    display: block !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   STOP IMAGE ZOOM ON HOVER
+========================================================= */
+
+.catalogue-category:hover
+.category-image-box img {
+    transform: none !important;
+}
+
+
+/* =========================================================
+   MOBILE - NEVER CROP IMAGES
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .category-image-box {
+        width: 100% !important;
+
+        height: 240px !important;
+
+        border-radius: 18px !important;
+
+        background: #ffffff !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        overflow: hidden !important;
+    }
+
+    .category-image-box img {
+        width: 100% !important;
+
+        height: 100% !important;
+
+        object-fit: contain !important;
+
+        object-position: center center !important;
+
+        transform: none !important;
+    }
+
+    .catalogue-category:hover
+    .category-image-box img {
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .category-image-box {
+        height: 205px !important;
+
+        border-radius: 16px !important;
+    }
+
+    .category-image-box img {
+        object-fit: contain !important;
+    }
+}
