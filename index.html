@@ -1,2369 +1,1400 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OYA Healthcare | Premium Healthcare Equipment</title>
+    <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Oya Health Care</title>
 
-<link rel="stylesheet" href="style.css">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-<header class="site-header">
-  <div class="nav-wrap">
 
-    <a href="#top" class="brand">
-      <img src="images/logo (2).png" alt="OYA Healthcare">
-    </a>
+<!-- =====================================================
+     MOBILE TOP BAR
+===================================================== -->
 
-    <nav class="nav-links">
-      <a href="#categories">Categories</a>
-      <a href="#about">Why OYA</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<header class="mobile-header">
 
-    <a href="#contact" class="nav-cta">Enquire Now ↗</a>
+    <img
+        src="images/logo (2).png"
+        alt="Oya Health Care"
+    >
 
-    <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
+    <button
+        id="mobileMenuButton"
+        class="mobile-menu-button"
+        type="button"
+    >
+        ☰
+    </button>
 
-  </div>
 </header>
 
 
-<main id="top">
-
 
 <!-- =====================================================
-     HERO
+     MAIN WEBSITE
 ===================================================== -->
 
-<section class="hero">
-
-  <div class="hero-copy">
-
-    <span class="eyebrow">
-      <i></i> PREMIUM HEALTHCARE EQUIPMENT
-    </span>
-
-    <h1>
-      Better care begins <em>with better equipment.</em>
-    </h1>
-
-    <p>
-      Premium medical equipment for hospitals, clinics and home healthcare —
-      selected for comfort, reliability and everyday care.
-    </p>
-
-    <div class="hero-actions">
-
-      <a href="#categories" class="primary-btn">
-        Explore Categories →
-      </a>
-
-      <a href="#contact" class="text-btn">
-        Talk to OYA ↗
-      </a>
-
-    </div>
-
-    <div class="hero-stats">
-
-      <div>
-        <strong>10</strong>
-        <span>Product<br>categories</span>
-      </div>
-
-      <div>
-        <strong>27+</strong>
-        <span>Healthcare<br>products</span>
-      </div>
-
-      <div>
-        <strong>24/7</strong>
-        <span>Enquiry<br>support</span>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="hero-visual">
-
-    <div class="hero-image-frame">
-
-      <span class="hero-label">
-        FEATURED · 01
-      </span>
-
-      <img
-        src="images/hospitalbed.webp"
-        alt="Hospital Bed"
-      >
-
-      <div class="hero-caption">
-
-        <small>
-          FEATURED COLLECTION
-        </small>
-
-        <strong>
-          Hospital Beds
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <div class="floating-card">
-
-      <span>✦</span>
-
-      <div>
-        <strong>Care, elevated.</strong>
-        <small>Quality • Comfort • Reliability</small>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     CATEGORY STRIP
-===================================================== -->
-
-<section class="category-strip">
-
-  <span>HOSPITALS</span>
-  <i>•</i>
-
-  <span>CLINICS</span>
-  <i>•</i>
-
-  <span>HOME CARE</span>
-  <i>•</i>
-
-  <span>DIAGNOSTICS</span>
-  <i>•</i>
-
-  <span>EMERGENCY CARE</span>
-
-</section>
-
-
-<!-- =====================================================
-     CATEGORY CARDS
-===================================================== -->
-
-<section class="catalogue" id="categories">
-
-  <div class="section-heading">
-
-    <div>
-
-      <span class="eyebrow">
-        <i></i> EXPLORE OUR COLLECTION
-      </span>
-
-      <h2>
-        Choose a category.<br>
-        <em>Then discover its products.</em>
-      </h2>
-
-    </div>
-
-    <p id="categoryInstruction">
-      Click one category to open its function/details and ONLY the products belonging to that category.
-    </p>
-
-  </div>
-
-
-  <div class="category-grid" id="categoryGrid">
+<div class="website-layout">
 
 
     <!-- =================================================
-         01 HOSPITAL FURNITURE
+         LEFT SIDEBAR
     ================================================== -->
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="hospital-furniture"
+    <aside
+        class="sidebar"
+        id="sidebar"
     >
 
-      <span class="category-number">01</span>
+        <div class="sidebar-inner">
 
-      <div class="category-image">
 
-        <img
-          src="images/hospitalbed.webp"
-          alt="Hospital Furniture"
-        >
+            <!-- LOGO -->
 
-      </div>
+            <div class="sidebar-logo">
 
-      <div class="category-body">
+                <img
+                    src="images/logo (2).png"
+                    alt="Oya Health Care"
+                >
 
-        <span>OYA COLLECTION</span>
+            </div>
 
-        <h3>
-          Hospital Furniture
-        </h3>
 
-        <p>
-          Manual beds, multi-function ICU beds,
-          and folding medical equipment.
-        </p>
 
-        <strong>
-          7 products <b>↗</b>
-        </strong>
+            <!-- TITLE -->
 
-      </div>
+            <h1>
+                Oya Health Care
+            </h1>
 
-    </button>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="company-description">
+
+                OYA Health Care – Trusted Medical Equipment
+                & Home Healthcare Solutions
+
+                OYA Health Care is a leading supplier of
+                high-quality medical equipment, hospital
+                supplies, and home healthcare products in India.
+
+                We are committed to providing reliable,
+                affordable and quality healthcare solutions.
+
+            </p>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="sidebar-divider"></div>
+
+
+
+            <!-- ADDRESS -->
+
+            <div class="sidebar-contact">
+
+                <div class="contact-row">
+
+                    <span class="contact-icon">
+                        ⌖
+                    </span>
+
+                    <span>
+                        Shop no 9 Shiv Vithai Galaxy
+                        near SBI Bank Thakurli
+                    </span>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="contact-row">
+
+                    <span class="contact-icon">
+                        ♧
+                    </span>
+
+                    <a href="tel:7021235223">
+                        7021235223
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <span>
+                    OYA HEALTH CARE
+                </span>
+
+                <small>
+                    Healthcare • Medical Equipment
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </aside>
+
 
 
     <!-- =================================================
-         02 OXYGEN EQUIPMENT
+         RIGHT CONTENT
     ================================================== -->
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="oxygen-equipment"
-    >
+    <main class="catalogue-area">
 
-      <span class="category-number">02</span>
 
-      <div class="category-image">
+        <!-- CATALOGUE HEADING -->
 
-        <img
-          src="images/concentrator.webp"
-          alt="Oxygen Equipment"
+        <section class="catalogue-header">
+
+            <div class="catalogue-title">
+
+                <span>
+                    CATALOGUE
+                </span>
+
+            </div>
+
+            <div class="catalogue-line"></div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCT CATALOGUE
+        ================================================== -->
+
+        <section
+            class="catalogue-grid"
+            id="catalogueGrid"
         >
 
-      </div>
 
-      <div class="category-body">
 
-        <span>OYA COLLECTION</span>
+            <!-- =================================================
+                 01 HOSPITAL FURNITURE
+            ================================================== -->
 
-        <h3>
-          Oxygen Equipment
-        </h3>
 
-        <p>
-          Medical-grade cylinders and
-          oxygen concentrators.
-        </p>
-
-        <strong>
-          3 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         03 WHEELCHAIRS
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="wheelchairs"
-    >
-
-      <span class="category-number">03</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/w1.png"
-          alt="Wheelchairs"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Wheelchairs
-        </h3>
-
-        <p>
-          Manual, reclining, foldable,
-          and commode wheelchairs.
-        </p>
-
-        <strong>
-          4 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         04 CPAP MACHINES
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="cpap-machines"
-    >
-
-      <span class="category-number">04</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/c1.png"
-          alt="CPAP Machines"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          CPAP Machines
-        </h3>
-
-        <p>
-          Sleep-care equipment for
-          suitable CPAP requirements.
-        </p>
-
-        <strong>
-          3 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         05 BIPAP MACHINES
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="bipap-machines"
-    >
-
-      <span class="category-number">05</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/b1.png"
-          alt="BiPAP Machines"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          BiPAP Machines
-        </h3>
-
-        <p>
-          Non-invasive respiratory-support
-          equipment.
-        </p>
-
-        <strong>
-          3 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         06 WALKERS
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="walkers"
-    >
-
-      <span class="category-number">06</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/wl1.png"
-          alt="Walkers"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Walkers
-        </h3>
-
-        <p>
-          Lightweight, folding and
-          adjustable walking aids.
-        </p>
-
-        <strong>
-          3 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         07 PATIENT MONITORING
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="patient-monitoring"
-    >
-
-      <span class="category-number">07</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/pm.png"
-          alt="Patient Monitoring"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Patient Monitoring
-        </h3>
-
-        <p>
-          Patient monitoring equipment for
-          vital signs and clinical observation.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         08 CRITICAL CARE
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="critical-care"
-    >
-
-      <span class="category-number">08</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/venti.png"
-          alt="Critical Care"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Critical Care
-        </h3>
-
-        <p>
-          Advanced respiratory support
-          equipment for critical care.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         09 DIAGNOSTIC EQUIPMENT
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="diagnostic-equipment"
-    >
-
-      <span class="category-number">09</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/pu.png"
-          alt="Diagnostic Equipment"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Diagnostic Equipment
-        </h3>
-
-        <p>
-          Essential equipment for basic
-          patient health measurements.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         10 EMERGENCY CARE
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="emergency-care"
-    >
-
-      <span class="category-number">10</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/amb.png"
-          alt="Emergency Care"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Emergency Care
-        </h3>
-
-        <p>
-          Emergency transportation and
-          urgent patient-care support.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     PRODUCTS SECTION
-===================================================== -->
-
-<section class="products-section" id="products">
-
-  <div class="selected-header">
-
-    <div>
-
-      <span class="eyebrow">
-        <i></i> SELECTED CATEGORY
-      </span>
-
-      <h2 id="selectedTitle">
-        Category
-      </h2>
-
-      <p id="selectedDescription">
-        Category description.
-      </p>
-
-    </div>
-
-    <button
-      id="backCategories"
-      class="back-categories"
-      type="button"
-    >
-      ← All Categories
-    </button>
-
-  </div>
-
-
-  <div class="products-heading">
-
-    <span>
-      PRODUCTS IN THIS CATEGORY
-    </span>
-
-    <small id="productCount"></small>
-
-  </div>
-
-
-  <div id="productArea">
-
-
-    <!-- =================================================
-         01 HOSPITAL FURNITURE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="hospital-furniture"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          01
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            HOSPITAL FURNITURE
-          </span>
-
-          <h3>
-            Hospital Furniture
-          </h3>
-
-          <p>
-            Manual beds, multi-function ICU beds,
-            and folding medical equipment.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Hospital Furniture"
-            src="images/hospitalbed.webp"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Manual Hospital Bed"
-              src="images/hospitalbed.webp"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="Manual Hospital Bed"
+                data-image="images/hospitalbed.webp"
+                data-description="A practical hospital bed designed for patient comfort, positioning and everyday healthcare use."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/hospitalbed.webp"
+                        alt="Manual Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              Manual Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        Manual Hospital Bed
+                    </h2>
+
+                    <p>
+                        Quality hospital bed for
+                        patient care and support.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Semi-Fowler Bed"
-              src="images/semi bed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="Semi-Fowler Bed"
+                data-image="images/semi bed.png"
+                data-description="A versatile semi-Fowler hospital bed designed for comfortable patient positioning."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/semi bed.png"
+                        alt="Semi-Fowler Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              Semi-Fowler Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        Semi-Fowler Bed
+                    </h2>
+
+                    <p>
+                        Comfortable positioning
+                        for everyday patient care.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Fowler Hospital Bed"
-              src="images/fowlerbed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="Fowler Hospital Bed"
+                data-image="images/fowlerbed.png"
+                data-description="A reliable Fowler hospital bed designed for flexible patient positioning and professional care."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/fowlerbed.png"
+                        alt="Fowler Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              Fowler Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        Fowler Hospital Bed
+                    </h2>
+
+                    <p>
+                        Flexible positioning for
+                        professional healthcare use.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="2 Function Hospital Bed"
-              src="images/2fbed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="2-Function Hospital Bed"
+                data-image="images/2fbed.png"
+                data-description="A functional hospital bed designed for dependable patient care."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/2fbed.png"
+                        alt="2 Function Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              2-Function Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        2-Function Hospital Bed
+                    </h2>
+
+                    <p>
+                        Practical hospital bed
+                        for everyday patient care.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="3 Function Hospital Bed"
-              src="images/3fbed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="3-Function Hospital Bed"
+                data-image="images/3fbed.png"
+                data-description="A multi-function hospital bed designed for flexible positioning."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/3fbed.png"
+                        alt="3 Function Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              3-Function Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        3-Function Hospital Bed
+                    </h2>
+
+                    <p>
+                        Multi-function design
+                        for flexible patient care.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="4 Function Hospital Bed"
-              src="images/4fbed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="4-Function Hospital Bed"
+                data-image="images/4fbed.png"
+                data-description="An advanced multi-function hospital bed for professional healthcare environments."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/4fbed.png"
+                        alt="4 Function Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              4-Function Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        4-Function Hospital Bed
+                    </h2>
+
+                    <p>
+                        Advanced positioning
+                        for professional healthcare.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Folding Hospital Bed"
-              src="images/foldingbed.png"
+            <article
+                class="catalogue-product"
+                data-category="Hospital Furniture"
+                data-title="Folding Hospital Bed"
+                data-image="images/foldingbed.png"
+                data-description="A practical folding hospital bed designed for flexible healthcare requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/foldingbed.png"
+                        alt="Folding Hospital Bed"
+                    >
 
-            <span>
-              Hospital Furniture
-            </span>
+                </div>
 
-            <h4>
-              Folding Hospital Bed
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        HOSPITAL FURNITURE
+                    </span>
 
-        </article>
+                    <h2>
+                        Folding Hospital Bed
+                    </h2>
 
+                    <p>
+                        Flexible folding design
+                        for healthcare requirements.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         02 OXYGEN EQUIPMENT
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="oxygen-equipment"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          02
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            RESPIRATORY CARE
-          </span>
-
-          <h3>
-            Oxygen Equipment
-          </h3>
-
-          <p>
-            Medical-grade cylinders and
-            oxygen concentrators.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Oxygen Equipment"
-            src="images/concentrator.webp"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 02 OXYGEN
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Cylinder 5Ltr"
-              src="images/oxy5ltr.png"
+            <article
+                class="catalogue-product"
+                data-category="Oxygen"
+                data-title='Oxygen Cylinder "5Ltr"'
+                data-image="images/oxy5ltr.png"
+                data-description="A compact oxygen cylinder suitable for appropriate oxygen-support requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/oxy5ltr.png"
+                        alt="Oxygen Cylinder 5Ltr"
+                    >
 
-            <span>
-              Oxygen
-            </span>
+                </div>
 
-            <h4>
-              Oxygen Cylinder "5Ltr"
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        OXYGEN
+                    </span>
 
-        </article>
+                    <h2>
+                        Oxygen Cylinder "5Ltr"
+                    </h2>
+
+                    <p>
+                        Compact oxygen cylinder
+                        for suitable healthcare use.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Cylinder 10Ltr"
-              src="images/oxy10ltr.png"
+            <article
+                class="catalogue-product"
+                data-category="Oxygen"
+                data-title='Oxygen Cylinder "10Ltr"'
+                data-image="images/oxy10ltr.png"
+                data-description="A higher-capacity oxygen cylinder suitable for medical and healthcare applications."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/oxy10ltr.png"
+                        alt="Oxygen Cylinder 10Ltr"
+                    >
 
-            <span>
-              Oxygen
-            </span>
+                </div>
 
-            <h4>
-              Oxygen Cylinder "10Ltr"
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        OXYGEN
+                    </span>
 
-        </article>
+                    <h2>
+                        Oxygen Cylinder "10Ltr"
+                    </h2>
+
+                    <p>
+                        Higher capacity cylinder
+                        for suitable applications.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Concentrator"
-              src="images/concentrator.webp"
+            <article
+                class="catalogue-product"
+                data-category="Oxygen"
+                data-title="Oxygen Concentrator"
+                data-image="images/concentrator.webp"
+                data-description="An oxygen-support device designed for suitable healthcare and home-care applications."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/concentrator.webp"
+                        alt="Oxygen Concentrator"
+                    >
 
-            <span>
-              Oxygen
-            </span>
+                </div>
 
-            <h4>
-              Oxygen Concentrator
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        OXYGEN
+                    </span>
 
-        </article>
+                    <h2>
+                        Oxygen Concentrator
+                    </h2>
 
+                    <p>
+                        Oxygen-support equipment
+                        for healthcare requirements.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         03 WHEELCHAIRS
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="wheelchairs"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          03
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            MOBILITY
-          </span>
-
-          <h3>
-            Wheelchairs
-          </h3>
-
-          <p>
-            Manual, reclining, foldable,
-            and commode wheelchairs.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Wheelchairs"
-            src="images/w1.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 03 WHEELCHAIRS
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard Manual Wheelchair"
-              src="images/w1.png"
+            <article
+                class="catalogue-product"
+                data-category="Wheelchair"
+                data-title="Standard Manual Wheelchair"
+                data-image="images/w1.png"
+                data-description="A practical mobility solution designed for comfortable everyday movement and patient support."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/w1.png"
+                        alt="Standard Manual Wheelchair"
+                    >
 
-            <span>
-              Wheelchair
-            </span>
+                </div>
 
-            <h4>
-              Standard Manual Wheelchair
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        WHEELCHAIR
+                    </span>
 
-        </article>
+                    <h2>
+                        Standard Manual Wheelchair
+                    </h2>
+
+                    <p>
+                        Practical mobility support
+                        for everyday use.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Folding Wheelchair"
-              src="images/w2.png"
+            <article
+                class="catalogue-product"
+                data-category="Wheelchair"
+                data-title="Folding Wheelchair"
+                data-image="images/w2.png"
+                data-description="A convenient foldable mobility solution designed for easier transportation and storage."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/w2.png"
+                        alt="Folding Wheelchair"
+                    >
 
-            <span>
-              Wheelchair
-            </span>
+                </div>
 
-            <h4>
-              Folding Wheelchair
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        WHEELCHAIR
+                    </span>
 
-        </article>
+                    <h2>
+                        Folding Wheelchair
+                    </h2>
+
+                    <p>
+                        Foldable design for
+                        convenient transportation.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Commode Wheelchair"
-              src="images/w3.png"
+            <article
+                class="catalogue-product"
+                data-category="Wheelchair"
+                data-title="Commode Wheelchair"
+                data-image="images/w3.png"
+                data-description="A mobility and patient-care solution designed for additional convenience and support."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/w3.png"
+                        alt="Commode Wheelchair"
+                    >
 
-            <span>
-              Wheelchair
-            </span>
+                </div>
 
-            <h4>
-              Commode Wheelchair
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        WHEELCHAIR
+                    </span>
 
-        </article>
+                    <h2>
+                        Commode Wheelchair
+                    </h2>
+
+                    <p>
+                        Mobility and patient-care
+                        support solution.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Reclining Wheelchair"
-              src="images/w4.png"
+            <article
+                class="catalogue-product"
+                data-category="Wheelchair"
+                data-title="Reclining Wheelchair"
+                data-image="images/w4.png"
+                data-description="A supportive wheelchair designed with reclining functionality for enhanced patient comfort."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/w4.png"
+                        alt="Reclining Wheelchair"
+                    >
 
-            <span>
-              Wheelchair
-            </span>
+                </div>
 
-            <h4>
-              Reclining Wheelchair
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        WHEELCHAIR
+                    </span>
 
-        </article>
+                    <h2>
+                        Reclining Wheelchair
+                    </h2>
 
+                    <p>
+                        Supportive reclining design
+                        for improved comfort.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         04 CPAP MACHINES
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="cpap-machines"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          04
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            SLEEP CARE
-          </span>
-
-          <h3>
-            CPAP Machines
-          </h3>
-
-          <p>
-            Sleep-care equipment for
-            suitable CPAP requirements.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="CPAP Machines"
-            src="images/c1.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 04 CPAP
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard CPAP Machine"
-              src="images/c1.png"
+            <article
+                class="catalogue-product"
+                data-category="CPAP"
+                data-title="Standard CPAP Machine"
+                data-image="images/c1.png"
+                data-description="A CPAP solution designed for suitable sleep-care requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/c1.png"
+                        alt="Standard CPAP Machine"
+                    >
 
-            <span>
-              CPAP
-            </span>
+                </div>
 
-            <h4>
-              Standard CPAP Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        CPAP
+                    </span>
 
-        </article>
+                    <h2>
+                        Standard CPAP Machine
+                    </h2>
+
+                    <p>
+                        CPAP equipment for
+                        suitable sleep-care needs.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Auto CPAP Machine"
-              src="images/c2.png"
+            <article
+                class="catalogue-product"
+                data-category="CPAP"
+                data-title="Auto CPAP (APAP) Machine"
+                data-image="images/c2.png"
+                data-description="An auto-adjusting CPAP solution designed for suitable sleep-care requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/c2.png"
+                        alt="Auto CPAP Machine"
+                    >
 
-            <span>
-              CPAP
-            </span>
+                </div>
 
-            <h4>
-              Auto CPAP (APAP) Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        CPAP
+                    </span>
 
-        </article>
+                    <h2>
+                        Auto CPAP (APAP) Machine
+                    </h2>
+
+                    <p>
+                        Auto-adjusting solution
+                        for suitable sleep care.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Portable CPAP Machine"
-              src="images/c3.png"
+            <article
+                class="catalogue-product"
+                data-category="CPAP"
+                data-title="Portable CPAP Machine"
+                data-image="images/c3.png"
+                data-description="A compact CPAP option designed for convenient use."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/c3.png"
+                        alt="Portable CPAP Machine"
+                    >
 
-            <span>
-              CPAP
-            </span>
+                </div>
 
-            <h4>
-              Portable CPAP Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        CPAP
+                    </span>
 
-        </article>
+                    <h2>
+                        Portable CPAP Machine
+                    </h2>
 
+                    <p>
+                        Compact CPAP option
+                        for convenient use.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         05 BIPAP MACHINES
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="bipap-machines"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          05
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            RESPIRATORY SUPPORT
-          </span>
-
-          <h3>
-            BiPAP Machines
-          </h3>
-
-          <p>
-            Non-invasive respiratory-support
-            equipment.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="BiPAP Machines"
-            src="images/b1.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 05 BIPAP
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard BiPAP Machine"
-              src="images/b1.png"
+            <article
+                class="catalogue-product"
+                data-category="BiPAP"
+                data-title="Standard BiPAP Machine"
+                data-image="images/b1.png"
+                data-description="A bi-level respiratory-support solution designed for suitable healthcare requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/b1.png"
+                        alt="Standard BiPAP Machine"
+                    >
 
-            <span>
-              BiPAP
-            </span>
+                </div>
 
-            <h4>
-              Standard BiPAP Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        BIPAP
+                    </span>
 
-        </article>
+                    <h2>
+                        Standard BiPAP Machine
+                    </h2>
+
+                    <p>
+                        Bi-level respiratory
+                        support equipment.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Portable BiPAP Machine"
-              src="images/b2.png"
+            <article
+                class="catalogue-product"
+                data-category="BiPAP"
+                data-title="Portable BiPAP Machine"
+                data-image="images/b2.png"
+                data-description="A portable respiratory-support option designed for convenient handling and use."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/b2.png"
+                        alt="Portable BiPAP Machine"
+                    >
 
-            <span>
-              BiPAP
-            </span>
+                </div>
 
-            <h4>
-              Portable BiPAP Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        BIPAP
+                    </span>
 
-        </article>
+                    <h2>
+                        Portable BiPAP Machine
+                    </h2>
+
+                    <p>
+                        Portable respiratory
+                        support equipment.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
+            <!-- =================================================
+                 06 WALKERS
+            ================================================== -->
 
-            <img
-              alt="Auto BiPAP Machine"
-              src="images/b1.png"
+
+            <article
+                class="catalogue-product"
+                data-category="Mobility Aids"
+                data-title="Standard Walker"
+                data-image="images/wl1.png"
+                data-description="A dependable mobility aid designed to provide walking support and stability."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/wl1.png"
+                        alt="Standard Walker"
+                    >
 
-            <span>
-              BiPAP
-            </span>
+                </div>
 
-            <h4>
-              Auto BiPAP Machine
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        MOBILITY AIDS
+                    </span>
 
-        </article>
+                    <h2>
+                        Standard Walker
+                    </h2>
 
+                    <p>
+                        Walking support and
+                        everyday stability.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         06 WALKERS
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="walkers"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          06
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            MOBILITY AIDS
-          </span>
-
-          <h3>
-            Walkers
-          </h3>
-
-          <p>
-            Lightweight, folding and
-            adjustable walking aids.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Walkers"
-            src="images/wl1.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
 
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard Walker"
-              src="images/wl1.png"
+            <article
+                class="catalogue-product"
+                data-category="Mobility Aids"
+                data-title="Folding Walker"
+                data-image="images/wl2.png"
+                data-description="A practical folding mobility aid designed for easier storage and transportation."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/wl2.png"
+                        alt="Folding Walker"
+                    >
 
-            <span>
-              Mobility Aids
-            </span>
+                </div>
 
-            <h4>
-              Standard Walker
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        MOBILITY AIDS
+                    </span>
 
-        </article>
+                    <h2>
+                        Folding Walker
+                    </h2>
+
+                    <p>
+                        Folding mobility aid
+                        for convenient storage.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
-
-            <img
-              alt="Folding Walker"
-              src="images/wl2.png"
+            <article
+                class="catalogue-product"
+                data-category="Mobility Aids"
+                data-title="Adjustable Walker"
+                data-image="images/wl3.png"
+                data-description="A height-adjustable mobility aid designed for adaptable everyday walking support."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/wl3.png"
+                        alt="Adjustable Walker"
+                    >
 
-            <span>
-              Mobility Aids
-            </span>
+                </div>
 
-            <h4>
-              Folding Walker
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        MOBILITY AIDS
+                    </span>
 
-        </article>
+                    <h2>
+                        Adjustable Walker
+                    </h2>
+
+                    <p>
+                        Adjustable support for
+                        everyday mobility.
+                    </p>
+
+                </div>
+
+            </article>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
 
-          <div class="product-image">
+            <!-- =================================================
+                 07 PATIENT MONITORING
+            ================================================== -->
 
-            <img
-              alt="Adjustable Walker"
-              src="images/wl3.png"
+
+            <article
+                class="catalogue-product"
+                data-category="Patient Monitoring"
+                data-title="Patient Monitor"
+                data-image="images/pm.png"
+                data-description="A patient-monitoring solution designed for suitable healthcare monitoring requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/pm.png"
+                        alt="Patient Monitor"
+                    >
 
-            <span>
-              Mobility Aids
-            </span>
+                </div>
 
-            <h4>
-              Adjustable Walker
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        PATIENT MONITORING
+                    </span>
 
-        </article>
+                    <h2>
+                        Patient Monitor
+                    </h2>
 
+                    <p>
+                        Equipment for suitable
+                        patient monitoring needs.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         07 PATIENT MONITORING
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="patient-monitoring"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          07
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            PATIENT MONITORING
-          </span>
-
-          <h3>
-            Patient Monitoring
-          </h3>
-
-          <p>
-            Patient monitoring equipment for
-            vital signs and clinical observation.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Patient Monitor"
-            src="images/pm.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 08 CRITICAL CARE
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Patient Monitor"
-              src="images/pm.png"
+            <article
+                class="catalogue-product"
+                data-category="Critical Care"
+                data-title="ICU Ventilator"
+                data-image="images/venti.png"
+                data-description="A critical-care respiratory support device intended for appropriate clinical environments."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/venti.png"
+                        alt="ICU Ventilator"
+                    >
 
-            <span>
-              Patient Monitoring
-            </span>
+                </div>
 
-            <h4>
-              Patient Monitor
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        CRITICAL CARE
+                    </span>
 
-        </article>
+                    <h2>
+                        ICU Ventilator
+                    </h2>
 
+                    <p>
+                        Respiratory support equipment
+                        for critical-care environments.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         08 CRITICAL CARE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="critical-care"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          08
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            CRITICAL CARE
-          </span>
-
-          <h3>
-            Critical Care
-          </h3>
-
-          <p>
-            Advanced respiratory support
-            equipment for critical care.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="ICU Ventilator"
-            src="images/venti.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 09 DIAGNOSTICS
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="ICU Ventilator"
-              src="images/venti.png"
+            <article
+                class="catalogue-product"
+                data-category="Diagnostics"
+                data-title="Pulse Oximeter"
+                data-image="images/pu.png"
+                data-description="A compact diagnostic device for measuring oxygen saturation and pulse rate."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/pu.png"
+                        alt="Pulse Oximeter"
+                    >
 
-            <span>
-              Critical Care
-            </span>
+                </div>
 
-            <h4>
-              ICU Ventilator
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        DIAGNOSTICS
+                    </span>
 
-        </article>
+                    <h2>
+                        Pulse Oximeter
+                    </h2>
 
+                    <p>
+                        Compact equipment for
+                        basic patient measurements.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         09 DIAGNOSTIC EQUIPMENT
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="diagnostic-equipment"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          09
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            DIAGNOSTICS
-          </span>
-
-          <h3>
-            Diagnostic Equipment
-          </h3>
-
-          <p>
-            Essential equipment for basic
-            patient health measurements.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Pulse Oximeter"
-            src="images/pu.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+
+            <!-- =================================================
+                 10 EMERGENCY
+            ================================================== -->
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Pulse Oximeter"
-              src="images/pu.png"
+            <article
+                class="catalogue-product"
+                data-category="Emergency"
+                data-title="Ambulance Service (24/7)"
+                data-image="images/amb.png"
+                data-description="Emergency transportation support for urgent patient-care requirements."
             >
 
-          </div>
+                <div class="product-image">
 
-          <div class="product-info">
+                    <img
+                        src="images/amb.png"
+                        alt="Ambulance Service"
+                    >
 
-            <span>
-              Diagnostics
-            </span>
+                </div>
 
-            <h4>
-              Pulse Oximeter
-            </h4>
+                <div class="product-info">
 
-          </div>
+                    <span>
+                        EMERGENCY
+                    </span>
 
-        </article>
+                    <h2>
+                        Ambulance Service (24/7)
+                    </h2>
 
+                    <p>
+                        Emergency transportation
+                        support for urgent care.
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
-
-
-    <!-- =================================================
-         10 EMERGENCY CARE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="emergency-care"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          10
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            EMERGENCY CARE
-          </span>
-
-          <h3>
-            Emergency Care
-          </h3>
-
-          <p>
-            Emergency transportation and
-            urgent patient-care support.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Ambulance Service"
-            src="images/amb.png"
-          >
-
-        </div>
-
-      </div>
+            </article>
 
 
-      <div class="product-grid">
+        </section>
 
 
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
 
-          <div class="product-image">
-
-            <img
-              alt="Ambulance Service"
-              src="images/amb.png"
-            >
-
-          </div>
-
-          <div class="product-info">
+        <footer class="catalogue-footer">
 
             <span>
-              Emergency
+                © 2026 OYA Health Care
             </span>
 
-            <h4>
-              Ambulance Service (24/7)
-            </h4>
+            <span>
+                Better care. Better equipment.
+            </span>
 
-          </div>
+        </footer>
 
-        </article>
 
-
-      </div>
-
-    </section>
-
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     WHY OYA
-===================================================== -->
-
-<section class="trust-section" id="about">
-
-  <div>
-
-    <span class="eyebrow">
-      <i></i> WHY OYA
-    </span>
-
-    <h2>
-      Professional equipment.<br>
-      <em>Thoughtfully selected.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="trust-grid">
-
-    <div>
-
-      <span>01</span>
-
-      <h3>
-        Curated catalogue
-      </h3>
-
-      <p>
-        Essential healthcare equipment organised into clear,
-        easy-to-browse categories.
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <span>02</span>
-
-      <h3>
-        Simple enquiries
-      </h3>
-
-      <p>
-        Open a product and contact OYA directly for details,
-        pricing and availability.
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <span>03</span>
-
-      <h3>
-        Care focused
-      </h3>
-
-      <p>
-        A clean product experience designed around hospitals,
-        clinics and everyday care.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="contact-banner" id="contact">
-
-  <div>
-
-    <span class="eyebrow">
-      <i></i> LET'S TALK
-    </span>
-
-    <h2>
-      Need the right<br>
-      <em>healthcare solution?</em>
-    </h2>
-
-  </div>
-
-
-  <div class="contact-actions">
-
-    <a
-      href="tel:7021235223"
-      class="primary-btn"
-    >
-      Call OYA ↗
-    </a>
-
-    <a
-      href="mailto:oyahealthcare@gmail.com"
-      class="secondary-btn"
-    >
-      Email Us
-    </a>
-
-    <p>
-      Shop no 9, Shiv Vithai Galaxy,
-      near SBI Bank, Thakurli
-    </p>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =====================================================
-     CATEGORY POPUP
-===================================================== -->
-
-<div
-  class="category-modal"
-  id="categoryModal"
-  aria-hidden="true"
->
-
-  <div class="category-modal-box">
-
-    <button
-      class="category-modal-close"
-      id="categoryModalClose"
-      type="button"
-      aria-label="Close"
-    >
-      ×
-    </button>
-
-
-    <div class="category-modal-header">
-
-      <span class="eyebrow">
-        <i></i> OYA COLLECTION
-      </span>
-
-      <h2 id="categoryModalTitle">
-        Category
-      </h2>
-
-      <p id="categoryModalDescription">
-        Explore our products.
-      </p>
-
-    </div>
-
-
-    <div
-      class="category-modal-products"
-      id="categoryModalProducts"
-    ></div>
-
-
-    <div class="category-modal-footer">
-
-      <button
-        id="categoryModalBack"
-        type="button"
-      >
-        ← Back to Categories
-      </button>
-
-    </div>
-
-  </div>
+    </main>
 
 </div>
 
 
+
 <!-- =====================================================
-     PRODUCT POPUP
+     PRODUCT MODAL
 ===================================================== -->
 
 <div
-  class="product-modal"
-  id="productModal"
-  aria-hidden="true"
+    class="product-modal"
+    id="productModal"
+    aria-hidden="true"
 >
 
-  <div class="modal-box">
-
-    <button
-      class="modal-close"
-      id="modalClose"
-      type="button"
-      aria-label="Close"
-    >
-      ×
-    </button>
+    <div class="product-modal-box">
 
 
-    <div class="modal-grid">
-
-
-      <div class="modal-image">
-
-        <img
-          id="modalImage"
-          src=""
-          alt=""
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
         >
-
-      </div>
-
-
-      <div class="modal-details">
-
-        <span id="modalCategory"></span>
-
-        <h2 id="modalTitle"></h2>
-
-        <p id="modalDescription"></p>
+            ×
+        </button>
 
 
-        <div class="modal-features">
 
-          <div>
-            ✓ Quality healthcare equipment
-          </div>
+        <div class="modal-content">
 
-          <div>
-            ✓ Suitable for professional & home care
-          </div>
 
-          <div>
-            ✓ Contact OYA for pricing & availability
-          </div>
+            <div class="modal-product-image">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+
+            <div class="modal-product-details">
+
+                <span
+                    id="modalCategory"
+                    class="modal-category"
+                >
+                    CATEGORY
+                </span>
+
+
+                <h2 id="modalTitle">
+                    Product Name
+                </h2>
+
+
+                <p id="modalDescription">
+                    Product description.
+                </p>
+
+
+
+                <div class="modal-features">
+
+                    <div>
+                        ✓ Quality healthcare equipment
+                    </div>
+
+                    <div>
+                        ✓ Suitable for professional & home care
+                    </div>
+
+                    <div>
+                        ✓ Contact OYA for pricing & availability
+                    </div>
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+                    <a
+                        href="tel:7021235223"
+                        class="modal-enquiry"
+                    >
+                        Enquire Now ↗
+                    </a>
+
+
+                    <a
+                        href="#"
+                        id="whatsappBtn"
+                        target="_blank"
+                        rel="noopener"
+                        class="modal-whatsapp"
+                    >
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
 
         </div>
-
-
-        <div class="modal-actions">
-
-          <a
-            href="tel:7021235223"
-            class="modal-enquiry"
-          >
-            Enquire Now ↗
-          </a>
-
-          <a
-            id="whatsappBtn"
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="modal-whatsapp"
-          >
-            WhatsApp
-          </a>
-
-        </div>
-
-      </div>
 
     </div>
-
-  </div>
 
 </div>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-  <div class="footer-top">
-
-
-    <div class="footer-brand">
-
-      <img
-        src="images/logo (2).png"
-        alt="OYA Healthcare"
-      >
-
-      <p>
-        Premium medical equipment and healthcare solutions.
-      </p>
-
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="#categories">
-        Categories
-      </a>
-
-      <a href="#about">
-        Why OYA
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
-    </div>
-
-
-    <div class="footer-contact">
-
-      <strong>
-        Get in touch
-      </strong>
-
-      <a href="mailto:oyahealthcare@gmail.com">
-        oyahealthcare@gmail.com
-      </a>
-
-      <a href="tel:7021235223">
-        7021235223
-      </a>
-
-    </div>
-
-
-  </div>
-
-
-  <div class="footer-bottom">
-
-    <span>
-      © 2026 OYA Healthcare
-    </span>
-
-    <span>
-      Healthcare, with confidence.
-    </span>
-
-  </div>
-
-</footer>
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
