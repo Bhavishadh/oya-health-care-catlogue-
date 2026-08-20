@@ -1874,3 +1874,18 @@ a {
         min-height: 290px !important;
     }
 }
+/* =========================================================
+   MOBILE - REMOVE DUPLICATE SIDEBAR LOGO
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .sidebar .sidebar-logo {
+        display: none !important;
+    }
+
+    .sidebar-inner {
+        padding-top: 28px !important;
+    }
+
+}
