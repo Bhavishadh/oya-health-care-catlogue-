@@ -5,28 +5,7 @@
 
 
 /* =====================================================
-   IMAGE PATH HELPER
-===================================================== */
-
-const IMG = "images/";
-
-
-/* =====================================================
-   COMPANY INFORMATION
-===================================================== */
-
-const companyDescription =
-    "OYA Health Care – Trusted Medical Equipment & Home Healthcare Solutions OYA Health Care is a leading supplier of high-quality medical equipment, hospital supplies, and home healthcare products in India. We are committed to providing reliable, affordable and quality healthcare solutions.";
-
-const companyAddress =
-    "Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli";
-
-const companyPhone =
-    "7021235223";
-
-
-/* =====================================================
-   CATEGORIES
+   DATA
 ===================================================== */
 
 const categories = [
@@ -39,69 +18,74 @@ const categories = [
         description:
             "Hospital beds and furniture designed for patient care and healthcare requirements.",
 
-        count: 4,
-
-        image: "hospitalbed.webp",
+        image: "images/hospitalbed.webp",
 
         products: [
 
             {
+                id: "hospital-bed",
+
                 title: "Hospital Bed",
 
-                description:
-                    "Hospital bed designed for patient care and hospital requirements.",
-
-                image: "hospitalbed.webp",
+                image: "images/hospitalbed.webp",
 
                 images: [
-                    "hospitalbed.webp",
-                    "fowlerbed.png",
-                    "semi bed.png",
-                    "foldingbed.png"
-                ]
+                    "images/hospitalbed.webp",
+                    "images/semi bed.png",
+                    "images/foldingbed.png",
+                    "images/fowlerbed.png"
+                ],
+
+                description:
+                    "Hospital bed designed for patient care, comfort and healthcare requirements."
             },
 
             {
-                title: "Fowler Bed",
+                id: "semi-fowler-bed",
 
-                description:
-                    "Comfortable adjustable hospital bed for patient care.",
-
-                image: "fowlerbed.png",
-
-                images: [
-                    "fowlerbed.png",
-                    "semi bed.png",
-                    "foldingbed.png"
-                ]
-            },
-
-            {
                 title: "Semi Fowler Bed",
 
-                description:
-                    "Reliable hospital bed suitable for everyday patient care.",
-
-                image: "semi bed.png",
+                image: "images/semi bed.png",
 
                 images: [
-                    "semi bed.png",
-                    "fowlerbed.png"
-                ]
+                    "images/semi bed.png",
+                    "images/hospitalbed.webp"
+                ],
+
+                description:
+                    "Semi Fowler hospital bed designed for comfortable patient positioning."
             },
 
             {
-                title: "Folding Hospital Bed",
+                id: "folding-bed",
 
-                description:
-                    "Practical folding bed solution for healthcare environments.",
+                title: "Folding Bed",
 
-                image: "foldingbed.png",
+                image: "images/foldingbed.png",
 
                 images: [
-                    "foldingbed.png",
-                    "hospitalbed.webp"
-                ]
+                    "images/foldingbed.png",
+                    "images/hospitalbed.webp"
+                ],
+
+                description:
+                    "Practical folding hospital bed for healthcare and patient-care environments."
+            },
+
+            {
+                id: "fowler-bed",
+
+                title: "Fowler Bed",
+
+                image: "images/fowlerbed.png",
+
+                images: [
+                    "images/fowlerbed.png",
+                    "images/hospitalbed.webp"
+                ],
+
+                description:
+                    "Fowler hospital bed designed for patient comfort and positioning."
             }
 
         ]
@@ -109,49 +93,67 @@ const categories = [
 
 
     /* =================================================
-       OXYGEN EQUIPMENT
+       OXYGEN CYLINDER
     ================================================= */
 
     {
-        id: "oxygen-equipment",
+        id: "oxygen-cylinder",
 
-        title: "Oxygen Equipment",
+        title: "Oxygen Cylinder",
 
         description:
-            "Oxygen cylinders and related equipment for healthcare and home-care requirements.",
+            "Oxygen cylinders and accessories for medical oxygen requirements.",
 
-        count: 2,
-
-        image: "oxy10ltr.png",
+        image: "images/oxy10ltr.png",
 
         products: [
 
             {
-                title: "Oxygen Cylinder 10 Litre",
+                id: "oxygen-cylinder-5",
 
-                description:
-                    "Oxygen cylinder suitable for medical and home healthcare use.",
+                title: "Oxygen Cylinder 5 Litre",
 
-                image: "oxy10ltr.png",
+                image: "images/oxy5ltr.png",
 
                 images: [
-                    "oxy10ltr.png",
-                    "oxy5ltr.png"
-                ]
+                    "images/oxy5ltr.png",
+                    "images/oxy10ltr.png"
+                ],
+
+                description:
+                    "Medical oxygen cylinder designed for healthcare and home-care oxygen requirements."
             },
 
             {
-                title: "Oxygen Cylinder 5 Litre",
+                id: "oxygen-cylinder-10",
 
-                description:
-                    "Compact oxygen cylinder designed for healthcare requirements.",
+                title: "Oxygen Cylinder 10 Litre",
 
-                image: "oxy5ltr.png",
+                image: "images/oxy10ltr.png",
 
                 images: [
-                    "oxy5ltr.png",
-                    "oxy10ltr.png"
-                ]
+                    "images/oxy10ltr.png",
+                    "images/oxy5ltr.png"
+                ],
+
+                description:
+                    "10 litre oxygen cylinder suitable for medical oxygen applications."
+            },
+
+            {
+                id: "oxygen-cylinder-accessory",
+
+                title: "Oxygen Cylinder With Regulator",
+
+                image: "images/oxy10ltr.png",
+
+                images: [
+                    "images/oxy10ltr.png",
+                    "images/oxy5ltr.png"
+                ],
+
+                description:
+                    "Oxygen cylinder setup with regulator for controlled oxygen delivery."
             }
 
         ]
@@ -168,25 +170,61 @@ const categories = [
         title: "Oxygen Concentrator",
 
         description:
-            "Oxygen concentrators designed to provide convenient oxygen support at home and in healthcare settings.",
+            "Oxygen concentrators designed for convenient oxygen support at home and healthcare environments.",
 
-        count: 1,
-
-        image: "concentrator.webp",
+        image: "images/concentrator.webp",
 
         products: [
 
             {
+                id: "oxygen-concentrator",
+
                 title: "Oxygen Concentrator",
 
-                description:
-                    "Portable oxygen concentrator designed for convenient home healthcare use.",
-
-                image: "concentrator.webp",
+                image: "images/concentrator.webp",
 
                 images: [
-                    "concentrator.webp"
-                ]
+                    "images/concentrator.webp",
+                    "images/c1.png",
+                    "images/c2.png"
+                ],
+
+                description:
+                    "Oxygen concentrator designed to provide convenient oxygen support for home healthcare."
+            },
+
+            {
+                id: "oxygen-concentrator-2",
+
+                title: "Portable Oxygen Concentrator",
+
+                image: "images/c1.png",
+
+                images: [
+                    "images/c1.png",
+                    "images/c2.png",
+                    "images/concentrator.webp"
+                ],
+
+                description:
+                    "Compact oxygen concentrator suitable for home healthcare and patient support."
+            },
+
+            {
+                id: "oxygen-concentrator-3",
+
+                title: "Oxygen Concentrator System",
+
+                image: "images/c2.png",
+
+                images: [
+                    "images/c2.png",
+                    "images/c1.png",
+                    "images/concentrator.webp"
+                ],
+
+                description:
+                    "Oxygen concentrator system designed for reliable oxygen support."
             }
 
         ]
@@ -205,25 +243,24 @@ const categories = [
         description:
             "Mobility solutions designed for comfortable patient movement and support.",
 
-        count: 1,
-
-        image: "w1.png",
+        image: "images/w1.png",
 
         products: [
 
             {
+                id: "wheelchair",
+
                 title: "Wheelchair",
 
-                description:
-                    "Comfortable wheelchair designed for patient mobility and support.",
-
-                image: "w1.png",
+                image: "images/w1.png",
 
                 images: [
-                    "w1.png"
-                ]
-            }
+                    "images/w1.png"
+                ],
 
+                description:
+                    "Comfortable wheelchair designed for patient mobility and everyday support."
+            }
         ]
     },
 
@@ -240,25 +277,58 @@ const categories = [
         description:
             "Equipment designed for suitable patient monitoring requirements.",
 
-        count: 1,
-
-        image: "pm.png",
+        image: "images/pm.png",
 
         products: [
 
             {
+                id: "patient-monitor",
+
                 title: "Patient Monitor",
 
-                description:
-                    "Patient monitoring equipment for monitoring essential patient parameters.",
-
-                image: "pm.png",
+                image: "images/pm.png",
 
                 images: [
-                    "pm.png"
-                ]
-            }
+                    "images/pm.png"
+                ],
 
+                description:
+                    "Patient monitoring equipment designed for healthcare environments."
+            }
+        ]
+    },
+
+
+    /* =================================================
+       AMBULANCE
+    ================================================= */
+
+    {
+        id: "emergency-care",
+
+        title: "Emergency Care",
+
+        description:
+            "Emergency transportation and urgent patient-care support.",
+
+        image: "images/amb.png",
+
+        products: [
+
+            {
+                id: "ambulance",
+
+                title: "Ambulance",
+
+                image: "images/amb.png",
+
+                images: [
+                    "images/amb.png"
+                ],
+
+                description:
+                    "Emergency transportation solution for urgent patient-care requirements."
+            }
         ]
     },
 
@@ -275,31 +345,30 @@ const categories = [
         description:
             "Respiratory-support equipment for suitable critical-care environments.",
 
-        count: 1,
-
-        image: "venti.png",
+        image: "images/venti.png",
 
         products: [
 
             {
+                id: "ventilator",
+
                 title: "Ventilator",
 
-                description:
-                    "Respiratory support equipment designed for critical-care environments.",
-
-                image: "venti.png",
+                image: "images/venti.png",
 
                 images: [
-                    "venti.png"
-                ]
-            }
+                    "images/venti.png"
+                ],
 
+                description:
+                    "Critical-care respiratory support equipment."
+            }
         ]
     },
 
 
     /* =================================================
-       DIAGNOSTIC EQUIPMENT
+       DIAGNOSTIC
     ================================================= */
 
     {
@@ -310,60 +379,24 @@ const categories = [
         description:
             "Equipment designed for basic patient measurements and diagnostics.",
 
-        count: 1,
-
-        image: "pu.png",
+        image: "images/pu.png",
 
         products: [
 
             {
+                id: "diagnostic-device",
+
                 title: "Diagnostic Equipment",
 
-                description:
-                    "Healthcare equipment designed for basic patient measurements.",
-
-                image: "pu.png",
+                image: "images/pu.png",
 
                 images: [
-                    "pu.png"
-                ]
-            }
-
-        ]
-    },
-
-
-    /* =================================================
-       EMERGENCY CARE
-    ================================================= */
-
-    {
-        id: "emergency-care",
-
-        title: "Emergency Care",
-
-        description:
-            "Emergency transportation and urgent patient-care support.",
-
-        count: 1,
-
-        image: "amb.png",
-
-        products: [
-
-            {
-                title: "Emergency Ambulance",
+                    "images/pu.png"
+                ],
 
                 description:
-                    "Emergency transportation support for urgent patient care.",
-
-                image: "amb.png",
-
-                images: [
-                    "amb.png"
-                ]
+                    "Diagnostic equipment designed for basic patient measurements."
             }
-
         ]
     }
 
@@ -371,11 +404,33 @@ const categories = [
 
 
 /* =====================================================
-   GET MAIN CONTENT
+   MAIN ELEMENT
 ===================================================== */
 
 const mainContent =
     document.getElementById("mainContent");
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMobileMenu() {
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    menu.classList.toggle("open");
+}
+
+
+function closeMobileMenu() {
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    menu.classList.remove("open");
+}
 
 
 /* =====================================================
@@ -393,50 +448,53 @@ function showHome() {
 
     mainContent.innerHTML = `
 
-        <!-- =============================================
-             MOBILE HOME INFORMATION
-             ONLY APPEARS ON HOME PAGE
-        ============================================== -->
+        <!-- =========================================
+             HOME INFORMATION
+        ========================================== -->
 
-        <section class="mobile-home-info"
-                 id="about">
+        <section class="home-info" id="about">
 
-            <img
-                src="images/logo%20(2).png"
-                alt="Oya Health Care"
-                class="mobile-home-logo"
-            >
+            <!--
+                IMPORTANT:
+                NO SECOND LOGO HERE.
 
-            <h1 class="mobile-home-title">
+                The only mobile logo is in the header.
+            -->
+
+            <h1 class="home-title">
                 Oya Health Care
             </h1>
 
-            <p class="mobile-home-description">
-                ${companyDescription}
+            <p class="home-description">
+                OYA Health Care – Trusted Medical Equipment & Home Healthcare
+                Solutions OYA Health Care is a leading supplier of high-quality
+                medical equipment, hospital supplies, and home healthcare
+                products in India. We are committed to providing reliable,
+                affordable and quality healthcare solutions.
             </p>
 
-            <div class="mobile-home-contact">
+            <div class="home-contact">
 
-                <div class="contact-item">
+                <div class="home-contact-item">
 
-                    <span class="contact-icon">
+                    <span class="home-contact-icon">
                         ⌖
                     </span>
 
                     <span>
-                        ${companyAddress}
+                        Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
                     </span>
 
                 </div>
 
-                <div class="contact-item">
+                <div class="home-contact-item">
 
-                    <span class="contact-icon">
+                    <span class="home-contact-icon">
                         ♧
                     </span>
 
-                    <a href="tel:${companyPhone}">
-                        ${companyPhone}
+                    <a href="tel:7021235223">
+                        7021235223
                     </a>
 
                 </div>
@@ -446,9 +504,9 @@ function showHome() {
         </section>
 
 
-        <!-- =============================================
+        <!-- =========================================
              CATALOGUE
-        ============================================== -->
+        ========================================== -->
 
         <section id="catalogue">
 
@@ -465,16 +523,13 @@ function showHome() {
 
             <div class="category-grid">
 
-                ${categories
-                    .map(category => categoryCard(category))
-                    .join("")}
+                ${categories.map(createCategoryCard).join("")}
 
             </div>
 
         </section>
 
     `;
-
 }
 
 
@@ -482,17 +537,19 @@ function showHome() {
    CATEGORY CARD
 ===================================================== */
 
-function categoryCard(category) {
+function createCategoryCard(category) {
 
     return `
 
-        <article class="category-card"
-                 onclick="showCategory('${category.id}')">
+        <article
+            class="category-card"
+            onclick="openCategory('${category.id}')"
+        >
 
             <div class="category-image-box">
 
                 <img
-                    src="${IMG}${category.image}"
+                    src="${category.image}"
                     alt="${category.title}"
                     class="category-image"
                     loading="lazy"
@@ -520,8 +577,8 @@ function categoryCard(category) {
                 <div class="category-bottom">
 
                     <span class="product-count">
-                        ${category.count}
-                        ${category.count === 1 ? "product" : "products"}
+                        ${category.products.length}
+                        ${category.products.length === 1 ? "product" : "products"}
                     </span>
 
                     <span class="arrow">
@@ -539,10 +596,10 @@ function categoryCard(category) {
 
 
 /* =====================================================
-   SHOW CATEGORY
+   OPEN CATEGORY
 ===================================================== */
 
-function showCategory(categoryId) {
+function openCategory(categoryId) {
 
     closeMobileMenu();
 
@@ -552,23 +609,22 @@ function showCategory(categoryId) {
         );
 
     if (!category) {
-
-        showHome();
-
         return;
     }
 
-
     /*
        IMPORTANT:
-       Company information is NOT rendered here.
-       Therefore it cannot repeat.
+       We REPLACE mainContent completely.
+
+       Therefore:
+       - company information does NOT repeat
+       - catalogue does NOT repeat
+       - previous back buttons do NOT multiply
     */
 
     mainContent.innerHTML = `
 
         <section class="category-page">
-
 
             <div class="page-heading">
 
@@ -581,33 +637,28 @@ function showCategory(categoryId) {
             </div>
 
 
-            <button class="back-button"
-                    onclick="showHome()">
-
+            <button
+                class="back-button"
+                onclick="showHome()"
+            >
                 ← Back to Catalogue
-
             </button>
 
 
             <div class="product-grid">
 
                 ${category.products
-                    .map(
-                        (product, index) =>
-                            productCard(
-                                category,
-                                product,
-                                index
-                            )
+                    .map(product =>
+                        createProductCard(product, category)
                     )
-                    .join("")}
+                    .join("")
+                }
 
             </div>
 
         </section>
 
     `;
-
 
     window.scrollTo({
         top: 0,
@@ -620,28 +671,27 @@ function showCategory(categoryId) {
    PRODUCT CARD
 ===================================================== */
 
-function productCard(
-    category,
-    product,
-    index
-) {
+function createProductCard(product, category) {
 
     return `
 
-        <article class="product-card"
-                 onclick="showProduct(
+        <article
+            class="product-card"
+            onclick="
+                openProduct(
                     '${category.id}',
-                    ${index}
-                 )">
+                    '${product.id}'
+                )
+            "
+        >
 
             <div class="product-image-box">
 
                 <img
-                    src="${IMG}${product.image}"
+                    src="${product.image}"
                     alt="${product.title}"
                     class="product-image"
                     loading="lazy"
-                    onerror="this.style.display='none'"
                 >
 
             </div>
@@ -670,13 +720,10 @@ function productCard(
 
 
 /* =====================================================
-   PRODUCT DETAIL
+   OPEN PRODUCT
 ===================================================== */
 
-function showProduct(
-    categoryId,
-    productIndex
-) {
+function openProduct(categoryId, productId) {
 
     closeMobileMenu();
 
@@ -686,57 +733,47 @@ function showProduct(
         );
 
     if (!category) {
-
-        showHome();
-
         return;
     }
 
     const product =
-        category.products[productIndex];
+        category.products.find(
+            item => item.id === productId
+        );
 
     if (!product) {
-
-        showCategory(categoryId);
-
         return;
     }
 
 
     /*
-       Remove duplicate images.
+       IMPORTANT:
+       Again we completely replace the content.
+
+       This prevents:
+       Back to Catalogue
+       Back to Catalogue
+       Back to Catalogue
+       Back to Catalogue
+
+       from appearing repeatedly.
     */
-
-    const images =
-        [...new Set(
-            product.images || [product.image]
-        )];
-
 
     mainContent.innerHTML = `
 
         <section class="product-detail">
 
-
-            <!-- =========================================
-                 CATEGORY BACK
-            ========================================== -->
-
             <div class="product-detail-top">
 
-                <button class="detail-back"
-                        onclick="showCategory('${category.id}')">
-
+                <button
+                    class="detail-back"
+                    onclick="openCategory('${category.id}')"
+                >
                     ← Back to ${category.title}
-
                 </button>
 
             </div>
 
-
-            <!-- =========================================
-                 PRODUCT
-            ========================================== -->
 
             <div class="product-detail-layout">
 
@@ -747,12 +784,11 @@ function showProduct(
 
                 <div class="detail-gallery">
 
-
                     <div class="main-product-image-box">
 
                         <img
                             id="mainProductImage"
-                            src="${IMG}${images[0]}"
+                            src="${product.images[0]}"
                             alt="${product.title}"
                             class="main-product-image"
                         >
@@ -760,16 +796,11 @@ function showProduct(
                     </div>
 
 
-                    ${
-                        images.length > 1
-                        ?
-                        `
-                        <div class="thumbnail-row">
+                    <div class="thumbnail-row">
 
-                            ${images
-                                .map(
-                                    (image, index) => `
-                                    
+                        ${product.images
+                            .map(
+                                (image, index) => `
                                     <button
                                         class="
                                             thumbnail
@@ -777,28 +808,24 @@ function showProduct(
                                         "
                                         onclick="
                                             changeProductImage(
-                                                '${IMG}${image}',
+                                                '${image}',
                                                 this
                                             )
                                         "
                                     >
 
                                         <img
-                                            src="${IMG}${image}"
+                                            src="${image}"
                                             alt="${product.title}"
                                         >
 
                                     </button>
+                                `
+                            )
+                            .join("")
+                        }
 
-                                    `
-                                )
-                                .join("")}
-
-                        </div>
-                        `
-                        :
-                        ""
-                    }
+                    </div>
 
                 </div>
 
@@ -823,24 +850,21 @@ function showProduct(
 
                     <div class="detail-line"></div>
 
-
                     <span class="detail-label">
-                        ENQUIRE ABOUT THIS PRODUCT
+                        ENQUIRY
                     </span>
-
 
                     <div class="enquiry-buttons">
 
                         <a
-                            href="tel:${companyPhone}"
+                            href="tel:7021235223"
                             class="enquiry-button call-button"
                         >
                             Call OYA
                         </a>
 
-
                         <a
-                            href="https://wa.me/91${companyPhone}"
+                            href="https://wa.me/917021235223"
                             class="enquiry-button whatsapp-button"
                             target="_blank"
                         >
@@ -857,7 +881,6 @@ function showProduct(
 
     `;
 
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -869,70 +892,30 @@ function showProduct(
    CHANGE PRODUCT IMAGE
 ===================================================== */
 
-function changeProductImage(
-    imagePath,
-    thumbnail
-) {
+function changeProductImage(image, button) {
 
     const mainImage =
         document.getElementById(
             "mainProductImage"
         );
 
-    if (!mainImage) return;
+    if (!mainImage) {
+        return;
+    }
 
-
-    mainImage.src = imagePath;
+    mainImage.src = image;
 
 
     document
         .querySelectorAll(".thumbnail")
         .forEach(item => {
 
-            item.classList.remove(
-                "active"
-            );
+            item.classList.remove("active");
 
         });
 
 
-    thumbnail.classList.add(
-        "active"
-    );
-}
-
-
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-function toggleMobileMenu() {
-
-    const menu =
-        document.getElementById(
-            "mobileMenu"
-        );
-
-    if (!menu) return;
-
-    menu.classList.toggle(
-        "open"
-    );
-}
-
-
-function closeMobileMenu() {
-
-    const menu =
-        document.getElementById(
-            "mobileMenu"
-        );
-
-    if (!menu) return;
-
-    menu.classList.remove(
-        "open"
-    );
+    button.classList.add("active");
 }
 
 
@@ -942,24 +925,18 @@ function closeMobileMenu() {
 
 function scrollToCatalogue() {
 
-    /*
-       If user is on a category/product page,
-       first return home.
-    */
-
     showHome();
 
     setTimeout(() => {
 
         const catalogue =
-            document.getElementById(
-                "catalogue"
-            );
+            document.getElementById("catalogue");
 
         if (catalogue) {
 
             catalogue.scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "start"
             });
 
         }
@@ -979,14 +956,13 @@ function scrollToAbout() {
     setTimeout(() => {
 
         const about =
-            document.getElementById(
-                "about"
-            );
+            document.getElementById("about");
 
         if (about) {
 
             about.scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "start"
             });
 
         }
@@ -1001,7 +977,7 @@ function scrollToAbout() {
 
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    function () {
 
         showHome();
 
@@ -1015,20 +991,17 @@ document.addEventListener(
 
 document.addEventListener(
     "click",
-    event => {
+    function (event) {
 
         const menu =
-            document.getElementById(
-                "mobileMenu"
-            );
+            document.getElementById("mobileMenu");
 
         const button =
-            document.getElementById(
-                "menuButton"
-            );
+            document.getElementById("menuButton");
 
-        if (!menu || !button) return;
-
+        if (!menu || !button) {
+            return;
+        }
 
         if (
             menu.classList.contains("open") &&
@@ -1036,7 +1009,7 @@ document.addEventListener(
             !button.contains(event.target)
         ) {
 
-            closeMobileMenu();
+            menu.classList.remove("open");
 
         }
 
