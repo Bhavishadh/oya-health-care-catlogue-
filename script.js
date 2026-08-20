@@ -1,6 +1,6 @@
 /* =====================================================
    OYA HEALTH CARE
-   CATALOGUE JAVASCRIPT
+   SHOPPING STYLE CATALOGUE
 ===================================================== */
 
 
@@ -30,86 +30,51 @@ const categories = [
 
             {
                 name: "Hospital Bed",
-
                 image: "images/hospitalbed.webp",
-
                 description:
-                    "Hospital bed designed for patient comfort, care and healthcare requirements.",
-
-                size:
-                    "Standard Hospital Bed"
+                    "Hospital bed designed for patient comfort, care and healthcare requirements."
             },
 
             {
                 name: "Semi Fowler Hospital Bed",
-
                 image: "images/semi bed.png",
-
                 description:
-                    "Semi Fowler hospital bed designed for comfortable patient positioning.",
-
-                size:
-                    "Standard Hospital Bed"
+                    "Semi Fowler hospital bed designed for comfortable patient positioning."
             },
 
             {
                 name: "Fowler Hospital Bed",
-
                 image: "images/fowlerbed.png",
-
                 description:
-                    "Fowler hospital bed designed for flexible patient positioning and patient care.",
-
-                size:
-                    "Standard Hospital Bed"
+                    "Fowler hospital bed designed for flexible patient positioning and patient care."
             },
 
             {
                 name: "2 Function Hospital Bed",
-
                 image: "images/2fbed.png",
-
                 description:
-                    "2-function hospital bed suitable for everyday patient-care requirements.",
-
-                size:
-                    "2 Function"
+                    "2-function hospital bed suitable for everyday patient-care requirements."
             },
 
             {
                 name: "3 Function Hospital Bed",
-
                 image: "images/3fbed.png",
-
                 description:
-                    "3-function hospital bed designed for flexible healthcare requirements.",
-
-                size:
-                    "3 Function"
+                    "3-function hospital bed designed for flexible healthcare requirements."
             },
 
             {
                 name: "4 Function Hospital Bed",
-
                 image: "images/4fbed.png",
-
                 description:
-                    "4-function hospital bed designed for professional healthcare environments.",
-
-                size:
-                    "4 Function"
+                    "4-function hospital bed designed for professional healthcare environments."
             },
 
             {
                 name: "Folding Hospital Bed",
-
                 image: "images/foldingbed.png",
-
                 description:
-                    "Folding hospital bed designed for convenient healthcare use.",
-
-                size:
-                    "Folding"
+                    "Folding hospital bed designed for convenient healthcare use."
             }
 
         ]
@@ -117,57 +82,35 @@ const categories = [
 
 
     /* =================================================
-       02 OXYGEN EQUIPMENT
+       02 OXYGEN CYLINDERS
     ================================================= */
 
     {
-        id: "oxygen-equipment",
+        id: "oxygen-cylinders",
 
-        name: "Oxygen Equipment",
+        name: "Oxygen Cylinders",
 
-        category: "Oxygen",
+        category: "Oxygen Cylinders",
 
-        image: "images/concentrator.webp",
+        image: "images/oxy5ltr.png",
 
         description:
-            "Oxygen cylinders and concentrators for healthcare and home-care requirements.",
+            "Oxygen cylinders available in different capacities for healthcare requirements.",
 
         products: [
 
             {
                 name: "Oxygen Cylinder 5 Litre",
-
                 image: "images/oxy5ltr.png",
-
                 description:
-                    "5 litre oxygen cylinder suitable for healthcare requirements.",
-
-                size:
-                    "5 Litre"
+                    "5 litre oxygen cylinder suitable for healthcare requirements."
             },
 
             {
                 name: "Oxygen Cylinder 10 Litre",
-
                 image: "images/oxy10ltr.png",
-
                 description:
-                    "10 litre oxygen cylinder suitable for medical and healthcare requirements.",
-
-                size:
-                    "10 Litre"
-            },
-
-            {
-                name: "Oxygen Concentrator",
-
-                image: "images/concentrator.webp",
-
-                description:
-                    "Oxygen concentrator suitable for healthcare and home-care requirements.",
-
-                size:
-                    "5 Liter to 10 Liter"
+                    "10 litre oxygen cylinder suitable for medical and healthcare requirements."
             }
 
         ]
@@ -175,7 +118,36 @@ const categories = [
 
 
     /* =================================================
-       03 WHEELCHAIRS
+       03 OXYGEN CONCENTRATORS
+    ================================================= */
+
+    {
+        id: "oxygen-concentrators",
+
+        name: "Oxygen Concentrators",
+
+        category: "Oxygen Concentrators",
+
+        image: "images/concentrator.webp",
+
+        description:
+            "Oxygen concentrators designed for healthcare and home-care requirements.",
+
+        products: [
+
+            {
+                name: "Oxygen Concentrator",
+                image: "images/concentrator.webp",
+                description:
+                    "Oxygen concentrator suitable for healthcare and home-care requirements."
+            }
+
+        ]
+    },
+
+
+    /* =================================================
+       04 WHEELCHAIRS
     ================================================= */
 
     {
@@ -183,7 +155,7 @@ const categories = [
 
         name: "Wheelchairs",
 
-        category: "Wheelchair",
+        category: "Wheelchairs",
 
         image: "images/w1.png",
 
@@ -194,36 +166,28 @@ const categories = [
 
             {
                 name: "Standard Wheelchair",
-
                 image: "images/w1.png",
-
                 description:
                     "Standard manual wheelchair designed for everyday mobility."
             },
 
             {
                 name: "Folding Wheelchair",
-
                 image: "images/w2.png",
-
                 description:
                     "Folding wheelchair designed for convenient transportation and storage."
             },
 
             {
                 name: "Commode Wheelchair",
-
                 image: "images/w3.png",
-
                 description:
                     "Commode wheelchair designed for additional patient-care convenience."
             },
 
             {
                 name: "Reclining Wheelchair",
-
                 image: "images/w4.png",
-
                 description:
                     "Reclining wheelchair designed for enhanced patient comfort."
             }
@@ -233,7 +197,7 @@ const categories = [
 
 
     /* =================================================
-       04 CPAP MACHINES
+       05 CPAP MACHINES
     ================================================= */
 
     {
@@ -241,7 +205,7 @@ const categories = [
 
         name: "CPAP Machines",
 
-        category: "CPAP",
+        category: "CPAP Machines",
 
         image: "images/c1.png",
 
@@ -252,27 +216,21 @@ const categories = [
 
             {
                 name: "CPAP Machine",
-
                 image: "images/c1.png",
-
                 description:
                     "CPAP machine designed for suitable sleep-care requirements."
             },
 
             {
                 name: "Auto CPAP Machine",
-
                 image: "images/c2.png",
-
                 description:
                     "Auto CPAP machine designed for convenient sleep-care use."
             },
 
             {
                 name: "Portable CPAP Machine",
-
                 image: "images/c3.png",
-
                 description:
                     "Portable CPAP equipment designed for convenient use."
             }
@@ -282,7 +240,7 @@ const categories = [
 
 
     /* =================================================
-       05 BIPAP MACHINES
+       06 BIPAP MACHINES
     ================================================= */
 
     {
@@ -290,29 +248,25 @@ const categories = [
 
         name: "BiPAP Machines",
 
-        category: "BiPAP",
+        category: "BiPAP Machines",
 
         image: "images/b1.png",
 
         description:
-            "Bi-level respiratory-support equipment for suitable healthcare requirements.",
+            "Bi-level respiratory-support equipment for healthcare requirements.",
 
         products: [
 
             {
                 name: "BiPAP Machine",
-
                 image: "images/b1.png",
-
                 description:
                     "BiPAP machine designed for suitable respiratory-support requirements."
             },
 
             {
                 name: "Portable BiPAP Machine",
-
                 image: "images/b2.png",
-
                 description:
                     "Portable BiPAP equipment designed for convenient use."
             }
@@ -322,7 +276,7 @@ const categories = [
 
 
     /* =================================================
-       06 MOBILITY AIDS
+       07 MOBILITY AIDS
     ================================================= */
 
     {
@@ -341,27 +295,21 @@ const categories = [
 
             {
                 name: "Walking Walker",
-
                 image: "images/wl1.png",
-
                 description:
                     "Walking support designed for everyday mobility and stability."
             },
 
             {
                 name: "Folding Walker",
-
                 image: "images/wl2.png",
-
                 description:
                     "Folding walker designed for convenient storage and transportation."
             },
 
             {
                 name: "Adjustable Walker",
-
                 image: "images/wl3.png",
-
                 description:
                     "Adjustable walking support designed for everyday mobility."
             }
@@ -371,7 +319,7 @@ const categories = [
 
 
     /* =================================================
-       07 PATIENT MONITORING
+       08 PATIENT MONITORING
     ================================================= */
 
     {
@@ -384,15 +332,13 @@ const categories = [
         image: "images/pm.png",
 
         description:
-            "Equipment designed for suitable patient monitoring requirements.",
+            "Equipment designed for patient monitoring requirements.",
 
         products: [
 
             {
                 name: "Patient Monitor",
-
                 image: "images/pm.png",
-
                 description:
                     "Patient monitoring equipment designed for healthcare requirements."
             }
@@ -402,7 +348,7 @@ const categories = [
 
 
     /* =================================================
-       08 CRITICAL CARE
+       09 CRITICAL CARE
     ================================================= */
 
     {
@@ -415,15 +361,13 @@ const categories = [
         image: "images/venti.png",
 
         description:
-            "Respiratory-support equipment for suitable critical-care environments.",
+            "Respiratory-support equipment for critical-care environments.",
 
         products: [
 
             {
                 name: "ICU Ventilator",
-
                 image: "images/venti.png",
-
                 description:
                     "Respiratory-support equipment for appropriate critical-care environments."
             }
@@ -433,7 +377,7 @@ const categories = [
 
 
     /* =================================================
-       09 DIAGNOSTICS
+       10 DIAGNOSTICS
     ================================================= */
 
     {
@@ -452,9 +396,7 @@ const categories = [
 
             {
                 name: "Pulse Oximeter",
-
                 image: "images/pu.png",
-
                 description:
                     "Compact diagnostic equipment designed for basic patient measurements."
             }
@@ -464,7 +406,7 @@ const categories = [
 
 
     /* =================================================
-       10 EMERGENCY CARE
+       11 EMERGENCY CARE
     ================================================= */
 
     {
@@ -472,7 +414,7 @@ const categories = [
 
         name: "Emergency Care",
 
-        category: "Emergency",
+        category: "Emergency Care",
 
         image: "images/amb.png",
 
@@ -483,9 +425,7 @@ const categories = [
 
             {
                 name: "Ambulance Service",
-
                 image: "images/amb.png",
-
                 description:
                     "Emergency transportation support for urgent patient-care requirements."
             }
@@ -497,7 +437,7 @@ const categories = [
 
 
 /* =====================================================
-   MAIN ELEMENT
+   MAIN
 ===================================================== */
 
 const mainContent =
@@ -505,19 +445,14 @@ const mainContent =
 
 
 /* =====================================================
-   HOME PAGE
+   HOME
 ===================================================== */
 
 function showHome() {
 
     if (!mainContent) return;
 
-
     mainContent.innerHTML = `
-
-        <!-- =============================================
-             HOME INFORMATION
-        ============================================== -->
 
         <section
             class="home-info"
@@ -527,7 +462,6 @@ function showHome() {
             <h1 class="home-title">
                 Oya Health Care
             </h1>
-
 
             <p class="home-description">
 
@@ -574,10 +508,6 @@ function showHome() {
         </section>
 
 
-        <!-- =============================================
-             CATALOGUE
-        ============================================== -->
-
         <section id="catalogue">
 
             <div class="page-heading">
@@ -594,9 +524,7 @@ function showHome() {
             <div
                 class="category-grid"
                 id="categoryGrid"
-            >
-
-            </div>
+            ></div>
 
         </section>
 
@@ -614,14 +542,13 @@ function showHome() {
 
 
 /* =====================================================
-   RENDER CATEGORY CARDS
+   CATEGORY CARDS
 ===================================================== */
 
 function renderCategories() {
 
     const grid =
         document.getElementById("categoryGrid");
-
 
     if (!grid) return;
 
@@ -636,7 +563,6 @@ function renderCategories() {
 
 
         card.type = "button";
-
 
         card.className =
             "category-card";
@@ -678,6 +604,7 @@ function renderCategories() {
                     <span class="product-count">
 
                         ${category.products.length}
+
                         ${
                             category.products.length === 1
                                 ? " product"
@@ -712,7 +639,7 @@ function renderCategories() {
 
 
 /* =====================================================
-   CATEGORY PAGE
+   OPEN CATEGORY
 ===================================================== */
 
 function openCategory(category) {
@@ -723,6 +650,7 @@ function openCategory(category) {
     mainContent.innerHTML = `
 
         <section class="category-page">
+
 
             <h1 class="category-page-title">
                 ${category.name.toUpperCase()}
@@ -740,12 +668,16 @@ function openCategory(category) {
             </button>
 
 
+            <p class="category-page-description">
+                ${category.description}
+            </p>
+
+
             <div
                 class="product-grid"
                 id="productGrid"
-            >
+            ></div>
 
-            </div>
 
         </section>
 
@@ -763,14 +695,13 @@ function openCategory(category) {
 
 
 /* =====================================================
-   RENDER PRODUCTS
+   PRODUCTS INSIDE CATEGORY
 ===================================================== */
 
 function renderProducts(category) {
 
     const grid =
         document.getElementById("productGrid");
-
 
     if (!grid) return;
 
@@ -786,7 +717,6 @@ function renderProducts(category) {
 
         card.type = "button";
 
-
         card.className =
             "product-card";
 
@@ -799,7 +729,6 @@ function renderProducts(category) {
                     src="${product.image}"
                     alt="${product.name}"
                     loading="lazy"
-                    onerror="this.style.display='none';"
                 >
 
             </div>
@@ -840,19 +769,13 @@ function renderProducts(category) {
 
 
 /* =====================================================
-   PRODUCT DETAIL PAGE
+   PRODUCT DETAIL
 ===================================================== */
 
 function openProduct(product, category) {
 
     if (!mainContent) return;
 
-
-    /*
-       At the moment every product has one main image.
-       If you later add more images, put them inside
-       product.gallery.
-    */
 
     const gallery =
         product.gallery &&
@@ -866,32 +789,20 @@ function openProduct(product, category) {
         <section class="product-detail">
 
 
-            <!-- =========================================
-                 BACK
-            ========================================== -->
-
             <div class="product-detail-top">
 
                 <button
                     class="detail-back"
                     onclick="openCategoryById('${category.id}')"
                 >
-                    ← Back
+                    ← Back to ${category.name}
                 </button>
 
             </div>
 
 
-            <!-- =========================================
-                 PRODUCT
-            ========================================== -->
-
             <div class="product-detail-layout">
 
-
-                <!-- =====================================
-                     LEFT
-                ====================================== -->
 
                 <div class="detail-gallery">
 
@@ -911,83 +822,44 @@ function openProduct(product, category) {
                     <div
                         class="thumbnail-row"
                         id="thumbnailRow"
-                    >
-
-                    </div>
+                    ></div>
 
 
                 </div>
 
 
-                <!-- =====================================
-                     RIGHT
-                ====================================== -->
-
                 <div class="product-detail-info">
 
 
                     <div class="detail-category">
-
                         ${category.category}
-
                     </div>
 
 
                     <h1 class="detail-title">
-
                         ${product.name}
-
                     </h1>
 
 
                     <p class="detail-description">
-
                         ${product.description}
-
                     </p>
 
 
                     <div class="detail-line"></div>
 
 
-                    ${
-                        product.size
-                            ? `
-
-                                <span class="detail-label">
-                                    SIZE
-                                </span>
-
-                                <div class="size-option">
-                                    ${product.size}
-                                </div>
-
-                              `
-                            : ""
-                    }
+                    <span class="detail-label">
+                        PRODUCT
+                    </span>
 
 
-                    ${
-                        product.specification
-                            ? `
-
-                                <div class="detail-line"></div>
-
-                                <span class="detail-label">
-                                    SPECIFICATION
-                                </span>
-
-                                <p class="detail-description">
-                                    ${product.specification}
-                                </p>
-
-                              `
-                            : ""
-                    }
+                    <div class="size-option">
+                        Available on enquiry
+                    </div>
 
 
                     <div class="enquiry-buttons">
-
 
                         <a
                             href="tel:7021235223"
@@ -1006,15 +878,12 @@ function openProduct(product, category) {
                             WhatsApp Enquiry
                         </a>
 
-
                     </div>
 
 
                 </div>
 
-
             </div>
-
 
         </section>
 
@@ -1028,19 +897,17 @@ function openProduct(product, category) {
         top: 0,
         behavior: "smooth"
     });
-
 }
 
 
 /* =====================================================
-   PRODUCT THUMBNAILS
+   THUMBNAILS
 ===================================================== */
 
 function renderThumbnails(gallery) {
 
     const row =
         document.getElementById("thumbnailRow");
-
 
     const mainImage =
         document.getElementById("mainProductImage");
@@ -1099,10 +966,13 @@ function renderThumbnails(gallery) {
                             ".thumbnail"
                         )
                         .forEach(
-                            item =>
+                            item => {
+
                                 item.classList.remove(
                                     "active"
-                                )
+                                );
+
+                            }
                         );
 
 
@@ -1125,7 +995,7 @@ function renderThumbnails(gallery) {
 
 
 /* =====================================================
-   OPEN CATEGORY BY ID
+   FIND CATEGORY
 ===================================================== */
 
 function openCategoryById(id) {
@@ -1189,7 +1059,7 @@ function closeMobileMenu() {
 
 
 /* =====================================================
-   SCROLL TO CATALOGUE
+   CATALOGUE SCROLL
 ===================================================== */
 
 function scrollToCatalogue() {
@@ -1222,7 +1092,7 @@ function scrollToCatalogue() {
 
 
 /* =====================================================
-   ABOUT
+   ABOUT SCROLL
 ===================================================== */
 
 function scrollToAbout() {
@@ -1255,7 +1125,7 @@ function scrollToAbout() {
 
 
 /* =====================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
+   OUTSIDE CLICK
 ===================================================== */
 
 document.addEventListener(
@@ -1294,7 +1164,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   START WEBSITE
+   START
 ===================================================== */
 
 document.addEventListener(
