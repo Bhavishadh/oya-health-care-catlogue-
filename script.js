@@ -433,77 +433,6 @@ const categories = [
 
 
     /* =====================================================
-       BIPAP
-    ===================================================== */
-
-    {
-        id: "bipap-machines",
-
-        title: "BiPAP Machines",
-
-        image: "images/b1.png",
-
-        description:
-            "Non-invasive respiratory-support equipment.",
-
-        products: [
-
-            {
-                name: "Standard BiPAP Machine",
-
-                images: [
-                    "images/b1.png"
-                ],
-
-                description:
-                    "Bi-level respiratory-support solution designed for suitable healthcare requirements.",
-
-                info: {
-                    "TYPE": "BiPAP Machine",
-                    "USE": "Respiratory Support"
-                }
-            },
-
-
-            {
-                name: "Portable BiPAP Machine",
-
-                images: [
-                    "images/b2.png"
-                ],
-
-                description:
-                    "Portable respiratory-support option designed for convenient handling and use.",
-
-                info: {
-                    "TYPE": "Portable BiPAP",
-                    "USE": "Respiratory Support"
-                }
-            },
-
-
-            {
-                name: "Auto BiPAP Machine",
-
-                images: [
-                    "images/b1.png"
-                ],
-
-                description:
-                    "Adaptive BiPAP option designed for suitable respiratory support.",
-
-                info: {
-                    "TYPE": "Auto BiPAP",
-                    "USE": "Respiratory Support"
-                }
-            }
-
-        ]
-    },
-
-
-
-    /* =====================================================
        WALKERS
     ===================================================== */
 
@@ -822,6 +751,8 @@ let currentCategory = null;
 
 let currentProductIndex = 0;
 
+let currentImageIndex = 0;
+
 
 
 /* =========================================================
@@ -1099,6 +1030,12 @@ function updateProductPage() {
 
 
 
+    /* RESET IMAGE INDEX */
+
+    currentImageIndex = 0;
+
+
+
     /* BIG IMAGE */
 
     mainProductImage.src =
@@ -1153,10 +1090,10 @@ function updateProductPage() {
 
 
 
-    /* SMALL PRODUCT CARDS */
+    /* IMAGE GALLERY THUMBNAILS (SAME PRODUCT) */
 
     renderProductThumbnails(
-        category
+        product
     );
 
 }
@@ -1164,19 +1101,20 @@ function updateProductPage() {
 
 
 /* =========================================================
-   SMALL PRODUCTS UNDER BIG IMAGE
+   PRODUCT IMAGE GALLERY
+   (thumbnails = other photos of THIS product)
 ========================================================= */
 
 function renderProductThumbnails(
-    category
+    product
 ) {
 
     thumbnailContainer.innerHTML =
         "";
 
 
-    category.products.forEach(
-        (product, index) => {
+    product.images.forEach(
+        (image, index) => {
 
             const card =
                 document.createElement(
@@ -1194,7 +1132,7 @@ function renderProductThumbnails(
 
             if (
                 index ===
-                currentProductIndex
+                currentImageIndex
             ) {
 
                 card.classList.add(
@@ -1207,15 +1145,10 @@ function renderProductThumbnails(
             card.innerHTML = `
 
                 <img
-                    src="${product.images[0]}"
+                    src="${image}"
                     alt="${product.name}"
                     loading="lazy"
                 >
-
-
-                <span>
-                    ${product.name}
-                </span>
 
             `;
 
@@ -1224,17 +1157,32 @@ function renderProductThumbnails(
                 "click",
                 () => {
 
-                    currentProductIndex =
+                    currentImageIndex =
                         index;
 
 
-                    updateProductPage();
+                    mainProductImage.src =
+                        image;
 
 
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
+                    mainProductImage.alt =
+                        product.name;
+
+
+                    thumbnailContainer
+                        .querySelectorAll(
+                            ".thumbnail"
+                        )
+                        .forEach(
+                            t => t.classList.remove(
+                                "active"
+                            )
+                        );
+
+
+                    card.classList.add(
+                        "active"
+                    );
 
                 }
             );
