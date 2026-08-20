@@ -1,3 +1,4 @@
+
 /* =========================================================
    OYA HEALTH CARE
    COMPLETE STYLE
@@ -294,7 +295,7 @@ a {
 
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
