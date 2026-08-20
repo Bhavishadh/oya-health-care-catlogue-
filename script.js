@@ -1,6 +1,6 @@
 /* =========================================================
    OYA HEALTH CARE
-   CATEGORY → ALL PRODUCTS → FULL PRODUCT PAGE
+   CATEGORY → PRODUCTS → PRODUCT DETAIL
 ========================================================= */
 
 
@@ -39,7 +39,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Semi-Fowler Bed",
 
@@ -56,7 +55,6 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
-
 
             {
                 name: "Fowler Hospital Bed",
@@ -75,7 +73,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "2-Function Hospital Bed",
 
@@ -92,7 +89,6 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
-
 
             {
                 name: "3-Function Hospital Bed",
@@ -111,7 +107,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "4-Function Hospital Bed",
 
@@ -128,7 +123,6 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
-
 
             {
                 name: "Folding Hospital Bed",
@@ -184,7 +178,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: 'Oxygen Cylinder "10Ltr"',
 
@@ -223,7 +216,7 @@ const categories = [
         products: [
 
             {
-                name: "Oxygen concentrator on rent",
+                name: "Oxygen Concentrator on Rent",
 
                 images: [
                     "images/concentrator.webp"
@@ -233,10 +226,97 @@ const categories = [
                     "On rent 24 hrs service at your doorstep. Rent with Oxygen cylinder.",
 
                 info: {
-                    "SIZE": "5 Liter to 10 Liter",
-                    "SERVICE": "On Rent",
-                    "AVAILABILITY": "24 Hrs",
-                    "DELIVERY": "At Your Doorstep"
+                    "SIZE": "5 Liter to 10 Liter"
+                }
+            },
+
+            {
+                name: "Oxygen Concentrator",
+
+                images: [
+                    "images/concentrator2.webp"
+                ],
+
+                description:
+                    "Oxygen concentrator suitable for respiratory-support requirements.",
+
+                info: {
+                    "SIZE": "5 Liter"
+                }
+            },
+
+            {
+                name: "Portable Oxygen Concentrator",
+
+                images: [
+                    "images/concentrator3.webp"
+                ],
+
+                description:
+                    "Portable oxygen concentrator designed for convenient oxygen support.",
+
+                info: {
+                    "SIZE": "Portable"
+                }
+            },
+
+            {
+                name: "Oxygen Concentrator 10L",
+
+                images: [
+                    "images/concentrator4.webp"
+                ],
+
+                description:
+                    "Higher-capacity oxygen concentrator for suitable healthcare requirements.",
+
+                info: {
+                    "SIZE": "10 Liter"
+                }
+            },
+
+            {
+                name: "Oxygen Concentrator Machine",
+
+                images: [
+                    "images/concentrator5.webp"
+                ],
+
+                description:
+                    "Reliable oxygen concentrator machine for appropriate healthcare applications.",
+
+                info: {
+                    "TYPE": "Oxygen Concentrator"
+                }
+            },
+
+            {
+                name: "Portable Oxygen Concentrator",
+
+                images: [
+                    "images/concentrator6.webp"
+                ],
+
+                description:
+                    "Compact oxygen concentrator designed for portability.",
+
+                info: {
+                    "TYPE": "Portable Oxygen Concentrator"
+                }
+            },
+
+            {
+                name: "Oxygen Concentrator",
+
+                images: [
+                    "images/concentrator7.webp"
+                ],
+
+                description:
+                    "Oxygen concentrator designed for suitable respiratory support.",
+
+                info: {
+                    "TYPE": "Oxygen Concentrator"
                 }
             }
 
@@ -276,7 +356,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Folding Wheelchair",
 
@@ -293,7 +372,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Commode Wheelchair",
 
@@ -309,7 +387,6 @@ const categories = [
                     "USE": "Patient Care"
                 }
             },
-
 
             {
                 name: "Reclining Wheelchair",
@@ -363,7 +440,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Auto CPAP (APAP) Machine",
 
@@ -379,7 +455,6 @@ const categories = [
                     "USE": "Sleep Care"
                 }
             },
-
 
             {
                 name: "Portable CPAP Machine",
@@ -433,7 +508,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Portable BiPAP Machine",
 
@@ -449,7 +523,6 @@ const categories = [
                     "USE": "Respiratory Support"
                 }
             },
-
 
             {
                 name: "Auto BiPAP Machine",
@@ -503,7 +576,6 @@ const categories = [
                 }
             },
 
-
             {
                 name: "Folding Walker",
 
@@ -519,7 +591,6 @@ const categories = [
                     "USE": "Mobility Support"
                 }
             },
-
 
             {
                 name: "Adjustable Walker",
@@ -741,6 +812,16 @@ const relatedProductsGrid =
 
 
 /* =========================================================
+   CURRENT PRODUCT
+========================================================= */
+
+let currentCategory = null;
+
+let currentProductIndex = 0;
+
+
+
+/* =========================================================
    RENDER CATEGORIES
 ========================================================= */
 
@@ -755,7 +836,6 @@ function renderCategories() {
 
         card.className =
             "category-card";
-
 
         card.innerHTML = `
 
@@ -795,12 +875,10 @@ function renderCategories() {
             </div>
         `;
 
-
         card.addEventListener(
             "click",
             () => openCategory(category)
         );
-
 
         categoryGrid.appendChild(card);
 
@@ -829,13 +907,8 @@ function openCategory(category) {
                 : "PRODUCTS"
         }`;
 
-
     productGrid.innerHTML = "";
 
-
-    /*
-       EVERY PRODUCT IS SHOWN
-    */
 
     category.products.forEach(
         (product, index) => {
@@ -845,7 +918,6 @@ function openCategory(category) {
 
             card.className =
                 "product-card";
-
 
             card.innerHTML = `
 
@@ -873,7 +945,6 @@ function openCategory(category) {
 
             `;
 
-
             card.addEventListener(
                 "click",
                 () => {
@@ -885,7 +956,6 @@ function openCategory(category) {
 
                 }
             );
-
 
             productGrid.appendChild(card);
 
@@ -925,68 +995,15 @@ function openProduct(
     if (!product) return;
 
 
-    productCategory.textContent =
-        category.title;
+    currentCategory =
+        category;
+
+    currentProductIndex =
+        productIndex;
 
 
-    productTitle.textContent =
-        product.name;
+    updateProductPage();
 
-
-    productDescription.textContent =
-        product.description;
-
-
-    /*
-       MAIN IMAGE
-    */
-
-    mainProductImage.src =
-        product.images[0];
-
-    mainProductImage.alt =
-        product.name;
-
-
-    /*
-       THUMBNAILS
-    */
-
-    renderThumbnails(product);
-
-
-    /*
-       PRODUCT INFORMATION
-    */
-
-    renderProductInfo(product);
-
-
-    /*
-       WHATSAPP
-    */
-
-    const message =
-        `Hi OYA Health Care, I am interested in ${product.name}. Please share details, price and availability.`;
-
-    productWhatsApp.href =
-        "https://wa.me/917021235223?text=" +
-        encodeURIComponent(message);
-
-
-    /*
-       OTHER PRODUCTS
-    */
-
-    renderRelatedProducts(
-        category,
-        productIndex
-    );
-
-
-    /*
-       SHOW PRODUCT PAGE
-    */
 
     document.body.classList.add(
         "product-open"
@@ -1007,16 +1024,101 @@ function openProduct(
 
 
 /* =========================================================
-   THUMBNAILS
+   UPDATE PRODUCT PAGE
 ========================================================= */
 
-function renderThumbnails(product) {
+function updateProductPage() {
+
+    const category =
+        currentCategory;
+
+    const product =
+        category.products[
+            currentProductIndex
+        ];
+
+    if (!product) return;
+
+
+    /* PRODUCT TITLE */
+
+    productTitle.textContent =
+        product.name;
+
+
+    /* PRODUCT CATEGORY */
+
+    productCategory.textContent =
+        category.title;
+
+
+    /* DESCRIPTION */
+
+    productDescription.textContent =
+        product.description;
+
+
+    /* BIG IMAGE */
+
+    mainProductImage.src =
+        product.images[0];
+
+    mainProductImage.alt =
+        product.name;
+
+
+    /*
+       IMPORTANT:
+
+       THUMBNAILS ARE NOW
+       OTHER PRODUCTS
+       FROM THE SAME CATEGORY
+    */
+
+    renderProductThumbnails();
+
+
+    /* PRODUCT INFORMATION */
+
+    renderProductInfo(product);
+
+
+    /* WHATSAPP */
+
+    const message =
+        `Hi OYA Health Care, I am interested in ${product.name}. Please share details, price and availability.`;
+
+    productWhatsApp.href =
+        "https://wa.me/917021235223?text=" +
+        encodeURIComponent(message);
+
+
+    /*
+       RELATED PRODUCTS BELOW
+       CAN STAY AS THEY ARE
+    */
+
+    renderRelatedProducts();
+
+}
+
+
+
+/* =========================================================
+   PRODUCT THUMBNAILS
+   OTHER PRODUCTS FROM SAME CATEGORY
+========================================================= */
+
+function renderProductThumbnails() {
 
     thumbnailContainer.innerHTML = "";
 
 
-    product.images.forEach(
-        (image, index) => {
+    if (!currentCategory) return;
+
+
+    currentCategory.products.forEach(
+        (product, index) => {
 
             const thumbnail =
                 document.createElement("button");
@@ -1025,7 +1127,14 @@ function renderThumbnails(product) {
                 "thumbnail";
 
 
-            if (index === 0) {
+            /*
+               CURRENT PRODUCT GETS
+               PURPLE BORDER
+            */
+
+            if (
+                index === currentProductIndex
+            ) {
 
                 thumbnail.classList.add(
                     "active"
@@ -1037,39 +1146,27 @@ function renderThumbnails(product) {
             thumbnail.innerHTML = `
 
                 <img
-                    src="${image}"
+                    src="${product.images[0]}"
                     alt="${product.name}"
+                    title="${product.name}"
                 >
 
             `;
 
 
+            /*
+               CLICK SMALL PRODUCT
+               → CHANGE BIG PRODUCT
+            */
+
             thumbnail.addEventListener(
                 "click",
                 () => {
 
-                    mainProductImage.src =
-                        image;
+                    currentProductIndex =
+                        index;
 
-
-                    document
-                        .querySelectorAll(
-                            ".thumbnail"
-                        )
-                        .forEach(
-                            item => {
-
-                                item.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-                    thumbnail.classList.add(
-                        "active"
-                    );
+                    updateProductPage();
 
                 }
             );
@@ -1095,7 +1192,10 @@ function renderProductInfo(product) {
     productInfoSection.innerHTML = "";
 
 
-    if (!product.info) {
+    if (
+        !product.info ||
+        Object.keys(product.info).length === 0
+    ) {
 
         return;
 
@@ -1142,19 +1242,20 @@ function renderProductInfo(product) {
    RELATED PRODUCTS
 ========================================================= */
 
-function renderRelatedProducts(
-    category,
-    selectedIndex
-) {
+function renderRelatedProducts() {
 
     relatedProductsGrid.innerHTML = "";
 
 
-    category.products.forEach(
+    if (!currentCategory) return;
+
+
+    currentCategory.products.forEach(
         (product, index) => {
 
             /*
-               Keep ALL products visible.
+               Keep related products section
+               working below the detail page.
             */
 
             const card =
@@ -1164,7 +1265,9 @@ function renderRelatedProducts(
                 "related-product-card";
 
 
-            if (index === selectedIndex) {
+            if (
+                index === currentProductIndex
+            ) {
 
                 card.classList.add(
                     "selected"
@@ -1188,9 +1291,9 @@ function renderRelatedProducts(
 
                     <small>
                         ${
-                            index === selectedIndex
+                            index === currentProductIndex
                                 ? "CURRENT PRODUCT"
-                                : category.title
+                                : currentCategory.title
                         }
                     </small>
 
@@ -1207,10 +1310,15 @@ function renderRelatedProducts(
                 "click",
                 () => {
 
-                    openProduct(
-                        category,
-                        index
-                    );
+                    currentProductIndex =
+                        index;
+
+                    updateProductPage();
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
 
                 }
             );
@@ -1263,6 +1371,20 @@ function backToProducts() {
     productView.classList.remove(
         "active"
     );
+
+
+    /*
+       Return to the category page
+    */
+
+    document.body.classList.add(
+        "category-open"
+    );
+
+    categoryView.classList.add(
+        "active"
+    );
+
 
     window.scrollTo({
         top: 0,
@@ -1427,7 +1549,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   START WEBSITE
+   START
 ========================================================= */
 
 renderCategories();
