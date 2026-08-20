@@ -1,1698 +1,959 @@
-/* =====================================================
+/* =========================================================
    OYA HEALTH CARE
-   PREMIUM RESPONSIVE CATALOGUE
-===================================================== */
+   MAIN WEBSITE JAVASCRIPT
+   ========================================================= */
 
-/* =========================
-   RESET
-========================= */
+/* =========================================================
+   CATEGORY DATA
+   ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+const categories = [
+
+    {
+        id: "hospital-furniture",
+        title: "Hospital Furniture",
+        description:
+            "Hospital beds and furniture designed for patient care and healthcare requirements.",
+        image: "images/hospitalbed.webp",
+        products: [
+            {
+                id: "hospital-bed",
+                name: "Hospital Bed",
+                description:
+                    "Hospital bed designed for patient comfort, care and professional healthcare use.",
+                images: [
+                    "images/hospitalbed.webp",
+                    "images/fowlerbed.png",
+                    "images/semi bed.png",
+                    "images/foldingbed.png"
+                ]
+            },
+            {
+                id: "fowler-bed",
+                name: "Fowler Bed",
+                description:
+                    "Comfortable adjustable hospital bed suitable for hospitals, clinics and home care.",
+                images: [
+                    "images/fowlerbed.png",
+                    "images/hospitalbed.webp"
+                ]
+            },
+            {
+                id: "semi-fowler-bed",
+                name: "Semi Fowler Bed",
+                description:
+                    "Semi Fowler hospital bed designed for comfortable patient positioning and care.",
+                images: [
+                    "images/semi bed.png",
+                    "images/hospitalbed.webp"
+                ]
+            },
+            {
+                id: "folding-bed",
+                name: "Folding Hospital Bed",
+                description:
+                    "Practical folding hospital bed for flexible healthcare and home-care requirements.",
+                images: [
+                    "images/foldingbed.png",
+                    "images/hospitalbed.webp"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "oxygen-equipment",
+        title: "Oxygen Equipment",
+        description:
+            "Oxygen cylinders and related equipment for healthcare and home-care requirements.",
+        image: "images/oxy1.png",
+        products: [
+            {
+                id: "oxygen-cylinder",
+                name: "Oxygen Cylinder",
+                description:
+                    "Oxygen cylinder with regulator suitable for medical and home healthcare requirements.",
+                images: [
+                    "images/oxy1.png",
+                    "images/oxy5ltr.png",
+                    "images/oxy10ltr.png"
+                ]
+            },
+            {
+                id: "oxygen-cylinder-5ltr",
+                name: "Oxygen Cylinder 5 Litre",
+                description:
+                    "Compact 5 litre oxygen cylinder designed for convenient medical oxygen use.",
+                images: [
+                    "images/oxy5ltr.png",
+                    "images/oxy1.png"
+                ]
+            },
+            {
+                id: "oxygen-cylinder-10ltr",
+                name: "Oxygen Cylinder 10 Litre",
+                description:
+                    "10 litre oxygen cylinder suitable for healthcare and oxygen-support requirements.",
+                images: [
+                    "images/oxy10ltr.png",
+                    "images/oxy1.png"
+                ]
+            }
+        ]
+    },
+
+    /* =====================================================
+       NEW CATEGORY
+       OXYGEN CONCENTRATOR
+       ===================================================== */
+
+    {
+        id: "oxygen-concentrator",
+        title: "Oxygen Concentrator",
+        description:
+            "Oxygen concentrators designed to provide convenient oxygen support for home healthcare.",
+        image: "images/concentrator.webp",
+        products: [
+            {
+                id: "oxygen-concentrator",
+                name: "Oxygen Concentrator",
+                description:
+                    "Oxygen concentrator designed for convenient home oxygen support and everyday healthcare requirements.",
+                images: [
+                    "images/concentrator.webp"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "wheelchairs",
+        title: "Wheelchairs",
+        description:
+            "Mobility solutions designed for comfortable patient movement and support.",
+        image: "images/w1.png",
+        products: [
+            {
+                id: "wheelchair",
+                name: "Wheelchair",
+                description:
+                    "Comfortable wheelchair designed for safe and convenient patient mobility.",
+                images: [
+                    "images/w1.png"
+                ]
+            },
+            {
+                id: "wheelchair-2",
+                name: "Wheelchair",
+                description:
+                    "Reliable mobility solution suitable for home, hospital and patient-care requirements.",
+                images: [
+                    "images/w1.png"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "patient-monitoring",
+        title: "Patient Monitoring",
+        description:
+            "Equipment designed for suitable patient monitoring requirements.",
+        image: "images/pm.png",
+        products: [
+            {
+                id: "patient-monitor",
+                name: "Patient Monitor",
+                description:
+                    "Patient monitoring equipment designed for professional healthcare environments.",
+                images: [
+                    "images/pm.png"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "critical-care",
+        title: "Critical Care",
+        description:
+            "Respiratory-support equipment for suitable critical-care environments.",
+        image: "images/venti.png",
+        products: [
+            {
+                id: "ventilator",
+                name: "Ventilator",
+                description:
+                    "Respiratory support equipment designed for critical-care environments.",
+                images: [
+                    "images/venti.png"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "diagnostic-equipment",
+        title: "Diagnostic Equipment",
+        description:
+            "Equipment designed for basic patient measurements and diagnostics.",
+        image: "images/amb.png",
+        products: [
+            {
+                id: "diagnostic-equipment",
+                name: "Diagnostic Equipment",
+                description:
+                    "Healthcare equipment designed to support basic patient measurements and diagnostics.",
+                images: [
+                    "images/amb.png"
+                ]
+            }
+        ]
+    },
+
+    {
+        id: "emergency-care",
+        title: "Emergency Care",
+        description:
+            "Emergency transportation and urgent patient-care support.",
+        image: "images/amb.png",
+        products: [
+            {
+                id: "ambulance",
+                name: "Ambulance",
+                description:
+                    "Emergency transportation solution for urgent patient-care requirements.",
+                images: [
+                    "images/amb.png"
+                ]
+            }
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   COMPANY INFORMATION
+   ========================================================= */
+
+const companyInfo = {
+    title: "Oya Health Care",
+
+    description:
+        "OYA Health Care – Trusted Medical Equipment & Home Healthcare Solutions OYA Health Care is a leading supplier of high-quality medical equipment, hospital supplies, and home healthcare products in India. We are committed to providing reliable, affordable and quality healthcare solutions.",
+
+    address:
+        "Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli",
+
+    phone:
+        "7021235223"
+};
+
+
+/* =========================================================
+   DOM
+   ========================================================= */
+
+const mainContent =
+    document.getElementById("mainContent");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const menuButton =
+    document.getElementById("menuButton");
+
+
+/* =========================================================
+   IMAGE PATH HELPER
+   ========================================================= */
+
+function safeImage(path) {
+
+    if (!path) {
+        return "";
+    }
+
+    return path.replaceAll(" ", "%20");
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f2e9;
-    color: #173d36;
-    overflow-x: hidden;
-}
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
 
-button,
-a {
-    font-family: inherit;
-}
+function showHome(scrollTop = true) {
 
-button {
-    cursor: pointer;
-}
+    closeMobileMenu();
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+    const homeInfo = `
+        <section class="mobile-home-info">
 
-img {
-    max-width: 100%;
-}
+            <a href="#" onclick="showHome(); return false;">
+                <img
+                    src="${safeImage("images/logo (2).png")}"
+                    alt="Oya Health Care"
+                    class="mobile-home-logo"
+                >
+            </a>
+
+            <h1 class="mobile-home-title">
+                ${companyInfo.title}
+            </h1>
+
+            <p class="mobile-home-description">
+                ${companyInfo.description}
+            </p>
+
+            <div class="mobile-home-contact">
+
+                <div class="contact-item">
+                    <div class="contact-icon">⌖</div>
+                    <div>
+                        ${companyInfo.address}
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">♧</div>
+                    <a href="tel:${companyInfo.phone}">
+                        ${companyInfo.phone}
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+    `;
 
 
-/* =====================================================
-   DESKTOP MAIN LAYOUT
-===================================================== */
+    const heading = `
+        <div class="page-heading">
 
-.site-layout {
-    display: grid;
-    grid-template-columns: 405px minmax(0, 1fr);
-    min-height: 100vh;
-}
+            <div class="eyebrow">
+                CATALOGUE
+            </div>
+
+            <div class="heading-line"></div>
+
+        </div>
+    `;
 
 
-/* =====================================================
-   LEFT INFORMATION PANEL
-===================================================== */
+    mainContent.innerHTML = `
+        ${homeInfo}
+        ${heading}
 
-.left-panel {
-    position: sticky;
-    top: 0;
+        <section class="category-grid">
 
-    width: 405px;
-    height: 100vh;
+            ${categories.map(categoryCard).join("")}
 
-    background: #f7f5ee;
+        </section>
+    `;
 
-    border-right: 1px solid #d5d7ce;
 
-    padding: 52px 42px 38px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    z-index: 20;
-}
-
-.left-panel-top {
-    width: 100%;
-}
-
-.main-logo {
-    width: 88px;
-    height: 88px;
-
-    object-fit: contain;
-
-    display: block;
-
-    border-radius: 22px;
-
-    margin-bottom: 24px;
-}
-
-.left-panel h1 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 32px;
-    line-height: 1.1;
-
-    font-weight: 500;
-
-    color: #064f45;
-
-    margin-bottom: 16px;
-}
-
-.company-description {
-    max-width: 315px;
-
-    font-size: 16px;
-    line-height: 1.65;
-
-    color: #66716e;
-}
-
-.panel-line {
-    width: 100%;
-    height: 1px;
-
-    background: #bdc6c0;
-
-    margin: 34px 0;
-}
-
-.contact-item {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 16px;
-
-    margin-bottom: 26px;
-
-    color: #66716e;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-}
-
-.contact-item a {
-    color: #66716e;
-
-    transition: 0.2s;
-}
-
-.contact-item a:hover {
-    color: #075f53;
-}
-
-.contact-icon {
-    width: 14px;
-    min-width: 14px;
-
-    color: #b99a58;
-
-    font-size: 19px;
-
-    line-height: 1;
-}
-
-.left-panel-bottom {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-
-    color: #176357;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
-.left-panel-bottom span {
-    color: #8a918e;
-
-    font-size: 10px;
-
-    letter-spacing: 0;
+    if (scrollTop) {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 }
 
 
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.main-content {
-    min-width: 0;
-
-    width: 100%;
-
-    padding: 64px 54px 80px;
-
-    background: #f4f2e9;
-
-    overflow-x: hidden;
-}
-
-
-/* =====================================================
-   PAGE HEADING
-===================================================== */
-
-.page-heading {
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-    margin-bottom: 36px;
-}
-
-.eyebrow {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-style: italic;
-
-    font-weight: bold;
-
-    letter-spacing: 8px;
-
-    font-size: 15px;
-
-    color: #075b4f;
-}
-
-.heading-line {
-    width: 100%;
-
-    height: 1px;
-
-    background: #aeb7b0;
-}
-
-
-/* =====================================================
-   MOBILE HOME INFORMATION
-===================================================== */
-
-.mobile-home-info {
-    display: none;
-}
-
-
-/* =====================================================
-   CATEGORY GRID
-===================================================== */
-
-.category-grid {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 42px 32px;
-}
-
-
-/* =====================================================
+/* =========================================================
    CATEGORY CARD
-===================================================== */
+   ========================================================= */
 
-.category-card {
-    width: 100%;
+function categoryCard(category) {
 
-    min-width: 0;
+    const productCount =
+        category.products.length;
 
-    cursor: pointer;
+    return `
+        <article
+            class="category-card"
+            onclick="openCategory('${category.id}')"
+        >
 
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-}
+            <div class="category-image-box">
 
-.category-card:hover {
-    transform: translateY(-5px);
-}
+                <img
+                    src="${safeImage(category.image)}"
+                    alt="${category.title}"
+                    class="category-image"
+                    loading="lazy"
+                >
 
+            </div>
 
-/* =====================================================
-   CATEGORY IMAGE
-===================================================== */
+            <div class="category-info">
 
-.category-image-box {
-    width: 100%;
+                <div class="category-label">
+                    OYA COLLECTION
+                </div>
 
-    height: 335px;
+                <h2 class="category-title">
+                    ${category.title}
+                </h2>
 
-    background: #ffffff;
+                <p class="category-description">
+                    ${category.description}
+                </p>
 
-    border-radius: 23px;
+                <div class="category-bottom">
 
-    overflow: hidden;
+                    <span class="product-count">
+                        ${productCount}
+                        ${productCount === 1 ? "product" : "products"}
+                    </span>
 
-    display: flex;
+                    <span class="arrow">
+                        ↗
+                    </span>
 
-    align-items: center;
+                </div>
 
-    justify-content: center;
+            </div>
 
-    padding: 15px;
-}
-
-.category-image {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-}
-
-
-/* =====================================================
-   CATEGORY INFO
-===================================================== */
-
-.category-info {
-    width: 100%;
-
-    padding: 18px 4px 0;
-}
-
-.category-label {
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    font-weight: bold;
-
-    color: #075b4f;
-
-    margin-bottom: 9px;
-}
-
-.category-title {
-    font-size: 21px;
-
-    line-height: 1.25;
-
-    color: #111b19;
-
-    margin-bottom: 8px;
-
-    font-weight: 500;
-}
-
-.category-description {
-    color: #75807c;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    min-height: 43px;
-}
-
-.category-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    border-top: 1px solid #d8d9d2;
-
-    margin-top: 14px;
-
-    padding-top: 14px;
-}
-
-.product-count {
-    color: #075b4f;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 1.7px;
-}
-
-.arrow {
-    color: #b49352;
-
-    font-size: 21px;
+        </article>
+    `;
 }
 
 
-/* =====================================================
-   CATEGORY PAGE
-===================================================== */
+/* =========================================================
+   OPEN CATEGORY
+   ========================================================= */
 
-.category-page {
-    width: 100%;
+function openCategory(categoryId) {
 
-    min-width: 0;
-}
+    closeMobileMenu();
 
-.category-page-title {
-    font-family: Georgia, "Times New Roman", serif;
+    const category =
+        categories.find(
+            item => item.id === categoryId
+        );
 
-    font-style: italic;
-
-    font-weight: bold;
-
-    letter-spacing: 7px;
-
-    color: #075b4f;
-
-    font-size: 18px;
-
-    line-height: 1.4;
-}
-
-.back-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    border: 0;
-
-    background: transparent;
-
-    color: #66716e;
-
-    font-size: 17px;
-
-    font-weight: 600;
-
-    padding: 0;
-
-    margin: 28px 0 38px;
-}
-
-.back-button:hover {
-    color: #075b4f;
-}
+    if (!category) {
+        return;
+    }
 
 
-/* =====================================================
-   PRODUCT GRID
-===================================================== */
+    mainContent.innerHTML = `
 
-.product-grid {
-    width: 100%;
+        <section class="category-page">
 
-    display: grid;
+            <div class="page-heading">
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+                <div class="category-page-title">
+                    ${category.title.toUpperCase()}
+                </div>
 
-    gap: 42px 32px;
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <button
+                class="back-button"
+                onclick="showHome()"
+                type="button"
+            >
+                ← Back to Catalogue
+            </button>
+
+
+            <section class="product-grid">
+
+                ${category.products
+                    .map(product =>
+                        productCard(product, category)
+                    )
+                    .join("")
+                }
+
+            </section>
+
+        </section>
+    `;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* =====================================================
+/* =========================================================
    PRODUCT CARD
-===================================================== */
+   ========================================================= */
 
-.product-card {
-    width: 100%;
+function productCard(product, category) {
 
-    min-width: 0;
-
-    cursor: pointer;
-
-    transition: transform 0.25s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
+    const firstImage =
+        product.images &&
+        product.images.length
+            ? product.images[0]
+            : category.image;
 
 
-/* =====================================================
-   PRODUCT CARD IMAGE
-===================================================== */
+    return `
+        <article
+            class="product-card"
+            onclick="openProduct(
+                '${category.id}',
+                '${product.id}'
+            )"
+        >
 
-.product-image-box {
-    width: 100%;
+            <div class="product-image-box">
 
-    height: 330px;
+                <img
+                    src="${safeImage(firstImage)}"
+                    alt="${product.name}"
+                    class="product-image"
+                    loading="lazy"
+                >
 
-    background: #ffffff;
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 18px;
-}
-
-.product-image {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-}
+            </div>
 
 
-/* =====================================================
-   PRODUCT CARD INFO
-===================================================== */
+            <div class="product-card-info">
 
-.product-card-info {
-    padding: 18px 4px 0;
-}
+                <div class="product-category">
+                    ${category.title.toUpperCase()}
+                </div>
 
-.product-category {
-    font-size: 10px;
+                <h2 class="product-title">
+                    ${product.name}
+                </h2>
 
-    letter-spacing: 2px;
+                <p class="product-description">
+                    ${product.description}
+                </p>
 
-    font-weight: bold;
+            </div>
 
-    color: #075b4f;
-
-    margin-bottom: 9px;
-}
-
-.product-title {
-    font-size: 21px;
-
-    color: #101918;
-
-    line-height: 1.25;
-
-    margin-bottom: 8px;
-
-    font-weight: 500;
-}
-
-.product-description {
-    color: #727c79;
-
-    line-height: 1.5;
-
-    font-size: 14px;
+        </article>
+    `;
 }
 
 
-/* =====================================================
-   PRODUCT DETAIL PAGE
-===================================================== */
+/* =========================================================
+   OPEN PRODUCT
+   ========================================================= */
 
-.product-detail {
-    width: 100%;
+function openProduct(categoryId, productId) {
 
-    min-width: 0;
-}
+    closeMobileMenu();
 
-.product-detail-top {
-    width: 100%;
+    const category =
+        categories.find(
+            item => item.id === categoryId
+        );
 
-    margin-bottom: 34px;
-}
-
-.detail-back {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    background: transparent;
-
-    border: 0;
-
-    color: #68736f;
-
-    font-size: 17px;
-
-    font-weight: 600;
-
-    padding: 0;
-}
-
-.detail-back:hover {
-    color: #075b4f;
-}
-
-
-/* =====================================================
-   PRODUCT DETAIL LAYOUT
-===================================================== */
-
-.product-detail-layout {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
-
-    gap: 52px;
-
-    align-items: start;
-}
-
-
-/* =====================================================
-   GALLERY
-===================================================== */
-
-.detail-gallery {
-    width: 100%;
-
-    min-width: 0;
-}
-
-
-/* =====================================================
-   MAIN PRODUCT IMAGE
-===================================================== */
-
-.main-product-image-box {
-    width: 100%;
-
-    height: min(620px, 58vw);
-
-    min-height: 400px;
-
-    background: #ffffff;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 25px;
-}
-
-.main-product-image {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    max-width: 100%;
-    max-height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-}
-
-
-/* =====================================================
-   THUMBNAILS
-===================================================== */
-
-.thumbnail-row {
-    width: 100%;
-
-    max-width: 100%;
-
-    display: flex;
-
-    flex-wrap: nowrap;
-
-    gap: 12px;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    padding: 15px 2px 5px;
-
-    scrollbar-width: thin;
-}
-
-.thumbnail-row::-webkit-scrollbar {
-    height: 5px;
-}
-
-.thumbnail-row::-webkit-scrollbar-thumb {
-    background: #b8c2bd;
-
-    border-radius: 10px;
-}
-
-.thumbnail {
-    flex: 0 0 82px;
-
-    width: 82px;
-
-    height: 82px;
-
-    border: 2px solid transparent;
-
-    background: #ffffff;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    padding: 4px;
-}
-
-.thumbnail.active {
-    border-color: #075b4f;
-}
-
-.thumbnail img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    display: block;
-}
-
-
-/* =====================================================
-   PRODUCT DETAIL INFORMATION
-===================================================== */
-
-.product-detail-info {
-    width: 100%;
-
-    min-width: 0;
-
-    padding-top: 10px;
-}
-
-.detail-category {
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: #075b4f;
-
-    font-weight: bold;
-
-    margin-bottom: 18px;
-}
-
-.detail-title {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(38px, 4vw, 62px);
-
-    font-weight: 500;
-
-    line-height: 1.02;
-
-    color: #14201d;
-
-    margin-bottom: 25px;
-}
-
-.detail-description {
-    color: #6e7875;
-
-    font-size: 18px;
-
-    line-height: 1.65;
-
-    margin-bottom: 30px;
-}
-
-.detail-line {
-    width: 100%;
-
-    height: 1px;
-
-    background: #c8ccc6;
-
-    margin: 25px 0;
-}
-
-.detail-label {
-    display: block;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    font-weight: bold;
-
-    color: #737d79;
-
-    margin-bottom: 12px;
-}
-
-.size-option {
-    display: inline-block;
-
-    border: 1px solid #89928e;
-
-    border-radius: 10px;
-
-    padding: 10px 14px;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    background: #ffffff;
-}
-
-
-/* =====================================================
-   ENQUIRY BUTTONS
-===================================================== */
-
-.enquiry-buttons {
-    display: flex;
-
-    gap: 12px;
-
-    margin-top: 30px;
-
-    flex-wrap: wrap;
-}
-
-.enquiry-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 48px;
-
-    padding: 0 20px;
-
-    border-radius: 30px;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.call-button {
-    background: #075b4f;
-
-    color: #ffffff;
-}
-
-.call-button:hover {
-    background: #06473f;
-}
-
-.whatsapp-button {
-    background: #dfece7;
-
-    color: #075b4f;
-}
-
-.whatsapp-button:hover {
-    background: #d2e4de;
-}
-
-
-/* =====================================================
-   MOBILE HEADER
-===================================================== */
-
-.mobile-header {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1200px) {
-
-    .site-layout {
-        grid-template-columns: 320px minmax(0, 1fr);
+    if (!category) {
+        return;
     }
 
-    .left-panel {
-        width: 320px;
 
-        padding: 40px 30px;
+    const product =
+        category.products.find(
+            item => item.id === productId
+        );
+
+    if (!product) {
+        return;
     }
 
-    .main-content {
-        padding: 48px 34px 70px;
+
+    const images =
+        product.images &&
+        product.images.length
+            ? product.images
+            : [category.image];
+
+
+    const firstImage =
+        images[0];
+
+
+    mainContent.innerHTML = `
+
+        <section class="product-detail">
+
+            <div class="product-detail-top">
+
+                <button
+                    class="detail-back"
+                    type="button"
+                    onclick="openCategory('${category.id}')"
+                >
+                    ← Back to Catalogue
+                </button>
+
+            </div>
+
+
+            <div class="product-detail-layout">
+
+
+                <!-- =========================
+                     PRODUCT GALLERY
+                ========================= -->
+
+                <div class="detail-gallery">
+
+                    <div class="main-product-image-box">
+
+                        <img
+                            id="mainProductImage"
+                            src="${safeImage(firstImage)}"
+                            alt="${product.name}"
+                            class="main-product-image"
+                        >
+
+                    </div>
+
+
+                    <!-- THUMBNAILS -->
+
+                    <div
+                        class="thumbnail-row"
+                        id="thumbnailRow"
+                    >
+
+                        ${images
+                            .map(
+                                (image, index) => `
+                                    <button
+                                        class="thumbnail ${
+                                            index === 0
+                                                ? "active"
+                                                : ""
+                                        }"
+                                        type="button"
+                                        onclick="changeProductImage(
+                                            '${safeImage(image)}',
+                                            this
+                                        )"
+                                    >
+
+                                        <img
+                                            src="${safeImage(image)}"
+                                            alt="${product.name}"
+                                        >
+
+                                    </button>
+                                `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     PRODUCT INFORMATION
+                ========================= -->
+
+                <div class="product-detail-info">
+
+                    <div class="detail-category">
+                        ${category.title.toUpperCase()}
+                    </div>
+
+
+                    <h1 class="detail-title">
+                        ${product.name}
+                    </h1>
+
+
+                    <p class="detail-description">
+                        ${product.description}
+                    </p>
+
+
+                    <div class="detail-line"></div>
+
+
+                    <span class="detail-label">
+                        QUALITY HEALTHCARE EQUIPMENT
+                    </span>
+
+
+                    <div class="size-option">
+                        Suitable for professional & home care
+                    </div>
+
+
+                    <div class="enquiry-buttons">
+
+                        <a
+                            href="tel:${companyInfo.phone}"
+                            class="enquiry-button call-button"
+                        >
+                            Enquire Now
+                        </a>
+
+
+                        <a
+                            href="https://wa.me/91${companyInfo.phone}"
+                            target="_blank"
+                            rel="noopener"
+                            class="enquiry-button whatsapp-button"
+                        >
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    `;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================================================
+   CHANGE PRODUCT IMAGE
+   ========================================================= */
+
+function changeProductImage(imagePath, thumbnail) {
+
+    const mainImage =
+        document.getElementById(
+            "mainProductImage"
+        );
+
+    if (!mainImage) {
+        return;
     }
 
-    .category-grid,
-    .product-grid {
-        gap: 30px 22px;
-    }
 
-    .category-image-box,
-    .product-image-box {
-        height: 280px;
-    }
+    mainImage.src =
+        imagePath;
 
-    .product-detail-layout {
-        gap: 30px;
+
+    document
+        .querySelectorAll(".thumbnail")
+        .forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+    if (thumbnail) {
+        thumbnail.classList.add("active");
     }
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
-@media (max-width: 768px) {
+function toggleMobileMenu() {
 
-    body {
-        width: 100%;
-
-        max-width: 100%;
-
-        overflow-x: hidden;
-    }
-
-
-    /* =================================================
-       MOBILE HEADER
-    ================================================= */
-
-    .mobile-header {
-        display: flex;
-
-        position: relative;
-
-        width: 100%;
-
-        height: 110px;
-
-        background: #faf9f4;
-
-        border-bottom: 1px solid #d1d5cf;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding: 15px 28px;
-
-        z-index: 100;
-    }
-
-    .mobile-logo-link {
-        display: block;
-
-        width: 82px;
-
-        height: 82px;
-    }
-
-    .mobile-logo {
-        width: 82px;
-
-        height: 82px;
-
-        object-fit: contain;
-
-        display: block;
-    }
-
-    .menu-button {
-        width: 66px;
-
-        height: 66px;
-
-        border-radius: 50%;
-
-        border: 0;
-
-        background: #dfece7;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 7px;
-    }
-
-    .menu-button span {
-        width: 32px;
-
-        height: 3px;
-
-        background: #075b4f;
-
-        border-radius: 4px;
-    }
-
-
-    /* =================================================
-       MOBILE MENU
-    ================================================= */
-
-    .mobile-menu {
-        position: absolute;
-
-        top: 110px;
-
-        left: 0;
-
-        right: 0;
-
-        width: 100%;
-
-        background: #faf9f4;
-
-        border-bottom: 1px solid #cfd4cf;
-
-        padding: 15px 25px 25px;
-
-        z-index: 99;
-
-        display: none;
-
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-    .mobile-menu.open {
-        display: flex;
-    }
-
-    .mobile-menu button,
-    .mobile-menu a {
-        border: 0;
-
-        background: transparent;
-
-        text-align: left;
-
-        padding: 14px 5px;
-
-        font-size: 17px;
-
-        color: #173d36;
-
-        font-weight: 600;
-    }
-
-
-    /* =================================================
-       HIDE DESKTOP LEFT PANEL
-    ================================================= */
-
-    .left-panel {
-        display: none;
-    }
-
-
-    /* =================================================
-       MAIN CONTENT
-    ================================================= */
-
-    .main-content {
-        display: block;
-
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-
-        padding: 48px 30px 70px;
-
-        overflow-x: hidden;
-    }
-
-
-    /* =================================================
-       HOME INFORMATION
-    ================================================= */
-
-    .mobile-home-info {
-        display: block;
-
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-bottom: 60px;
-
-        padding-bottom: 34px;
-
-        border-bottom: 1px solid #c9cec8;
-    }
-
-    .mobile-home-logo {
-        width: 94px;
-
-        height: 94px;
-
-        object-fit: contain;
-
-        display: block;
-
-        margin-bottom: 22px;
-    }
-
-    .mobile-home-title {
-        font-family: Georgia, "Times New Roman", serif;
-
-        font-size: 42px;
-
-        line-height: 1.05;
-
-        color: #075b4f;
-
-        font-weight: 500;
-
-        margin-bottom: 18px;
-    }
-
-    .mobile-home-description {
-        width: 100%;
-
-        font-size: 17px;
-
-        line-height: 1.65;
-
-        color: #707a76;
-
-        margin-bottom: 27px;
-    }
-
-    .mobile-home-contact {
-        width: 100%;
-
-        border-top: 1px solid #bdc5bf;
-
-        padding-top: 25px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        color: #707a76;
-
-        font-size: 16px;
-
-        line-height: 1.5;
-    }
-
-
-    /* =================================================
-       PAGE HEADING
-    ================================================= */
-
-    .page-heading {
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-bottom: 32px;
-    }
-
-    .eyebrow {
-        font-size: 17px;
-
-        letter-spacing: 7px;
-
-        line-height: 1.5;
-
-        word-break: normal;
-    }
-
-    .heading-line {
-        width: 100%;
-
-        margin-top: 3px;
-    }
-
-
-    /* =================================================
-       CATEGORY GRID
-    ================================================= */
-
-    .category-grid {
-        width: 100%;
-
-        max-width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 48px;
-    }
-
-    .category-card {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-    }
-
-    .category-image-box {
-        width: 100%;
-
-        max-width: 100%;
-
-        height: auto;
-
-        aspect-ratio: 1 / 0.84;
-
-        border-radius: 24px;
-
-        padding: 15px;
-
-        overflow: hidden;
-    }
-
-    .category-image {
-        width: 100%;
-
-        height: 100%;
-
-        max-width: 100%;
-
-        max-height: 100%;
-
-        object-fit: contain;
-
-        object-position: center;
-    }
-
-    .category-info {
-        width: 100%;
-
-        padding: 19px 7px 0;
-    }
-
-    .category-title {
-        font-size: 27px;
-
-        line-height: 1.25;
-    }
-
-    .category-description {
-        font-size: 16px;
-
-        min-height: auto;
-
-        margin-bottom: 10px;
-    }
-
-    .product-count {
-        font-size: 12px;
-    }
-
-
-    /* =================================================
-       CATEGORY PAGE
-    ================================================= */
-
-    .category-page {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-    }
-
-    .category-page-title {
-        font-size: 18px;
-
-        letter-spacing: 6px;
-
-        line-height: 1.5;
-
-        margin-bottom: 12px;
-
-        overflow-wrap: normal;
-    }
-
-    .back-button {
-        margin: 25px 0 35px;
-
-        font-size: 17px;
-    }
-
-
-    /* =================================================
-       PRODUCT GRID
-    ================================================= */
-
-    .product-grid {
-        width: 100%;
-
-        max-width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 42px;
-    }
-
-    .product-card {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-    }
-
-    .product-image-box {
-        width: 100%;
-
-        max-width: 100%;
-
-        height: auto;
-
-        aspect-ratio: 1 / 0.84;
-
-        border-radius: 24px;
-
-        padding: 15px;
-
-        overflow: hidden;
-    }
-
-    .product-image {
-        width: 100%;
-
-        height: 100%;
-
-        max-width: 100%;
-
-        max-height: 100%;
-
-        object-fit: contain;
-
-        object-position: center;
-    }
-
-    .product-title {
-        font-size: 27px;
-
-        line-height: 1.25;
-    }
-
-    .product-description {
-        font-size: 16px;
-
-        line-height: 1.5;
-    }
-
-
-    /* =================================================
-       PRODUCT DETAIL
-    ================================================= */
-
-    .product-detail {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-    }
-
-    .product-detail-top {
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-bottom: 25px;
-    }
-
-    .detail-back {
-        max-width: 100%;
-
-        font-size: 17px;
-
-        white-space: normal;
-
-        text-align: left;
-    }
-
-    .product-detail-layout {
-        display: flex;
-
-        flex-direction: column;
-
-        width: 100%;
-
-        max-width: 100%;
-
-        gap: 30px;
-
-        overflow: visible;
-    }
-
-
-    /* =================================================
-       FIX MAIN PRODUCT IMAGE
-    ================================================= */
-
-    .detail-gallery {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-    }
-
-    .main-product-image-box {
-        width: 100%;
-
-        max-width: 100%;
-
-        height: auto;
-
-        min-height: 0;
-
-        aspect-ratio: 1 / 0.86;
-
-        border-radius: 24px;
-
-        padding: 15px;
-
-        overflow: hidden;
-    }
-
-    .main-product-image {
-        width: 100%;
-
-        height: 100%;
-
-        max-width: 100%;
-
-        max-height: 100%;
-
-        object-fit: contain;
-
-        object-position: center;
-    }
-
-
-    /* =================================================
-       FIX THUMBNAILS
-    ================================================= */
-
-    .thumbnail-row {
-        width: 100%;
-
-        max-width: 100%;
-
-        overflow-x: auto;
-
-        overflow-y: hidden;
-
-        display: flex;
-
-        flex-wrap: nowrap;
-
-        gap: 12px;
-
-        padding: 15px 2px 8px;
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .thumbnail {
-        flex: 0 0 82px;
-
-        width: 82px;
-
-        height: 82px;
-
-        min-width: 82px;
-    }
-
-
-    /* =================================================
-       PRODUCT INFORMATION
-    ================================================= */
-
-    .product-detail-info {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-
-        padding: 0 4px;
-    }
-
-    .detail-category {
-        margin-top: 5px;
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-    .detail-title {
-        width: 100%;
-
-        font-size: 44px;
-
-        line-height: 1.04;
-
-        margin-bottom: 18px;
-
-        word-break: normal;
-
-        overflow-wrap: break-word;
-    }
-
-    .detail-description {
-        width: 100%;
-
-        font-size: 17px;
-
-        line-height: 1.6;
-
-        margin-bottom: 25px;
-    }
-
-    .detail-line {
-        width: 100%;
-
-        margin: 20px 0;
-    }
-
-
-    /* =================================================
-       BUTTONS
-    ================================================= */
-
-    .enquiry-buttons {
-        width: 100%;
-
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-    .enquiry-button {
-        width: 100%;
-
-        min-height: 50px;
-    }
-
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 430px) {
-
-    .mobile-header {
-        height: 100px;
-
-        padding: 12px 22px;
-    }
-
-    .mobile-logo-link {
-        width: 76px;
-
-        height: 76px;
-    }
-
-    .mobile-logo {
-        width: 76px;
-
-        height: 76px;
-    }
-
-    .menu-button {
-        width: 62px;
-
-        height: 62px;
+    if (!mobileMenu) {
+        return;
     }
 
-    .menu-button span {
-        width: 29px;
-    }
-
-    .mobile-menu {
-        top: 100px;
-    }
-
-    .main-content {
-        padding:
-            45px
-            24px
-            60px;
-    }
 
-    .mobile-home-title {
-        font-size: 38px;
-    }
-
-    .mobile-home-description {
-        font-size: 16px;
-    }
+    mobileMenu.classList.toggle("open");
 
-    .category-image-box,
-    .product-image-box {
-        aspect-ratio: 1 / 0.82;
-    }
 
-    .category-title,
-    .product-title {
-        font-size: 25px;
-    }
+    if (menuButton) {
 
-    .main-product-image-box {
-        aspect-ratio: 1 / 0.84;
-    }
+        menuButton.classList.toggle(
+            "active"
+        );
 
-    .detail-title {
-        font-size: 39px;
     }
 }
 
 
-/* =====================================================
-   VERY SMALL MOBILE
-===================================================== */
+/* =========================================================
+   CLOSE MOBILE MENU
+   ========================================================= */
 
-@media (max-width: 360px) {
+function closeMobileMenu() {
 
-    .main-content {
-        padding-left: 20px;
+    if (mobileMenu) {
 
-        padding-right: 20px;
+        mobileMenu.classList.remove(
+            "open"
+        );
+
     }
 
-    .mobile-header {
-        padding-left: 17px;
 
-        padding-right: 17px;
-    }
+    if (menuButton) {
 
-    .mobile-home-title {
-        font-size: 34px;
-    }
+        menuButton.classList.remove(
+            "active"
+        );
 
-    .detail-title {
-        font-size: 35px;
-    }
-
-    .main-product-image-box {
-        aspect-ratio: 1 / 0.82;
     }
 }
+
+
+/* =========================================================
+   SCROLL TO CATALOGUE
+   ========================================================= */
+
+function scrollToCatalogue() {
+
+    closeMobileMenu();
+
+    showHome(false);
+
+
+    setTimeout(() => {
+
+        const heading =
+            document.querySelector(
+                ".page-heading"
+            );
+
+        if (heading) {
+
+            heading.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }, 50);
+}
+
+
+/* =========================================================
+   SCROLL TO ABOUT
+   ========================================================= */
+
+function scrollToAbout() {
+
+    closeMobileMenu();
+
+    showHome(false);
+
+
+    setTimeout(() => {
+
+        const info =
+            document.querySelector(
+                ".mobile-home-info"
+            );
+
+        if (info) {
+
+            info.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }, 50);
+}
+
+
+/* =========================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+   ========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (!mobileMenu ||
+            !menuButton) {
+            return;
+        }
+
+
+        const clickedInsideMenu =
+            mobileMenu.contains(
+                event.target
+            );
+
+
+        const clickedButton =
+            menuButton.contains(
+                event.target
+            );
+
+
+        if (
+            mobileMenu.classList.contains("open") &&
+            !clickedInsideMenu &&
+            !clickedButton
+        ) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   HANDLE BROWSER BACK BUTTON
+   ========================================================= */
+
+window.addEventListener(
+    "popstate",
+    function() {
+
+        showHome();
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        showHome(false);
+
+    }
+);
