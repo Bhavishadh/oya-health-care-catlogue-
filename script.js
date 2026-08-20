@@ -1,26 +1,23 @@
-/* =====================================================
+/* =========================================================
    OYA HEALTH CARE
-   SHOPPING STYLE CATALOGUE
-===================================================== */
+   FINAL SHOPPING STYLE CATALOGUE
+========================================================= */
 
 
-/* =====================================================
+/* =========================================================
    CATEGORY DATA
-===================================================== */
+========================================================= */
 
 const categories = [
 
-    /* =================================================
+    /* =====================================================
        01 HOSPITAL FURNITURE
-    ================================================= */
+    ===================================================== */
 
     {
         id: "hospital-furniture",
-
         name: "Hospital Furniture",
-
         category: "Hospital Furniture",
-
         image: "images/hospitalbed.webp",
 
         description:
@@ -81,17 +78,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        02 OXYGEN CYLINDERS
-    ================================================= */
+    ===================================================== */
 
     {
         id: "oxygen-cylinders",
-
         name: "Oxygen Cylinders",
-
         category: "Oxygen Cylinders",
-
         image: "images/oxy5ltr.png",
 
         description:
@@ -117,17 +111,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        03 OXYGEN CONCENTRATORS
-    ================================================= */
+    ===================================================== */
 
     {
         id: "oxygen-concentrators",
-
         name: "Oxygen Concentrators",
-
         category: "Oxygen Concentrators",
-
         image: "images/concentrator.webp",
 
         description:
@@ -146,17 +137,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        04 WHEELCHAIRS
-    ================================================= */
+    ===================================================== */
 
     {
         id: "wheelchairs",
-
         name: "Wheelchairs",
-
         category: "Wheelchairs",
-
         image: "images/w1.png",
 
         description:
@@ -196,17 +184,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        05 CPAP MACHINES
-    ================================================= */
+    ===================================================== */
 
     {
         id: "cpap-machines",
-
         name: "CPAP Machines",
-
         category: "CPAP Machines",
-
         image: "images/c1.png",
 
         description:
@@ -239,17 +224,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        06 BIPAP MACHINES
-    ================================================= */
+    ===================================================== */
 
     {
         id: "bipap-machines",
-
         name: "BiPAP Machines",
-
         category: "BiPAP Machines",
-
         image: "images/b1.png",
 
         description:
@@ -275,17 +257,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        07 MOBILITY AIDS
-    ================================================= */
+    ===================================================== */
 
     {
         id: "mobility-aids",
-
         name: "Mobility Aids",
-
         category: "Mobility Aids",
-
         image: "images/wl1.png",
 
         description:
@@ -318,17 +297,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        08 PATIENT MONITORING
-    ================================================= */
+    ===================================================== */
 
     {
         id: "patient-monitoring",
-
         name: "Patient Monitoring",
-
         category: "Patient Monitoring",
-
         image: "images/pm.png",
 
         description:
@@ -347,17 +323,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        09 CRITICAL CARE
-    ================================================= */
+    ===================================================== */
 
     {
         id: "critical-care",
-
         name: "Critical Care",
-
         category: "Critical Care",
-
         image: "images/venti.png",
 
         description:
@@ -376,17 +349,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        10 DIAGNOSTICS
-    ================================================= */
+    ===================================================== */
 
     {
         id: "diagnostics",
-
         name: "Diagnostics",
-
         category: "Diagnostics",
-
         image: "images/pu.png",
 
         description:
@@ -405,17 +375,14 @@ const categories = [
     },
 
 
-    /* =================================================
+    /* =====================================================
        11 EMERGENCY CARE
-    ================================================= */
+    ===================================================== */
 
     {
         id: "emergency-care",
-
         name: "Emergency Care",
-
         category: "Emergency Care",
-
         image: "images/amb.png",
 
         description:
@@ -436,17 +403,1038 @@ const categories = [
 ];
 
 
-/* =====================================================
-   MAIN
-===================================================== */
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
 
 const mainContent =
     document.getElementById("mainContent");
 
 
-/* =====================================================
+/* =========================================================
+   FORCE SHOPPING STYLE
+   This prevents oversized mobile cards.
+========================================================= */
+
+function injectFinalStyles() {
+
+    if (document.getElementById("oya-final-styles")) return;
+
+    const style = document.createElement("style");
+
+    style.id = "oya-final-styles";
+
+    style.textContent = `
+
+        /* ================================================
+           CATEGORY GRID
+        ================================================ */
+
+        .category-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 38px 30px;
+
+            width: 100%;
+
+        }
+
+
+        .category-card {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 0;
+
+            margin: 0;
+
+            border: 0;
+
+            background: transparent;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            color: inherit;
+
+        }
+
+
+        .category-image-box {
+
+            width: 100%;
+
+            aspect-ratio: 1 / 0.82;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .category-image-box img {
+
+            width: 86%;
+
+            height: 86%;
+
+            object-fit: contain;
+
+            display: block;
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .category-card:hover
+        .category-image-box img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        .category-info {
+
+            padding: 0 8px;
+
+        }
+
+
+        .category-label,
+        .product-category {
+
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #075f57;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .category-title {
+
+            margin: 0 0 10px;
+
+            font-size: 25px;
+
+            line-height: 1.15;
+
+            font-weight: 500;
+
+            color: #111918;
+
+        }
+
+
+        .category-description {
+
+            margin: 0;
+
+            color: #78817f;
+
+            font-size: 15px;
+
+            line-height: 1.55;
+
+        }
+
+
+        .category-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-top: 1px solid #d8d9d2;
+
+            margin-top: 18px;
+
+            padding-top: 15px;
+
+        }
+
+
+        .product-count {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #075f57;
+
+        }
+
+
+        .category-arrow {
+
+            font-size: 22px;
+
+            color: #ad8b4d;
+
+        }
+
+
+        /* ================================================
+           CATEGORY PAGE
+        ================================================ */
+
+        .category-page {
+
+            width: 100%;
+
+            padding: 0;
+
+        }
+
+
+        .category-page-title {
+
+            margin: 0;
+
+            max-width: 650px;
+
+            font-size: 28px;
+
+            line-height: 1.3;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            font-style: italic;
+
+            color: #075f57;
+
+        }
+
+
+        .category-page-line {
+
+            height: 1px;
+
+            background: #aeb4af;
+
+            width: 100%;
+
+            margin: 20px 0 40px;
+
+        }
+
+
+        .back-button,
+        .detail-back {
+
+            border: 0;
+
+            background: transparent;
+
+            padding: 0;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            color: #687370;
+
+            cursor: pointer;
+
+            margin-bottom: 38px;
+
+        }
+
+
+        .category-page-description {
+
+            max-width: 700px;
+
+            color: #78817f;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+
+            margin: -10px 0 35px;
+
+        }
+
+
+        /* ================================================
+           PRODUCTS INSIDE CATEGORY
+        ================================================ */
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 50px 28px;
+
+            width: 100%;
+
+        }
+
+
+        .product-card {
+
+            display: block;
+
+            width: 100%;
+
+            border: 0;
+
+            padding: 0;
+
+            margin: 0;
+
+            background: transparent;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            color: inherit;
+
+        }
+
+
+        .product-image-box {
+
+            width: 100%;
+
+            aspect-ratio: 1 / 0.88;
+
+            background: #ffffff;
+
+            border-radius: 26px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .product-image-box img {
+
+            width: 82%;
+
+            height: 82%;
+
+            object-fit: contain;
+
+            display: block;
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .product-card:hover
+        .product-image-box img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        .product-card-info {
+
+            padding: 0 6px;
+
+        }
+
+
+        .product-title {
+
+            margin: 0 0 10px;
+
+            font-size: 25px;
+
+            line-height: 1.2;
+
+            font-weight: 500;
+
+            color: #111918;
+
+        }
+
+
+        .product-description {
+
+            margin: 0;
+
+            color: #78817f;
+
+            font-size: 15px;
+
+            line-height: 1.55;
+
+        }
+
+
+        /* ================================================
+           PRODUCT DETAIL
+        ================================================ */
+
+        .product-detail {
+
+            width: 100%;
+
+            background: #ffffff;
+
+            min-height: 100vh;
+
+            padding: 0;
+
+        }
+
+
+        .product-detail-top {
+
+            width: 100%;
+
+        }
+
+
+        .detail-back {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .product-detail-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.1fr)
+                minmax(0, .9fr);
+
+            gap: 58px;
+
+            align-items: start;
+
+        }
+
+
+        .detail-gallery {
+
+            width: 100%;
+
+        }
+
+
+        .main-product-image-box {
+
+            width: 100%;
+
+            aspect-ratio: 1 / .92;
+
+            background: #ffffff;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .main-product-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+        }
+
+
+        /* ================================================
+           THUMBNAILS
+        ================================================ */
+
+        .thumbnail-row {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 14px;
+
+            overflow-x: auto;
+
+            padding-bottom: 4px;
+
+        }
+
+
+        .thumbnail {
+
+            flex: 0 0 72px;
+
+            width: 72px;
+
+            height: 72px;
+
+            padding: 4px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+        }
+
+
+        .thumbnail.active {
+
+            border: 2px solid #274fdf;
+
+        }
+
+
+        .thumbnail img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        /* ================================================
+           DETAIL INFORMATION
+        ================================================ */
+
+        .product-detail-info {
+
+            padding: 0 5px;
+
+        }
+
+
+        .detail-category {
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            color: #777;
+
+            text-transform: uppercase;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .detail-title {
+
+            margin: 0 0 25px;
+
+            font-size: clamp(32px, 4vw, 52px);
+
+            line-height: 1.08;
+
+            font-weight: 500;
+
+            color: #111918;
+
+        }
+
+
+        .detail-description {
+
+            margin: 0;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #707876;
+
+            white-space: pre-line;
+
+        }
+
+
+        .detail-line {
+
+            width: 100%;
+
+            height: 1px;
+
+            background: #bfc3bf;
+
+            margin: 38px 0;
+
+        }
+
+
+        .detail-label {
+
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #777;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .size-option {
+
+            display: inline-block;
+
+            border: 1px solid #777;
+
+            border-radius: 9px;
+
+            padding: 9px 15px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #111;
+
+        }
+
+
+        .enquiry-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .enquiry-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 20px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        .call-button {
+
+            background: #075f57;
+
+            color: white;
+
+        }
+
+
+        .whatsapp-button {
+
+            border: 1px solid #075f57;
+
+            color: #075f57;
+
+            background: white;
+
+        }
+
+
+        /* ================================================
+           MOBILE
+        ================================================ */
+
+        @media (max-width: 700px) {
+
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 38px 18px;
+
+            }
+
+
+            .category-image-box {
+
+                border-radius: 20px;
+
+                aspect-ratio: 1 / .9;
+
+                margin-bottom: 13px;
+
+            }
+
+
+            .category-image-box img {
+
+                width: 82%;
+
+                height: 82%;
+
+            }
+
+
+            .category-info {
+
+                padding: 0 4px;
+
+            }
+
+
+            .category-label,
+            .product-category {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+
+                margin-bottom: 7px;
+
+            }
+
+
+            .category-title {
+
+                font-size: 19px;
+
+                line-height: 1.2;
+
+                margin-bottom: 7px;
+
+            }
+
+
+            .category-description {
+
+                font-size: 13px;
+
+                line-height: 1.45;
+
+            }
+
+
+            .category-bottom {
+
+                margin-top: 12px;
+
+                padding-top: 11px;
+
+            }
+
+
+            .product-count {
+
+                font-size: 10px;
+
+                letter-spacing: 1.5px;
+
+            }
+
+
+            .category-arrow {
+
+                font-size: 17px;
+
+            }
+
+
+            /* CATEGORY PAGE MOBILE */
+
+            .category-page-title {
+
+                font-size: 24px;
+
+                letter-spacing: 4px;
+
+                max-width: 100%;
+
+            }
+
+
+            .category-page-line {
+
+                margin: 16px 0 32px;
+
+            }
+
+
+            .back-button {
+
+                font-size: 17px;
+
+                margin-bottom: 32px;
+
+            }
+
+
+            .category-page-description {
+
+                font-size: 15px;
+
+            }
+
+
+            /* PRODUCT GRID MOBILE */
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 42px 18px;
+
+            }
+
+
+            .product-image-box {
+
+                aspect-ratio: 1 / .9;
+
+                border-radius: 20px;
+
+                margin-bottom: 13px;
+
+            }
+
+
+            .product-image-box img {
+
+                width: 84%;
+
+                height: 84%;
+
+            }
+
+
+            .product-card-info {
+
+                padding: 0 4px;
+
+            }
+
+
+            .product-title {
+
+                font-size: 19px;
+
+                line-height: 1.2;
+
+                margin-bottom: 7px;
+
+            }
+
+
+            .product-description {
+
+                font-size: 13px;
+
+                line-height: 1.45;
+
+            }
+
+
+            /* PRODUCT DETAIL MOBILE */
+
+            .product-detail-layout {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+            }
+
+
+            .main-product-image-box {
+
+                aspect-ratio: 1 / .88;
+
+                border-radius: 18px;
+
+            }
+
+
+            .thumbnail {
+
+                flex-basis: 64px;
+
+                width: 64px;
+
+                height: 64px;
+
+            }
+
+
+            .product-detail-info {
+
+                padding: 0;
+
+            }
+
+
+            .detail-title {
+
+                font-size: 34px;
+
+            }
+
+
+            .detail-description {
+
+                font-size: 16px;
+
+            }
+
+
+            .detail-line {
+
+                margin: 28px 0;
+
+            }
+
+
+            .enquiry-buttons {
+
+                flex-direction: column;
+
+            }
+
+
+            .enquiry-button {
+
+                width: 100%;
+
+            }
+
+        }
+
+
+        /* ================================================
+           VERY SMALL PHONES
+        ================================================ */
+
+        @media (max-width: 380px) {
+
+            .category-grid,
+            .product-grid {
+
+                gap-left: 12px;
+
+                gap-right: 12px;
+
+            }
+
+
+            .category-title,
+            .product-title {
+
+                font-size: 17px;
+
+            }
+
+
+            .category-description,
+            .product-description {
+
+                font-size: 12px;
+
+            }
+
+        }
+
+    `;
+
+    document.head.appendChild(style);
+}
+
+
+/* =========================================================
    HOME
-===================================================== */
+========================================================= */
 
 function showHome() {
 
@@ -541,9 +1529,9 @@ function showHome() {
 }
 
 
-/* =====================================================
+/* =========================================================
    CATEGORY CARDS
-===================================================== */
+========================================================= */
 
 function renderCategories() {
 
@@ -638,9 +1626,9 @@ function renderCategories() {
 }
 
 
-/* =====================================================
+/* =========================================================
    OPEN CATEGORY
-===================================================== */
+========================================================= */
 
 function openCategory(category) {
 
@@ -662,7 +1650,7 @@ function openCategory(category) {
 
             <button
                 class="back-button"
-                onclick="showHome()"
+                type="button"
             >
                 ← Back to Catalogue
             </button>
@@ -684,6 +1672,20 @@ function openCategory(category) {
     `;
 
 
+    const backButton =
+        document.querySelector(".back-button");
+
+
+    if (backButton) {
+
+        backButton.addEventListener(
+            "click",
+            showHome
+        );
+
+    }
+
+
     renderProducts(category);
 
 
@@ -694,9 +1696,9 @@ function openCategory(category) {
 }
 
 
-/* =====================================================
+/* =========================================================
    PRODUCTS INSIDE CATEGORY
-===================================================== */
+========================================================= */
 
 function renderProducts(category) {
 
@@ -729,6 +1731,7 @@ function renderProducts(category) {
                     src="${product.image}"
                     alt="${product.name}"
                     loading="lazy"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
@@ -768,14 +1771,20 @@ function renderProducts(category) {
 }
 
 
-/* =====================================================
+/* =========================================================
    PRODUCT DETAIL
-===================================================== */
+========================================================= */
 
 function openProduct(product, category) {
 
     if (!mainContent) return;
 
+
+    /*
+       If a product has a gallery array, use it.
+
+       Otherwise use its main image.
+    */
 
     const gallery =
         product.gallery &&
@@ -793,7 +1802,7 @@ function openProduct(product, category) {
 
                 <button
                     class="detail-back"
-                    onclick="openCategoryById('${category.id}')"
+                    type="button"
                 >
                     ← Back to ${category.name}
                 </button>
@@ -803,6 +1812,8 @@ function openProduct(product, category) {
 
             <div class="product-detail-layout">
 
+
+                <!-- IMAGE SIDE -->
 
                 <div class="detail-gallery">
 
@@ -827,6 +1838,8 @@ function openProduct(product, category) {
 
                 </div>
 
+
+                <!-- INFORMATION SIDE -->
 
                 <div class="product-detail-info">
 
@@ -883,11 +1896,27 @@ function openProduct(product, category) {
 
                 </div>
 
+
             </div>
+
 
         </section>
 
     `;
+
+
+    const backButton =
+        document.querySelector(".detail-back");
+
+
+    if (backButton) {
+
+        backButton.addEventListener(
+            "click",
+            () => openCategory(category)
+        );
+
+    }
 
 
     renderThumbnails(gallery);
@@ -900,9 +1929,9 @@ function openProduct(product, category) {
 }
 
 
-/* =====================================================
+/* =========================================================
    THUMBNAILS
-===================================================== */
+========================================================= */
 
 function renderThumbnails(gallery) {
 
@@ -994,9 +2023,9 @@ function renderThumbnails(gallery) {
 }
 
 
-/* =====================================================
+/* =========================================================
    FIND CATEGORY
-===================================================== */
+========================================================= */
 
 function openCategoryById(id) {
 
@@ -1018,9 +2047,9 @@ function openCategoryById(id) {
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE MENU
-===================================================== */
+========================================================= */
 
 function toggleMobileMenu() {
 
@@ -1058,9 +2087,9 @@ function closeMobileMenu() {
 }
 
 
-/* =====================================================
+/* =========================================================
    CATALOGUE SCROLL
-===================================================== */
+========================================================= */
 
 function scrollToCatalogue() {
 
@@ -1091,9 +2120,9 @@ function scrollToCatalogue() {
 }
 
 
-/* =====================================================
+/* =========================================================
    ABOUT SCROLL
-===================================================== */
+========================================================= */
 
 function scrollToAbout() {
 
@@ -1124,9 +2153,9 @@ function scrollToAbout() {
 }
 
 
-/* =====================================================
+/* =========================================================
    OUTSIDE CLICK
-===================================================== */
+========================================================= */
 
 document.addEventListener(
     "click",
@@ -1163,18 +2192,30 @@ document.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    START
-===================================================== */
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     () => {
 
+        /*
+           Apply final catalogue/product styles.
+        */
+
+        injectFinalStyles();
+
+
+        /*
+           Load home page.
+        */
+
         showHome();
 
+
         console.log(
-            "OYA Health Care loaded successfully."
+            "OYA Health Care - Final shopping catalogue loaded."
         );
 
     }
