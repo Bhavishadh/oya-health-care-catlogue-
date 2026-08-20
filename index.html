@@ -2,21 +2,29 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <title>Oya Health Care | Medical Equipment</title>
 
-    <title>Oya Health Care | Premium Healthcare Equipment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -24,189 +32,483 @@
 
 
 <!-- =====================================================
-     MOBILE HEADER
+     MOBILE TOP BAR
 ===================================================== -->
 
-<header class="mobile-header">
+<header class="topbar">
 
-    <a
-        href="#"
-        class="mobile-logo-link"
-        onclick="showHome(); return false;"
+  <a class="mini-brand" href="#home">
+
+    <img
+      src="images/logo (2).png"
+      alt="Oya Health Care"
     >
 
-        <img
-            src="images/logo%20(2).png"
-            alt="Oya Health Care"
-            class="mobile-logo"
-        >
+  </a>
 
+
+  <div class="topbar-title">
+    OYA HEALTH CARE
+  </div>
+
+
+  <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open menu"
+  >
+    ☰
+  </button>
+
+
+  <nav
+    class="mobile-nav"
+    id="mobileNav"
+  >
+
+    <a href="#home">
+      Home
     </a>
 
+    <a href="#catalogue">
+      Catalogue
+    </a>
 
-    <button
-        class="menu-button"
-        id="menuButton"
-        onclick="toggleMobileMenu()"
-        aria-label="Open menu"
-    >
+    <a href="#about">
+      About
+    </a>
 
-        <span></span>
-        <span></span>
-        <span></span>
+    <a href="#contact">
+      Contact
+    </a>
 
-    </button>
+  </nav>
 
 </header>
 
 
+
+<main>
+
+
 <!-- =====================================================
-     MOBILE MENU
+     HOME PAGE
 ===================================================== -->
 
-<div
-    class="mobile-menu"
-    id="mobileMenu"
+<section
+  class="home"
+  id="home"
 >
 
-    <button
-        onclick="showHome(); closeMobileMenu();"
+
+  <!-- COMPANY INFORMATION -->
+
+  <div class="home-company">
+
+    <img
+      class="company-logo"
+      src="images/logo (2).png"
+      alt="Oya Health Care"
     >
-        Home
-    </button>
 
 
-    <button
-        onclick="scrollToCatalogue(); closeMobileMenu();"
+    <div class="company-copy">
+
+      <h1>
+        Oya Health Care
+      </h1>
+
+
+      <p>
+        OYA Health Care – Trusted Medical Equipment &amp;
+        Home Healthcare Solutions OYA Health Care is a
+        leading supplier of high-quality medical equipment,
+        hospital supplies, and home healthcare products in
+        India. We are committed to providing reliable,
+        affordable and quality healthcare solutions.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- CONTACT INFORMATION -->
+
+  <div class="contact-info">
+
+    <div>
+
+      <span>
+        ⌖
+      </span>
+
+      Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
+
+    </div>
+
+
+    <div>
+
+      <span>
+        ♧
+      </span>
+
+      <a href="tel:7021235223">
+        7021235223
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- BANNER -->
+
+  <div class="banner">
+
+    <img
+      src="images/oya banner.png"
+      alt="Oya Health Care medical equipment"
     >
-        Catalogue
-    </button>
+
+  </div>
 
 
-    <button
-        onclick="scrollToAbout(); closeMobileMenu();"
-    >
-        About OYA
-    </button>
+</section>
+
+
+
+<!-- =====================================================
+     CATALOGUE
+===================================================== -->
+
+<section
+  class="catalogue"
+  id="catalogue"
+>
+
+
+  <div class="catalogue-heading">
+
+    <span>
+      CATALOGUE
+    </span>
+
+
+    <h2>
+      Medical equipment for everyday care.
+    </h2>
+
+  </div>
+
+
+  <!-- CATEGORY CARDS ARE CREATED BY JAVASCRIPT -->
+
+  <div
+    class="category-grid"
+    id="categoryGrid"
+  >
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+  class="about"
+  id="about"
+>
+
+  <span>
+    WHY OYA
+  </span>
+
+
+  <h2>
+    Reliable healthcare equipment,
+    made simple.
+  </h2>
+
+
+  <p>
+    Browse products by category, open a category to see
+    all its products, then open any product for details
+    and enquiry.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="contact"
+  id="contact"
+>
+
+  <span>
+    CONTACT OYA
+  </span>
+
+
+  <h2>
+    Need a healthcare solution?
+  </h2>
+
+
+  <div class="contact-buttons">
+
+    <a href="tel:7021235223">
+      Call 7021235223
+    </a>
 
 
     <a
-        href="tel:7021235223"
-        onclick="closeMobileMenu();"
+      href="https://wa.me/917021235223"
+      target="_blank"
+      rel="noopener"
     >
-        Contact
+      WhatsApp
     </a>
 
-</div>
+  </div>
+
+
+  <p>
+    Shop no 9, Shiv Vithai Galaxy,
+    near SBI Bank, Thakurli
+  </p>
+
+</section>
+
 
 
 <!-- =====================================================
-     WEBSITE
+     CATEGORY PAGE
 ===================================================== -->
 
-<div class="site-layout">
+<section
+  class="category-view"
+  id="categoryView"
+  aria-hidden="true"
+>
 
 
-    <!-- =================================================
-         DESKTOP LEFT INFORMATION
-    ================================================= -->
+  <div class="category-view-top">
 
-    <aside class="left-panel">
-
-        <div class="left-panel-top">
-
-            <a
-                href="#"
-                onclick="showHome(); return false;"
-            >
-
-                <img
-                    src="images/logo%20(2).png"
-                    alt="Oya Health Care Logo"
-                    class="main-logo"
-                >
-
-            </a>
-
-
-            <h1>
-                Oya Health Care
-            </h1>
-
-
-            <p class="company-description">
-
-                OYA Health Care – Trusted Medical Equipment &
-                Home Healthcare Solutions OYA Health Care is a
-                leading supplier of high-quality medical equipment,
-                hospital supplies, and home healthcare products
-                in India. We are committed to providing reliable,
-                affordable and quality healthcare solutions.
-
-            </p>
-
-
-            <div class="panel-line"></div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ⌖
-                </div>
-
-                <div>
-                    Shop no 9 Shiv Vithai Galaxy near SBI Bank
-                    Thakurli
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ♧
-                </div>
-
-                <a href="tel:7021235223">
-                    7021235223
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="left-panel-bottom">
-
-            <strong>
-                OYA HEALTH CARE
-            </strong>
-
-            <span>
-                Healthcare • Medical Equipment
-            </span>
-
-        </div>
-
-    </aside>
-
-
-    <!-- =================================================
-         MAIN CONTENT
-    ================================================= -->
-
-    <main
-        class="main-content"
-        id="mainContent"
+    <button
+      class="back-btn"
+      id="backBtn"
     >
+      ← Back to Catalogue
+    </button>
 
-        <!-- JavaScript creates the page here -->
+  </div>
 
-    </main>
+
+
+  <div class="category-intro">
+
+    <div>
+
+      <span>
+        OYA COLLECTION
+      </span>
+
+
+      <h2 id="categoryTitle">
+      </h2>
+
+
+      <p id="categoryDescription">
+      </p>
+
+    </div>
+
+
+    <div
+      class="category-count"
+      id="categoryCount"
+    >
+    </div>
+
+  </div>
+
+
+
+  <div
+    class="product-grid"
+    id="productGrid"
+  >
+  </div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =====================================================
+     PRODUCT DETAIL POPUP
+===================================================== -->
+
+<div
+  class="product-modal"
+  id="productModal"
+  aria-hidden="true"
+>
+
+
+  <div class="product-page">
+
+
+    <button
+      class="close-product"
+      id="closeProduct"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+
+    <button
+      class="modal-back"
+      id="modalBack"
+    >
+      ← Back
+    </button>
+
+
+
+    <div class="product-detail">
+
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="product-gallery">
+
+
+        <div class="main-product-image">
+
+          <img
+            id="detailImage"
+            src=""
+            alt=""
+          >
+
+        </div>
+
+
+
+        <!-- PRODUCT THUMBNAILS -->
+
+        <div
+          class="thumbs"
+          id="thumbs"
+        >
+        </div>
+
+
+      </div>
+
+
+
+      <!-- PRODUCT INFORMATION -->
+
+      <div class="product-details">
+
+
+        <span
+          class="detail-category"
+          id="detailCategory"
+        >
+        </span>
+
+
+        <h2
+          id="detailTitle"
+        >
+        </h2>
+
+
+        <p
+          id="detailDescription"
+        >
+        </p>
+
+
+        <hr>
+
+
+        <div class="detail-label">
+          PRODUCT ENQUIRY
+        </div>
+
+
+        <div class="detail-actions">
+
+
+          <a href="tel:7021235223">
+            Enquire Now ↗
+          </a>
+
+
+          <a
+            id="detailWhatsApp"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
 
 </div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <strong>
+    OYA HEALTH CARE
+  </strong>
+
+
+  <span>
+    Healthcare • Medical Equipment
+  </span>
+
+</footer>
+
 
 
 <script src="script.js"></script>
