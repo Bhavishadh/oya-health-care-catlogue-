@@ -781,14 +781,20 @@ a {
 
 
 /* =========================================================
-   BIG IMAGE
+   BIG IMAGE (made smaller / more compact)
 ========================================================= */
 
 .main-image-box {
     width: 100%;
 
+    max-width: 480px;
+
+    margin: 0 auto;
+
     aspect-ratio:
-        1 / .72;
+        1 / .8;
+
+    max-height: 340px;
 
     background:
         #f7f7f5;
@@ -1690,7 +1696,7 @@ body.product-open footer {
 
 
 
-    /* BIG PRODUCT IMAGE */
+    /* BIG PRODUCT IMAGE (smaller on mobile too) */
 
     .product-page {
         width:
@@ -1703,13 +1709,25 @@ body.product-open footer {
 
     .main-image-box {
         width:
-            100%;
+            84%;
+
+        max-width:
+            320px;
+
+        margin:
+            0 auto;
 
         aspect-ratio:
-            1 / .82;
+            1 / .85;
+
+        max-height:
+            230px;
 
         border-radius:
-            0;
+            14px;
+
+        margin-top:
+            14px;
     }
 
 
