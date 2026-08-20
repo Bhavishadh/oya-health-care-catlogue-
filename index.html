@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Oya Health Care | Premium Healthcare Equipment</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
+
 <!-- =====================================================
-     HEADER
+     MOBILE HEADER
 ===================================================== -->
 
 <header class="mobile-header">
 
-    <a href="#" onclick="showHome(); return false;" class="header-logo-link">
+    <a
+        href="#"
+        class="mobile-logo-link"
+        onclick="showHome(); return false;"
+    >
+
         <img
             src="images/logo%20(2).png"
             alt="Oya Health Care"
-            class="header-logo"
+            class="mobile-logo"
         >
+
     </a>
+
 
     <button
         class="menu-button"
@@ -31,9 +50,11 @@
         onclick="toggleMobileMenu()"
         aria-label="Open menu"
     >
+
         <span></span>
         <span></span>
         <span></span>
+
     </button>
 
 </header>
@@ -43,25 +64,40 @@
      MOBILE MENU
 ===================================================== -->
 
-<nav class="mobile-menu" id="mobileMenu">
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
 
-    <button onclick="showHome(); closeMobileMenu();">
+    <button
+        onclick="showHome(); closeMobileMenu();"
+    >
         Home
     </button>
 
-    <button onclick="scrollToCatalogue(); closeMobileMenu();">
+
+    <button
+        onclick="scrollToCatalogue(); closeMobileMenu();"
+    >
         Catalogue
     </button>
 
-    <button onclick="scrollToAbout(); closeMobileMenu();">
+
+    <button
+        onclick="scrollToAbout(); closeMobileMenu();"
+    >
         About OYA
     </button>
 
-    <a href="tel:7021235223" onclick="closeMobileMenu();">
+
+    <a
+        href="tel:7021235223"
+        onclick="closeMobileMenu();"
+    >
         Contact
     </a>
 
-</nav>
+</div>
 
 
 <!-- =====================================================
@@ -72,52 +108,86 @@
 
 
     <!-- =================================================
-         DESKTOP LEFT PANEL
+         DESKTOP LEFT INFORMATION
     ================================================= -->
 
     <aside class="left-panel">
 
-        <div>
+        <div class="left-panel-top">
 
-            <a href="#" onclick="showHome(); return false;">
+            <a
+                href="#"
+                onclick="showHome(); return false;"
+            >
+
                 <img
                     src="images/logo%20(2).png"
-                    alt="Oya Health Care"
-                    class="desktop-logo"
+                    alt="Oya Health Care Logo"
+                    class="main-logo"
                 >
+
             </a>
 
-            <h1>Oya Health Care</h1>
+
+            <h1>
+                Oya Health Care
+            </h1>
+
 
             <p class="company-description">
-                OYA Health Care – Trusted Medical Equipment & Home Healthcare
-                Solutions OYA Health Care is a leading supplier of high-quality
-                medical equipment, hospital supplies, and home healthcare
-                products in India. We are committed to providing reliable,
+
+                OYA Health Care – Trusted Medical Equipment &
+                Home Healthcare Solutions OYA Health Care is a
+                leading supplier of high-quality medical equipment,
+                hospital supplies, and home healthcare products
+                in India. We are committed to providing reliable,
                 affordable and quality healthcare solutions.
+
             </p>
+
 
             <div class="panel-line"></div>
 
-            <div class="contact-item">
-                <span>⌖</span>
-                <span>
-                    Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
-                </span>
-            </div>
 
             <div class="contact-item">
-                <span>♧</span>
+
+                <div class="contact-icon">
+                    ⌖
+                </div>
+
+                <div>
+                    Shop no 9 Shiv Vithai Galaxy near SBI Bank
+                    Thakurli
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ♧
+                </div>
+
                 <a href="tel:7021235223">
                     7021235223
                 </a>
+
             </div>
 
         </div>
 
-        <div class="left-footer">
-            <strong>OYA HEALTH CARE</strong>
-            <span>Healthcare • Medical Equipment</span>
+
+        <div class="left-panel-bottom">
+
+            <strong>
+                OYA HEALTH CARE
+            </strong>
+
+            <span>
+                Healthcare • Medical Equipment
+            </span>
+
         </div>
 
     </aside>
@@ -127,7 +197,14 @@
          MAIN CONTENT
     ================================================= -->
 
-    <main id="mainContent" class="main-content"></main>
+    <main
+        class="main-content"
+        id="mainContent"
+    >
+
+        <!-- JavaScript creates the page here -->
+
+    </main>
 
 </div>
 
@@ -135,4 +212,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
