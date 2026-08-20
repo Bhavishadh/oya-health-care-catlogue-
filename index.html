@@ -1,2465 +1,2506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OYA Healthcare | Premium Healthcare Equipment</title>
+    <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Oya Health Care | Premium Healthcare Equipment</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="Oya Health Care - Medical equipment, hospital furniture, oxygen equipment and home healthcare solutions."
+    >
+
+    <style>
+
+        /* =========================================================
+           OYA HEALTH CARE
+           PREMIUM CREAM + FOREST GREEN
+        ========================================================= */
+
+        :root {
+            --background: #f3f0e8;
+            --sidebar: #fbfaf6;
+            --card: #f8f6ef;
+            --white: #ffffff;
+
+            --text: #17221f;
+            --muted: #727b76;
+
+            --green: #174f45;
+            --green-dark: #0d3932;
+            --green-light: #dce9e2;
+
+            --gold: #b89a62;
+
+            --line: #d7d5cb;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--background);
+            color: var(--text);
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           MAIN LAYOUT
+        ========================================================= */
+
+        .website-layout {
+            display: grid;
+
+            grid-template-columns:
+                390px
+                1fr;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================================================
+           DESKTOP LEFT PANEL
+        ========================================================= */
+
+        .sidebar {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 390px;
+            height: 100vh;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #fbfaf6 0%,
+                    #f2eee4 100%
+                );
+
+            border-right:
+                1px solid var(--line);
+
+            overflow-y: auto;
+
+            z-index: 1000;
+        }
+
+
+        .sidebar-inner {
+            min-height: 100vh;
+
+            padding:
+                48px 42px 35px;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .sidebar-logo {
+            width: 78px;
+            height: 78px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            margin-bottom: 22px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 10px 28px
+                rgba(23,79,69,.13);
+        }
+
+
+        .sidebar-logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+           COMPANY
+        ========================================================= */
+
+        .sidebar h1 {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 31px;
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            color: var(--green);
+
+            margin-bottom: 10px;
+        }
+
+
+        .company-description {
+            max-width: 300px;
+
+            font-size: 15px;
+
+            line-height: 1.58;
+
+            color: #68716d;
+        }
+
+
+        /* =========================================================
+           DIVIDER
+        ========================================================= */
+
+        .sidebar-divider {
+            width: 100%;
+
+            height: 1px;
+
+            background: var(--green);
+
+            opacity: .35;
+
+            margin:
+                34px 0 29px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .sidebar-contact {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 25px;
+        }
+
+
+        .contact-row {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 14px;
+
+            color: #66716c;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        .contact-icon {
+            color: var(--gold);
+
+            font-size: 17px;
+
+            min-width: 18px;
+
+            padding-top: 1px;
+        }
+
+
+        .contact-row a {
+            transition: .2s ease;
+        }
+
+
+        .contact-row a:hover {
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           SIDEBAR FOOTER
+        ========================================================= */
+
+        .sidebar-bottom {
+            margin-top: auto;
+
+            padding-top: 45px;
+        }
+
+
+        .sidebar-bottom strong {
+            display: block;
+
+            color: var(--green);
+
+            font-size: 9px;
+
+            letter-spacing: .18em;
+
+            margin-bottom: 5px;
+        }
+
+
+        .sidebar-bottom span {
+            color: #87908b;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           MAIN AREA
+        ========================================================= */
+
+        .main-area {
+            grid-column: 2;
+
+            min-width: 0;
+
+            min-height: 100vh;
+        }
+
+
+        .catalogue-area {
+            width: 100%;
+
+            padding:
+                60px 55px 45px;
+        }
+
+
+        /* =========================================================
+           CATALOGUE HEADER
+        ========================================================= */
+
+        .catalogue-header {
+            margin-bottom: 36px;
+        }
+
+
+        .catalogue-title {
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .catalogue-title span {
+            color: var(--green);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            font-style: italic;
+
+            letter-spacing: .34em;
+        }
+
+
+        .catalogue-line {
+            width: 100%;
+
+            height: 1px;
+
+            background: #8d9993;
+
+            margin-top: 14px;
+
+            opacity: .75;
+        }
+
+
+        /* =========================================================
+           CATEGORY GRID
+        ========================================================= */
+
+        .catalogue-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,minmax(0,1fr));
+
+            column-gap: 32px;
+
+            row-gap: 43px;
+        }
+
+
+        .category-grid-view {
+            display: grid;
+        }
+
+
+        /* =========================================================
+           CATEGORY CARD
+        ========================================================= */
+
+        .catalogue-category {
+            min-width: 0;
+
+            cursor: pointer;
+
+            border: 0;
+
+            background: transparent;
+
+            text-align: left;
+
+            transition:
+                transform .3s ease;
+        }
+
+
+        .catalogue-category:hover {
+            transform:
+                translateY(-5px);
+        }
+
+
+        /* =========================================================
+           CATEGORY IMAGE
+           COMPLETE IMAGE - NO CROP
+        ========================================================= */
+
+        .category-image-box {
+            width: 100%;
+
+            height: 320px;
+
+            border-radius: 21px;
+
+            overflow: hidden;
+
+            background: #ffffff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 12px;
+
+            box-shadow:
+                0 7px 22px
+                rgba(23,79,69,.055);
+        }
+
+
+        .category-image-box img {
+            width: 100%;
+
+            height: 100%;
+
+            max-width: 100%;
+
+            max-height: 100%;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            transform: none;
+
+            transition: none;
+        }
+
+
+        .catalogue-category:hover
+        .category-image-box img {
+            transform: none;
+        }
+
+
+        /* =========================================================
+           CATEGORY TEXT
+        ========================================================= */
+
+        .category-content {
+            padding:
+                19px 4px 0;
+        }
+
+
+        .category-content > span {
+            display: block;
+
+            color: var(--green);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .15em;
+
+            margin-bottom: 7px;
+        }
+
+
+        .category-content h2 {
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            font-size: 18px;
+
+            line-height: 1.25;
+
+            font-weight: 600;
+
+            color: var(--text);
+
+            margin-bottom: 7px;
+        }
+
+
+        .category-content p {
+            color: #727a76;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+            margin-bottom: 12px;
+        }
+
+
+        .category-content strong {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            padding-top: 12px;
+
+            border-top:
+                1px solid var(--line);
+        }
+
+
+        .category-content strong b {
+            color: var(--gold);
+
+            font-size: 18px;
+
+            transition: .2s;
+        }
+
+
+        .catalogue-category:hover
+        .category-content strong b {
+            transform:
+                translate(3px,-3px);
+        }
+
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        .category-back-button {
+            display: block;
+
+            border: 0;
+
+            background: transparent;
+
+            padding: 0;
+
+            margin:
+                0 0 22px;
+
+            color: #6c7671;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            text-align: left;
+        }
+
+
+        .category-back-button:hover {
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           CATEGORY PRODUCT VIEWER
+        ========================================================= */
+
+        .category-product-viewer {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.05fr)
+                minmax(0,.95fr);
+
+            gap: 58px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           VIEWER LEFT
+        ========================================================= */
+
+        .viewer-left {
+            min-width: 0;
+        }
+
+
+        .viewer-main-image {
+            width: 100%;
+
+            height: 550px;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 12px;
+        }
+
+
+        .viewer-main-image img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: center;
+        }
+
+
+        /* =========================================================
+           THUMBNAILS
+        ========================================================= */
+
+        .viewer-thumbnails {
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            margin-top: 14px;
+
+            overflow-x: auto;
+
+            padding-bottom: 6px;
+
+            scrollbar-width: none;
+        }
+
+
+        .viewer-thumbnails::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .viewer-thumbnail {
+            flex:
+                0 0 72px;
+
+            width: 72px;
+
+            height: 72px;
+
+            padding: 3px;
+
+            border:
+                2px solid transparent;
+
+            border-radius: 11px;
+
+            background: #ffffff;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            transition:
+                border .2s ease,
+                transform .2s ease;
+        }
+
+
+        .viewer-thumbnail:hover {
+            transform:
+                translateY(-2px);
+        }
+
+
+        .viewer-thumbnail.active {
+            border:
+                2px solid var(--green);
+        }
+
+
+        .viewer-thumbnail img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 8px;
+        }
+
+
+        /* =========================================================
+           VIEWER RIGHT
+        ========================================================= */
+
+        .viewer-right {
+            min-width: 0;
+
+            padding:
+                15px 25px 0 0;
+        }
+
+
+        .viewer-category {
+            color: var(--green);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .2em;
+
+            margin-bottom: 15px;
+        }
+
+
+        .viewer-title {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 42px;
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            color: var(--text);
+
+            margin-bottom: 20px;
+        }
+
+
+        .viewer-description {
+            color: #727a76;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            max-width: 470px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .viewer-divider {
+            width: 100%;
+
+            height: 1px;
+
+            background: var(--line);
+
+            margin:
+                24px 0;
+        }
+
+
+        .viewer-details span {
+            display: block;
+
+            color: #8a918d;
+
+            font-size: 9px;
+
+            letter-spacing: .18em;
+
+            margin-bottom: 8px;
+        }
+
+
+        .viewer-details strong {
+            color: var(--text);
+
+            font-size: 14px;
+        }
+
+
+        .viewer-product-count {
+            color: var(--green);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .15em;
+
+            margin-bottom: 24px;
+        }
+
+
+        .viewer-enquiry {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            min-height: 48px;
+
+            padding:
+                12px 24px;
+
+            border-radius: 999px;
+
+            background: var(--green);
+
+            color: #ffffff;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: .2s ease;
+        }
+
+
+        .viewer-enquiry:hover {
+            background:
+                var(--green-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .viewer-enquiry span {
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .catalogue-footer {
+            margin-top: 65px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid var(--line);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: #7f8883;
+
+            font-size: 10px;
+        }
+
+
+        .catalogue-footer strong {
+            color: var(--green);
+
+            letter-spacing: .15em;
+        }
+
+
+        /* =========================================================
+           MOBILE HEADER
+        ========================================================= */
+
+        .mobile-header {
+            display: none;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .website-layout {
+                grid-template-columns:
+                    310px
+                    1fr;
+            }
+
+
+            .sidebar {
+                width: 310px;
+            }
+
+
+            .sidebar-inner {
+                padding:
+                    35px 28px;
+            }
+
+
+            .sidebar h1 {
+                font-size: 27px;
+            }
+
+
+            .company-description {
+                font-size: 13px;
+            }
+
+
+            .catalogue-area {
+                padding:
+                    50px 30px;
+            }
+
+
+            .catalogue-grid {
+                gap: 25px;
+            }
+
+
+            .category-image-box {
+                height: 260px;
+            }
+
+
+            .category-product-viewer {
+                gap: 35px;
+            }
+
+
+            .viewer-main-image {
+                height: 460px;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 750px) {
+
+            body {
+                background:
+                    #f3f0e8;
+            }
+
+
+            /* =============================================
+               HEADER
+            ============================================= */
+
+            .mobile-header {
+                position: sticky;
+
+                top: 0;
+
+                z-index: 2000;
+
+                height: 76px;
+
+                padding:
+                    10px 18px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: space-between;
+
+                background:
+                    rgba(251,250,246,.98);
+
+                backdrop-filter:
+                    blur(12px);
+
+                border-bottom:
+                    1px solid var(--line);
+            }
+
+
+            .mobile-header img {
+                width: 54px;
+
+                height: 54px;
+
+                object-fit: contain;
+
+                border-radius: 14px;
+
+                background: #ffffff;
+            }
+
+
+            .mobile-menu-button {
+                width: 50px;
+
+                height: 50px;
+
+                border: 0;
+
+                border-radius: 50%;
+
+                background:
+                    var(--green-light);
+
+                color:
+                    var(--green);
+
+                font-size: 25px;
+
+                cursor: pointer;
+            }
+
+
+            /* =============================================
+               LAYOUT
+            ============================================= */
+
+            .website-layout {
+                display: block;
+            }
+
+
+            .main-area {
+                width: 100%;
+            }
+
+
+            /* =============================================
+               SIDEBAR MOBILE
+            ============================================= */
+
+            .sidebar {
+                position: fixed;
+
+                top: 76px;
+
+                left: 0;
+
+                width: 100%;
+
+                height:
+                    calc(100vh - 76px);
+
+                transform:
+                    translateX(-100%);
+
+                transition:
+                    transform .3s ease;
+
+                z-index: 1900;
+
+                box-shadow:
+                    10px 0 40px
+                    rgba(23,79,69,.15);
+            }
+
+
+            .sidebar.open {
+                transform:
+                    translateX(0);
+            }
+
+
+            .sidebar-inner {
+                padding:
+                    30px 24px;
+            }
+
+
+            .sidebar-logo {
+                width: 65px;
+
+                height: 65px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .sidebar h1 {
+                font-size: 28px;
+            }
+
+
+            .company-description {
+                font-size: 14px;
+
+                line-height: 1.55;
+            }
+
+
+            /* =============================================
+               CATALOGUE
+            ============================================= */
+
+            .catalogue-area {
+                width: 100%;
+
+                padding:
+                    32px 18px 30px;
+            }
+
+
+            .catalogue-header {
+                margin-bottom: 30px;
+            }
+
+
+            .catalogue-title span {
+                font-size: 12px;
+
+                letter-spacing: .30em;
+            }
+
+
+            .catalogue-line {
+                margin-top: 13px;
+            }
+
+
+            /* =============================================
+               MOBILE CATEGORY GRID
+            ============================================= */
+
+            .catalogue-grid {
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 34px;
+            }
+
+
+            .catalogue-grid.category-grid-view {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            /* =============================================
+               MOBILE CATEGORY IMAGE
+            ============================================= */
+
+            .category-image-box {
+                width: 100%;
+
+                height: 280px;
+
+                border-radius: 20px;
+
+                padding: 10px;
+
+                background: #ffffff;
+            }
+
+
+            .category-image-box img {
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+                object-position: center;
+
+                transform: none !important;
+            }
+
+
+            /* =============================================
+               MOBILE CATEGORY TEXT
+            ============================================= */
+
+            .category-content {
+                padding:
+                    14px 3px 0;
+            }
+
+
+            .category-content > span {
+                font-size: 8px;
+
+                margin-bottom: 7px;
+            }
+
+
+            .category-content h2 {
+                font-size: 21px;
+
+                margin-bottom: 7px;
+            }
+
+
+            .category-content p {
+                font-size: 12px;
+
+                line-height: 1.55;
+            }
+
+
+            .category-content strong {
+                font-size: 10px;
+            }
+
+
+            /* =============================================
+               VIEWER MOBILE
+            ============================================= */
+
+            .category-product-viewer {
+                display: block;
+
+                width: 100%;
+            }
+
+
+            .category-back-button {
+                margin:
+                    0 0 22px;
+
+                font-size: 15px;
+
+                padding:
+                    4px 0;
+            }
+
+
+            .viewer-main-image {
+                width: 100%;
+
+                height: 390px;
+
+                border-radius: 20px;
+
+                padding: 10px;
+
+                background: #ffffff;
+            }
+
+
+            .viewer-main-image img {
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+            }
+
+
+            .viewer-thumbnails {
+                gap: 10px;
+
+                margin-top: 14px;
+            }
+
+
+            .viewer-thumbnail {
+                flex:
+                    0 0 70px;
+
+                width: 70px;
+
+                height: 70px;
+            }
+
+
+            .viewer-right {
+                padding:
+                    30px 3px 20px;
+            }
+
+
+            .viewer-category {
+                font-size: 9px;
+
+                margin-bottom: 12px;
+            }
+
+
+            .viewer-title {
+                font-size: 36px;
+
+                line-height: 1.08;
+
+                margin-bottom: 18px;
+            }
+
+
+            .viewer-description {
+                font-size: 14px;
+
+                line-height: 1.6;
+            }
+
+
+            .viewer-enquiry {
+                width: 100%;
+            }
+
+
+            .catalogue-footer {
+                margin-top: 40px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 7px;
+            }
+
+        }
+
+
+        /* =========================================================
+           SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 430px) {
+
+            .catalogue-area {
+                padding:
+                    28px 16px 25px;
+            }
+
+
+            .category-image-box {
+                height: 260px;
+
+                border-radius: 17px;
+            }
+
+
+            .viewer-main-image {
+                height: 360px;
+
+                border-radius: 18px;
+            }
+
+
+            .viewer-title {
+                font-size: 32px;
+            }
+
+
+            .viewer-description {
+                font-size: 13px;
+            }
+
+
+            .viewer-thumbnail {
+                flex:
+                    0 0 64px;
+
+                width: 64px;
+
+                height: 64px;
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 360px) {
+
+            .category-image-box {
+                height: 230px;
+            }
+
+
+            .viewer-main-image {
+                height: 320px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<header class="site-header">
-  <div class="nav-wrap">
 
-    <a href="#top" class="brand">
-      <img src="images/logo (2).png" alt="OYA Healthcare">
-    </a>
+    <!-- =========================================================
+         MOBILE HEADER
+    ========================================================= -->
 
-    <nav class="nav-links">
-      <a href="#categories">Categories</a>
-      <a href="#about">Why OYA</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <header class="mobile-header">
 
-    <a href="#contact" class="nav-cta">Enquire Now ↗</a>
-
-    <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
-
-  </div>
-</header>
-
-
-<main id="top">
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-  <div class="hero-copy">
-
-    <span class="eyebrow">
-      <i></i> PREMIUM HEALTHCARE EQUIPMENT
-    </span>
-
-    <h1>
-      Better care begins <em>with better equipment.</em>
-    </h1>
-
-    <p>
-      Premium medical equipment for hospitals, clinics and home healthcare —
-      selected for comfort, reliability and everyday care.
-    </p>
-
-    <div class="hero-actions">
-
-      <a href="#categories" class="primary-btn">
-        Explore Categories →
-      </a>
-
-      <a href="#contact" class="text-btn">
-        Talk to OYA ↗
-      </a>
-
-    </div>
-
-    <div class="hero-stats">
-
-      <div>
-        <strong>11</strong>
-        <span>Product<br>categories</span>
-      </div>
-
-      <div>
-        <strong>27+</strong>
-        <span>Healthcare<br>products</span>
-      </div>
-
-      <div>
-        <strong>24/7</strong>
-        <span>Enquiry<br>support</span>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="hero-visual">
-
-    <div class="hero-image-frame">
-
-      <span class="hero-label">
-        FEATURED · 01
-      </span>
-
-      <img
-        src="images/hospitalbed.webp"
-        alt="Hospital Bed"
-      >
-
-      <div class="hero-caption">
-
-        <small>
-          FEATURED COLLECTION
-        </small>
-
-        <strong>
-          Hospital Beds
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <div class="floating-card">
-
-      <span>✦</span>
-
-      <div>
-        <strong>Care, elevated.</strong>
-        <small>Quality • Comfort • Reliability</small>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     CATEGORY STRIP
-===================================================== -->
-
-<section class="category-strip">
-
-  <span>HOSPITALS</span>
-  <i>•</i>
-
-  <span>CLINICS</span>
-  <i>•</i>
-
-  <span>HOME CARE</span>
-  <i>•</i>
-
-  <span>DIAGNOSTICS</span>
-  <i>•</i>
-
-  <span>EMERGENCY CARE</span>
-
-</section>
-
-
-<!-- =====================================================
-     CATEGORY CARDS
-===================================================== -->
-
-<section class="catalogue" id="categories">
-
-  <div class="section-heading">
-
-    <div>
-
-      <span class="eyebrow">
-        <i></i> EXPLORE OUR COLLECTION
-      </span>
-
-      <h2>
-        Choose a category.<br>
-        <em>Then discover its products.</em>
-      </h2>
-
-    </div>
-
-    <p id="categoryInstruction">
-      Click one category to open its function/details and ONLY the products belonging to that category.
-    </p>
-
-  </div>
-
-
-  <div class="category-grid" id="categoryGrid">
-
-
-    <!-- =================================================
-         01 HOSPITAL FURNITURE
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="hospital-furniture"
-    >
-
-      <span class="category-number">01</span>
-
-      <div class="category-image">
+        <!-- CHANGE ONLY THIS IMAGE PATH IF YOUR LOGO FILE
+             HAS A DIFFERENT NAME -->
 
         <img
-          src="images/hospitalbed.webp"
-          alt="Hospital Furniture"
+            src="images/logo.png"
+            alt="Oya Health Care"
+            onerror="this.style.visibility='hidden';"
         >
 
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Hospital Furniture
-        </h3>
-
-        <p>
-          Manual beds, multi-function ICU beds,
-          and folding medical equipment.
-        </p>
-
-        <strong>
-          7 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         02 OXYGEN CYLINDERS
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="oxygen-equipment"
-    >
-
-      <span class="category-number">02</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/oxy5ltr.png"
-          alt="Oxygen Cylinders"
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-label="Open menu"
         >
+            ☰
+        </button>
 
-      </div>
+    </header>
 
-      <div class="category-body">
 
-        <span>OYA COLLECTION</span>
 
-        <h3>
-          Oxygen Cylinders
-        </h3>
+    <!-- =========================================================
+         WEBSITE
+    ========================================================= -->
 
-        <p>
-          Medical oxygen cylinders available
-          in different capacities for healthcare
-          and home-care requirements.
-        </p>
+    <div class="website-layout">
 
-        <strong>
-          2 products <b>↗</b>
-        </strong>
 
-      </div>
+        <!-- =====================================================
+             LEFT PANEL
+        ===================================================== -->
 
-    </button>
+        <aside class="sidebar" id="sidebar">
 
+            <div class="sidebar-inner">
 
-    <!-- =================================================
-         03 OXYGEN CONCENTRATOR
-    ================================================== -->
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="oxygen-concentrator"
-    >
+                <div class="sidebar-logo">
 
-      <span class="category-number">11</span>
+                    <img
+                        src="images/logo.png"
+                        alt="Oya Health Care"
+                        onerror="this.style.visibility='hidden';"
+                    >
 
-      <div class="category-image">
+                </div>
 
-        <img
-          src="images/concentrator.webp"
-          alt="Oxygen Concentrator"
-        >
 
-      </div>
+                <h1>
+                    Oya Health Care
+                </h1>
 
-      <div class="category-body">
 
-        <span>OYA COLLECTION</span>
+                <p class="company-description">
 
-        <h3>
-          Oxygen Concentrator
-        </h3>
+                    OYA Health Care – Trusted Medical
+                    Equipment &amp; Home Healthcare
+                    Solutions OYA Health Care is a
+                    leading supplier of high-quality
+                    medical equipment, hospital
+                    supplies, and home healthcare
+                    products in India. We are committed
+                    to providing reliable, affordable
+                    and quality healthcare solutions.
 
-        <p>
-          Oxygen concentrators designed for
-          convenient respiratory support at
-          home and healthcare facilities.
-        </p>
+                </p>
 
-        <strong>
-          1 product <b>↗</b>
-        </strong>
 
-      </div>
+                <div class="sidebar-divider"></div>
 
-    </button>
 
+                <div class="sidebar-contact">
 
-    <!-- =================================================
-         03 WHEELCHAIRS
-    ================================================== -->
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="wheelchairs"
-    >
+                    <div class="contact-row">
 
-      <span class="category-number">03</span>
+                        <span class="contact-icon">
+                            ♧
+                        </span>
 
-      <div class="category-image">
+                        <span>
+                            Shop no 9 Shiv Vithai Galaxy
+                            near SBI Bank Thakurli
+                        </span>
 
-        <img
-          src="images/w1.png"
-          alt="Wheelchairs"
-        >
+                    </div>
 
-      </div>
 
-      <div class="category-body">
+                    <div class="contact-row">
 
-        <span>OYA COLLECTION</span>
+                        <span class="contact-icon">
+                            ♧
+                        </span>
 
-        <h3>
-          Wheelchairs
-        </h3>
+                        <a href="tel:7021235223">
+                            7021235223
+                        </a>
 
-        <p>
-          Manual, reclining, foldable,
-          and commode wheelchairs.
-        </p>
+                    </div>
 
-        <strong>
-          4 products <b>↗</b>
-        </strong>
 
-      </div>
+                </div>
 
-    </button>
 
+                <div class="sidebar-bottom">
 
-    <!-- =================================================
-         04 CPAP MACHINES
-    ================================================== -->
+                    <strong>
+                        OYA HEALTH CARE
+                    </strong>
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="cpap-machines"
-    >
+                    <span>
+                        Healthcare • Medical Equipment
+                    </span>
 
-      <span class="category-number">04</span>
+                </div>
 
-      <div class="category-image">
+            </div>
 
-        <img
-          src="images/c1.png"
-          alt="CPAP Machines"
-        >
+        </aside>
 
-      </div>
 
-      <div class="category-body">
 
-        <span>OYA COLLECTION</span>
+        <!-- =====================================================
+             MAIN
+        ===================================================== -->
 
-        <h3>
-          CPAP Machines
-        </h3>
+        <main class="main-area">
 
-        <p>
-          Sleep-care equipment for
-          suitable CPAP requirements.
-        </p>
+            <section class="catalogue-area">
 
-        <strong>
-          3 products <b>↗</b>
-        </strong>
 
-      </div>
+                <div class="catalogue-header">
 
-    </button>
+                    <div class="catalogue-title">
 
+                        <span id="catalogueTitle">
+                            CATALOGUE
+                        </span>
 
-    <!-- =================================================
-         05 BIPAP MACHINES
-    ================================================== -->
+                    </div>
 
-    <button
-      class="category-card"
-      type="button"
-      data-category="bipap-machines"
-    >
+                    <div class="catalogue-line"></div>
 
-      <span class="category-number">05</span>
+                </div>
 
-      <div class="category-image">
 
-        <img
-          src="images/b1.png"
-          alt="BiPAP Machines"
-        >
+                <!-- =================================================
+                     DYNAMIC CONTENT
+                ================================================= -->
 
-      </div>
+                <div
+                    class="catalogue-grid category-grid-view"
+                    id="catalogueGrid"
+                ></div>
 
-      <div class="category-body">
 
-        <span>OYA COLLECTION</span>
+                <!-- =================================================
+                     FOOTER
+                ================================================= -->
 
-        <h3>
-          BiPAP Machines
-        </h3>
+                <footer class="catalogue-footer">
 
-        <p>
-          Non-invasive respiratory-support
-          equipment.
-        </p>
+                    <strong>
+                        © 2026 OYA HEALTH CARE
+                    </strong>
 
-        <strong>
-          3 products <b>↗</b>
-        </strong>
+                    <span>
+                        Better care. Better equipment.
+                    </span>
 
-      </div>
+                </footer>
 
-    </button>
 
+            </section>
 
-    <!-- =================================================
-         06 WALKERS
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="walkers"
-    >
-
-      <span class="category-number">06</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/wl1.png"
-          alt="Walkers"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Walkers
-        </h3>
-
-        <p>
-          Lightweight, folding and
-          adjustable walking aids.
-        </p>
-
-        <strong>
-          3 products <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         07 PATIENT MONITORING
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="patient-monitoring"
-    >
-
-      <span class="category-number">07</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/pm.png"
-          alt="Patient Monitoring"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Patient Monitoring
-        </h3>
-
-        <p>
-          Patient monitoring equipment for
-          vital signs and clinical observation.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         08 CRITICAL CARE
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="critical-care"
-    >
-
-      <span class="category-number">08</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/venti.png"
-          alt="Critical Care"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Critical Care
-        </h3>
-
-        <p>
-          Advanced respiratory support
-          equipment for critical care.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         09 DIAGNOSTIC EQUIPMENT
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="diagnostic-equipment"
-    >
-
-      <span class="category-number">09</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/pu.png"
-          alt="Diagnostic Equipment"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Diagnostic Equipment
-        </h3>
-
-        <p>
-          Essential equipment for basic
-          patient health measurements.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-    <!-- =================================================
-         10 EMERGENCY CARE
-    ================================================== -->
-
-    <button
-      class="category-card"
-      type="button"
-      data-category="emergency-care"
-    >
-
-      <span class="category-number">10</span>
-
-      <div class="category-image">
-
-        <img
-          src="images/amb.png"
-          alt="Emergency Care"
-        >
-
-      </div>
-
-      <div class="category-body">
-
-        <span>OYA COLLECTION</span>
-
-        <h3>
-          Emergency Care
-        </h3>
-
-        <p>
-          Emergency transportation and
-          urgent patient-care support.
-        </p>
-
-        <strong>
-          1 product <b>↗</b>
-        </strong>
-
-      </div>
-
-    </button>
-
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     PRODUCTS SECTION
-===================================================== -->
-
-<section class="products-section" id="products">
-
-  <div class="selected-header">
-
-    <div>
-
-      <span class="eyebrow">
-        <i></i> SELECTED CATEGORY
-      </span>
-
-      <h2 id="selectedTitle">
-        Category
-      </h2>
-
-      <p id="selectedDescription">
-        Category description.
-      </p>
-
-    </div>
-
-    <button
-      id="backCategories"
-      class="back-categories"
-      type="button"
-    >
-      ← All Categories
-    </button>
-
-  </div>
-
-
-  <div class="products-heading">
-
-    <span>
-      PRODUCTS IN THIS CATEGORY
-    </span>
-
-    <small id="productCount"></small>
-
-  </div>
-
-
-  <div id="productArea">
-
-
-    <!-- =================================================
-         01 HOSPITAL FURNITURE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="hospital-furniture"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          01
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            HOSPITAL FURNITURE
-          </span>
-
-          <h3>
-            Hospital Furniture
-          </h3>
-
-          <p>
-            Manual beds, multi-function ICU beds,
-            and folding medical equipment.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Hospital Furniture"
-            src="images/hospitalbed.webp"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Manual Hospital Bed"
-              src="images/hospitalbed.webp"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              Manual Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Semi-Fowler Bed"
-              src="images/semi bed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              Semi-Fowler Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Fowler Hospital Bed"
-              src="images/fowlerbed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              Fowler Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="2 Function Hospital Bed"
-              src="images/2fbed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              2-Function Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="3 Function Hospital Bed"
-              src="images/3fbed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              3-Function Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="4 Function Hospital Bed"
-              src="images/4fbed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              4-Function Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Folding Hospital Bed"
-              src="images/foldingbed.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Hospital Furniture
-            </span>
-
-            <h4>
-              Folding Hospital Bed
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         02 OXYGEN CYLINDERS
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="oxygen-equipment"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          02
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            RESPIRATORY CARE
-          </span>
-
-          <h3>
-            Oxygen Cylinders
-          </h3>
-
-          <p>
-            Medical oxygen cylinders available
-            for healthcare and home-care use.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Oxygen Cylinders"
-            src="images/oxy5ltr.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Cylinder 5Ltr"
-              src="images/oxy5ltr.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Oxygen
-            </span>
-
-            <h4>
-              Oxygen Cylinder "5Ltr"
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Cylinder 10Ltr"
-              src="images/oxy10ltr.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Oxygen
-            </span>
-
-            <h4>
-              Oxygen Cylinder "10Ltr"
-            </h4>
-
-          </div>
-
-        </article>
-
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         03 OXYGEN CONCENTRATOR
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="oxygen-concentrator"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          11
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            RESPIRATORY CARE
-          </span>
-
-          <h3>
-            Oxygen Concentrator
-          </h3>
-
-          <p>
-            Oxygen concentrators designed for
-            convenient respiratory support at
-            home and healthcare facilities.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Oxygen Concentrator"
-            src="images/concentrator.webp"
-          >
-
-        </div>
-
-      </div>
-
-      <div class="product-grid">
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Oxygen Concentrator"
-              src="images/concentrator.webp"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Oxygen Concentrator
-            </span>
-
-            <h4>
-              Oxygen Concentrator
-            </h4>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         03 WHEELCHAIRS
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="wheelchairs"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          03
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            MOBILITY
-          </span>
-
-          <h3>
-            Wheelchairs
-          </h3>
-
-          <p>
-            Manual, reclining, foldable,
-            and commode wheelchairs.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Wheelchairs"
-            src="images/w1.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard Manual Wheelchair"
-              src="images/w1.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Wheelchair
-            </span>
-
-            <h4>
-              Standard Manual Wheelchair
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Folding Wheelchair"
-              src="images/w2.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Wheelchair
-            </span>
-
-            <h4>
-              Folding Wheelchair
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Commode Wheelchair"
-              src="images/w3.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Wheelchair
-            </span>
-
-            <h4>
-              Commode Wheelchair
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Reclining Wheelchair"
-              src="images/w4.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Wheelchair
-            </span>
-
-            <h4>
-              Reclining Wheelchair
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         04 CPAP MACHINES
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="cpap-machines"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          04
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            SLEEP CARE
-          </span>
-
-          <h3>
-            CPAP Machines
-          </h3>
-
-          <p>
-            Sleep-care equipment for
-            suitable CPAP requirements.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="CPAP Machines"
-            src="images/c1.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard CPAP Machine"
-              src="images/c1.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              CPAP
-            </span>
-
-            <h4>
-              Standard CPAP Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Auto CPAP Machine"
-              src="images/c2.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              CPAP
-            </span>
-
-            <h4>
-              Auto CPAP (APAP) Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Portable CPAP Machine"
-              src="images/c3.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              CPAP
-            </span>
-
-            <h4>
-              Portable CPAP Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         05 BIPAP MACHINES
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="bipap-machines"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          05
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            RESPIRATORY SUPPORT
-          </span>
-
-          <h3>
-            BiPAP Machines
-          </h3>
-
-          <p>
-            Non-invasive respiratory-support
-            equipment.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="BiPAP Machines"
-            src="images/b1.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard BiPAP Machine"
-              src="images/b1.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              BiPAP
-            </span>
-
-            <h4>
-              Standard BiPAP Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Portable BiPAP Machine"
-              src="images/b2.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              BiPAP
-            </span>
-
-            <h4>
-              Portable BiPAP Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Auto BiPAP Machine"
-              src="images/b1.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              BiPAP
-            </span>
-
-            <h4>
-              Auto BiPAP Machine
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         06 WALKERS
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="walkers"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          06
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            MOBILITY AIDS
-          </span>
-
-          <h3>
-            Walkers
-          </h3>
-
-          <p>
-            Lightweight, folding and
-            adjustable walking aids.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Walkers"
-            src="images/wl1.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Standard Walker"
-              src="images/wl1.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Mobility Aids
-            </span>
-
-            <h4>
-              Standard Walker
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Folding Walker"
-              src="images/wl2.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Mobility Aids
-            </span>
-
-            <h4>
-              Folding Walker
-            </h4>
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Adjustable Walker"
-              src="images/wl3.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Mobility Aids
-            </span>
-
-            <h4>
-              Adjustable Walker
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         07 PATIENT MONITORING
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="patient-monitoring"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          07
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            PATIENT MONITORING
-          </span>
-
-          <h3>
-            Patient Monitoring
-          </h3>
-
-          <p>
-            Patient monitoring equipment for
-            vital signs and clinical observation.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Patient Monitor"
-            src="images/pm.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Patient Monitor"
-              src="images/pm.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Patient Monitoring
-            </span>
-
-            <h4>
-              Patient Monitor
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         08 CRITICAL CARE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="critical-care"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          08
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            CRITICAL CARE
-          </span>
-
-          <h3>
-            Critical Care
-          </h3>
-
-          <p>
-            Advanced respiratory support
-            equipment for critical care.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="ICU Ventilator"
-            src="images/venti.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="ICU Ventilator"
-              src="images/venti.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Critical Care
-            </span>
-
-            <h4>
-              ICU Ventilator
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         09 DIAGNOSTIC EQUIPMENT
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="diagnostic-equipment"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          09
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            DIAGNOSTICS
-          </span>
-
-          <h3>
-            Diagnostic Equipment
-          </h3>
-
-          <p>
-            Essential equipment for basic
-            patient health measurements.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Pulse Oximeter"
-            src="images/pu.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Pulse Oximeter"
-              src="images/pu.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Diagnostics
-            </span>
-
-            <h4>
-              Pulse Oximeter
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         10 EMERGENCY CARE
-    ================================================== -->
-
-    <section
-      class="category-block"
-      id="emergency-care"
-    >
-
-      <div class="category-header">
-
-        <div class="category-number">
-          10
-        </div>
-
-        <div class="category-copy">
-
-          <span>
-            EMERGENCY CARE
-          </span>
-
-          <h3>
-            Emergency Care
-          </h3>
-
-          <p>
-            Emergency transportation and
-            urgent patient-care support.
-          </p>
-
-        </div>
-
-        <div class="category-image">
-
-          <img
-            alt="Ambulance Service"
-            src="images/amb.png"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="product-grid">
-
-
-        <article
-          class="product-card product-clickable"
-          role="button"
-          tabindex="0"
-        >
-
-          <div class="product-image">
-
-            <img
-              alt="Ambulance Service"
-              src="images/amb.png"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span>
-              Emergency
-            </span>
-
-            <h4>
-              Ambulance Service (24/7)
-            </h4>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     WHY OYA
-===================================================== -->
-
-<section class="trust-section" id="about">
-
-  <div>
-
-    <span class="eyebrow">
-      <i></i> WHY OYA
-    </span>
-
-    <h2>
-      Professional equipment.<br>
-      <em>Thoughtfully selected.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="trust-grid">
-
-    <div>
-
-      <span>01</span>
-
-      <h3>
-        Curated catalogue
-      </h3>
-
-      <p>
-        Essential healthcare equipment organised into clear,
-        easy-to-browse categories.
-      </p>
+        </main>
 
     </div>
 
 
-    <div>
 
-      <span>02</span>
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   CATEGORY DATA
+                ================================================= */
+
+                const categories = [
+
+                    {
+                        name: "Hospital Furniture",
+                        category: "Hospital Furniture",
+                        description:
+                            "Hospital beds and furniture designed for patient care and healthcare requirements.",
+
+                        products: [
+
+                            {
+                                name: "Hospital Bed",
+                                image: "images/hospitalbed.webp",
+                                description:
+                                    "Hospital bed designed for patient comfort, care and healthcare requirements."
+                            },
+
+                            {
+                                name: "Semi Fowler Hospital Bed",
+                                image: "images/semi bed.png",
+                                description:
+                                    "Semi Fowler hospital bed designed for comfortable patient positioning."
+                            },
+
+                            {
+                                name: "Fowler Hospital Bed",
+                                image: "images/fowlerbed.png",
+                                description:
+                                    "Fowler hospital bed designed for flexible patient positioning and patient care."
+                            },
+
+                            {
+                                name: "2 Function Hospital Bed",
+                                image: "images/2fbed.png",
+                                description:
+                                    "2-function hospital bed suitable for everyday patient-care requirements."
+                            },
+
+                            {
+                                name: "3 Function Hospital Bed",
+                                image: "images/3fbed.png",
+                                description:
+                                    "3-function hospital bed designed for flexible healthcare requirements."
+                            },
+
+                            {
+                                name: "4 Function Hospital Bed",
+                                image: "images/4fbed.png",
+                                description:
+                                    "4-function hospital bed designed for professional healthcare environments."
+                            },
+
+                            {
+                                name: "Folding Hospital Bed",
+                                image: "images/foldingbed.png",
+                                description:
+                                    "Folding hospital bed designed for convenient healthcare use."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "Oxygen Cylinders",
+                        category: "Oxygen",
+                        description:
+                            "Medical oxygen cylinders designed for healthcare and patient-care requirements.",
+
+                        products: [
+
+                            {
+                                name: "Oxygen Cylinder 5 Litre",
+                                image: "images/oxy5ltr.png",
+                                description:
+                                    "5 litre oxygen cylinder suitable for healthcare requirements."
+                            },
+
+                            {
+                                name: "Oxygen Cylinder 10 Litre",
+                                image: "images/oxy10ltr.png",
+                                description:
+                                    "10 litre oxygen cylinder suitable for medical and healthcare requirements."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "Oxygen Concentrator",
+                        category: "Oxygen Concentrator",
+                        description:
+                            "Oxygen concentrator equipment designed for suitable healthcare and home-care requirements.",
+
+                        products: [
+
+                            {
+                                name: "Oxygen Concentrator",
+                                image: "images/concentrator.webp",
+                                description:
+                                    "Oxygen concentrator suitable for healthcare and home-care requirements."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "Wheelchairs",
+                        category: "Wheelchair",
+                        description:
+                            "Mobility solutions designed for comfortable patient movement and support.",
+
+                        products: [
+
+                            {
+                                name: "Standard Wheelchair",
+                                image: "images/w1.png",
+                                description:
+                                    "Standard manual wheelchair designed for everyday mobility."
+                            },
+
+                            {
+                                name: "Folding Wheelchair",
+                                image: "images/w2.png",
+                                description:
+                                    "Folding wheelchair designed for convenient transportation and storage."
+                            },
+
+                            {
+                                name: "Commode Wheelchair",
+                                image: "images/w3.png",
+                                description:
+                                    "Commode wheelchair designed for additional patient-care convenience."
+                            },
+
+                            {
+                                name: "Reclining Wheelchair",
+                                image: "images/w4.png",
+                                description:
+                                    "Reclining wheelchair designed for enhanced patient comfort."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "CPAP Machines",
+                        category: "CPAP",
+                        description:
+                            "CPAP equipment designed for suitable sleep-care requirements.",
+
+                        products: [
+
+                            {
+                                name: "CPAP Machine",
+                                image: "images/c1.png",
+                                description:
+                                    "CPAP machine designed for suitable sleep-care requirements."
+                            },
+
+                            {
+                                name: "Auto CPAP Machine",
+                                image: "images/c2.png",
+                                description:
+                                    "Auto CPAP machine designed for convenient sleep-care use."
+                            },
+
+                            {
+                                name: "Portable CPAP Machine",
+                                image: "images/c3.png",
+                                description:
+                                    "Portable CPAP equipment designed for convenient use."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "BiPAP Machines",
+                        category: "BiPAP",
+                        description:
+                            "Bi-level respiratory-support equipment for suitable healthcare requirements.",
+
+                        products: [
+
+                            {
+                                name: "BiPAP Machine",
+                                image: "images/b1.png",
+                                description:
+                                    "BiPAP machine designed for suitable respiratory-support requirements."
+                            },
+
+                            {
+                                name: "Portable BiPAP Machine",
+                                image: "images/b2.png",
+                                description:
+                                    "Portable BiPAP equipment designed for convenient use."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "Mobility Aids",
+                        category: "Mobility Aids",
+                        description:
+                            "Walking aids designed to provide everyday mobility support.",
+
+                        products: [
+
+                            {
+                                name: "Walking Walker",
+                                image: "images/wl1.png",
+                                description:
+                                    "Walking support designed for everyday mobility and stability."
+                            },
+
+                            {
+                                name: "Folding Walker",
+                                image: "images/wl2.png",
+                                description:
+                                    "Folding walker designed for convenient storage and transportation."
+                            },
+
+                            {
+                                name: "Adjustable Walker",
+                                image: "images/wl3.png",
+                                description:
+                                    "Adjustable walking support designed for everyday mobility."
+                            }
+
+                        ]
+                    },
+
+
+                    {
+                        name: "Patient Monitoring",
+                        category: "Patient Monitoring",
+                        description:
+                            "Equipment designed for suitable patient monitoring requirements.",
+
+                        products: [
 
-      <h3>
-        Simple enquiries
-      </h3>
+                            {
+                                name: "Patient Monitor",
+                                image: "images/pm.png",
+                                description:
+                                    "Patient monitoring equipment designed for healthcare requirements."
+                            }
 
-      <p>
-        Open a product and contact OYA directly for details,
-        pricing and availability.
-      </p>
+                        ]
+                    },
 
-    </div>
 
+                    {
+                        name: "Critical Care",
+                        category: "Critical Care",
+                        description:
+                            "Respiratory-support equipment for suitable critical-care environments.",
 
-    <div>
+                        products: [
 
-      <span>03</span>
+                            {
+                                name: "ICU Ventilator",
+                                image: "images/venti.png",
+                                description:
+                                    "Respiratory-support equipment for appropriate critical-care environments."
+                            }
 
-      <h3>
-        Care focused
-      </h3>
+                        ]
+                    },
 
-      <p>
-        A clean product experience designed around hospitals,
-        clinics and everyday care.
-      </p>
 
-    </div>
+                    {
+                        name: "Diagnostic Equipment",
+                        category: "Diagnostics",
+                        description:
+                            "Equipment designed for basic patient measurements and diagnostics.",
 
-  </div>
+                        products: [
 
-</section>
+                            {
+                                name: "Pulse Oximeter",
+                                image: "images/pu.png",
+                                description:
+                                    "Compact diagnostic equipment designed for basic patient measurements."
+                            }
 
+                        ]
+                    },
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
 
-<section class="contact-banner" id="contact">
+                    {
+                        name: "Emergency Care",
+                        category: "Emergency",
+                        description:
+                            "Emergency transportation and urgent patient-care support.",
 
-  <div>
+                        products: [
 
-    <span class="eyebrow">
-      <i></i> LET'S TALK
-    </span>
+                            {
+                                name: "Ambulance Service",
+                                image: "images/amb.png",
+                                description:
+                                    "Emergency transportation support for urgent patient-care requirements."
+                            }
 
-    <h2>
-      Need the right<br>
-      <em>healthcare solution?</em>
-    </h2>
+                        ]
+                    }
 
-  </div>
+                ];
 
 
-  <div class="contact-actions">
+                /* =================================================
+                   ELEMENTS
+                ================================================= */
 
-    <a
-      href="tel:7021235223"
-      class="primary-btn"
-    >
-      Call OYA ↗
-    </a>
+                const grid =
+                    document.getElementById(
+                        "catalogueGrid"
+                    );
 
-    <a
-      href="mailto:oyahealthcare@gmail.com"
-      class="secondary-btn"
-    >
-      Email Us
-    </a>
 
-    <p>
-      Shop no 9, Shiv Vithai Galaxy,
-      near SBI Bank, Thakurli
-    </p>
+                const title =
+                    document.getElementById(
+                        "catalogueTitle"
+                    );
 
-  </div>
 
-</section>
+                const sidebar =
+                    document.getElementById(
+                        "sidebar"
+                    );
 
 
-</main>
+                const menuButton =
+                    document.getElementById(
+                        "mobileMenuButton"
+                    );
 
 
-<!-- =====================================================
-     CATEGORY POPUP
-===================================================== -->
+                /* =================================================
+                   SHOW CATEGORIES
+                ================================================= */
 
-<div
-  class="category-modal"
-  id="categoryModal"
-  aria-hidden="true"
->
+                function showCategories() {
 
-  <div class="category-modal-box">
+                    grid.innerHTML = "";
 
-    <button
-      class="category-modal-close"
-      id="categoryModalClose"
-      type="button"
-      aria-label="Close"
-    >
-      ×
-    </button>
+                    title.textContent =
+                        "CATALOGUE";
 
 
-    <div class="category-modal-header">
+                    categories.forEach(
+                        function (category) {
 
-      <span class="eyebrow">
-        <i></i> OYA COLLECTION
-      </span>
+                            const card =
+                                document.createElement(
+                                    "button"
+                                );
 
-      <h2 id="categoryModalTitle">
-        Category
-      </h2>
 
-      <p id="categoryModalDescription">
-        Explore our products.
-      </p>
+                            card.type = "button";
 
-    </div>
 
+                            card.className =
+                                "catalogue-category";
 
-    <div
-      class="category-modal-products"
-      id="categoryModalProducts"
-    ></div>
 
+                            card.innerHTML = `
 
-    <div class="category-modal-footer">
+                                <div class="category-image-box">
 
-      <button
-        id="categoryModalBack"
-        type="button"
-      >
-        ← Back to Categories
-      </button>
+                                    <img
+                                        src="${category.products[0].image}"
+                                        alt="${category.name}"
+                                        loading="lazy"
+                                    >
 
-    </div>
+                                </div>
 
-  </div>
 
-</div>
+                                <div class="category-content">
 
+                                    <span>
+                                        OYA COLLECTION
+                                    </span>
 
-<!-- =====================================================
-     PRODUCT POPUP
-===================================================== -->
 
-<div
-  class="product-modal"
-  id="productModal"
-  aria-hidden="true"
->
+                                    <h2>
+                                        ${category.name}
+                                    </h2>
 
-  <div class="modal-box">
 
-    <button
-      class="modal-close"
-      id="modalClose"
-      type="button"
-      aria-label="Close"
-    >
-      ×
-    </button>
+                                    <p>
+                                        ${category.description}
+                                    </p>
 
 
-    <div class="modal-grid">
+                                    <strong>
 
+                                        <span>
+                                            ${category.products.length}
+                                            ${
+                                                category.products.length === 1
+                                                    ? " product"
+                                                    : " products"
+                                            }
+                                        </span>
 
-      <div class="modal-image">
+                                        <b>
+                                            ↗
+                                        </b>
 
-        <img
-          id="modalImage"
-          src=""
-          alt=""
-        >
+                                    </strong>
 
-      </div>
+                                </div>
 
+                            `;
 
-      <div class="modal-details">
 
-        <span id="modalCategory"></span>
+                            card.addEventListener(
+                                "click",
+                                function () {
 
-        <h2 id="modalTitle"></h2>
+                                    openCategory(
+                                        category
+                                    );
 
-        <p id="modalDescription"></p>
+                                }
+                            );
 
 
-        <div class="modal-features">
+                            grid.appendChild(
+                                card
+                            );
 
-          <div>
-            ✓ Quality healthcare equipment
-          </div>
+                        }
+                    );
 
-          <div>
-            ✓ Suitable for professional & home care
-          </div>
 
-          <div>
-            ✓ Contact OYA for pricing & availability
-          </div>
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
 
-        </div>
+                }
 
 
-        <div class="modal-actions">
+                /* =================================================
+                   OPEN CATEGORY
+                ================================================= */
 
-          <a
-            href="tel:7021235223"
-            class="modal-enquiry"
-          >
-            Enquire Now ↗
-          </a>
+                function openCategory(
+                    category
+                ) {
 
-          <a
-            id="whatsappBtn"
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="modal-whatsapp"
-          >
-            WhatsApp
-          </a>
+                    /*
+                       CLEAR EVERYTHING FIRST.
 
-        </div>
+                       This is what prevents multiple
+                       Back to Catalogue buttons.
+                    */
 
-      </div>
+                    grid.innerHTML = "";
 
-    </div>
 
-  </div>
+                    title.textContent =
+                        category.name.toUpperCase();
 
-</div>
 
+                    /* =============================================
+                       ONE BACK BUTTON ONLY
+                    ============================================= */
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+                    const back =
+                        document.createElement(
+                            "button"
+                        );
 
-<footer class="footer">
 
-  <div class="footer-top">
+                    back.type = "button";
 
 
-    <div class="footer-brand">
+                    back.className =
+                        "category-back-button";
 
-      <img
-        src="images/logo (2).png"
-        alt="OYA Healthcare"
-      >
 
-      <p>
-        Premium medical equipment and healthcare solutions.
-      </p>
+                    back.textContent =
+                        "← Back to Catalogue";
 
-    </div>
 
+                    back.addEventListener(
+                        "click",
+                        function () {
 
-    <div class="footer-links">
+                            showCategories();
 
-      <a href="#categories">
-        Categories
-      </a>
+                        }
+                    );
 
-      <a href="#about">
-        Why OYA
-      </a>
 
-      <a href="#contact">
-        Contact
-      </a>
+                    grid.appendChild(
+                        back
+                    );
 
-    </div>
 
+                    /* =============================================
+                       VIEWER
+                    ============================================= */
 
-    <div class="footer-contact">
+                    const viewer =
+                        document.createElement(
+                            "section"
+                        );
 
-      <strong>
-        Get in touch
-      </strong>
 
-      <a href="mailto:oyahealthcare@gmail.com">
-        oyahealthcare@gmail.com
-      </a>
+                    viewer.className =
+                        "category-product-viewer";
 
-      <a href="tel:7021235223">
-        7021235223
-      </a>
 
-    </div>
+                    viewer.innerHTML = `
 
+                        <div class="viewer-left">
 
-  </div>
+                            <div class="viewer-main-image">
 
+                                <img
+                                    id="mainProductImage"
+                                    src="${category.products[0].image}"
+                                    alt="${category.products[0].name}"
+                                >
 
-  <div class="footer-bottom">
+                            </div>
 
-    <span>
-      © 2026 OYA Healthcare
-    </span>
 
-    <span>
-      Healthcare, with confidence.
-    </span>
+                            <div
+                                class="viewer-thumbnails"
+                                id="productThumbnails"
+                            ></div>
 
-  </div>
+                        </div>
 
-</footer>
 
+                        <div class="viewer-right">
 
-<script src="script.js"></script>
+                            <div class="viewer-category">
+
+                                ${category.category.toUpperCase()}
+
+                            </div>
+
+
+                            <h1
+                                class="viewer-title"
+                                id="viewerProductTitle"
+                            >
+
+                                ${category.products[0].name}
+
+                            </h1>
+
+
+                            <p
+                                class="viewer-description"
+                                id="viewerProductDescription"
+                            >
+
+                                ${category.products[0].description}
+
+                            </p>
+
+
+                            <div
+                                class="viewer-divider"
+                            ></div>
+
+
+                            <div class="viewer-details">
+
+                                <span>
+                                    CATEGORY
+                                </span>
+
+                                <strong>
+                                    ${category.name}
+                                </strong>
+
+                            </div>
+
+
+                            <div
+                                class="viewer-divider"
+                            ></div>
+
+
+                            <div class="viewer-product-count">
+
+                                ${category.products.length}
+
+                                ${
+                                    category.products.length === 1
+                                        ? " PRODUCT"
+                                        : " PRODUCTS"
+                                }
+
+                            </div>
+
+
+                            <a
+                                class="viewer-enquiry"
+                                href="https://wa.me/917021235223"
+                                target="_blank"
+                                rel="noopener"
+                            >
+
+                                Enquire on WhatsApp
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+
+                    grid.appendChild(
+                        viewer
+                    );
+
+
+                    /* =============================================
+                       PRODUCT ELEMENTS
+                    ============================================= */
+
+                    const mainImage =
+                        viewer.querySelector(
+                            "#mainProductImage"
+                        );
+
+
+                    const productTitle =
+                        viewer.querySelector(
+                            "#viewerProductTitle"
+                        );
+
+
+                    const productDescription =
+                        viewer.querySelector(
+                            "#viewerProductDescription"
+                        );
+
+
+                    const thumbnails =
+                        viewer.querySelector(
+                            "#productThumbnails"
+                        );
+
+
+                    /* =============================================
+                       SELECT PRODUCT
+                    ============================================= */
+
+                    function selectProduct(
+                        product,
+                        index
+                    ) {
+
+                        mainImage.src =
+                            product.image;
+
+
+                        mainImage.alt =
+                            product.name;
+
+
+                        productTitle.textContent =
+                            product.name;
+
+
+                        productDescription.textContent =
+                            product.description;
+
+
+                        thumbnails
+                            .querySelectorAll(
+                                ".viewer-thumbnail"
+                            )
+                            .forEach(
+                                function (
+                                    thumbnail,
+                                    thumbnailIndex
+                                ) {
+
+                                    thumbnail.classList.toggle(
+                                        "active",
+                                        thumbnailIndex === index
+                                    );
+
+                                }
+                            );
+
+                    }
+
+
+                    /* =============================================
+                       CREATE THUMBNAILS
+                    ============================================= */
+
+                    category.products.forEach(
+                        function (
+                            product,
+                            index
+                        ) {
+
+                            const thumbnail =
+                                document.createElement(
+                                    "button"
+                                );
+
+
+                            thumbnail.type =
+                                "button";
+
+
+                            thumbnail.className =
+                                "viewer-thumbnail";
+
+
+                            thumbnail.innerHTML = `
+
+                                <img
+                                    src="${product.image}"
+                                    alt="${product.name}"
+                                    loading="lazy"
+                                >
+
+                            `;
+
+
+                            thumbnail.addEventListener(
+                                "click",
+                                function () {
+
+                                    selectProduct(
+                                        product,
+                                        index
+                                    );
+
+                                }
+                            );
+
+
+                            thumbnails.appendChild(
+                                thumbnail
+                            );
+
+                        }
+                    );
+
+
+                    selectProduct(
+                        category.products[0],
+                        0
+                    );
+
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+
+
+                /* =================================================
+                   MOBILE MENU
+                ================================================= */
+
+                if (
+                    menuButton &&
+                    sidebar
+                ) {
+
+                    menuButton.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+
+                            sidebar.classList.toggle(
+                                "open"
+                            );
+
+
+                            if (
+                                sidebar.classList.contains(
+                                    "open"
+                                )
+                            ) {
+
+                                menuButton.textContent =
+                                    "×";
+
+                            } else {
+
+                                menuButton.textContent =
+                                    "☰";
+
+                            }
+
+                        }
+                    );
+
+
+                    document.addEventListener(
+                        "click",
+                        function (event) {
+
+                            if (
+                                sidebar.classList.contains(
+                                    "open"
+                                ) &&
+
+                                !sidebar.contains(
+                                    event.target
+                                ) &&
+
+                                !menuButton.contains(
+                                    event.target
+                                )
+                            ) {
+
+                                sidebar.classList.remove(
+                                    "open"
+                                );
+
+
+                                menuButton.textContent =
+                                    "☰";
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                /* =================================================
+                   START
+                ================================================= */
+
+                showCategories();
+
+            }
+
+        );
+
+    </script>
 
 </body>
 </html>
