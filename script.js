@@ -1,6 +1,6 @@
 /* =========================================================
    OYA HEALTH CARE
-   CATEGORY → PRODUCTS → PRODUCT DETAIL
+   COMPLETE SCRIPT
 ========================================================= */
 
 
@@ -9,6 +9,10 @@
 ========================================================= */
 
 const categories = [
+
+    /* =====================================================
+       HOSPITAL FURNITURE
+    ===================================================== */
 
     {
         id: "hospital-furniture",
@@ -39,6 +43,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Semi-Fowler Bed",
 
@@ -55,6 +60,7 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
+
 
             {
                 name: "Fowler Hospital Bed",
@@ -73,6 +79,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "2-Function Hospital Bed",
 
@@ -89,6 +96,7 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
+
 
             {
                 name: "3-Function Hospital Bed",
@@ -107,6 +115,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "4-Function Hospital Bed",
 
@@ -123,6 +132,7 @@ const categories = [
                     "CATEGORY": "Hospital Furniture"
                 }
             },
+
 
             {
                 name: "Folding Hospital Bed",
@@ -143,6 +153,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -178,6 +189,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: 'Oxygen Cylinder "10Ltr"',
 
@@ -197,6 +209,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -230,6 +243,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Oxygen Concentrator",
 
@@ -244,6 +258,7 @@ const categories = [
                     "SIZE": "5 Liter"
                 }
             },
+
 
             {
                 name: "Portable Oxygen Concentrator",
@@ -260,6 +275,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Oxygen Concentrator 10L",
 
@@ -274,6 +290,7 @@ const categories = [
                     "SIZE": "10 Liter"
                 }
             },
+
 
             {
                 name: "Oxygen Concentrator Machine",
@@ -290,6 +307,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Portable Oxygen Concentrator",
 
@@ -304,6 +322,7 @@ const categories = [
                     "TYPE": "Portable Oxygen Concentrator"
                 }
             },
+
 
             {
                 name: "Oxygen Concentrator",
@@ -322,6 +341,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -356,6 +376,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Folding Wheelchair",
 
@@ -372,6 +393,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Commode Wheelchair",
 
@@ -387,6 +409,7 @@ const categories = [
                     "USE": "Patient Care"
                 }
             },
+
 
             {
                 name: "Reclining Wheelchair",
@@ -407,73 +430,6 @@ const categories = [
         ]
     },
 
-
-    /* =====================================================
-       CPAP
-    ===================================================== */
-
-    {
-        id: "cpap-machines",
-
-        title: "CPAP Machines",
-
-        image: "images/c1.png",
-
-        description:
-            "Sleep-care equipment for suitable CPAP requirements.",
-
-        products: [
-
-            {
-                name: "Standard CPAP Machine",
-
-                images: [
-                    "images/c1.png"
-                ],
-
-                description:
-                    "CPAP solution designed for suitable sleep-care requirements.",
-
-                info: {
-                    "TYPE": "CPAP Machine",
-                    "USE": "Sleep Care"
-                }
-            },
-
-            {
-                name: "Auto CPAP (APAP) Machine",
-
-                images: [
-                    "images/c2.png"
-                ],
-
-                description:
-                    "Auto-adjusting CPAP solution designed for suitable sleep-care requirements.",
-
-                info: {
-                    "TYPE": "Auto CPAP",
-                    "USE": "Sleep Care"
-                }
-            },
-
-            {
-                name: "Portable CPAP Machine",
-
-                images: [
-                    "images/c3.png"
-                ],
-
-                description:
-                    "Compact CPAP option designed for convenient use.",
-
-                info: {
-                    "TYPE": "Portable CPAP",
-                    "USE": "Sleep Care"
-                }
-            }
-
-        ]
-    },
 
 
     /* =====================================================
@@ -508,6 +464,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Portable BiPAP Machine",
 
@@ -523,6 +480,7 @@ const categories = [
                     "USE": "Respiratory Support"
                 }
             },
+
 
             {
                 name: "Auto BiPAP Machine",
@@ -542,6 +500,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -576,6 +535,7 @@ const categories = [
                 }
             },
 
+
             {
                 name: "Folding Walker",
 
@@ -591,6 +551,7 @@ const categories = [
                     "USE": "Mobility Support"
                 }
             },
+
 
             {
                 name: "Adjustable Walker",
@@ -610,6 +571,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -648,6 +610,7 @@ const categories = [
     },
 
 
+
     /* =====================================================
        CRITICAL CARE
     ===================================================== */
@@ -684,6 +647,7 @@ const categories = [
     },
 
 
+
     /* =====================================================
        DIAGNOSTIC
     ===================================================== */
@@ -718,6 +682,7 @@ const categories = [
 
         ]
     },
+
 
 
     /* =====================================================
@@ -765,54 +730,92 @@ const categories = [
 ========================================================= */
 
 const categoryGrid =
-    document.getElementById("categoryGrid");
+    document.getElementById(
+        "categoryGrid"
+    );
+
 
 const categoryView =
-    document.getElementById("categoryView");
+    document.getElementById(
+        "categoryView"
+    );
+
 
 const productGrid =
-    document.getElementById("productGrid");
+    document.getElementById(
+        "productGrid"
+    );
+
 
 const categoryTitle =
-    document.getElementById("categoryTitle");
+    document.getElementById(
+        "categoryTitle"
+    );
+
 
 const categoryDescription =
-    document.getElementById("categoryDescription");
+    document.getElementById(
+        "categoryDescription"
+    );
+
 
 const categoryCount =
-    document.getElementById("categoryCount");
+    document.getElementById(
+        "categoryCount"
+    );
+
 
 const productView =
-    document.getElementById("productView");
+    document.getElementById(
+        "productView"
+    );
+
 
 const mainProductImage =
-    document.getElementById("mainProductImage");
+    document.getElementById(
+        "mainProductImage"
+    );
+
 
 const thumbnailContainer =
-    document.getElementById("thumbnailContainer");
+    document.getElementById(
+        "thumbnailContainer"
+    );
+
 
 const productTitle =
-    document.getElementById("productTitle");
+    document.getElementById(
+        "productTitle"
+    );
+
 
 const productDescription =
-    document.getElementById("productDescription");
+    document.getElementById(
+        "productDescription"
+    );
+
 
 const productCategory =
-    document.getElementById("productCategory");
+    document.getElementById(
+        "productCategory"
+    );
+
 
 const productInfoSection =
-    document.getElementById("productInfoSection");
+    document.getElementById(
+        "productInfoSection"
+    );
+
 
 const productWhatsApp =
-    document.getElementById("productWhatsApp");
-
-const relatedProductsGrid =
-    document.getElementById("relatedProductsGrid");
+    document.getElementById(
+        "productWhatsApp"
+    );
 
 
 
 /* =========================================================
-   CURRENT PRODUCT
+   CURRENT STATE
 ========================================================= */
 
 let currentCategory = null;
@@ -829,60 +832,82 @@ function renderCategories() {
 
     categoryGrid.innerHTML = "";
 
-    categories.forEach(category => {
 
-        const card =
-            document.createElement("article");
+    categories.forEach(
+        category => {
 
-        card.className =
-            "category-card";
+            const card =
+                document.createElement(
+                    "article"
+                );
 
-        card.innerHTML = `
 
-            <div class="category-image">
+            card.className =
+                "category-card";
 
-                <img
-                    src="${category.image}"
-                    alt="${category.title}"
-                    loading="lazy"
-                >
 
-            </div>
+            card.innerHTML = `
 
-            <div class="category-label">
-                OYA COLLECTION
-            </div>
+                <div class="category-image">
 
-            <h3>
-                ${category.title}
-            </h3>
+                    <img
+                        src="${category.image}"
+                        alt="${category.title}"
+                        loading="lazy"
+                    >
 
-            <div class="category-bottom">
+                </div>
 
-                <span>
-                    ${category.products.length}
-                    ${
-                        category.products.length === 1
-                            ? " PRODUCT"
-                            : " PRODUCTS"
-                    }
-                </span>
 
-                <strong>
-                    ↗
-                </strong>
+                <div class="category-label">
+                    OYA COLLECTION
+                </div>
 
-            </div>
-        `;
 
-        card.addEventListener(
-            "click",
-            () => openCategory(category)
-        );
+                <h3>
+                    ${category.title}
+                </h3>
 
-        categoryGrid.appendChild(card);
 
-    });
+                <div class="category-bottom">
+
+                    <span>
+                        ${category.products.length}
+                        ${
+                            category.products.length === 1
+                                ? " PRODUCT"
+                                : " PRODUCTS"
+                        }
+                    </span>
+
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    openCategory(
+                        category
+                    );
+
+                }
+            );
+
+
+            categoryGrid.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
@@ -892,13 +917,21 @@ function renderCategories() {
    OPEN CATEGORY
 ========================================================= */
 
-function openCategory(category) {
+function openCategory(
+    category
+) {
+
+    currentCategory =
+        category;
+
 
     categoryTitle.textContent =
         category.title;
 
+
     categoryDescription.textContent =
         category.description;
+
 
     categoryCount.textContent =
         `${category.products.length} ${
@@ -907,6 +940,7 @@ function openCategory(category) {
                 : "PRODUCTS"
         }`;
 
+
     productGrid.innerHTML = "";
 
 
@@ -914,10 +948,14 @@ function openCategory(category) {
         (product, index) => {
 
             const card =
-                document.createElement("article");
+                document.createElement(
+                    "article"
+                );
+
 
             card.className =
                 "product-card";
+
 
             card.innerHTML = `
 
@@ -931,19 +969,23 @@ function openCategory(category) {
 
                 </div>
 
+
                 <small>
                     ${category.title}
                 </small>
 
+
                 <h3>
                     ${product.name}
                 </h3>
+
 
                 <p>
                     ${product.description}
                 </p>
 
             `;
+
 
             card.addEventListener(
                 "click",
@@ -957,7 +999,10 @@ function openCategory(category) {
                 }
             );
 
-            productGrid.appendChild(card);
+
+            productGrid.appendChild(
+                card
+            );
 
         }
     );
@@ -967,9 +1012,11 @@ function openCategory(category) {
         "category-open"
     );
 
+
     categoryView.classList.add(
         "active"
     );
+
 
     window.scrollTo({
         top: 0,
@@ -990,13 +1037,19 @@ function openProduct(
 ) {
 
     const product =
-        category.products[productIndex];
+        category.products[
+            productIndex
+        ];
 
-    if (!product) return;
+
+    if (!product) {
+        return;
+    }
 
 
     currentCategory =
         category;
+
 
     currentProductIndex =
         productIndex;
@@ -1008,6 +1061,7 @@ function openProduct(
     document.body.classList.add(
         "product-open"
     );
+
 
     productView.classList.add(
         "active"
@@ -1032,24 +1086,42 @@ function updateProductPage() {
     const category =
         currentCategory;
 
+
     const product =
         category.products[
             currentProductIndex
         ];
 
-    if (!product) return;
+
+    if (!product) {
+        return;
+    }
 
 
-    /* PRODUCT TITLE */
+
+    /* BIG IMAGE */
+
+    mainProductImage.src =
+        product.images[0];
+
+
+    mainProductImage.alt =
+        product.name;
+
+
+
+    /* TITLE */
 
     productTitle.textContent =
         product.name;
 
 
-    /* PRODUCT CATEGORY */
+
+    /* CATEGORY */
 
     productCategory.textContent =
         category.title;
+
 
 
     /* DESCRIPTION */
@@ -1058,18 +1130,13 @@ function updateProductPage() {
         product.description;
 
 
-    /* BIG IMAGE */
 
-    mainProductImage.src =
-        product.images[0];
+    /* PRODUCT INFO */
 
-    mainProductImage.alt =
-        product.name;
+    renderProductInfo(
+        product
+    );
 
-
-    /* PRODUCT INFORMATION */
-
-    renderProductInfo(product);
 
 
     /* WHATSAPP */
@@ -1077,9 +1144,108 @@ function updateProductPage() {
     const message =
         `Hi OYA Health Care, I am interested in ${product.name}. Please share details, price and availability.`;
 
+
     productWhatsApp.href =
         "https://wa.me/917021235223?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+            message
+        );
+
+
+
+    /* SMALL PRODUCT CARDS */
+
+    renderProductThumbnails(
+        category
+    );
+
+}
+
+
+
+/* =========================================================
+   SMALL PRODUCTS UNDER BIG IMAGE
+========================================================= */
+
+function renderProductThumbnails(
+    category
+) {
+
+    thumbnailContainer.innerHTML =
+        "";
+
+
+    category.products.forEach(
+        (product, index) => {
+
+            const card =
+                document.createElement(
+                    "button"
+                );
+
+
+            card.type =
+                "button";
+
+
+            card.className =
+                "thumbnail";
+
+
+            if (
+                index ===
+                currentProductIndex
+            ) {
+
+                card.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            card.innerHTML = `
+
+                <img
+                    src="${product.images[0]}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
+
+
+                <span>
+                    ${product.name}
+                </span>
+
+            `;
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    currentProductIndex =
+                        index;
+
+
+                    updateProductPage();
+
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+            );
+
+
+            thumbnailContainer.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
@@ -1089,14 +1255,19 @@ function updateProductPage() {
    PRODUCT INFORMATION
 ========================================================= */
 
-function renderProductInfo(product) {
+function renderProductInfo(
+    product
+) {
 
-    productInfoSection.innerHTML = "";
+    productInfoSection.innerHTML =
+        "";
 
 
     if (
         !product.info ||
-        Object.keys(product.info).length === 0
+        Object.keys(
+            product.info
+        ).length === 0
     ) {
 
         return;
@@ -1110,7 +1281,10 @@ function renderProductInfo(product) {
         ([label, value]) => {
 
             const item =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             item.className =
                 "info-row";
@@ -1121,6 +1295,7 @@ function renderProductInfo(product) {
                 <span>
                     ${label}
                 </span>
+
 
                 <strong>
                     ${value}
@@ -1150,9 +1325,11 @@ function backToCatalogue() {
         "category-open"
     );
 
+
     categoryView.classList.remove(
         "active"
     );
+
 
     window.scrollTo({
         top: 0,
@@ -1173,6 +1350,7 @@ function backToProducts() {
         "product-open"
     );
 
+
     productView.classList.remove(
         "active"
     );
@@ -1181,6 +1359,7 @@ function backToProducts() {
     document.body.classList.add(
         "category-open"
     );
+
 
     categoryView.classList.add(
         "active"
@@ -1197,11 +1376,13 @@ function backToProducts() {
 
 
 /* =========================================================
-   BUTTONS
+   BACK BUTTONS
 ========================================================= */
 
 document
-    .getElementById("backCatalogue")
+    .getElementById(
+        "backCatalogue"
+    )
     .addEventListener(
         "click",
         backToCatalogue
@@ -1209,7 +1390,9 @@ document
 
 
 document
-    .getElementById("backProducts")
+    .getElementById(
+        "backProducts"
+    )
     .addEventListener(
         "click",
         backToProducts
@@ -1222,10 +1405,15 @@ document
 ========================================================= */
 
 const menuBtn =
-    document.getElementById("menuBtn");
+    document.getElementById(
+        "menuBtn"
+    );
+
 
 const mobileNav =
-    document.getElementById("mobileNav");
+    document.getElementById(
+        "mobileNav"
+    );
 
 
 menuBtn.addEventListener(
@@ -1238,13 +1426,20 @@ menuBtn.addEventListener(
 
 
         menuBtn.textContent =
-            mobileNav.classList.contains("active")
+            mobileNav.classList.contains(
+                "active"
+            )
                 ? "×"
                 : "☰";
 
     }
 );
 
+
+
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
 
 mobileNav
     .querySelectorAll("a")
@@ -1258,6 +1453,7 @@ mobileNav
                     mobileNav.classList.remove(
                         "active"
                     );
+
 
                     menuBtn.textContent =
                         "☰";
@@ -1290,9 +1486,11 @@ document
                         "product-open"
                     );
 
+
                     categoryView.classList.remove(
                         "active"
                     );
+
 
                     productView.classList.remove(
                         "active"
@@ -1315,9 +1513,12 @@ document.addEventListener(
     event => {
 
         if (
-            event.key !== "Escape"
+            event.key !==
+            "Escape"
         ) {
+
             return;
+
         }
 
 
