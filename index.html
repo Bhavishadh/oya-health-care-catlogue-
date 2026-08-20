@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Oya Health Care | Premium Healthcare Equipment</title>
+    <title>OYA Health Care | Medical Equipment</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,21 +12,20 @@
 <body>
 
 <!-- =========================
-     MOBILE HEADER
+     HEADER
 ========================= -->
+<header class="header">
 
-<header class="mobile-header">
+    <div class="logo-area">
+        <img src="images/oya-logo.png" alt="OYA Health Care Logo">
+        <div>
+            <h1>OYA</h1>
+            <span>HEALTH CARE</span>
+        </div>
+    </div>
 
-    <a href="#" class="mobile-logo-link" onclick="showHome(); return false;">
-        <img src="images/logo%20(2).png"
-             alt="Oya Health Care"
-             class="mobile-logo">
-    </a>
-
-    <button class="menu-button" id="menuButton" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+    <button class="menu-btn" id="menuBtn">
+        ☰
     </button>
 
 </header>
@@ -35,110 +34,481 @@
 <!-- =========================
      MOBILE MENU
 ========================= -->
+<nav class="mobile-menu" id="mobileMenu">
 
-<div class="mobile-menu" id="mobileMenu">
-
-    <button onclick="showHome(); closeMobileMenu();">
+    <button onclick="goHome()">
         Home
     </button>
 
-    <button onclick="scrollToCatalogue(); closeMobileMenu();">
+    <button onclick="scrollToCatalogue()">
         Catalogue
     </button>
 
-    <button onclick="scrollToAbout(); closeMobileMenu();">
-        About OYA
+    <button onclick="showContact()">
+        Contact
     </button>
 
-    <a href="tel:7021235223">
-        Contact
-    </a>
-
-</div>
+</nav>
 
 
 <!-- =========================
-     MAIN WEBSITE
+     HOME PAGE
 ========================= -->
+<main id="homePage">
 
-<div class="site-layout">
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                MEDICAL EQUIPMENT & HEALTHCARE SOLUTIONS
+            </p>
+
+            <h2>
+                OYA HEALTH CARE
+            </h2>
+
+            <p class="hero-text">
+                Your trusted partner for quality healthcare and medical
+                equipment. We provide reliable, comfortable and practical
+                healthcare solutions designed for hospitals, clinics,
+                nursing homes, healthcare professionals and home care.
+            </p>
+
+            <button class="catalogue-btn" onclick="scrollToCatalogue()">
+                VIEW CATALOGUE
+            </button>
+
+        </div>
+
+    </section>
 
 
     <!-- =========================
-         LEFT INFORMATION PANEL
+         COMPANY INFORMATION
     ========================= -->
+    <section class="company-section">
 
-    <aside class="left-panel">
+        <div class="section-label">
+            ABOUT OYA
+        </div>
 
-        <div class="left-panel-top">
+        <h2>
+            Oya Health Care
+        </h2>
 
-            <a href="#" onclick="showHome(); return false;">
-                <img src="images/logo%20(2).png"
-                     alt="Oya Health Care Logo"
-                     class="main-logo">
-            </a>
+        <p>
+            Oya Health Care is a healthcare equipment and medical products
+            provider committed to delivering dependable and high-quality
+            healthcare solutions. Our catalogue includes hospital beds,
+            patient care equipment, examination furniture, mobility
+            equipment and other essential healthcare products.
+        </p>
 
-            <h1>Oya Health Care</h1>
+        <p>
+            We focus on combining quality, functionality, comfort and
+            affordability to support hospitals, clinics, nursing homes,
+            healthcare professionals and patients with reliable equipment.
+        </p>
 
-            <p class="company-description">
-                OYA Health Care – Trusted Medical Equipment & Home Healthcare
-                Solutions OYA Health Care is a leading supplier of high-quality
-                medical equipment, hospital supplies, and home healthcare
-                products in India. We are committed to providing reliable,
-                affordable and quality healthcare solutions.
-            </p>
+        <div class="contact-info">
 
-            <div class="panel-line"></div>
+            <div class="contact-card">
 
-            <div class="contact-item">
-
-                <div class="contact-icon">⌖</div>
+                <span class="contact-icon">📍</span>
 
                 <div>
-                    Shop no 9 Shiv Vithai Galaxy near SBI Bank Thakurli
+                    <strong>ADDRESS</strong>
+
+                    <p>
+                        OYA Health Care<br>
+                        Maharashtra, India
+                    </p>
                 </div>
 
             </div>
 
 
-            <div class="contact-item">
+            <div class="contact-card">
 
-                <div class="contact-icon">♧</div>
+                <span class="contact-icon">📞</span>
 
-                <a href="tel:7021235223">
-                    7021235223
-                </a>
+                <div>
+                    <strong>PHONE</strong>
+
+                    <p>
+                        +91 XXXXX XXXXX
+                    </p>
+                </div>
 
             </div>
 
         </div>
 
-
-        <div class="left-panel-bottom">
-
-            <strong>OYA HEALTH CARE</strong>
-
-            <span>
-                Healthcare • Medical Equipment
-            </span>
-
-        </div>
-
-    </aside>
-
+    </section>
 
 
     <!-- =========================
-         RIGHT CONTENT
+         CATALOGUE
     ========================= -->
+    <section class="catalogue-section" id="catalogue">
 
-    <main class="main-content" id="mainContent">
+        <div class="section-label">
+            OUR PRODUCTS
+        </div>
 
-        <!-- CONTENT CREATED BY JS -->
+        <h2>
+            Medical Equipment Catalogue
+        </h2>
 
-    </main>
+        <p class="catalogue-description">
+            Explore our range of healthcare and medical equipment.
+            Select a category to view the available products.
+        </p>
+
+
+        <!-- =========================
+             CATEGORY GRID
+        ========================= -->
+        <div class="category-grid">
+
+
+            <!-- HOSPITAL BEDS -->
+            <article
+                class="category-card"
+                onclick="openCategory('hospital-beds')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/hospital-bed.jpg"
+                        alt="Hospital Beds"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 01
+                    </span>
+
+                    <h3>
+                        Hospital Beds
+                    </h3>
+
+                    <p>
+                        Electric, semi-electric and manual hospital beds.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PATIENT CARE -->
+            <article
+                class="category-card"
+                onclick="openCategory('patient-care')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/patient-care.jpg"
+                        alt="Patient Care Equipment"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 02
+                    </span>
+
+                    <h3>
+                        Patient Care
+                    </h3>
+
+                    <p>
+                        Essential equipment for patient monitoring and care.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- HOSPITAL FURNITURE -->
+            <article
+                class="category-card"
+                onclick="openCategory('hospital-furniture')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/hospital-furniture.jpg"
+                        alt="Hospital Furniture"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 03
+                    </span>
+
+                    <h3>
+                        Hospital Furniture
+                    </h3>
+
+                    <p>
+                        Practical furniture solutions for hospitals and clinics.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- EXAMINATION -->
+            <article
+                class="category-card"
+                onclick="openCategory('examination')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/examination-table.jpg"
+                        alt="Examination Equipment"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 04
+                    </span>
+
+                    <h3>
+                        Examination
+                    </h3>
+
+                    <p>
+                        Examination tables and clinical furniture.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MOBILITY -->
+            <article
+                class="category-card"
+                onclick="openCategory('mobility')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/wheelchair.jpg"
+                        alt="Mobility Equipment"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 05
+                    </span>
+
+                    <h3>
+                        Mobility Equipment
+                    </h3>
+
+                    <p>
+                        Wheelchairs, walkers and mobility solutions.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- HOME CARE -->
+            <article
+                class="category-card"
+                onclick="openCategory('home-care')"
+            >
+
+                <div class="category-image">
+
+                    <img
+                        src="images/home-care.jpg"
+                        alt="Home Care Equipment"
+                    >
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        CATEGORY 06
+                    </span>
+
+                    <h3>
+                        Home Care
+                    </h3>
+
+                    <p>
+                        Healthcare products designed for home use.
+                    </p>
+
+                    <button>
+                        VIEW PRODUCTS →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     CATEGORY PAGE
+========================= -->
+<section id="categoryPage" class="category-page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← BACK TO CATALOGUE
+    </button>
+
+    <div class="category-header">
+
+        <span id="categoryNumber">
+            CATEGORY
+        </span>
+
+        <h2 id="categoryTitle">
+            Hospital Beds
+        </h2>
+
+        <p id="categoryDescription">
+            Explore our products.
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+    <div id="productList" class="product-list"></div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCT POPUP
+========================= -->
+<div class="product-modal" id="productModal">
+
+    <div class="modal-overlay" onclick="closeProduct()"></div>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeProduct()"
+        >
+            ×
+        </button>
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+        <div class="modal-details">
+
+            <span id="modalCategory">
+                MEDICAL EQUIPMENT
+            </span>
+
+            <h2 id="modalTitle">
+                Product
+            </h2>
+
+            <p id="modalDescription">
+                Product description
+            </p>
+
+            <button class="enquiry-btn">
+                ENQUIRE NOW
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+
+    <div class="footer-logo">
+        OYA HEALTH CARE
+    </div>
+
+    <p>
+        Quality Healthcare Equipment & Medical Solutions
+    </p>
+
+    <p class="copyright">
+        © 2026 Oya Health Care. All Rights Reserved.
+    </p>
+
+</footer>
 
 
 <script src="script.js"></script>
