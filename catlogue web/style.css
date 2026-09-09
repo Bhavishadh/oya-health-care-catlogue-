@@ -393,6 +393,7 @@ img{
 
 /* =========================================================
    CATEGORY CARDS
+   (SIZE INCREASED — everything else unchanged)
 ========================================================= */
 
 .category-grid{
@@ -404,7 +405,7 @@ img{
 .category-card{
   position:relative;
   overflow:hidden;
-  min-height:420px;
+  min-height:480px;
   padding:0;
   border:1px solid var(--line);
   background:#fff;
@@ -430,7 +431,7 @@ img{
 }
 
 .category-image{
-  height:220px;
+  height:260px;
   background:linear-gradient(145deg,#f1f5f2,#e5ede9);
   display:grid;
   place-items:center;
@@ -445,7 +446,7 @@ img{
 }
 
 .category-body{
-  padding:22px;
+  padding:26px;
 }
 
 .category-body>span{
@@ -456,13 +457,13 @@ img{
 }
 
 .category-body h3{
-  font:800 22px/1.15 Manrope;
+  font:800 25px/1.15 Manrope;
   letter-spacing:-.035em;
   margin:8px 0 7px;
 }
 
 .category-body p{
-  font-size:11px;
+  font-size:12px;
   color:var(--muted);
   line-height:1.6;
 }
@@ -473,12 +474,12 @@ img{
   margin-top:18px;
   padding-top:14px;
   border-top:1px solid var(--line);
-  font-size:10px;
+  font-size:11px;
 }
 
 .category-body strong b{
   color:var(--green);
-  font-size:16px;
+  font-size:17px;
 }
 
 
@@ -1028,15 +1029,18 @@ img{
 
 /* =========================================================
    CATEGORY POPUP PRODUCTS
+   (SIZE INCREASED — 3 columns instead of 4,
+   so each product card is bigger. Everything
+   else unchanged.)
 ========================================================= */
 
 .category-modal-products{
   display:grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(3,1fr);
 
-  gap:16px;
+  gap:18px;
 }
 
 
@@ -1078,7 +1082,7 @@ img{
 ========================================================= */
 
 .category-popup-image{
-  height:205px;
+  height:250px;
 
   display:grid;
 
@@ -1115,7 +1119,7 @@ img{
 ========================================================= */
 
 .category-popup-info{
-  padding:16px;
+  padding:18px;
 }
 
 .category-popup-info span{
@@ -1123,7 +1127,7 @@ img{
 
   color:var(--green);
 
-  font-size:8px;
+  font-size:9px;
 
   font-weight:900;
 
@@ -1135,7 +1139,7 @@ img{
 }
 
 .category-popup-info h4{
-  font:700 14px/1.35 Manrope;
+  font:700 16px/1.35 Manrope;
 }
 
 
