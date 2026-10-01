@@ -1,6 +1,6 @@
 /* =========================================================
    OYA HEALTH CARE
-   PREMIUM RESPONSIVE CSS
+   PREMIUM RESPONSIVE WEBSITE
 ========================================================= */
 
 :root {
@@ -140,7 +140,7 @@ a {
 
 
 /* =========================================================
-   MOBILE NAV
+   NAVIGATION
 ========================================================= */
 
 .mobile-nav {
@@ -153,6 +153,7 @@ a {
 
 .mobile-nav a {
     font-size: 13px;
+
     font-weight: 600;
 
     color: var(--muted);
@@ -184,11 +185,12 @@ a {
 
 /* =========================================================
    COMPANY INTRO
-   LOGO REMOVED
+   NO LOGO IMAGE HERE
 ========================================================= */
 
 .home-company {
     width: 100%;
+
     display: block;
 }
 
@@ -236,7 +238,7 @@ a {
 
 
 /* =========================================================
-   CONTACT INFO
+   CONTACT INFORMATION
 ========================================================= */
 
 .contact-info {
@@ -276,6 +278,7 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background: var(--mint);
@@ -290,16 +293,19 @@ a {
 
 /* =========================================================
    BANNER
+   CONTROLLED SIZE
 ========================================================= */
 
 .banner {
     width: 100%;
 
+    height: 420px;
+
     overflow: hidden;
 
     border-radius: 28px;
 
-    background: white;
+    background: #f7f7f5;
 
     box-shadow: var(--shadow);
 }
@@ -307,9 +313,11 @@ a {
 .banner img {
     width: 100%;
 
-    height: auto;
+    height: 100%;
 
     object-fit: cover;
+
+    object-position: center;
 }
 
 
@@ -353,6 +361,8 @@ a {
     line-height: 1;
 
     letter-spacing: -3px;
+
+    max-width: 100%;
 }
 
 
@@ -367,6 +377,8 @@ a {
         repeat(4, minmax(0, 1fr));
 
     gap: 22px;
+
+    width: 100%;
 }
 
 
@@ -378,6 +390,8 @@ a {
     position: relative;
 
     min-height: 360px;
+
+    height: 360px;
 
     overflow: hidden;
 
@@ -1175,7 +1189,7 @@ footer span {
 
 /* =========================================================
    TABLET
-   901px - 1100px
+   MAX 1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1199,6 +1213,7 @@ footer span {
 
 /* =========================================================
    TABLET / SMALL LAPTOP
+   MAX 900px
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1264,13 +1279,12 @@ footer span {
     .product-layout {
         grid-template-columns: 1fr;
     }
-
 }
 
 
 /* =========================================================
    MOBILE
-   701px - 900px
+   MAX 700px
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -1338,8 +1352,24 @@ footer span {
         margin-bottom: 40px;
     }
 
+    /* =========================
+       MOBILE BANNER
+    ========================= */
+
     .banner {
-        border-radius: 20px;
+        height: 220px;
+
+        border-radius: 18px;
+    }
+
+    .banner img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
     }
 
 
@@ -1361,16 +1391,16 @@ footer span {
         font-size: 42px;
 
         letter-spacing: -2px;
+
+        overflow-wrap: break-word;
     }
 
 
     /* =========================
-       MOBILE CATEGORY GRID
-       3 CARDS ACROSS
+       3 CATEGORY CARDS
     ========================= */
 
     .category-grid {
-
         display: grid;
 
         grid-template-columns:
@@ -1379,16 +1409,9 @@ footer span {
         gap: 10px;
 
         width: 100%;
-
     }
 
-
-    /* =========================
-       SMALL CATEGORY CARD
-    ========================= */
-
     .category-card {
-
         width: 100%;
 
         min-height: 175px;
@@ -1396,12 +1419,9 @@ footer span {
         height: 175px;
 
         border-radius: 14px;
-
     }
 
-
     .category-image {
-
         width: 100%;
 
         height: 175px;
@@ -1409,16 +1429,9 @@ footer span {
         min-height: 175px;
 
         object-fit: cover;
-
     }
 
-
-    /* =========================
-       CATEGORY NAME
-    ========================= */
-
     .category-label {
-
         left: 10px;
 
         right: 8px;
@@ -1428,16 +1441,9 @@ footer span {
         font-size: 13px;
 
         line-height: 1.15;
-
     }
 
-
-    /* =========================
-       CATEGORY PRODUCT COUNT
-    ========================= */
-
     .category-bottom {
-
         left: 10px;
 
         right: 10px;
@@ -1445,13 +1451,10 @@ footer span {
         bottom: 10px;
 
         font-size: 8px;
-
     }
 
     .category-bottom span:last-child {
-
         font-size: 15px;
-
     }
 
 
@@ -1486,7 +1489,7 @@ footer span {
 
 
     /* =========================
-       PRODUCT GRID
+       PRODUCTS
     ========================= */
 
     .product-grid {
@@ -1581,7 +1584,6 @@ footer span {
             30px
             5%;
     }
-
 }
 
 
@@ -1634,6 +1636,27 @@ footer span {
 
 
     /* =========================
+       SMALL MOBILE BANNER
+    ========================= */
+
+    .banner {
+        height: 180px;
+
+        border-radius: 15px;
+    }
+
+    .banner img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    /* =========================
        CATALOGUE
     ========================= */
 
@@ -1643,8 +1666,18 @@ footer span {
             18px;
     }
 
+    .catalogue-heading {
+        width: 100%;
+    }
+
     .catalogue-heading h2 {
-        font-size: 38px;
+        font-size: 34px;
+
+        letter-spacing: -1.5px;
+
+        overflow-wrap: break-word;
+
+        word-break: normal;
     }
 
 
@@ -1653,39 +1686,29 @@ footer span {
     ========================= */
 
     .category-grid {
-
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
 
         gap: 8px;
-
     }
 
-
     .category-card {
-
         min-height: 150px;
 
         height: 150px;
 
         border-radius: 12px;
-
     }
 
-
     .category-image {
-
         min-height: 150px;
 
         height: 150px;
 
         object-fit: cover;
-
     }
 
-
     .category-label {
-
         left: 8px;
 
         right: 6px;
@@ -1695,12 +1718,9 @@ footer span {
         font-size: 11px;
 
         line-height: 1.1;
-
     }
 
-
     .category-bottom {
-
         left: 8px;
 
         right: 8px;
@@ -1708,14 +1728,10 @@ footer span {
         bottom: 8px;
 
         font-size: 7px;
-
     }
 
-
     .category-bottom span:last-child {
-
         font-size: 13px;
-
     }
 
 
@@ -1829,7 +1845,6 @@ footer span {
 
         text-align: center;
     }
-
 }
 
 
@@ -1856,44 +1871,46 @@ footer span {
     }
 
 
-    /* CATALOGUE */
+    /* BANNER */
 
-    .catalogue-heading h2 {
-        font-size: 34px;
+    .banner {
+        height: 155px;
+
+        border-radius: 12px;
     }
 
 
-    /* CATEGORY CARDS */
+    /* CATALOGUE */
+
+    .catalogue-heading h2 {
+        font-size: 31px;
+    }
+
+
+    /* CATEGORY */
 
     .category-grid {
-
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
 
         gap: 6px;
-
     }
 
     .category-card {
-
         height: 135px;
 
         min-height: 135px;
 
         border-radius: 10px;
-
     }
 
     .category-image {
-
         height: 135px;
 
         min-height: 135px;
-
     }
 
     .category-label {
-
         left: 6px;
 
         right: 5px;
@@ -1901,11 +1918,9 @@ footer span {
         bottom: 27px;
 
         font-size: 9px;
-
     }
 
     .category-bottom {
-
         left: 6px;
 
         right: 6px;
@@ -1913,13 +1928,10 @@ footer span {
         bottom: 6px;
 
         font-size: 6px;
-
     }
 
     .category-bottom span:last-child {
-
         font-size: 11px;
-
     }
 
 
@@ -1935,5 +1947,25 @@ footer span {
     .product-information h1 {
         font-size: 36px;
     }
+}
 
+
+/* =========================================================
+   EXTRA SAFETY AGAINST HORIZONTAL OVERFLOW
+========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+section,
+.catalogue,
+.category-view,
+.product-view,
+.home {
+    max-width: 100%;
+    overflow-x: hidden;
 }
